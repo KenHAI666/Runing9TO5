@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - runing9to5</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<header>
+  <nav class="fixed-nav">
+    <a href="{{ '/' | relative_url }}">首頁</a>
+    <a href="{{ '/about/' | relative_url }}">關於我</a>
+    <a href="{{ '/articles/' | relative_url }}">文章</a>
+    <a href="{{ '/resources/' | relative_url }}">資源</a>
+    <a href="{{ '/contact/' | relative_url }}">聯絡</a>
+  </nav>
+</header>
+
+<div class="spacer" style="height:80px;"></div>
+
+<main>
+  {{ content }}
+</main>
+
+<button id="backToTop">⬆</button>
+
+<script>
+const backToTopBtn = document.getElementById("backToTop");
+window.onscroll = function() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+};
+backToTopBtn.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
+</script>
+</body>
+</html>
