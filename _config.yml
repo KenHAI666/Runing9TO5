@@ -1,0 +1,6 @@
+title: "runing9to5"
+description: "用系統化方法陪上班族與內向創作者建立穩定輸出與個人品牌"
+baseurl: "/Runing9TO5" # 如果 repo 名稱有大小寫，這裡要一致
+url: "https://kenhai666.github.io"
+theme: minima
+markdown: kramdown
