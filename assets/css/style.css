@@ -1,16 +1,23 @@
-body { font-family: "Noto Sans TC", sans-serif; margin:0; padding:0; }
-.card-section { padding: 40px; margin:20px auto; max-width:800px; border-radius:12px; }
-.fixed-nav { position: fixed; top:0; left:0; right:0; background:#fff; padding:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:100; }
-.fixed-nav a { margin:0 10px; text-decoration:none; color:#333; }
-.about-img { width:150px; border-radius:50%; display:block; margin:10px 0; }
-#backToTop { position: fixed; bottom:30px; right:30px; display:none; padding:10px 15px; border:none; border-radius:50%; background:#0077ff; color:#fff; cursor:pointer; }
-.newsletter-box { margin-top:15px; }
-
-/卡片置中/
-.card-section {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 40px;
-  border-radius: 12px;
+body { font-family: "Noto Sans TC", sans-serif; margin:0; padding:0; background:#f5f5f5; }
+.card-section { 
+  padding: 40px; 
+  margin: 20px auto; 
+  max-width: 800px; 
+  border-radius: 12px; 
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
   text-align: center;
+}
+.fixed-nav { 
+  position: fixed; top:0; left:0; right:0; 
+  background:#fff; padding:10px; 
+  box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:100; 
+  display:flex; justify-content:center;
+}
+.fixed-nav a { margin:0 15px; text-decoration:none; color:#333; font-weight:500; }
+.about-img { width:150px; border-radius:50%; display:block; margin:15px auto; }
+#backToTop { position: fixed; bottom:30px; right:30px; display:none; padding:10px 15px; border:none; border-radius:50%; background:#0077ff; color:#fff; cursor:pointer; }
+.newsletter-box { margin-top:15px; display:flex; justify-content:center; }
+@media (max-width: 768px) {
+  .card-section { padding: 20px; margin: 15px; }
+  .fixed-nav { flex-direction: column; }
 }
