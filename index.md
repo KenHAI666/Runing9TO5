@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "系統化經營自媒體｜runing9to5"
+description: "用系統化方法陪上班族與內向創作者建立穩定輸出與個人品牌，學習自媒體經營、產品打造與自由工作者生活。"
 permalink: /index/
+keywords: "自媒體, 個人品牌, 上班族, 創作者, 自由工作"
 ---
 
 <section class="card-section" style="background:#dceeff;">
