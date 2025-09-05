@@ -23,10 +23,12 @@ permalink: /index/
 
 <section class="card-section">
   <h2>關於我</h2>
-  <img src="{{ '/images/ME.jpg' | relative_url }}"
-       alt="我的大頭照"
-       class="about-img"
-       onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23ececec%22/><text x=%2250%25%22 y=%2255%25%22 font-size=%2236%22 text-anchor=%22middle%22 fill=%22%23666%22>K叔</text></svg>';">
+  <img src="{{ '/assets/images/me.jpeg' | relative_url }}"
+     alt="我的大頭照"
+     class="about-img"
+     onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23ececec%22/><text x=%2250%25%22 y=%2255%25%22 font-size=%2236%22 text-anchor=%22middle%22 fill=%22%23666%22>K叔</text></svg>';"
+     style="width:200px; border-radius:50%; margin-bottom:20px;">
+
   <p>嗨，我是 K叔，一隻不想上班的貓。<br>
      這裡記錄我如何經營自媒體、打造產品，並分享自由工作者的故事。</p>
 </section>
