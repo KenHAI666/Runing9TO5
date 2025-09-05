@@ -1,9 +1,14 @@
 title: "runing9to5"
 description: "K叔｜陪你用最懶人的方式，把自媒體經營變成可持續的斜槓收入。"
-baseurl: "/repo" # 如果 repo 是 username.github.io/repo，填 /repo
+baseurl: "/Runing9TO5" # 對應你的 repo 名稱，大小寫要一致
 url: "https://kenhai666.github.io"
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
+# 可選：指定 Markdown 處理器
+markdown: kramdown
+kramdown:
+  input: GFM
