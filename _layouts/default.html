@@ -1,52 +1,130 @@
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO 優化標題 -->
+  <title>
+    {% if page.url == "/" or page.url == "/index/" %}
+      系統化經營自媒體｜runing9to5
+    {% elsif page.title %}
+      {{ page.title }} - runing9to5
+    {% else %}
+      runing9to5
+    {% endif %}
+  </title>
+  
+  <!-- Meta 標籤優化 -->
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}用系統化方法，陪你走得長久｜協助上班族與內向創作者，建立穩定輸出與個人品牌{% endif %}">
+  <meta name="keywords" content="自媒體, 個人品牌, 斜槓, 上班族, 內容創作, K叔, runing9to5">
+  <meta name="author" content="K叔">
+  
+  <!-- Open Graph 標籤 (社群分享優化) -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} - runing9to5{% else %}系統化經營自媒體｜runing9to5{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}用系統化方法，陪你走得長久｜協助上班族與內向創作者，建立穩定輸出與個人品牌{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  {% if page.image %}
+  <meta property="og:image" content="{{ page.image | absolute_url }}">
+  {% endif %}
+  
+  <!-- 樣式檔案 -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  
+  <!-- Favicon (可選) -->
+  <link rel="icon" type="image/x-icon" href="{{ '/images/favicon.ico' | relative_url }}">
+  
+  <!-- 字體優化 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <!-- 導航欄 -->
+  <header>
+    <nav class="fixed-nav" role="navigation" aria-label="主要導航">
+      <div class="nav-container">
+        <a href="{{ '/' | relative_url }}" class="logo">runing9to5</a>
+        <div class="nav-links">
+          <a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>首頁</a>
+          <a href="{{ '/about/' | relative_url }}" {% if page.url contains "/about/" %}class="active"{% endif %}>關於我</a>
+          <a href="{{ '/articles/' | relative_url }}" {% if page.url contains "/articles/" %}class="active"{% endif %}>文章</a>
+          <a href="{{ '/resources/' | relative_url }}" {% if page.url contains "/resources/" %}class="active"{% endif %}>資源</a>
+          <a href="{{ '/contact/' | relative_url }}" {% if page.url contains "/contact/" %}class="active"{% endif %}>聯絡</a>
+        </div>
+        
+        <!-- 手機版選單按鈕 -->
+        <button class="mobile-menu-toggle" aria-label="開啟選單">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-on:
-  push:
-    branches: ["main"]   # main 分支 push 時自動觸發
-  workflow_dispatch:     # 也可以手動執行
+  <!-- 主要內容區域 -->
+  <div class="spacer"></div>
+  <main role="main">
+    {% if page.title and page.url != "/" %}
+    <div class="page-header">
+      <h1>{{ page.title }}</h1>
+    </div>
+    {% endif %}
+    {{ content }}
+  </main>
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+  <!-- 頁尾 -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; {{ 'now' | date: '%Y' }} runing9to5. 用系統化方法，陪你走得長久。</p>
+      <div class="social-links">
+        <!-- 可以加入社群媒體連結 -->
+      </div>
+    </div>
+  </footer>
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  <!-- 回到頂部按鈕 -->
+  <button id="backToTop" aria-label="回到頂部">⬆</button>
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  <!-- JavaScript -->
+  <script>
+    // 回到頂部功能
+    const backToTopBtn = document.getElementById("backToTop");
+    
+    window.addEventListener('scroll', function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    });
+    
+    backToTopBtn.addEventListener("click", function() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'
-          bundler-cache: true
-          cache-version: 0
+    // 手機版選單切換
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        this.classList.toggle('active');
+      });
+    }
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5   # ✅ 更新到 v5
-
-      - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4   # ✅ 更新到 v4
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4   # ✅ 更新到 v4
+    // 點擊選單連結後關閉手機版選單
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
