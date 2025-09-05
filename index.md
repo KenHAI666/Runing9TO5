@@ -1,43 +1,50 @@
 ---
 layout: default
 title: "系統化經營自媒體｜runing9to5"
-description: "用系統化方法陪上班族與內向創作者建立穩定輸出與個人品牌，學習自媒體經營、產品打造與自由工作者生活。"
-permalink: /index/
 ---
 
-<section class="card-section" style="background:#dceeff;">
-  <h1>歡迎來到 runing9to5</h1>
-  <p>用系統化方法，陪你走得長久<br>
-  協助上班族與內向創作者<br>
-  建立穩定輸出與個人品牌</p>
-</section>
+<div class="card-section fade-in-up">
+  <img src="{{ '/assets/images/me.jpeg' | relative_url }}" alt="K叔大頭照" class="about-img">
+  <h1>系統化經營自媒體｜runing9to5</h1>
+  <p>嗨，我是 <strong>K叔｜不想上班的貓</strong></p>
+  <p>這裡是一個專屬於斜槓與自媒體創作者的基地。想用最懶人的方式經營，卻能穩定成長與變現，這裡會是你的起點。</p>
+</div>
 
-<section class="card-section" style="background:#fff6e8;">
-  <h2>訂閱電子報</h2>
-  <p>📬 輸入你的 Email，加入我們！</p>
-  <div class="newsletter-box">
-    <script async data-uid="49e70b7c7c" src="https://ken-66.kit.com/49e70b7c7c/index.js"></script>
+<div class="card-section fade-in-up">
+  <h2>🎯 我能幫你什麼？</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>📌 自媒體產品打造</h3>
+      <p>從 0 到 1，找到能變現的主題</p>
+    </div>
+    <div class="card">
+      <h3>📌 行銷漏斗設計</h3>
+      <p>用對策略，讓你的內容持續轉換</p>
+    </div>
+    <div class="card">
+      <h3>📌 Threads 與電子報經營</h3>
+      <p>打造專屬流量池，不再依賴單一平台</p>
+    </div>
+    <div class="card">
+      <h3>📌 長期品牌建立</h3>
+      <p>讓你從素人變成被信任的個人IP</p>
+    </div>
   </div>
-  <p>🔹 想快速掌握自媒體經營技巧？<a href="/articles/">點此查看最新文章！</a></p>
-</section>
+</div>
 
-<section class="card-section">
-  <h2>關於我</h2>
-  <img src="{{ '/assets/images/me.jpeg' | relative_url }}"
-     alt="我的大頭照"
-     class="about-img"
-     onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23ececec%22/><text x=%2250%25%22 y=%2255%25%22 font-size=%2236%22 text-anchor=%22middle%22 fill=%22%23666%22>K叔</text></svg>';"
-     style="width:200px; border-radius:50%; margin-bottom:20px;">
+<div class="card-section fade-in-up">
+  <h2>🎁 免費資源</h2>
+  <div class="btn-grid">
+    <a href="/resources/" class="btn">📚 下載《7日 Threads 破圈挑戰包》</a>
+    <a href="#newsletter" class="btn btn-outline">📬 訂閱電子報，獲得更多筆記</a>
+  </div>
+</div>
 
-  <p>嗨，我是 K叔，一隻不想上班的貓。<br>
-     這裡記錄我如何經營自媒體、打造產品，並分享自由工作者的故事。</p>
-</section>
-
-<section class="card-section" style="background:#ffe8e8;">
-  <h2>聯絡我 / 社群</h2>
-  <p>Email：<a href="mailto:uncleKen@runing9to5.com">uncleKen@runing9to5.com</a></p>
-  <p>
-    <a href="https://www.threads.net/@runing_9to5" target="_blank">Threads</a> | 
-    <a href="https://instagram.com/" target="_blank">Instagram</a>
-  </p>
-</section>
+<div class="newsletter-box fade-in-up" id="newsletter">
+  <h3>🚀 立即行動</h3>
+  <p>想開始經營你的自媒體，但不知道從哪裡著手？別急，從一封信開始就好。</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="輸入你的 Email 地址" required>
+    <button type="submit">立即訂閱</button>
+  </div>
+</div>
