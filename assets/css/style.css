@@ -1,17 +1,26 @@
-body { font-family:"Noto Sans TC", sans-serif; margin:0; padding:0; line-height:1.6; padding-top:80px; }
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  margin:0;
+  padding:0;
+  line-height:1.6;
+  background: #fdf6e3;
+}
+
+/* 導覽列 */
 .fixed-nav {
   position: fixed;
   top:0;
   left:0;
   width:100%;
   background:#dceeff;
-  z-index:9999;
-  box-shadow:0 4px 8px rgba(0,0,0,0.1);
   display:flex;
   justify-content:center;
-  gap:30px;
+  gap:40px;
   padding:15px 0;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  z-index:999;
 }
+
 .fixed-nav a {
   text-decoration:none;
   color:#333;
@@ -19,38 +28,48 @@ body { font-family:"Noto Sans TC", sans-serif; margin:0; padding:0; line-height:
   font-size:16px;
   transition: color 0.3s;
 }
-.fixed-nav a:hover { color:#0077cc; }
 
-.center-section { text-align:center; }
+.fixed-nav a:hover {
+  color:#0077cc;
+}
 
+/* 卡片樣式 */
+.card-section {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  text-align:center;
+}
+
+/* 大頭照 */
 .about-img {
   width:150px;
   border-radius:50%;
-  margin:20px auto;
   display:block;
+  margin: 0 auto 20px auto;
 }
 
-.newsletter-box { display:flex; justify-content:center; margin:20px 0; }
+/* 電子報置中 */
+.newsletter-box {
+  display:flex;
+  justify-content:center;
+  margin:20px 0;
+}
 
+/* 回到頂部按鈕 */
 #backToTop {
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  padding:10px 15px;
-  font-size:18px;
-  display:none;
-  cursor:pointer;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  font-size: 18px;
+  display: none;
+  cursor: pointer;
   background:#333;
   color:#fff;
   border:none;
   border-radius:5px;
-}
-
-.card-section {
-  background-color: #fff;
-  border-radius:10px;
-  box-shadow:0 12px 24px rgba(0,0,0,0.25);
-  padding:40px 20px;
-  margin:20px auto;
-  max-width:900px;
 }
