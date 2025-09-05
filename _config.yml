@@ -1,49 +1,12 @@
-# 網站基本設定
-title: "runing9to5"
-description: "用系統化方法，陪你走得長久｜協助上班族與內向創作者，建立穩定輸出與個人品牌"
-author: "K叔"
-url: "https://kenhai666.github.io"  # ✅ 改成你的實際 user page
-baseurl: "/Runing9TO5"              # ✅ 專案名稱要填進來
+title: "系統化經營自媒體｜runing9to5"
+description: "K叔｜陪你用最懶人的方式，把自媒體經營變成可持續的斜槓收入。這裡有完整的筆記、策略與方法，陪你從0開始打造個人品牌。"
+baseurl: "" 
+url: "https://kenhai666.github.io"
+theme: minima
 
-# 建置設定
-markdown: kramdown
-highlighter: rouge
-permalink: /:title/
-
-# 插件
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# 排除檔案
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-
-# 集合設定 (如果需要部落格功能)
-collections:
-  posts:
-    output: true
-    permalink: /:collection/:name/
-
-# 預設值
-defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "default"
+markdown: kramdown
