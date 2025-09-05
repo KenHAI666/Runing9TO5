@@ -3,6 +3,8 @@ description: "K叔｜陪你用最懶人的方式，把自媒體經營變成可�
 baseurl: "/Runing9TO5" # 對應你的 repo 名稱，大小寫要一致
 url: "https://kenhai666.github.io"
 theme: minima
+<img src="{{ site.baseurl }}/assets/images/me.jpeg" alt="K叔">
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
