@@ -1,12 +1,9 @@
-title: "系統化經營自媒體｜runing9to5"
-description: "K叔｜陪你用最懶人的方式，把自媒體經營變成可持續的斜槓收入。這裡有完整的筆記、策略與方法，陪你從0開始打造個人品牌。"
-baseurl: "" 
+title: "runing9to5"
+description: "K叔｜陪你用最懶人的方式，把自媒體經營變成可持續的斜槓收入。"
+baseurl: "" # 如果 repo 是 username.github.io/repo，填 /repo
 url: "https://kenhai666.github.io"
 theme: minima
-
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-
-markdown: kramdown
