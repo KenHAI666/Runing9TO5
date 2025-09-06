@@ -26,28 +26,30 @@ body {
   color: #333;
   font-size: 16px;
   position: relative;
-  transition: all 0.3s;
   padding-bottom: 4px;
+  transition: all 0.3s;
 }
 
-/* 當前頁面底線＋粗體 */
-.fixed-nav a.current {
-  font-weight: bold;
-}
-
-.fixed-nav a.current::after {
+/* 初始 ::after 底線，寬度為 0，帶動畫 */
+.fixed-nav a::after {
   content: "";
   display: block;
-  width: 100%;
+  width: 0;
   height: 2px;
   background: #0077cc;
   margin-top: 2px;
+  transition: width 0.3s;
 }
 
-/* hover 動畫效果 */
+/* 當前頁面或 hover，展開底線＋粗體 */
+.fixed-nav a.active,
+.fixed-nav a:hover {
+  font-weight: bold;
+}
+
+.fixed-nav a.active::after,
 .fixed-nav a:hover::after {
   width: 100%;
-  background: #0077cc;
 }
 
 /* 卡片樣式 */
