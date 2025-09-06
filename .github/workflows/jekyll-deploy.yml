@@ -1,48 +1,33 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+name: Jekyll Deploy
 
-  <!-- SEO -->
-  <title>{{ page.title }} | runing9to5</title>
-  <meta name="description" content="{{ page.description | default: site.description }}">
-  <meta name="keywords" content="{{ page.keywords | default: site.keywords }}">
-  <meta name="author" content="K叔">
+on:
+  push:
+    branches:
+      - main  # 如果你的主要分支是 master，改成 master
 
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-</head>
-<body>
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
-<header>
-  <nav class="fixed-nav">
-    <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}current{% endif %}">首頁</a>
-    <a href="{{ '/articles/' | relative_url }}" class="{% if page.url == '/articles/' %}current{% endif %}">文章</a>
-    <a href="{{ '/resources/' | relative_url }}" class="{% if page.url == '/resources/' %}current{% endif %}">資源</a>
-    <a href="{{ '/contact/' | relative_url }}" class="{% if page.url == '/contact/' %}current{% endif %}">聯絡</a>
-    <a href="{{ '/about/' | relative_url }}" class="{% if page.url == '/about/' %}current{% endif %}">關於我</a>
-  </nav>
-</header>
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-<div style="height:70px;"></div>
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2  # 依照你的專案需求，可調整
 
-<main>
-  {{ content }}
-</main>
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
 
-<button id="backToTop">⬆</button>
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
 
-<script>
-const backToTopBtn = document.getElementById("backToTop");
-window.onscroll = function() {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    backToTopBtn.style.display = "block";
-  } else {
-    backToTopBtn.style.display = "none";
-  }
-};
-backToTopBtn.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
-</script>
-
-</body>
-</html>
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
