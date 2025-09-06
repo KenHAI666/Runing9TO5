@@ -33,6 +33,11 @@ body {
 .fixed-nav a:hover {
   color: #0077cc;
 }
+.fixed-nav a.active {
+  color: #0077cc;       /* 高亮顏色 */
+  font-weight: 700;      /* 可選：加粗 */
+  border-bottom: 2px solid #0077cc; /* 可選：加底線 */
+}
 
 /* 卡片樣式 */
 .card-section {
