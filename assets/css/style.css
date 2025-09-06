@@ -26,13 +26,29 @@ body {
   color: #333;
   font-weight: 600;
   font-size: 16px;
+  position: relative;
   transition: all 0.3s;
 }
 
+/* 當前頁面底線＋粗體 */
 .fixed-nav a.current {
-  text-decoration: underline; /* 底線 */
-  font-weight: bold;          /* 粗體 */
-  color: #333;                /* 顏色固定，不高亮 */
+  font-weight: bold;
+}
+
+.fixed-nav a.current::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #0077cc;
+  margin-top: 4px;
+  transition: width 0.3s;
+}
+
+/* hover 動畫效果 */
+.fixed-nav a:hover::after {
+  width: 100%;
+  background: #0077cc;
 }
 
 /* 卡片樣式 */
