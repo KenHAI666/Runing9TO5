@@ -1,6 +1,8 @@
 ---
 layout: default
 title: 聯絡
+description: 聯絡 K叔，提供自媒體諮詢或合作事宜
+keywords: 聯絡, K叔, 自媒體, 合作
 ---
 
 <div class="card-section">
