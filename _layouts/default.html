@@ -18,13 +18,15 @@
 
 <header>
   <nav class="fixed-nav">
-    <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}current{% endif %}">首頁</a>
-    <a href="{{ '/articles/' | relative_url }}" class="{% if page.url contains '/articles' %}current{% endif %}">文章</a>
-    <a href="{{ '/resources/' | relative_url }}" class="{% if page.url contains '/resources' %}current{% endif %}">資源</a>
-    <a href="{{ '/contact/' | relative_url }}" class="{% if page.url contains '/contact' %}current{% endif %}">聯絡</a>
-    <a href="{{ '/about/' | relative_url }}" class="{% if page.url contains '/about' %}current{% endif %}">關於我</a>
+    {% for item in site.nav %}
+      <a href="{{ item.link | relative_url }}" 
+         class="{% if page.url == item.link %}active{% endif %}">
+        {{ item.name }}
+      </a>
+    {% endfor %}
   </nav>
 </header>
+
 
 <div style="height:70px;"></div> <!-- 導覽列間距 -->
 
