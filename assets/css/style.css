@@ -1,62 +1,86 @@
 body {
   font-family: "Noto Sans TC", sans-serif;
-  margin:0;
-  padding:0;
-  line-height:1.6;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
   background: #fdf6e3;
 }
 
 /* 導覽列 */
 .fixed-nav {
   position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  background:#dceeff;
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  padding:15px 0;
-  box-shadow:0 4px 8px rgba(0,0,0,0.1);
-  z-index:999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #dceeff;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 15px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 999;
 }
 
 .fixed-nav a {
-  text-decoration:none;
-  color:#333;
-  font-weight:600;
-  font-size:16px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
   transition: color 0.3s;
 }
 
 .fixed-nav a:hover {
-  color:#0077cc;
+  color: #0077cc;
+}
+
+/* 主內容卡片容器 */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 100px 20px 40px 20px; /* 上方留給固定導覽列 */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* 卡片樣式 */
-.card-section {
+.card {
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-  padding: 40px 20px;
-  margin: 20px auto;
-  max-width: 900px;
-  text-align:center;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.3em;
+}
+
+.card p {
+  font-size: 0.95em;
+  color: #555;
 }
 
 /* 大頭照 */
 .about-img {
-  width:150px;
-  border-radius:50%;
-  display:block;
+  width: 150px;
+  border-radius: 50%;
+  display: block;
   margin: 0 auto 20px auto;
 }
 
 /* 電子報置中 */
 .newsletter-box {
-  display:flex;
-  justify-content:center;
-  margin:20px 0;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
 /* 回到頂部按鈕 */
@@ -68,8 +92,8 @@ body {
   font-size: 18px;
   display: none;
   cursor: pointer;
-  background:#333;
-  color:#fff;
-  border:none;
-  border-radius:5px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
 }
