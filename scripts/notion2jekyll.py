@@ -1,31 +1,28 @@
 import os
-import datetime
 import re
+from datetime import datetime
 
 # -------------------------------
-# Notion 文章範例資料
+# Notion 文章資料，只需填寫這些
 # -------------------------------
 notion_pages = [
     {
-        "title": "測試文章",
-        "date": "2025-09-06",
-        "content": "這是從 Notion 來的文章內容。\n\n可以換行。\n\n也可以有列表。",
-        "tags": ["Notion", "Jekyll", "測試"],
-        "categories": ["教學"],
-        "description": "這是一篇測試用文章，用來示範自動生成 Jekyll 文章。"
+        "title": "Welcome",
+        "content": "這是一篇範例文章，測試 Jekyll 是否正常運作。文章會自動生成 SEO 與 tags。",
+        "categories": ["articles"]
     },
-    # 可以加入更多文章 dict
+    {
+        "title": "測試文章",
+        "content": "測試文章內容，用來示範自動生成 Jekyll 文章，SEO description 與 tags 都會自動抓取。",
+        "categories": ["教學"]
+    }
 ]
 
 # -------------------------------
-# 確認專案根目錄 _posts 資料夾
+# 確認 _posts 資料夾
 # -------------------------------
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-POSTS_DIR = os.path.join(ROOT_DIR, "_posts")
-
-if not os.path.exists(POSTS_DIR):
-    os.makedirs(POSTS_DIR)
-    print("已建立 _posts 資料夾")
+if not os.path.exists("_posts"):
+    os.makedirs("_posts")
 
 # -------------------------------
 # 幫標題生成安全檔名
@@ -37,31 +34,56 @@ def slugify(text):
     return text
 
 # -------------------------------
+# 簡單生成 SEO description：取前 100 個字
+# -------------------------------
+def generate_description(content):
+    plain = re.sub(r"<[^>]+>", "", content)
+    return plain[:100] + "..." if len(plain) > 100 else plain
+
+# -------------------------------
+# 簡單自動生成 tags：抓文章內容中的詞語（此處為示範，可改進）
+# -------------------------------
+def generate_tags(content):
+    # 取中文詞語與英文單字
+    words = re.findall(r"[\u4e00-\u9fff]+|\b\w+\b", content)
+    # 去重並選前 5 個
+    tags = list(dict.fromkeys(words))
+    return tags[:5]
+
+# -------------------------------
 # 生成 Markdown 檔案
 # -------------------------------
 for page in notion_pages:
-    # 檔名：YYYY-MM-DD-標題.md
-    filename = os.path.join(POSTS_DIR, f"{page['date']}-{slugify(page['title'])}.md")
+    # 日期：今天
+    today = datetime.today().strftime("%Y-%m-%d")
     
-    # 自動抓 SEO description，如果沒有就取文章前 100 個字
-    description = page.get("description", "")
-    if not description:
-        description = page["content"][:100].replace("\n", " ").strip()
-    
-    # 前置資料（Front Matter）
+    # 前置資料
+    title_with_category = f"[{page['categories'][0].capitalize()}] {page['title']}"
+    description = generate_description(page['content'])
+    tags = generate_tags(page['content'])
+
+    filename = f"_posts/{today}-{slugify(page['title'])}.md"
+
     front_matter = f"""---
-layout: post
-title: "{page['title']}"
-date: {page['date']}
+layout: default
+title: "{title_with_category}"
+date: {today}
 categories: {page.get('categories', [])}
-tags: {page.get('tags', [])}
+tags: {tags}
 description: "{description}"
 ---
 """
-    # 寫入檔案
+
+    content = f"""
+<div class="card-section" style="background:#fff6e8;">
+  <h1>{page['title']}</h1>
+  {page['content']}
+</div>
+"""
+
     with open(filename, "w", encoding="utf-8") as f:
-        f.write(front_matter + "\n" + page['content'])
-    
+        f.write(front_matter + content)
+
     print(f"生成文章：{filename}")
 
 print("完成！")
