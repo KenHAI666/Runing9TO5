@@ -41,13 +41,6 @@ title: 關於我
     <li>✅ 自動化部署</li>
   </ul>
 
-  <h3>聯絡方式</h3>
-  <ul style="list-style:none; padding:0;">
-    <li>📱 Threads：<a href="https://www.threads.net/@runing9to5" target="_blank">@runing9to5</a></li>
-    <li>📧 Email：透過網站聯絡表單</li>
-  </ul>
-</div>
-
 <div class="card-section" style="text-align:center; font-size:0.9em; color:#555; background:#f0f0f0;">
   <p>---<br>Made with ❤️ by K叔</p>
 </div>
