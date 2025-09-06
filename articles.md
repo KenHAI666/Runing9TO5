@@ -1,8 +1,12 @@
 ---
 layout: default
 title: 文章
+description: K叔的文章頁，分享自媒體經營、斜槓生活與個人品牌心得
+keywords: 自媒體, 文章, 經營心得, K叔
 ---
 
+<div class="card-section" style="background:#e8f6ff;">
+  # 最新文章  
 <div class="card-section">
   <h2>自媒體起手式</h2>
   <p>先想清楚你要幫誰，然後設計內容策略，才能有效變現。</p>
