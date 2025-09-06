@@ -19,13 +19,14 @@
 <header>
   <nav class="fixed-nav">
     {% for item in site.nav %}
-      <a href="{{ item.link | relative_url }}" 
-         class="{% if page.url == item.link %}active{% endif %}">
+      <a href="{{ item.link | relative_url }}"
+         class="{% if page.url == item.link or page.url == item.link | append: '/' %}active{% endif %}">
         {{ item.name }}
       </a>
     {% endfor %}
   </nav>
 </header>
+
 
 
 <div style="height:70px;"></div> <!-- 導覽列間距 -->
