@@ -1,16 +1,27 @@
-title: "runing9to5"
+title: "Runing9TO5"
 description: "K叔｜陪你用最懶人的方式，把自媒體經營變成可持續的斜槓收入。"
-baseurl: "/Runing9TO5" # 對應你的 repo 名稱，大小寫要一致
+baseurl: "/Runing9TO5" # 不要漏斜線，跟 repo 名稱一致
 url: "https://kenhai666.github.io"
+
+author:
+  name: "K叔"
+  avatar: "/assets/images/me.jpeg"
+
 theme: minima
-<img src="{{ site.baseurl }}/assets/images/me.jpeg" alt="K叔">
 
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
 
-# 可選：指定 Markdown 處理器
-markdown: kramdown
-kramdown:
-  input: GFM
+# 導覽列設定
+nav:
+  - name: "首頁"
+    link: "/"
+  - name: "文章"
+    link: "/articles"
+  - name: "關於我"
+    link: "/about"
+  - name: "資源"
+    link: "/resources"
+  - name: "聯絡"
+    link: "/contact"
