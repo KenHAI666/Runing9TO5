@@ -12,12 +12,17 @@ GitHub 提供「雲端 VSCode」環境，你可以直接在瀏覽器開啟專案
 
 python3 scripts/notion2jekyll.py
 
-
 確認 _posts 資料夾和檔案生成
-Git 提交到遠端
-
 確認沒問題後，將文章加入 Git：
 
-git add _posts/
+Commit 文章
+
+git commit -m "新增文章: Welcome & 測試文章"
+
+注意 -m 後面必須跟 commit 訊息，不然會報錯。
+
+Push 到遠端
 
 git push origin main
+
+這樣才會把 _posts 文章推到 GitHub。
