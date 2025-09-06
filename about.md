@@ -43,7 +43,7 @@ title: 關於我
 
   <h3>聯絡方式</h3>
   <ul style="list-style:none; padding:0;">
-    <li>📱 Threads：<a href="https://www.threads.net/@your_account" target="_blank">@your_account</a></li>
+    <li>📱 Threads：<a href="https://www.threads.net/@runing9to5" target="_blank">@runing9to5</a></li>
     <li>📧 Email：透過網站聯絡表單</li>
   </ul>
 </div>
