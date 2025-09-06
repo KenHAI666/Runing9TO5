@@ -1,27 +1,45 @@
-name: Deploy Jekyll site to Pages
+name: Build and Deploy Jekyll site
 
 on:
   push:
     branches:
-      - main   # 或 master，看你主要分支是哪個
+      - main   # ⚠️ 你的預設分支，確認是不是 main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true
 
-      - name: Build Jekyll site
-        run: bundle exec jekyll build
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --trace
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          path: ./_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
