@@ -4,7 +4,7 @@ title: 首頁
 ---
 
 <section class="card-section" style="background:#dceeff;">
-  <h1>歡迎來到 runing9to5</h1>
+  <h1>歡迎來到 Runing9To5</h1>
   <p>用系統化方法，陪你走得長久<br>
      協助上班族與內向創作者<br>
      建立穩定輸出與個人品牌</p>
