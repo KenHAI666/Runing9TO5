@@ -1,39 +1,33 @@
-/* -----------------------
-   全站通用字體與背景
------------------------- */
 body {
   font-family: "Noto Sans TC", sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+  margin:0;
+  padding:0;
+  line-height:1.6;
   background: #fdf6e3;
 }
 
-/* -----------------------
-   導覽列
------------------------- */
+/* 導覽列 */
 .fixed-nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #dceeff;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 15px 0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 999;
+  top:0;
+  left:0;
+  width:100%;
+  background:#dceeff;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:15px 0;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  z-index:999;
 }
 
 .fixed-nav a {
   text-decoration: none;
   color: #333;
-  font-weight: 600;
   font-size: 16px;
   position: relative;
-  display: inline-block;
   transition: all 0.3s;
+  padding-bottom: 4px;
 }
 
 /* 當前頁面底線＋粗體 */
@@ -47,27 +41,16 @@ body {
   width: 100%;
   height: 2px;
   background: #0077cc;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
-/* hover 動畫底線 */
-.fixed-nav a::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #0077cc;
-  margin-top: 4px;
-  transition: width 0.3s;
-}
-
+/* hover 動畫效果 */
 .fixed-nav a:hover::after {
   width: 100%;
+  background: #0077cc;
 }
 
-/* -----------------------
-   卡片樣式
------------------------- */
+/* 卡片樣式 */
 .card-section {
   background-color: #fff;
   border-radius: 10px;
@@ -78,28 +61,22 @@ body {
   text-align: center;
 }
 
-/* -----------------------
-   大頭照
------------------------- */
+/* 大頭照 */
 .about-img {
-  width: 150px;
-  border-radius: 50%;
-  display: block;
+  width:150px;
+  border-radius:50%;
+  display:block;
   margin: 0 auto 20px auto;
 }
 
-/* -----------------------
-   電子報置中
------------------------- */
+/* 電子報置中 */
 .newsletter-box {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  display:flex;
+  justify-content:center;
+  margin:20px 0;
 }
 
-/* -----------------------
-   回到頂部按鈕
------------------------- */
+/* 回到頂部按鈕 */
 #backToTop {
   position: fixed;
   bottom: 30px;
@@ -108,8 +85,8 @@ body {
   font-size: 18px;
   display: none;
   cursor: pointer;
-  background: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+  background:#333;
+  color:#fff;
+  border:none;
+  border-radius:5px;
 }
