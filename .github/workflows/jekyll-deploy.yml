@@ -3,38 +3,27 @@ name: Jekyll Deploy
 on:
   push:
     branches:
-      - main  # 你主要分支名稱
+      - main
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. 取得 repository
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v3
 
-      # 2. 安裝 Ruby
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
+          bundler-cache: true  # 這會自動執行 bundle install
 
-      # 3. 安裝 bundler
-      - name: Install Bundler
-        run: gem install bundler
-
-      # 4. 安裝 Gemfile 依賴
-      - name: Install dependencies
-        run: bundle install
-
-      # 5. Build Jekyll site
-      - name: Build site
+      - name: Build Jekyll site
         run: bundle exec jekyll build
 
-      # 6. Deploy 到 GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ GH_PAGES_TOKEN }}  # 你 GitHub Secrets 設定的 Token 名稱
+          github_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./_site
