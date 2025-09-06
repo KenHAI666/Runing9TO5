@@ -1,10 +1,12 @@
 ---
 layout: default
 title: 首頁
+description: K叔的個人網站首頁，記錄自媒體經營、斜槓生活及實用方法
+keywords: 自媒體, 斜槓, 個人品牌, K叔
 ---
 
 <section class="card-section" style="background:#dceeff;">
-  <h1>歡迎來到 Runing9To5</h1>
+  <h1>嗨，我是 K叔 👋 <br>歡迎來到 Runing9To5</h1>
   <p>用系統化方法，陪你走得長久<br>
      協助上班族與內向創作者<br>
      建立穩定輸出與個人品牌</p>
