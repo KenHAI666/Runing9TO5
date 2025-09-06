@@ -1,11 +1,14 @@
 ---
 layout: default
-title: 關於我
-description: 這裡介紹 K叔 的自媒體經營與個人品牌心得
-keywords: 自媒體, 斜槓, 個人品牌, 經營技巧
+title: 聯絡
+description: 聯絡 K叔，提供自媒體諮詢或合作事宜
+keywords: 聯絡, K叔, 自媒體, 合作
 ---
 
+<div class="card-section" style="background:#e8f6ff;">
+  # 聯絡我  
 
+有任何問題、合作或建議都可以透過以下方式聯絡我：  <br>
 <div class="card-section" style="background:#fff6e8;">
   <h1>關於我</h1>
   <p>嗨，我是 <b>K叔</b> 👋</p>
