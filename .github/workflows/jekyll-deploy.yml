@@ -1,51 +1,46 @@
-name: Build and Deploy Jekyll site
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | runing9to5</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="keywords" content="{{ page.keywords | default: site.keywords }}">
+  <meta name="author" content="K叔">
 
-on:
-  push:
-    branches:
-      - main   # ⚠️ 你的預設分支，確認是不是 main
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+<header>
+  <nav class="fixed-nav">
+    <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}current{% endif %}">首頁</a>
+    <a href="{{ '/articles/' | relative_url }}" class="{% if page.url == '/articles/' %}current{% endif %}">文章</a>
+    <a href="{{ '/resources/' | relative_url }}" class="{% if page.url == '/resources/' %}current{% endif %}">資源</a>
+    <a href="{{ '/contact/' | relative_url }}" class="{% if page.url == '/contact/' %}current{% endif %}">聯絡</a>
+    <a href="{{ '/about/' | relative_url }}" class="{% if page.url == '/about/' %}current{% endif %}">關於我</a>
+  </nav>
+</header>
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
+<div style="height:70px;"></div>
 
-      - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install
+<main>
+  {{ content }}
+</main>
 
-      - name: Build with Jekyll
-        run: bundle exec jekyll build --trace
+<button id="backToTop">⬆</button>
 
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./_site
+<script>
+const backToTopBtn = document.getElementById("backToTop");
+window.onscroll = function() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+};
+backToTopBtn.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
+</script>
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-<a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">首頁</a>
-<a href="{{ '/about/' | relative_url }}" class="{% if page.url == '/about/' %}active{% endif %}">關於我</a>
-<a href="{{ '/articles/' | relative_url }}" class="{% if page.url == '/articles/' %}active{% endif %}">文章</a>
-<a href="{{ '/resources/' | relative_url }}" class="{% if page.url == '/resources/' %}active{% endif %}">資源</a>
-<a href="{{ '/contact/' | relative_url }}" class="{% if page.url == '/contact/' %}active{% endif %}">聯絡</a>
+</body>
+</html>
