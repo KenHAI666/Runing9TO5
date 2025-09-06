@@ -3,7 +3,7 @@ layout: default
 title: 關於我
 ---
 
-<div class="card">
+<div class="card-section">
   # 關於我
 
 嗨，我是 **K叔** 👋  
@@ -20,7 +20,7 @@ title: 關於我
 > 系統化經營自媒體｜用最懶人的方式，把自媒體經營變成可持續的斜槓收入
 </div>
 
-<div class="card">
+<div class="card-section">
   ## 關於專案
 
 K叔的個人網站，專注於分享自媒體經營、個人品牌建立的實用內容。
