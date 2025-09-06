@@ -3,12 +3,17 @@ layout: default
 title: 聯絡
 ---
 
-# 聯絡我
+<div class="card">
+  <h2>Email</h2>
+  <p>uncleken@runing9to5.com</p>
+</div>
 
-如果你想合作、交流或提問，可以透過以下方式：  
+<div class="card">
+  <h2>Threads</h2>
+  <p>@yruning9to5</p>
+</div>
 
-- 📩 Email: yourmail@example.com  
-- 🧵 Threads: [@yourthreads](#)  
-- 💬 留言區（之後我會加上表單）  
-
-期待能和你聊聊 🚀
+<div class="card">
+  <h2>留言區</h2>
+  <p>未來會加上表單，方便大家直接聯絡我。</p>
+</div>
