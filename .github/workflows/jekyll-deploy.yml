@@ -1,33 +1,41 @@
 name: Jekyll Deploy
 
+# 觸發條件：當 main 分支有 push 時
 on:
   push:
     branches:
-      - main  # 如果你的主要分支是 master，改成 master
+      - main   # ⚠️ 如果你的主要分支是 master，改成 master
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ 取得專案程式碼
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2️⃣ 安裝 Ruby
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2  # 依照你的專案需求，可調整
+          ruby-version: 3.2  # 可依專案需求調整
 
+      # 3️⃣ 安裝相依套件
       - name: Install dependencies
         run: |
           gem install bundler
           bundle install
 
+      # 4️⃣ 建置 Jekyll 網站
       - name: Build Jekyll site
         run: bundle exec jekyll build
 
+      # 5️⃣ 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+          force_orphan: true  # 第一次部署自動建立 gh-pages 分支
+          keep_files: false   # 可選：部署前清空 gh-pages 舊檔案
