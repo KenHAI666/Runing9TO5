@@ -1,47 +1,38 @@
-/* 全站字體與背景 */
 body {
   font-family: "Noto Sans TC", sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+  margin:0;
+  padding:0;
+  line-height:1.6;
   background: #fdf6e3;
 }
 
 /* 導覽列 */
 .fixed-nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #dceeff;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 15px 0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 999;
+  top:0;
+  left:0;
+  width:100%;
+  background:#dceeff;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:15px 0;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  z-index:999;
 }
 
-/* 導覽列連結 */
 .fixed-nav a {
-  text-decoration: none;      /* 取消預設底線 */
+  text-decoration: none;
   color: #333;
   font-weight: 600;
   font-size: 16px;
-  padding-bottom: 2px;        /* 底線空間 */
   transition: all 0.3s;
 }
 
-/* 當前頁面 */
 .fixed-nav a.current {
-  font-weight: 700;               /* 粗體 */
-  border-bottom: 2px solid #0077cc; /* 底線 */
-  color: #0077cc;                 /* 可選顏色強化識別 */
-}
-
-/* hover 效果 */
-.fixed-nav a:hover {
-  color: #0077cc;
+  text-decoration: underline; /* 底線 */
+  font-weight: bold;          /* 粗體 */
+  color: #333;                /* 顏色固定，不高亮 */
 }
 
 /* 卡片樣式 */
@@ -57,17 +48,17 @@ body {
 
 /* 大頭照 */
 .about-img {
-  width: 150px;
-  border-radius: 50%;
-  display: block;
+  width:150px;
+  border-radius:50%;
+  display:block;
   margin: 0 auto 20px auto;
 }
 
 /* 電子報置中 */
 .newsletter-box {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  display:flex;
+  justify-content:center;
+  margin:20px 0;
 }
 
 /* 回到頂部按鈕 */
@@ -79,8 +70,8 @@ body {
   font-size: 18px;
   display: none;
   cursor: pointer;
-  background: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+  background:#333;
+  color:#fff;
+  border:none;
+  border-radius:5px;
 }
