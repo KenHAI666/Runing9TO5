@@ -22,22 +22,27 @@ body {
   z-index: 999;
 }
 
+/* 導覽列連結 */
 .fixed-nav a {
-  text-decoration: none;
+  text-decoration: none;      /* 取消預設底線 */
   color: #333;
   font-weight: 600;
   font-size: 16px;
-  padding-bottom: 2px;
+  padding-bottom: 2px;        /* 底線空間 */
   transition: all 0.3s;
 }
 
+/* 當前頁面 */
 .fixed-nav a.current {
-  font-weight: 700;       /* 粗體 */
+  font-weight: 700;               /* 粗體 */
   border-bottom: 2px solid #0077cc; /* 底線 */
-  color: #0077cc;         /* 可選，加強識別 */
+  color: #0077cc;                 /* 可選顏色強化識別 */
 }
 
-
+/* hover 效果 */
+.fixed-nav a:hover {
+  color: #0077cc;
+}
 
 /* 卡片樣式 */
 .card-section {
