@@ -1,0 +1,23 @@
+GitHub Codespaces
+
+GitHub 提供「雲端 VSCode」環境，你可以直接在瀏覽器開啟專案並運行 Python。
+
+步驟：
+
+打開你的專案 → 點 Code → Codespaces → New codespace。
+
+開啟終端機。
+
+跑指令：
+
+python3 scripts/notion2jekyll.py
+
+
+確認 _posts 資料夾和檔案生成
+Git 提交到遠端
+
+確認沒問題後，將文章加入 Git：
+
+git add _posts/
+
+git push origin main
