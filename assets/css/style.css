@@ -1,3 +1,4 @@
+/* 全站字體與背景 */
 body {
   font-family: "Noto Sans TC", sans-serif;
   margin: 0;
@@ -33,39 +34,15 @@ body {
   color: #0077cc;
 }
 
-/* 主內容卡片容器 */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 100px 20px 40px 20px; /* 上方留給固定導覽列 */
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 /* 卡片樣式 */
-.card {
+.card-section {
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 10px;
   box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-  padding: 20px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 900px;
   text-align: center;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.3);
-}
-
-.card h2 {
-  margin-top: 0;
-  font-size: 1.3em;
-}
-
-.card p {
-  font-size: 0.95em;
-  color: #555;
 }
 
 /* 大頭照 */
