@@ -27,9 +27,9 @@ title: 首頁
 
 <section class="card-section" style="background:#ffe8e8;">
   <h2>聯絡我 / 社群</h2>
-  <p>Email：<a href="mailto:uncleK@runing9to5.com">uncleK@runing9to5.com</a></p>
+  <p>Email：<a href="mailto:uncleKen@runing9to5.com">uncleKen@runing9to5.com</a></p>
   <p>
     <a href="https://www.threads.net/@runing_9to5" target="_blank">Threads</a> | 
-    <a href="https://instagram.com/" target="_blank">Instagram</a>
+    <a href="https://www.instagram.com/runing_9to5/" target="_blank">Instagram</a>
   </p>
 </section>
