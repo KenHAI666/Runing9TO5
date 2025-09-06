@@ -7,7 +7,7 @@ title: 聯絡
   <h2>Email</h2>
   <p>uncleken@runing9to5.com</p>
   <h2>Threads</h2>
-  <p>@yruning9to5</p>
+  <p>@runing9to5</p>
 </div>
 
 <div class="card-section">
