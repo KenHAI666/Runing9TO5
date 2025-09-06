@@ -1,7 +1,11 @@
 ---
 layout: default
 title: 關於我
+description: 這裡介紹 K叔 的自媒體經營與個人品牌心得
+keywords: 自媒體, 斜槓, 個人品牌, 經營技巧
+og_image: /assets/images/about-og.png
 ---
+
 
 <div class="card-section" style="background:#fff6e8;">
   <h1>關於我</h1>
