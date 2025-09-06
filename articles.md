@@ -5,12 +5,9 @@ description: K叔的文章頁，分享自媒體經營、斜槓生活與個人品
 keywords: 自媒體, 文章, 經營心得, K叔
 permalink: /articles/
 ---
-<h1>文章列表</h1>
-
-
 
 <div class="card-section" style="background:#e8f6ff;">
-  # 最新文章  
+<h1>文章列表</h1>
 <div class="card-section">
   <ul>
 {% assign sorted_posts = site.posts | sort: "date" | reverse %}
