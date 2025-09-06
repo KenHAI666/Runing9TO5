@@ -6,11 +6,9 @@ keywords: 聯絡, K叔, 自媒體, 合作
 ---
 
 <div class="card-section" style="background:#e8f6ff;">
-  # 聯絡我  
-
-有任何問題、合作或建議都可以透過以下方式聯絡我：  <br>
+  <h1>關於我</h1>  <br>
 <div class="card-section" style="background:#fff6e8;">
-  <h1>關於我</h1>
+  
   <p>嗨，我是 <b>K叔</b> 👋</p>
   <p>這裡記錄著我的自媒體經營、斜槓生活，以及一路上學到的方法與心得。</p>
 
