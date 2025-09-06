@@ -9,22 +9,22 @@ title: 關於我
 嗨，我是 **K叔** 👋  
 這裡記錄著我的自媒體經營、斜槓生活，以及一路上學到的方法與心得。  
 
-✨ **核心理念**：
+✨ **核心理念**：  
 - 懶人也能經營自媒體  
 - 用最低能量，做到持續輸出  
 - 把「副業」打造成「穩定的收入」  
 
-如果你也想用輕鬆方式開始，這裡就是你的避風港。
+如果你也想用輕鬆方式開始，這裡就是你的避風港。  
 
 > 系統化經營自媒體｜用最懶人的方式，把自媒體經營變成可持續的斜槓收入
 </div>
 
-<div class="card-section">
+<div class="card-section" style="background:#e8f6ff;">
   ## 關於專案
 
-K叔的個人網站，專注於分享自媒體經營、個人品牌建立的實用內容。
+K叔的個人網站，專注於分享自媒體經營、個人品牌建立的實用內容。  
 
-**網站連結**: [你的網址.github.io](https://你的用戶名.github.io)
+**網站連結**: [https://kenhai666.github.io/Runing9TO5/](https://kenhai666.github.io/Runing9TO5/)
 
 ### 技術架構
 
@@ -46,7 +46,7 @@ K叔的個人網站，專注於分享自媒體經營、個人品牌建立的實�
 - **Email**: 透過網站聯絡表單
 </div>
 
-<div class="card-section" style="text-align:center; font-size:0.9em; color:#555;">
+<div class="card-section" style="text-align:center; font-size:0.9em; color:#555; background:#f0f0f0;">
   ---  
   Made with ❤️ by **K叔**
 </div>
