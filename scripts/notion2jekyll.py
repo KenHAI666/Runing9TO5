@@ -5,13 +5,6 @@ import re
 # -------------------------------
 # Notion 文章範例資料
 # -------------------------------
-# 每篇文章用 dict 表示
-# page['title'] → 標題
-# page['date'] → 發布日期 YYYY-MM-DD
-# page['content'] → 文章內容（Markdown）
-# page['tags'] → 標籤 list
-# page['categories'] → 分類 list
-# page['description'] → SEO description
 notion_pages = [
     {
         "title": "測試文章",
@@ -25,10 +18,13 @@ notion_pages = [
 ]
 
 # -------------------------------
-# 確認 _posts 資料夾
+# 確認專案根目錄 _posts 資料夾
 # -------------------------------
-if not os.path.exists("_posts"):
-    os.makedirs("_posts")
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+POSTS_DIR = os.path.join(ROOT_DIR, "_posts")
+
+if not os.path.exists(POSTS_DIR):
+    os.makedirs(POSTS_DIR)
     print("已建立 _posts 資料夾")
 
 # -------------------------------
@@ -45,7 +41,12 @@ def slugify(text):
 # -------------------------------
 for page in notion_pages:
     # 檔名：YYYY-MM-DD-標題.md
-    filename = f"_posts/{page['date']}-{slugify(page['title'])}.md"
+    filename = os.path.join(POSTS_DIR, f"{page['date']}-{slugify(page['title'])}.md")
+    
+    # 自動抓 SEO description，如果沒有就取文章前 100 個字
+    description = page.get("description", "")
+    if not description:
+        description = page["content"][:100].replace("\n", " ").strip()
     
     # 前置資料（Front Matter）
     front_matter = f"""---
@@ -54,7 +55,7 @@ title: "{page['title']}"
 date: {page['date']}
 categories: {page.get('categories', [])}
 tags: {page.get('tags', [])}
-description: "{page.get('description','')}"
+description: "{description}"
 ---
 """
     # 寫入檔案
