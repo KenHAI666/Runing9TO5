@@ -1,6 +1,4 @@
-name: Jekyll Deploy
 
-# 觸發條件：當 main 分支有 push 時
 on:
   push:
     branches:
