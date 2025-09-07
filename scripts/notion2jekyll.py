@@ -247,4 +247,16 @@ description: "{description}"
 
     print(f"生成文章：{filename}")
 
+# -------------------------------
+# Git commit & push
+# -------------------------------
+try:
+    subprocess.run(["git", "add", "_posts"], check=True)
+    subprocess.run(["git", "commit", "-m", f"新增文章：{', '.join([p['title'] for p in notion_pages])}"], check=True)
+    subprocess.run(["git", "push", "origin", "main"], check=True)
+    print("已 commit 並 push 到遠端")
+except subprocess.CalledProcessError as e:
+    print("Git 操作失敗，請確認 Git 設定與權限")
+
+
 print("完成！")
