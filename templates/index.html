@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>後台文章管理</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input[type=text], textarea { width: 100%; padding: 8px; margin-top: 5px; }
+        textarea { height: 200px; }
+        button { margin-top: 15px; padding: 10px 20px; }
+        .flash { color: red; margin-bottom: 10px; }
+        .preview { margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <h1>新增文章</h1>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for msg in messages %}
+          <div class="flash">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <label for="title">文章標題</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="category">文章分類</label>
+        <input type="text" id="category" name="category" value="教學" required>
+
+        <label for="content">文章內容 (Markdown)</label>
+        <textarea id="content" name="content" required></textarea>
+
+        <button type="submit">預覽 & 儲存</button>
+    </form>
+
+    {% if preview_html %}
+    <div class="preview">
+        <h2>文章預覽</h2>
+        {{ preview_html | safe }}
+    </div>
+    {% endif %}
+</body>
+</html>
