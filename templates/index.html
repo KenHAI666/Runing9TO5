@@ -4,20 +4,68 @@
     <meta charset="UTF-8">
     <title>後台新增文章</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        #preview {
+            margin-top: 30px;
+        }
+        #preview .card-section-1 {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+            background-color: #fff;
+        }
+    </style>
 </head>
 <body>
     <h1>新增文章</h1>
-    <form method="post">
+    <form id="articleForm" method="post">
         <label>標題：</label><br>
-        <input type="text" name="title" required><br><br>
+        <input type="text" name="title" id="title" required><br><br>
 
         <label>分類：</label><br>
-        <input type="text" name="categories" required placeholder="用逗號分隔"><br><br>
+        <input type="text" name="categories" id="categories" required placeholder="用逗號分隔"><br><br>
 
         <label>內容：</label><br>
-        <textarea name="content" rows="15" cols="80" required></textarea><br><br>
+        <textarea name="content" id="content" rows="15" cols="80" required></textarea><br><br>
 
         <input type="submit" value="儲存文章">
     </form>
+
+    <h2>即時預覽</h2>
+    <div id="preview"></div>
+
+    <script>
+        const titleInput = document.getElementById("title");
+        const categoriesInput = document.getElementById("categories");
+        const contentInput = document.getElementById("content");
+        const previewDiv = document.getElementById("preview");
+
+        function updatePreview() {
+            const title = titleInput.value;
+            const categories = categoriesInput.value.split(',').map(c => c.trim());
+            const content = contentInput.value;
+
+            const paragraphs = content.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+
+            if(title || content) {
+                previewDiv.innerHTML = `
+                    <div class="card-section-1">
+                        <h1>${title}</h1>
+                        ${paragraphs}
+                        <p><strong>分類:</strong> ${categories[0] || ''}</p>
+                        <p><strong>標籤:</strong> 無</p>
+                    </div>
+                `;
+            } else {
+                previewDiv.innerHTML = '';
+            }
+        }
+
+        titleInput.addEventListener("input", updatePreview);
+        categoriesInput.addEventListener("input", updatePreview);
+        contentInput.addEventListener("input", updatePreview);
+    </script>
 </body>
 </html>
