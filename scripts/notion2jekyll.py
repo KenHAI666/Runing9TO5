@@ -247,7 +247,7 @@ description: "{description}"
 
     # 組成完整卡片 HTML
     card_html = f'''
-<div class="card-section">
+<div class="card-section-1">
     <h1>{page['title']}</h1>
     {content_html}
     <p><strong>分類:</strong> {page['categories'][0]}</p>
