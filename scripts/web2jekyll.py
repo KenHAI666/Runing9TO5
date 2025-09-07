@@ -69,3 +69,27 @@ description: "{description}"
         f.write(front_matter + card_html)
 
     return filename
+# scripts/web2jekyll.py
+import os
+from datetime import datetime
+
+def create_markdown(title, category, content, posts_dir="../_posts"):
+    if not os.path.exists(posts_dir):
+        os.makedirs(posts_dir)
+
+    today = datetime.today().strftime("%Y-%m-%d")
+    filename = f"{posts_dir}/{today}-{title.replace(' ', '-')}.md"
+
+    md_content = f"""---
+layout: default
+title: "{title}"
+date: {today}
+categories: ["{category}"]
+---
+
+{content}
+"""
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(md_content)
+    
+    return filename
