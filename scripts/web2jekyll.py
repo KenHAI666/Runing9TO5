@@ -1,43 +1,55 @@
 import os
+import re
 from datetime import datetime
 
-POSTS_DIR = "_posts"
+def slugify(text):
+    text = text.lower()
+    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"\s+", "-", text)
+    return text
 
-def create_article(title, category, content):
-    """後台輸入文章 → 存成 Markdown 檔案"""
+def generate_description(content):
+    plain = re.sub(r"<[^>]+>", "", content)
+    return plain[:100] + "..." if len(plain) > 100 else plain
 
-    # 產生檔名
-    date = datetime.now().strftime("%Y-%m-%d")
-    slug = title.replace(" ", "-").lower()
-    filename = f"{date}-{slug}.md"
+def generate_tags(content):
+    words = re.findall(r"[\u4e00-\u9fff]+|\b\w+\b", content)
+    tags = list(dict.fromkeys(words))
+    return tags[:5]
 
-    # 文章 Front Matter（Jekyll 必須要有）
+def create_post(title, category, content):
+    today = datetime.today().strftime("%Y-%m-%d")
+    filename = f"_posts/{today}-{slugify(title)}.md"
+
+    if not os.path.exists("_posts"):
+        os.makedirs("_posts")
+
+    description = generate_description(content)
+    tags = generate_tags(content)
+
     front_matter = f"""---
-layout: post
-title: "{title}"
-categories: {category}
+layout: default
+title: "[{category}] {title}"
+date: {today}
+categories: [{category}]
+tags: {tags}
+description: "{description}"
 ---
-
 """
 
-    # 套用 card-section-1 CSS
-    styled_content = f'<div class="card-section-1">\n{content}\n</div>'
+    content_paragraphs = content.split('\n\n')
+    content_html = ''.join(f'<p>{p.replace("\n","<br>")}</p>\n' for p in content_paragraphs)
 
-    # 合併完整內容
-    final_content = front_matter + styled_content
+    card_html = f'''
+<div class="card-section-1">
+    <h1>{title}</h1>
+    {content_html}
+    <p><strong>分類:</strong> {category}</p>
+    <p><strong>標籤:</strong> {', '.join(tags)}</p>
+</div>
+'''
 
-    # 存檔
-    path = os.path.join(POSTS_DIR, filename)
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(final_content)
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(front_matter + card_html)
 
-    return path
-
-if __name__ == "__main__":
-    # 測試用
-    path = create_article(
-        title="測試文章",
-        category="測試分類",
-        content="這是一篇測試文章，內容由後台輸入。",
-    )
-    print(f"✅ 已建立文章: {path}")
+    return filename
