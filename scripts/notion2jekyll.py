@@ -8,7 +8,7 @@ from datetime import datetime
 notion_pages = [
     {
         "title": "自媒體起號不靠天份",
-        "content": "用PDCA玩轉Threads的內容實戰筆記
+        "content": "用PDCA玩轉Threads的內容實戰筆記"
 
 ---
 
