@@ -215,10 +215,8 @@ def generate_tags(content):
 # 生成 Markdown 檔案
 # -------------------------------
 for page in notion_pages:
-    # 日期：今天
     today = datetime.today().strftime("%Y-%m-%d")
-    
-    # 前置資料
+
     title_with_category = f"[{page['categories'][0].capitalize()}] {page['title']}"
     description = generate_description(page['content'])
     tags = generate_tags(page['content'])
@@ -235,28 +233,21 @@ description: "{description}"
 ---
 """
 
+    # Markdown 排版
     content = f"""
-<div class="card-section" style="background:#fff6e8;">
-  <h1>{page['title']}</h1>
-  {page['content']}
-</div>
+# {page['title']}
+
+{page['content']}
+
+**分類:** {page['categories'][0]}
+**標籤:** {', '.join(tags)}
 """
-
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(front_matter + content)
-
-    print(f"生成文章：{filename}")
-
 # -------------------------------
 # Git commit & push
 # -------------------------------
-try:
-    subprocess.run(["git", "add", "_posts"], check=True)
-    subprocess.run(["git", "commit", "-m", f"新增文章：{', '.join([p['title'] for p in notion_pages])}"], check=True)
-    subprocess.run(["git", "push", "origin", "main"], check=True)
-    print("已 commit 並 push 到遠端")
-except subprocess.CalledProcessError as e:
-    print("Git 操作失敗，請確認 Git 設定與權限")
+with open(filename, "w", encoding="utf-8") as f:
+        f.write(front_matter + content)
 
+    print(f"生成文章：{filename}")
 
 print("完成！")
