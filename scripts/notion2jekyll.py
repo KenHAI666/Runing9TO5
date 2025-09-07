@@ -220,7 +220,7 @@ def generate_tags(content):
     return tags[:5]
 
 # -------------------------------
-# 生成 Markdown 檔案
+# 生成 Markdown 檔案（卡片風格 + H1 標題）
 # -------------------------------
 for page in notion_pages:
     today = datetime.today().strftime("%Y-%m-%d")
@@ -241,14 +241,20 @@ description: "{description}"
 ---
 """
 
-    # 文章內容保留 Markdown
-    content_md = page['content'] + "\n\n"
-    content_md += f"**分類:** {page['categories'][0]}\n"
-    content_md += f"**標籤:** {', '.join(tags)}\n"
+    # 文章內容 HTML 卡片
+    content_html = '<div class="card-section" style="background:#fff6e8; padding:20px; margin-bottom:20px; border-radius:10px;">\n'
+    # 標題 H1
+    content_html += f"<h1>{page['title']}</h1>\n"
+    # 雙換行變段落，單換行變 <br>
+    content_html += '<p>' + page['content'].replace('\n\n', '</p><p>').replace('\n', '<br>') + '</p>'
+    # 分類與標籤
+    content_html += f"\n<p><strong>分類:</strong> {page['categories'][0]}</p>"
+    content_html += f"\n<p><strong>標籤:</strong> {', '.join(tags)}</p>"
+    content_html += '\n</div>\n'
 
     # 寫入檔案
     with open(filename, "w", encoding="utf-8") as f:
-        f.write(front_matter + content_md)
+        f.write(front_matter + content_html)
 
     print(f"生成文章：{filename}")
 
@@ -258,3 +264,4 @@ description: "{description}"
     subprocess.run(["git", "push", "origin", "main"])
 
 print("完成！")
+
