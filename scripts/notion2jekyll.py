@@ -220,7 +220,7 @@ def generate_tags(content):
     return tags[:5]
 
 # -------------------------------
-# 生成 Markdown 檔案（卡片風格 + H1 標題 + 陰影效果）
+# 生成 Markdown 檔案（H1 標題 + 分類 + 標籤卡片，套用現有 CSS）
 # -------------------------------
 for page in notion_pages:
     today = datetime.today().strftime("%Y-%m-%d")
@@ -241,38 +241,23 @@ description: "{description}"
 ---
 """
 
-    # 文章內容 HTML 卡片（陰影 + hover 浮動效果）
-    content_html = '''
-<div class="card-section" style="
-    background:#fff6e8; 
-    padding:20px; 
-    margin-bottom:20px; 
-    border-radius:12px; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-">
-    <h1>{title}</h1>
-    <p>{content}</p>
-    <p><strong>分類:</strong> {category}</p>
-    <p><strong>標籤:</strong> {tags}</p>
+    # 將內容換行轉成 <p> 標籤
+    content_paragraphs = page['content'].split('\n\n')
+    content_html = ''.join(f'<p>{p.replace("\n","<br>")}</p>\n' for p in content_paragraphs)
+
+    # 組成完整卡片 HTML
+    card_html = f'''
+<div class="card-section">
+    <h1>{page['title']}</h1>
+    {content_html}
+    <p><strong>分類:</strong> {page['categories'][0]}</p>
+    <p><strong>標籤:</strong> {', '.join(tags)}</p>
 </div>
+'''
 
-<style>
-.card-section:hover {{
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-}}
-</style>
-'''.format(
-        title=page['title'],
-        content=page['content'].replace('\n\n', '</p><p>').replace('\n', '<br>'),
-        category=page['categories'][0],
-        tags=', '.join(tags)
-    )
-
-    # 寫入檔案
+    # 寫入 Markdown 檔案
     with open(filename, "w", encoding="utf-8") as f:
-        f.write(front_matter + content_html)
+        f.write(front_matter + card_html)
 
     print(f"生成文章：{filename}")
 
