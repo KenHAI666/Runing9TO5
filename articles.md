@@ -83,15 +83,14 @@ permalink: /articles/
 <script>
 function filterCategory(category) {
   const cards = document.querySelectorAll("#articles-list .card");
-  const buttons = document.querySelectorAll(".category-btn");
-
-  buttons.forEach(btn => btn.classList.remove("active"));
-  const activeBtn = Array.from(buttons).find(btn => 
-    btn.textContent.trim() === category || (category === "all" && btn.textContent.trim() === "全部")
-  );
-  if (activeBtn) activeBtn.classList.add("active");
-
   cards.forEach(card => {
-    if (category === 'all' || card.dataset.category.includes(category)) {
-      card.style.display = 'block';
-    } else
+    const cats = card.dataset.category.split(",");
+    if (category === "all" || cats.includes(category)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+</script>
+
