@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect
-import web2jekyll
+from scripts import web2jekyll
+
+filename = web2jekyll.create_markdown(title, category, content)
 
 app = Flask(__name__, template_folder="../templates")
 
