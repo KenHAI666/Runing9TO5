@@ -1,25 +1,24 @@
-# 📝 開發者專用流程 (README_DEV.md)
+scripts/
+ ├─ notion2jekyll.py   # Notion → Jekyll
+ ├─ web2jekyll.py      # 後台輸入 → Jekyll
+ └─ server.py          # Flask 後台（呼叫 web2jekyll）
 
-這份文件記錄如何在 **GitHub Codespaces** 生成並發布文章。
-
----
-
-## 🚀 發布文章流程
-
-### 1️⃣ 開啟 Codespaces
-- 打開 GitHub 專案頁
-- 點 **Code → Codespaces → New codespace**
-- 等待自動開啟雲端 VSCode
+📝 開發者專用流程 (README_DEV.md)
+這份文件記錄如何在 GitHub Codespaces 生成並發布文章。
 
 ---
+🚀 發布文章流程n otion2jekyll.py
 
-### 2️⃣ 執行腳本生成文章
+1️⃣ 開啟 Codespaces
+打開 GitHub 專案頁
+點 Code → Codespaces → New codespace
+等待自動開啟雲端 VSCode
+
+2️⃣ 執行腳本生成文章
 在終端機輸入：
-
-```bash
 python3 scripts/notion2jekyll.py
 
-新增文章後，必須手動提交：
+3️⃣新增文章後，必須手動提交： 已改成自動
 git add _posts/
 
 git commit -m "新增文章: 測試文章"
@@ -27,3 +26,4 @@ git commit -m "新增文章: 測試文章"
 
 推送到 GitHub
 git push origin main
+---
