@@ -20,8 +20,10 @@
 python3 scripts/notion2jekyll.py
 
 新增文章後，必須手動提交：
-git add .
+git add _posts/
+
 git commit -m "新增文章: 測試文章"
 ⚠️ 注意：-m 後面一定要寫訊息，不能留空。
+
 推送到 GitHub
 git push origin main
