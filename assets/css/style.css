@@ -63,6 +63,18 @@ body {
   text-align: center;
 }
 
+/* 卡片樣式-1 */
+.card-section-1 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+
+
 /* 大頭照 */
 .about-img {
   width:150px;
