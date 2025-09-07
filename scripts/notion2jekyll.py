@@ -215,14 +215,19 @@ def generate_tags(content):
 # 生成 Markdown 檔案
 # -------------------------------
 for page in notion_pages:
+    # 日期：今天
     today = datetime.today().strftime("%Y-%m-%d")
-
-    title_with_category = f"[{page['categories'][0].capitalize()}] {page['title']}"
-    description = generate_description(page['content'])
-    tags = generate_tags(page['content'])
-
+    
+    # 生成 slug
     filename = f"_posts/{today}-{slugify(page['title'])}.md"
 
+    # 自動生成 SEO description
+    description = generate_description(page['content'])
+    # 自動生成 tags
+    tags = generate_tags(page['content'])
+
+    # 前置資料
+    title_with_category = f"[{page['categories'][0].capitalize()}] {page['title']}"
     front_matter = f"""---
 layout: default
 title: "{title_with_category}"
@@ -233,15 +238,24 @@ description: "{description}"
 ---
 """
 
-    # Markdown 排版
-    content = f"""
-# {page['title']}
+    # 文章內容 HTML 卡片
+    content_html = '<div class="card-section" style="background:#fff6e8;">\n'
+    # 雙換行變段落，單換行變 <br>
+    content_html += '<p>' + page['content'].replace('\n\n', '</p><p>').replace('\n', '<br>') + '</p>'
+    content_html += '\n</div>\n'
 
-{page['content']}
+    # 加上分類與標籤
+    content_html += f"<p><strong>分類:</strong> {page['categories'][0]}</p>\n"
+    content_html += f"<p><strong>標籤:</strong> {', '.join(tags)}</p>\n"
 
-**分類:** {page['categories'][0]}
-**標籤:** {', '.join(tags)}
-"""
+    # 寫入 Markdown 檔
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(front_matter + content_html)
+
+    print(f"生成文章：{filename}")
+
+print("完成！")
+
 # -------------------------------
 # Git commit & push
 # -------------------------------
