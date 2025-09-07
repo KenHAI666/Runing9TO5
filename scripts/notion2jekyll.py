@@ -8,7 +8,7 @@ from datetime import datetime
 notion_pages = [
     {
         "title": "自媒體起號不靠天份",
-        "content": "用PDCA玩轉Threads的內容實戰筆記"
+        "content": """用PDCA玩轉Threads的內容實戰筆記"
 
 ---
 
@@ -173,7 +173,7 @@ Threads 是一個適合「從0開始」的平台，
 
 你不是沒內容，而是還沒找到正確的方法。
 
-願這本文章，幫你走出內容卡關，也走進穩定成長。",
+願這本文章，幫你走出內容卡關，也走進穩定成長。""",
         "categories": ["教學"]
     },
     
