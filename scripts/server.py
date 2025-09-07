@@ -1,14 +1,19 @@
-from flask import Flask, render_template, request, redirect, url_for
-from scripts.web2jekyll import create_post
+from flask import Flask, render_template, request, redirect
+import web2jekyll
 
 app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        title = request.form.get("title")
-        categories = request.form.get("categories").split(",")  # 可輸入多個分類
-        content = request.form.get("content")
+        title = request.form["title"]
+        categories = request.form.getlist("categories")  # 可多選
+        content = request.form["content"]
+        
+        filename = web2jekyll.create_markdown(title, categories, content)
+        return f"文章已儲存: {filename}"
 
-        filename = create_post(title, categories, content)
-        return f"文章已生成
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)
