@@ -1,27 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for
-import subprocess
-from web2jekyll import create_post
+from scripts.web2jekyll import create_post
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
-    return render_template("templates/index.html")
+    if request.method == "POST":
+        title = request.form.get("title")
+        categories = request.form.get("categories").split(",")  # 可輸入多個分類
+        content = request.form.get("content")
 
-@app.route("/new", methods=["POST"])
-def new_post():
-    title = request.form["title"]
-    category = request.form["category"]
-    content = request.form["content"]
-
-    filename = create_post(title, category, content)
-
-    # 自動提交到 GitHub
-    subprocess.run(["git", "add", filename])
-    subprocess.run(["git", "commit", "-m", f"新增文章：{title}"])
-    subprocess.run(["git", "push", "origin", "main"])
-
-    return redirect(url_for("index"))
-
-if __name__ == "__main__":
-    app.run(debug=True)
+        filename = create_post(title, categories, content)
+        return f"文章已生成
