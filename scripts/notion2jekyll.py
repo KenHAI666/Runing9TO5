@@ -248,6 +248,5 @@ description: "{description}"
 with open(filename, "w", encoding="utf-8") as f:
         f.write(front_matter + content)
 
-    print(f"生成文章：{filename}")
 
 print("完成！")
