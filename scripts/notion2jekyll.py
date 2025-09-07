@@ -247,6 +247,8 @@ description: "{description}"
 # -------------------------------
 with open(filename, "w", encoding="utf-8") as f:
         f.write(front_matter + content)
-
+subprocess.run(["git", "add", filename])
+subprocess.run(["git", "commit", "-m", f"新增文章：{page['title']}"])
+subprocess.run(["git", "push", "origin", "main"])
 
 print("完成！")
