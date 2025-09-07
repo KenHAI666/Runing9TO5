@@ -1,83 +1,27 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
-import os, re
-from datetime import datetime
-import markdown2
+from flask import Flask, render_template, request, redirect, url_for
+import subprocess
+from web2jekyll import create_post
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # 預設 session key
 
-# -------------------------------
-# Helpers
-# -------------------------------
-def slugify(text):
-    text = text.lower()
-    text = re.sub(r"[^\w\s-]", "", text)
-    text = re.sub(r"\s+", "-", text)
-    return text
-
-def generate_tags(content):
-    words = re.findall(r"[\u4e00-\u9fff]+|\b\w+\b", content)
-    tags = list(dict.fromkeys(words))
-    return tags[:5]
-
-def generate_description(content):
-    plain = re.sub(r"<[^>]+>", "", content)
-    return plain[:100] + "..." if len(plain) > 100 else plain
-
-def markdown_to_html(content):
-    return markdown2.markdown(content)
-
-# -------------------------------
-# Routes
-# -------------------------------
-@app.route("/", methods=["GET", "POST"])
+@app.route("/")
 def index():
-    preview_html = None
-    if request.method == "POST":
-        title = request.form.get("title", "").strip()
-        category = request.form.get("category", "").strip()
-        content = request.form.get("content", "").strip()
+    return render_template("index.html")
 
-        if not title or not content or not category:
-            flash("請完整填寫標題、分類與內容")
-        else:
-            # Markdown -> HTML
-            html_content = markdown_to_html(content)
-            tags = generate_tags(content)
-            description = generate_description(content)
+@app.route("/new", methods=["POST"])
+def new_post():
+    title = request.form["title"]
+    category = request.form["category"]
+    content = request.form["content"]
 
-            preview_html = f'''
-<div class="card-section-1">
-    <h1>{title}</h1>
-    {html_content}
-    <p><strong>分類:</strong> {category}</p>
-    <p><strong>標籤:</strong> {', '.join(tags)}</p>
-</div>
-'''
+    filename = create_post(title, category, content)
 
-            # 儲存 Markdown 到 _posts
-            if not os.path.exists("_posts"):
-                os.makedirs("_posts")
+    # 自動提交到 GitHub
+    subprocess.run(["git", "add", filename])
+    subprocess.run(["git", "commit", "-m", f"新增文章：{title}"])
+    subprocess.run(["git", "push", "origin", "main"])
 
-            today = datetime.today().strftime("%Y-%m-%d")
-            filename = f"_posts/{today}-{slugify(title)}.md"
-
-            front_matter = f"""---
-layout: default
-title: "[{category}] {title}"
-date: {today}
-categories: ["{category}"]
-tags: {tags}
-description: "{description}"
----
-"""
-
-            with open(filename, "w", encoding="utf-8") as f:
-                f.write(front_matter + content)
-
-            flash(f"文章已儲存至 {filename}")
-
-    return render_template("index.html", preview_html=preview_html)
+    return redirect(url_for("index"))
 
 if __name__ == "__main__":
     app.run(debug=True)
