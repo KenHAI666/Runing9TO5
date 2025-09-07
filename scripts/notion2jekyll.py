@@ -1,14 +1,15 @@
 import os
 import re
 from datetime import datetime
+import subprocess
 
 # -------------------------------
-# Notion 文章資料，只需填寫這些
+# Notion 文章資料範例（標題與文章先留白）
 # -------------------------------
 notion_pages = [
     {
-        "title": "自媒體起號不靠天份",
-        "content": """用PDCA玩轉Threads的內容實戰筆記"
+        "title": "自媒體起號不靠天份",  # 這裡填文章標題
+        "content": """ 用PDCA玩轉Threads的內容實戰筆記
 
 ---
 
@@ -161,6 +162,16 @@ Threads 是一個適合「從0開始」的平台，
 
 ---
 
+# 🎁 附錄資源
+
+- 🔖 5種開場句式公式
+- 🧰 Threads內容格式建議表
+- 📓 爆款文觀察記錄表格
+- 📎 CTA範例50句
+- 📊 每週內容自評模板
+
+---
+
 # ✅ 行動引導 CTA
 
 👉 喜歡這本電子書？記得：
@@ -171,12 +182,11 @@ Threads 是一個適合「從0開始」的平台，
 
 ---
 
-你不是沒內容，而是還沒找到正確的方法。
-
-願這本文章，幫你走出內容卡關，也走進穩定成長。""",
-        "categories": ["教學"]
+你不是沒內容，而是還沒找到正確的方法
+        """,  # 這裡填文章內容，保留 Markdown 排版
+        "categories": ["教學"]  # 文章分類
     },
-    
+    # 可以再新增多篇文章
 ]
 
 # -------------------------------
@@ -195,19 +205,17 @@ def slugify(text):
     return text
 
 # -------------------------------
-# 簡單生成 SEO description：取前 100 個字
+# 簡單生成 SEO description
 # -------------------------------
 def generate_description(content):
     plain = re.sub(r"<[^>]+>", "", content)
     return plain[:100] + "..." if len(plain) > 100 else plain
 
 # -------------------------------
-# 簡單自動生成 tags：抓文章內容中的詞語（此處為示範，可改進）
+# 簡單自動生成 tags
 # -------------------------------
 def generate_tags(content):
-    # 取中文詞語與英文單字
     words = re.findall(r"[\u4e00-\u9fff]+|\b\w+\b", content)
-    # 去重並選前 5 個
     tags = list(dict.fromkeys(words))
     return tags[:5]
 
@@ -215,19 +223,14 @@ def generate_tags(content):
 # 生成 Markdown 檔案
 # -------------------------------
 for page in notion_pages:
-    # 日期：今天
     today = datetime.today().strftime("%Y-%m-%d")
-    
-    # 生成 slug
     filename = f"_posts/{today}-{slugify(page['title'])}.md"
 
-    # 自動生成 SEO description
     description = generate_description(page['content'])
-    # 自動生成 tags
     tags = generate_tags(page['content'])
-
-    # 前置資料
     title_with_category = f"[{page['categories'][0].capitalize()}] {page['title']}"
+
+    # Front matter
     front_matter = f"""---
 layout: default
 title: "{title_with_category}"
@@ -238,31 +241,20 @@ description: "{description}"
 ---
 """
 
-    # 文章內容 HTML 卡片
-    content_html = '<div class="card-section" style="background:#fff6e8;">\n'
-    # 雙換行變段落，單換行變 <br>
-    content_html += '<p>' + page['content'].replace('\n\n', '</p><p>').replace('\n', '<br>') + '</p>'
-    content_html += '\n</div>\n'
+    # 文章內容保留 Markdown
+    content_md = page['content'] + "\n\n"
+    content_md += f"**分類:** {page['categories'][0]}\n"
+    content_md += f"**標籤:** {', '.join(tags)}\n"
 
-    # 加上分類與標籤
-    content_html += f"<p><strong>分類:</strong> {page['categories'][0]}</p>\n"
-    content_html += f"<p><strong>標籤:</strong> {', '.join(tags)}</p>\n"
-
-    # 寫入 Markdown 檔
+    # 寫入檔案
     with open(filename, "w", encoding="utf-8") as f:
-        f.write(front_matter + content_html)
+        f.write(front_matter + content_md)
 
     print(f"生成文章：{filename}")
 
-print("完成！")
-
-# -------------------------------
-# Git commit & push
-# -------------------------------
-with open(filename, "w", encoding="utf-8") as f:
-        f.write(front_matter + content)
-subprocess.run(["git", "add", filename])
-subprocess.run(["git", "commit", "-m", f"新增文章：{page['title']}"])
-subprocess.run(["git", "push", "origin", "main"])
+    # Git commit & push
+    subprocess.run(["git", "add", filename])
+    subprocess.run(["git", "commit", "-m", f"新增文章：{page['title']}"])
+    subprocess.run(["git", "push", "origin", "main"])
 
 print("完成！")
