@@ -5,9 +5,27 @@ scripts/
 
 📝 開發者專用流程 (README_DEV.md)
 這份文件記錄如何在 GitHub Codespaces 生成並發布文章。
+---
+🚀server.py+web2jekyll.py 發布文章流程
+
+1️⃣ 啟動後台伺服器
+開啟終端機，進入專案根目錄，並執行你的 Flask 伺服器：
+
+python3 scripts/server.py
+成功執行後，你將看到一個類似 * Running on http://127.0.0.1:5000 的訊息。
+
+如果你是在 GitHub Codespaces 中執行，請點擊「在瀏覽器中開啟」或「在本地開啟」按鈕，或者直接訪問 Codespaces 提供的網址。
+
+2️⃣ 透過後台介面發布文章
+在瀏覽器中開啟 http://127.0.0.1:5000。
+
+在網頁表單中輸入文章的 標題、分類 和 內容。
+你可以即時看到文章的預覽效果。
+確認內容無誤後，點擊「儲存並發布文章」按鈕。
+腳本會自動將文章寫入 _posts 資料夾，並使用 YYYY-MM-DD-標題.md 的格式命名。
 
 ---
-🚀 發布文章流程n otion2jekyll.py
+🚀 發布文章流程notion2jekyll.py
 
 1️⃣ 開啟 Codespaces
 打開 GitHub 專案頁
