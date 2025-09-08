@@ -7,10 +7,12 @@ app = Flask(__name__, template_folder="../templates")
 def index():
     if request.method == "POST":
         title = request.form["title"]
-        categories = request.form.getlist("categories")
+        # 從表單取得字串，然後用逗號分隔成列表
+        categories_str = request.form["categories"]
+        categories = [c.strip() for c in categories_str.split(',')]
         content = request.form["content"]
         
-        # 修正這裡！呼叫新的 create_post 函式
+        # 呼叫 web2jekyll 中的 create_post 函式
         filename = web2jekyll.create_post(title, categories, content)
         
         return f"文章已儲存: {filename}"
