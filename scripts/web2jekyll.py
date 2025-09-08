@@ -27,18 +27,21 @@ def generate_tags(content):
     return tags[:5]
 
 # -------------------------------
-# 生成 Markdown 並套 card-section-1 CSS
+# 生成 Markdown 檔案
 # -------------------------------
 def create_post(title, categories, content):
-    if not os.path.exists("_posts"):
-        os.makedirs("_posts")
+    # 使用 os.path.join 來確保路徑正確
+    posts_dir = "_posts"
+    if not os.path.exists(posts_dir):
+        os.makedirs(posts_dir)
 
     today = datetime.today().strftime("%Y-%m-%d")
-    filename = f"_posts/{today}-{slugify(title)}.md"
+    filename = os.path.join(posts_dir, f"{today}-{slugify(title)}.md")
 
     description = generate_description(content)
     tags = generate_tags(content)
-    title_with_category = f"[{categories[0].capitalize()}] {title}"
+    # 不再將分類加入標題，讓 Jekyll 自己處理
+    title_with_category = title
 
     # Front matter
     front_matter = f"""---
@@ -51,45 +54,8 @@ description: "{description}"
 ---
 """
 
-    # 內容轉 HTML
-    content_paragraphs = content.split('\n\n')
-    content_html = ''.join(f'<p>{p.replace("\n","<br>")}</p>\n' for p in content_paragraphs)
-
-    card_html = f'''
-<div class="card-section-1">
-    <h1>{title}</h1>
-    {content_html}
-    <p><strong>分類:</strong> {categories[0]}</p>
-    <p><strong>標籤:</strong> {', '.join(tags)}</p>
-</div>
-'''
-
-    # 寫入 Markdown
+    # 寫入 Markdown，直接使用原始的 content 內容
     with open(filename, "w", encoding="utf-8") as f:
-        f.write(front_matter + card_html)
+        f.write(front_matter + "\n\n" + content)
 
-    return filename
-# scripts/web2jekyll.py
-import os
-from datetime import datetime
-
-def create_markdown(title, category, content, posts_dir="../_posts"):
-    if not os.path.exists(posts_dir):
-        os.makedirs(posts_dir)
-
-    today = datetime.today().strftime("%Y-%m-%d")
-    filename = f"{posts_dir}/{today}-{title.replace(' ', '-')}.md"
-
-    md_content = f"""---
-layout: default
-title: "{title}"
-date: {today}
-categories: ["{category}"]
----
-
-{content}
-"""
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(md_content)
-    
     return filename
