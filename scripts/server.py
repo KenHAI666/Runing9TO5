@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from scripts import web2jekyll
+import web2jekyll
 
 app = Flask(__name__, template_folder="../templates")
 
