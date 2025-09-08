@@ -19,14 +19,6 @@ def generate_description(content):
     return plain[:100] + "..." if len(plain) > 100 else plain
 
 # -------------------------------
-# 簡單自動生成 tags
-# -------------------------------
-def generate_tags(content):
-    words = re.findall(r"[\u4e00-\u9fff]+|\b\w+\b", content)
-    tags = list(dict.fromkeys(words))
-    return tags[:5]
-
-# -------------------------------
 # 生成 Markdown 檔案
 # -------------------------------
 def create_post(title, categories, content):
@@ -39,21 +31,18 @@ def create_post(title, categories, content):
     filename = os.path.join(posts_dir, f"{today}-{slugify(title)}.md")
 
     description = generate_description(content)
-    tags = generate_tags(content)
-    # 不再將分類加入標題，讓 Jekyll 自己處理
-    title_with_category = title
+    tags = categories # 這裡簡單地將分類作為標籤，你也可以根據內容生成更複雜的標籤
 
     # Front matter
     front_matter = f"""---
 layout: default
-title: "{title_with_category}"
+title: "{title}"
 date: {today}
 categories: {categories}
 tags: {tags}
 description: "{description}"
 ---
 """
-
     # 寫入 Markdown，直接使用原始的 content 內容
     with open(filename, "w", encoding="utf-8") as f:
         f.write(front_matter + "\n\n" + content)
