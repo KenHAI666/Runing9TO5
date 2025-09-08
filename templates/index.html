@@ -5,32 +5,33 @@
     <title>後台新增文章</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        #preview {
-            margin-top: 30px;
-        }
-        #preview .card-section-1 {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-            background-color: #fff;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; max-width: 1200px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
+        h1, h2 { color: #333; }
+        form, #preview { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        label { font-weight: bold; margin-bottom: 5px; display: block; }
+        input[type="text"], textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        input[type="submit"] { background-color: #007bff; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        input[type="submit"]:hover { background-color: #0056b3; }
+        #preview .card-section-1 { border: 1px dashed #ccc; padding: 20px; border-radius: 8px; }
+        #preview h1 { color: #555; }
+        p { margin-top: 0; }
+        ul, ol { margin-top: 0; padding-left: 20px; }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.17/marked.min.js"></script>
 </head>
 <body>
     <h1>新增文章</h1>
     <form id="articleForm" method="post">
-        <label>標題：</label><br>
-        <input type="text" name="title" id="title" required><br><br>
+        <label for="title">標題：</label>
+        <input type="text" name="title" id="title" required><br>
 
-        <label>分類：</label><br>
-        <input type="text" name="categories" id="categories" required placeholder="用逗號分隔"><br><br>
+        <label for="categories">分類：</label>
+        <input type="text" name="categories" id="categories" required placeholder="用逗號分隔，例如: 技術, 行銷"><br>
 
-        <label>內容：</label><br>
-        <textarea name="content" id="content" rows="15" cols="80" required></textarea><br><br>
+        <label for="content">內容 (支援 Markdown 語法)：</label>
+        <textarea name="content" id="content" rows="15" required></textarea><br>
 
-        <input type="submit" value="儲存文章">
+        <input type="submit" value="儲存並發布文章">
     </form>
 
     <h2>即時預覽</h2>
@@ -46,16 +47,17 @@
             const title = titleInput.value;
             const categories = categoriesInput.value.split(',').map(c => c.trim());
             const content = contentInput.value;
-
-            const paragraphs = content.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+            
+            // 使用 marked.js 將 Markdown 轉換為 HTML
+            const renderedContent = marked.parse(content);
 
             if(title || content) {
                 previewDiv.innerHTML = `
                     <div class="card-section-1">
                         <h1>${title}</h1>
-                        ${paragraphs}
-                        <p><strong>分類:</strong> ${categories[0] || ''}</p>
-                        <p><strong>標籤:</strong> 無</p>
+                        <p><strong>分類:</strong> ${categories.join(', ')}</p>
+                        <hr>
+                        ${renderedContent}
                     </div>
                 `;
             } else {
