@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
   {% include head.html %}
+
   <body>
+    <!-- 導覽列 -->
     <header>
       <nav class="fixed-nav">
         {% for item in site.nav %}
@@ -13,16 +15,21 @@
       </nav>
     </header>
 
-    <div style="height:70px;"></div> <!-- 導覽列間距 -->
+    <!-- 導覽列間距 -->
+    <div style="height:70px;"></div>
 
+    <!-- 文章 / 頁面內容 -->
     <main>
       {{ content }}
     </main>
 
+    <!-- 回頂端按鈕 -->
     <button id="backToTop">⬆</button>
 
+    <!-- JS 功能 -->
     <script>
       const backToTopBtn = document.getElementById("backToTop");
+
       window.onscroll = function() {
         if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
           backToTopBtn.style.display = "block";
@@ -30,7 +37,10 @@
           backToTopBtn.style.display = "none";
         }
       };
-      backToTopBtn.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     </script>
   </body>
 </html>
