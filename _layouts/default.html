@@ -1,53 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% include head.html %}
+  <body>
+    <header>
+      <nav class="fixed-nav">
+        {% for item in site.nav %}
+          <a href="{{ item.link | relative_url }}"
+             class="{% if page.url == item.link or page.url == item.link | append: '/' %}active{% endif %}">
+            {{ item.name }}
+          </a>
+        {% endfor %}
+      </nav>
+    </header>
 
-  <!-- SEO 基本設定 -->
-  <title>{{ page.title }} | runing9to5</title>
-  <meta name="description" content="{{ page.description | default: site.description }}">
-  <meta name="keywords" content="{{ page.keywords | default: site.keywords }}">
-  <meta name="author" content="K叔">
+    <div style="height:70px;"></div> <!-- 導覽列間距 -->
 
-  <!-- CSS -->
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+    <main>
+      {{ content }}
+    </main>
 
-</head>
-<body>
+    <button id="backToTop">⬆</button>
 
-<header>
-  <nav class="fixed-nav">
-    {% for item in site.nav %}
-      <a href="{{ item.link | relative_url }}"
-         class="{% if page.url == item.link or page.url == item.link | append: '/' %}active{% endif %}">
-        {{ item.name }}
-      </a>
-    {% endfor %}
-  </nav>
-</header>
-
-
-
-<div style="height:70px;"></div> <!-- 導覽列間距 -->
-
-<main>
-  {{ content }}
-</main>
-
-<button id="backToTop">⬆</button>
-
-<script>
-const backToTopBtn = document.getElementById("backToTop");
-window.onscroll = function() {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    backToTopBtn.style.display = "block";
-  } else {
-    backToTopBtn.style.display = "none";
-  }
-};
-backToTopBtn.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
-</script>
-
-</body>
+    <script>
+      const backToTopBtn = document.getElementById("backToTop");
+      window.onscroll = function() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      };
+      backToTopBtn.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
+    </script>
+  </body>
 </html>
