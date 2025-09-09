@@ -12,7 +12,6 @@ keywords: 自媒體, 斜槓, 個人品牌, K叔
      建立穩定輸出與個人品牌<br>
      <H2>網站目前努力建置中</H2>
   
-     </p>
 </section>
 
 <section class="card-section" style="background:#fff6e8;">
