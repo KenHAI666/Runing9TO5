@@ -1,8 +1,8 @@
 # 全站基本設定
 title: "Runing9TO5"
 description: "K叔｜陪你用最懶人的方式，把自媒體經營變成可持續的斜槓收入。"
-baseurl: "/Runing9TO5"
-url: "https://kenhai666.github.io"
+baseurl: ""
+url: "https://runing9to5.com/"
 
 author:
   name: "K叔"
