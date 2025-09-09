@@ -1,6 +1,7 @@
+# 全站基本設定
 title: "Runing9TO5"
 description: "K叔｜陪你用最懶人的方式，把自媒體經營變成可持續的斜槓收入。"
-baseurl: "/Runing9TO5" # 不要漏斜線，跟 repo 名稱一致
+baseurl: "/Runing9TO5"
 url: "https://kenhai666.github.io"
 
 author:
@@ -13,7 +14,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# 導覽列設定
+# 導覽列
 nav:
   - name: "首頁"
     link: "/"
@@ -25,3 +26,10 @@ nav:
     link: "/contact"
   - name: "關於我"
     link: "/about"
+
+# SEO 專用
+seo:
+  type: "website"                # 網站類型
+  twitter: false                  # 如果不用 Twitter Card
+  facebook: false                 # 如果不用 FB App ID
+  image: "/assets/images/og-default.jpg"  # 社群分享縮圖
