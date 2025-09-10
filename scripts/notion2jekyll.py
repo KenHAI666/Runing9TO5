@@ -82,22 +82,31 @@ def parse_notion_content(md_content):
             i += 1
             continue
 
-        # 表格識別（至少兩個欄位，Tab 或多空格分隔）
-        if re.search(r"\|", line):
+        # 表格識別（Markdown 標準表格）
+        if "|" in line:
             table_rows = []
             while i < len(lines) and "|" in lines[i]:
                 row = [cell.strip() for cell in lines[i].split("|")[1:-1]]  # 去掉首尾空格/空單元
                 table_rows.append(row)
                 i += 1
-            # Markdown 表格
-            header = "| " + " | ".join(table_rows[0]) + " |"
-            divider = "| " + " | ".join(["---"]*len(table_rows[0])) + " |"
-            rows = ["| " + " | ".join(r) + " |" for r in table_rows[1:]]
-            new_lines.append("\n".join([header, divider] + rows))
+            # 組成 <table class="table-card">
+            table_html = ['<table class="table-card">']
+            # 表頭
+            table_html.append("<thead>")
+            table_html.append("<tr>" + "".join(f"<th>{h}</th>" for h in table_rows[0]) + "</tr>")
+            table_html.append("</thead>")
+            # 表身
+            table_html.append("<tbody>")
+            for r in table_rows[1:]:
+                table_html.append("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>")
+            table_html.append("</tbody>")
+            table_html.append("</table>")
+            new_lines.append("\n".join(table_html))
             continue
 
         # 普通段落
-        new_lines.append(line)
+        if line:
+            new_lines.append(f"<p>{line}</p>")
         i += 1
 
     return "\n".join(new_lines)
@@ -127,7 +136,7 @@ description: "{description}"
 ---
 """
 
-    # 組成完整文章（套卡片風格）
+    # 組成完整文章（套文章卡片）
     full_content = f'''
 <div class="card-section-1">
 {content_parsed}
