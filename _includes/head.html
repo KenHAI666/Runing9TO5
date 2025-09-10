@@ -2,23 +2,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<!-- Favicon -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}" />
 
   <!-- 網站標題 & 說明 -->
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="author" content="K叔｜不想上班的貓">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
-  <!-- Open Graph (Threads / FB / LINE 分享用) -->
+  <!-- Open Graph (FB / LINE / Threads 分享) -->
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ page.description | default: site.description }}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:image" content="{{ site.url }}/assets/images/og-default.jpg">
 
+
   <!-- CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+
+  <!-- Google Analytics (GA4) -->
+  <!-- ⚠️ 替換成你的測量 ID (例如 G-XXXXXXX) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V656NSBTJR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V656NSBTJR');
+  </script>
 </head>
