@@ -10,39 +10,23 @@ notion_pages = [
     {
         "title": "你的圈子決定你的成就",
         "categories": ["電子報"],
-        "content": """我希望帶給大家，如同朋友間的感覺
+        "content": """# 開始經營個人品牌
+
+我希望帶給大家，如同朋友間的感覺
 我不是什麼自媒體大神，也不是甚麼高人
 只是各位，在自媒體經營上的朋友，所以歡迎提出你想問的問題
 
+## 重要觀念
+
 **你的 財富/認知 取決於身邊最親近6人的平均**
 
-你可能聽過這句話，但你有仔細想過它的影響有多深嗎？
-🔸 他們怎麼看待賺錢，你就容易複製同樣的模式
-🔸 他們遇到挑戰是選擇退縮，還是找方法突破，也會影響你的行動習慣
-🔸 他們聊的話題，是買房買車，還是抱怨上班、存不到錢？
-不知不覺，大家就都在同一個水平
+等級    粉絲數    流量指標    爆文加分    定位說明
+🐣 初心者    300 以下    平均流量 ≈ 粉絲數    無    建立人設，練習穩定發文（每天 ≥ 5 則）
+⚔️ 轉職    300–1000    平均流量 ≥ 粉絲數 3 倍    若單篇 ≥ 5 倍粉絲 → ⭐    開始觸及陌生人，測試內容題材
+🏹 高手    1000–3000    平均流量 ≥ 粉絲數 5 倍    若單篇 ≥ 10 倍粉絲 → ⭐⭐    內容進入穩定爆發期，能持續帶新粉
+👑 大師    3000+    平均流量 ≥ 粉絲數 5–8 倍    每月 ≥ 1 篇爆文（≥ 10 倍粉絲）→ ⭐⭐⭐    帳號進入品牌化，粉絲月成長率 ≥ 15%
 
-所以
-如果你開始覺得卡關、不滿現狀、但又說不上來問題是什麼
-**很可能，是圈子該更新了。**
-✔️ 找對的人互動
-✔️ 看對的內容
-✔️ 追蹤讓你變更好的創作者
-
-這些選擇，就是你未來的方向
-因為我相信： **努力很重要，但選對圈子更快**你可以沒資源、沒背景，但你不能繼續一個人亂撞如果你正在打造個人品牌、學習自媒體變現我在做這件事，
-
-也歡迎你一起 加入我的朋友圈目前我覺得最簡單 也最有效的方式就是在THREADS上透過內容，
-
-去打開你的圈子當你開始發文，你會發現你接觸到的人變多了當你開始做個人品牌，
-
-你會發現你一只低估了自己經營內容，不只是曝光自己，
-
-更是在重塑你的圈子你的帳號可以是你跳脫現狀、認識新圈子、建立影響力的起點
-而個人品牌，不是要你去演一個更好的自己，
-
-而是**去長出「你想成為的樣子」**
-
+這些選擇，就是你未來的方向...
 """
     },
 ]
@@ -79,23 +63,52 @@ def generate_tags(content):
     return tags[:5]
 
 # -------------------------------
-# Markdown -> HTML 保留標題與分隔線
+# 解析 Notion 內容：標題 / 表格 / 分隔線 / 段落
 # -------------------------------
-def markdown_to_html_keep_headers(md_content):
-    html_lines = []
-    for line in md_content.split("\n"):
-        line = line.strip()
+def parse_notion_content(md_content):
+    lines = md_content.split("\n")
+    new_lines = []
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
+
+        # 標題
         if line.startswith("### "):
-            html_lines.append(f"<h3>{line[4:]}</h3>")
+            new_lines.append(f"<h3>{line[4:]}</h3>")
+            i += 1
+            continue
         elif line.startswith("## "):
-            html_lines.append(f"<h2>{line[3:]}</h2>")
+            new_lines.append(f"<h2>{line[3:]}</h2>")
+            i += 1
+            continue
         elif line.startswith("# "):
-            html_lines.append(f"<h1>{line[2:]}</h1>")
+            new_lines.append(f"<h1>{line[2:]}</h1>")
+            i += 1
+            continue
         elif line == "---":
-            html_lines.append("<hr>")
-        else:
-            html_lines.append(line)  # 保留原 Markdown（表格或段落）
-    return "\n".join(html_lines)
+            new_lines.append("<hr>")
+            i += 1
+            continue
+
+        # 表格識別（至少兩個欄位，Tab 或多空格分隔）
+        if re.search(r"\t+|\s{2,}", line):
+            table_rows = []
+            while i < len(lines) and re.search(r"\t+|\s{2,}", lines[i]):
+                row = re.split(r"\t+|\s{2,}", lines[i].strip())
+                table_rows.append(row)
+                i += 1
+            # Markdown 表格
+            header = "| " + " | ".join(table_rows[0]) + " |"
+            divider = "| " + " | ".join(["---"]*len(table_rows[0])) + " |"
+            rows = ["| " + " | ".join(r) + " |" for r in table_rows[1:]]
+            new_lines.append("\n".join([header, divider] + rows))
+            continue
+
+        # 普通段落
+        new_lines.append(line)
+        i += 1
+
+    return "\n".join(new_lines)
 
 # -------------------------------
 # 生成 Markdown 檔案
@@ -104,8 +117,11 @@ for page in notion_pages:
     today = datetime.today().strftime("%Y-%m-%d")
     filename = f"_posts/{today}-{slugify(page['title'])}.md"
 
-    description = generate_description(page['content'])
-    tags = generate_tags(page['content'])
+    # 解析內容
+    content_parsed = parse_notion_content(page['content'])
+
+    description = generate_description(content_parsed)
+    tags = generate_tags(content_parsed)
     title_with_category = f"[{page['categories'][0].capitalize()}] {page['title']}"
 
     # Front matter
@@ -119,12 +135,9 @@ description: "{description}"
 ---
 """
 
-    # 內容轉 HTML / 保留 Markdown 表格
-    content_html = markdown_to_html_keep_headers(page['content'])
-
     # 組成完整文章
     full_content = f'''
-{content_html}
+{content_parsed}
 
 <p><strong>分類:</strong> {page['categories'][0]}</p>
 <p><strong>標籤:</strong> {', '.join(tags)}</p>
@@ -136,9 +149,7 @@ description: "{description}"
 
     print(f"生成文章：{filename}")
 
-    # Git commit & push
-    subprocess.run(["git", "add", filename])
-    subprocess.run(["git", "commit", "-m", f"新增文章：{page['title']}"])
-    subprocess.run(["git", "push", "origin", "main"])
+    # Git commit & push（改成手動提示）
+    print(f"請手動 git add / commit / push {filename}")
 
 print("完成！")
