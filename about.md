@@ -27,7 +27,7 @@ keywords: 聯絡, K叔, 自媒體, 合作
   <h2>關於專案</h2>
   <p>K叔的個人網站，專注於分享自媒體經營、個人品牌建立的實用內容。</p>
 
-  <p><b>網站連結</b>：<a href="[[https://kenhai666.github.io/Runing9TO5/](https://runing9to5.com/)](https://runing9to5.com/contact)" target="_blank">[[https://kenhai666.github.io/Runing9TO5/](https://runing9to5.com/)](https://runing9to5.com/contact)</a></p>
+<p><b>網站連結</b>：<a href="https://runing9to5.com" target="_blank">https://runing9to5.com</a></p>
 
   <h3>技術架構</h3>
   <ul style="list-style:none; padding:0;">
