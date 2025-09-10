@@ -23,5 +23,5 @@ description: "粉絲 × 流量 × 爆文 等級粉絲數流量指標爆文加分
 </table>
 
 <p><strong>分類:</strong> Threads</p>
-<p><strong>標籤:</strong> p, 粉絲, 流量, 爆文, table</p>
+<p><strong>標籤:</strong> 粉絲, 流量, 爆文, table</p>
 </div>
