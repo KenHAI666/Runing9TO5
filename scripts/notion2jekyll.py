@@ -11,7 +11,7 @@ notion_pages = [
         "title": "Threads 等級 KPI 表",
         "categories": ["Threads"],
         "content": """
-        粉絲 × 流量 × 爆文
+粉絲 × 流量 × 爆文
 
 | 等級 | 粉絲數 | 流量指標 | 爆文加分 | 定位說明 |
 | --- | --- | --- | --- | --- |
@@ -22,7 +22,6 @@ notion_pages = [
 """
     },
 ]
-
 
 # -------------------------------
 # 確認 _posts 資料夾
@@ -84,10 +83,10 @@ def parse_notion_content(md_content):
             continue
 
         # 表格識別（至少兩個欄位，Tab 或多空格分隔）
-        if re.search(r"\t+|\s{2,}", line):
+        if re.search(r"\|", line):
             table_rows = []
-            while i < len(lines) and re.search(r"\t+|\s{2,}", lines[i]):
-                row = re.split(r"\t+|\s{2,}", lines[i].strip())
+            while i < len(lines) and "|" in lines[i]:
+                row = [cell.strip() for cell in lines[i].split("|")[1:-1]]  # 去掉首尾空格/空單元
                 table_rows.append(row)
                 i += 1
             # Markdown 表格
@@ -128,40 +127,25 @@ description: "{description}"
 ---
 """
 
-    # 組成完整文章
+    # 組成完整文章（套卡片風格）
     full_content = f'''
-{content_parsed}
-
-<p><strong>分類:</strong> {page['categories'][0]}</p>
-<p><strong>標籤:</strong> {', '.join(tags)}</p>
-'''
-# -------------------------------
-# 組成完整文章（套卡片風格）
-# -------------------------------
-full_content = f'''
 <div class="card-section-1">
 {content_parsed}
 
 <p><strong>分類:</strong> {page['categories'][0]}</p>
 <p><strong>標籤:</strong> {', '.join(tags)}</p>
 </div>
+'''
 
-# -------------------------------
-# 寫入 Markdown 檔案 + 自動推送
-# -------------------------------
-with open(filename, "w", encoding="utf-8") as f:
-    f.write(front_matter + full_content)
+    # 寫入 Markdown 檔案
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(front_matter + full_content)
 
-print(f"生成文章：{filename}")
+    print(f"生成文章：{filename}")
 
-# Git 自動 commit & push
-subprocess.run(["git", "add", filename])
-subprocess.run(["git", "commit", "-m", f"新增文章：{page['title']}"])
-subprocess.run(["git", "push", "origin", "main"])
+    # Git 自動 commit & push
+    subprocess.run(["git", "add", filename])
+    subprocess.run(["git", "commit", "-m", f"新增文章：{page['title']}"])
+    subprocess.run(["git", "push", "origin", "main"])
 
 print("完成！")
-
-
-
-
-
