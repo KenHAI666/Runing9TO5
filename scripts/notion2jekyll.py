@@ -135,17 +135,6 @@ description: "{description}"
 <p><strong>分類:</strong> {page['categories'][0]}</p>
 <p><strong>標籤:</strong> {', '.join(tags)}</p>
 '''
-
-    # 寫入 Markdown 檔案
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(front_matter + full_content)
-
-    print(f"生成文章：{filename}")
-
-    # Git commit & push（改成手動提示）
-    print(f"請手動 git add / commit / push {filename}")
-
-
 # -------------------------------
 # 組成完整文章（套卡片風格）
 # -------------------------------
@@ -157,5 +146,22 @@ full_content = f'''
 <p><strong>標籤:</strong> {', '.join(tags)}</p>
 </div>
 
+# -------------------------------
+# 寫入 Markdown 檔案 + 自動推送
+# -------------------------------
+with open(filename, "w", encoding="utf-8") as f:
+    f.write(front_matter + full_content)
+
+print(f"生成文章：{filename}")
+
+# Git 自動 commit & push
+subprocess.run(["git", "add", filename])
+subprocess.run(["git", "commit", "-m", f"新增文章：{page['title']}"])
+subprocess.run(["git", "push", "origin", "main"])
 
 print("完成！")
+
+
+
+
+
