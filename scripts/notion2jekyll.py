@@ -23,6 +23,7 @@ notion_pages = [
     },
 ]
 
+
 # -------------------------------
 # 確認 _posts 資料夾
 # -------------------------------
@@ -143,5 +144,18 @@ description: "{description}"
 
     # Git commit & push（改成手動提示）
     print(f"請手動 git add / commit / push {filename}")
+
+
+# -------------------------------
+# 組成完整文章（套卡片風格）
+# -------------------------------
+full_content = f'''
+<div class="card-section-1">
+{content_parsed}
+
+<p><strong>分類:</strong> {page['categories'][0]}</p>
+<p><strong>標籤:</strong> {', '.join(tags)}</p>
+</div>
+
 
 print("完成！")
