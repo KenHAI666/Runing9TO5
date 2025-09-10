@@ -6,8 +6,8 @@ keywords: 聯絡, K叔, 自媒體, 合作
 ---
 <div class="card-section" style="background:#e8f6ff; padding:30px; border-radius:12px; max-width:800px; margin:40px auto; box-shadow:0 4px 12px rgba(0,0,0,0.1); font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
    
-   <h1 style="text-align:center; font-size:2rem; margin-bottom:20px;">📬 聯絡我</h1>
-   <p style="text-align:center; font-size:1rem; color:#333; margin-bottom:30px;">
+   <h1 style="contact-cards; font-size:2rem; margin-bottom:20px;">📬 聯絡我</h1>
+   <p style="contact-cards; font-size:1rem; color:#333; margin-bottom:30px;">
      有任何問題、合作或建議，都可以透過以下方式聯絡我：
    </p>
 
