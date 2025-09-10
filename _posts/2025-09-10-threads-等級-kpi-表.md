@@ -8,7 +8,7 @@ description: "粉絲 × 流量 × 爆文 等級粉絲數流量指標爆文加分
 ---
 
 <div class="card-section-1">
-<p>粉絲 × 流量 × 爆文</p>
+<h2>粉絲 × 流量 × 爆文</h2>
 <table class="table-card">
 <thead>
 <tr><th>等級</th><th>粉絲數</th><th>流量指標</th><th>爆文加分</th><th>定位說明</th></tr>
