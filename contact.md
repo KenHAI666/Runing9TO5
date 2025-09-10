@@ -21,7 +21,7 @@ keywords: 聯絡, K叔, 自媒體, 合作
      
      <div class="card" style="background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
        <h2 style="margin-bottom:10px; color:#0077cc;">Threads</h2>
-       <p><a href="https://www.threads.net/@runing9to5" target="_blank" style="color:#0077cc; text-decoration:none;">@runing9to5</a></p>
+       <p><a href="https://www.threads.net/@runing_9to5" target="_blank" style="color:#0077cc; text-decoration:none;">@runing_9to5</a></p>
      </div>
 
    </div>
