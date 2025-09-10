@@ -5,7 +5,7 @@ description: K叔整理的自媒體經營資源，包括工具、範例與教學
 keywords: 自媒體, 資源, 工具, 教學, K叔
 ---
 
-<div class="card-section" style="background:#fff6e8;">
+<div class="card-section" >
 <H1>📌以下是我的資源</H1> <br>
 <div class="card-section-1">
   <h2>自媒體策略 + 破圈挑戰包[FREE] </h2>
