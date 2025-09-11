@@ -5,7 +5,7 @@ description: K叔的個人網站，分享自媒體經營技巧、斜槓副業方
 keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
 ---
 <!-- SEO 短版 Hero 區 -->
-<section class="hero" style="background:#dceeff; padding:40px;">
+<section class="hero" style="background:#dceeff; padding:40px;text-align:center;">
   <h1>K叔｜不想上班的貓 🐾</h1>
   <p>自媒體經營 × 斜槓生活 × 個人品牌養成<br>
      陪你找到屬於自己的節奏，打造內容變現的可能性</p>
