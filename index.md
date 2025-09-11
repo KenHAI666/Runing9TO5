@@ -1,17 +1,56 @@
 ---
 layout: default
-title: 首頁
-description: K叔的個人網站首頁，記錄自媒體經營、斜槓生活及實用方法
-keywords: 自媒體, 斜槓, 個人品牌, K叔
+title: K叔｜自媒體經營 × 斜槓生活 × 個人品牌
+description: K叔的個人網站，分享自媒體經營技巧、斜槓副業方法與個人品牌建立，陪你從上班族到自由工作者。
+keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
 ---
+<!-- SEO 短版 Hero 區 -->
+<section class="hero" style="background:#dceeff; padding:40px; text-align:center;">
+  <h1>K叔｜不想上班的貓 🐾</h1>
+  <p>自媒體經營 × 斜槓生活 × 個人品牌養成<br>
+     陪你找到屬於自己的節奏，打造內容變現的可能性</p>
+  <H2>網站目前努力建置中</H2>
+</section>
+     
+<!-- 用戶回饋區 -->
+<section class="card-section" style="background:#ffe8e8;">
+  <h2>用戶回饋</h2>
+  <p>讀者與學員的真實心得：</p>
 
-<section class="card-section" style="background:#dceeff;">
-  <h1>嗨，我是 K叔 👋 <br>歡迎來到 Runing9To5</h1>
-  <p>用系統化方法，陪你走得長久<br>
-     協助上班族與內向創作者<br>
-     建立穩定輸出與個人品牌<br>
-     <H2>網站目前努力建置中</H2>
+  <div class="testimonial">
+    <blockquote>「K叔的筆記超實用，幫我釐清了自媒體定位，不再盲目亂寫。」</blockquote>
+    <p>—— 小芳，上班族斜槓寫作者</p>
+  </div>
 
+  <div class="testimonial">
+    <blockquote>「電子報很有系統，讓我開始懂得怎麼規劃內容，感覺不再那麼迷茫。」</blockquote>
+    <p>—— 阿明，內向創作者</p>
+  </div>
+
+  <div class="testimonial">
+    <blockquote>「原來不用很高調也能經營個人品牌，瞬間安心很多。」</blockquote>
+    <p>—— Chris，自媒體新手</p>
+  </div>
+</section>
+<!-- SEO 長文區 -->
+<section class="card-section" style="background:#f7f7f7;">
+  <h2>自媒體 × 斜槓 × 個人品牌｜從上班族到自由工作者</h2>
+  <p>
+  這個網站是 K叔的數位筆記本，專門整理 <b>自媒體經營、內容變現、斜槓副業</b> 的方法。<br><br>
+  如果你是一位想要突破日常、卻又擔心沒有方向的上班族，這裡有最實用的筆記，陪你從「想開始」到「能做到」。<br><br>
+  📌 你可以在這裡找到：  
+  </p>
+  <ul>
+    <li>自媒體定位與經營策略</li>
+    <li>內容創作與寫作輸出的方法</li>
+    <li>斜槓副業的低成本啟動模式</li>
+    <li>個人品牌養成與長期經營心法</li>
+  </ul>
+  <p>
+  我相信，<b>自由不是辭職才開始，而是從現在就能累積的選擇權</b>。<br>
+  👉 更多文章請見 <a href="articles.md">文章</a>
+  </p>
+</section>
 
 <section class="card-section" style="background:#fff6e8;">
   <h2>訂閱電子報</h2>
