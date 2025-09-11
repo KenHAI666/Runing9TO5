@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://runing9to5.com/sitemap.xml
