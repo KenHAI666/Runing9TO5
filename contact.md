@@ -33,6 +33,11 @@ keywords: 關於我, K叔, 自媒體, 作品, 聯絡
       <h3 style="margin-bottom:10px; color:#0077cc;">Threads</h3>
       <p><a href="https://www.threads.net/@runing_9to5" target="_blank" style="color:#0077cc; text-decoration:none;">@runing_9to5</a></p>
     </div>
+
+ <div class="card" style="background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08); width:260px;">
+      <h3 style="margin-bottom:10px; color:#0077cc;">Instagram</h3>
+      <p><a href="https://www.instagram.com/runing_9to5" target="_blank" style="color:#0077cc; text-decoration:none;">@runing_9to5</a></p>
+    </div>
   </div>
 
   <!-- 留言表單 -->
