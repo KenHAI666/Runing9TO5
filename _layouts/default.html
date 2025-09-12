@@ -4,24 +4,27 @@
 
   <body>
     <!-- 導覽列 -->
-  <header>
-  <nav class="fixed-nav">
-    <a href="/" class="logo">K叔｜不想上班的貓</a>
+    <header>
+      <nav class="fixed-nav">
+        <a href="/" class="logo">K叔｜不想上班的貓</a>
 
-    <div class="hamburger" id="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+        <!-- 漢堡按鈕（手機用） -->
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
 
-    <div class="nav-links" id="navLinks">
-      <a href="/">首頁</a>
-      <a href="/about">關於我</a>
-      <a href="/articles">文章</a>
-      <a href="/contact">聯絡我</a>
-    </div>
-  </nav>
-</header> 
+        <!-- 導覽連結 -->
+        <div class="nav-links" id="navLinks">
+          <a href="/index">首頁</a>
+          <a href="/about">關於我</a>
+          <a href="/articles">文章</a>
+          <a href="/resources">資源</a>
+          <a href="/contact">聯絡我</a>
+        </div>
+      </nav>
+    </header>
 
     <!-- 導覽列間距 -->
     <div style="height:70px;"></div>
@@ -35,33 +38,32 @@
     <button id="backToTop">⬆</button>
 
     <!-- JS 功能 -->
-   <script>
-  // 回到頂端按鈕
-  const backToTopBtn = document.getElementById("backToTop");
+    <script>
+      // 回到頂端按鈕
+      const backToTopBtn = document.getElementById("backToTop");
 
-  window.onscroll = function () {
-    if (
-      document.body.scrollTop > 200 ||
-      document.documentElement.scrollTop > 200
-    ) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
-    }
-  };
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      };
 
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
 
-  // 漢堡選單功能
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
+      // 漢堡選單功能（手機用）
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
 
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
-
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    </script>
   </body>
 </html>
