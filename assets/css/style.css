@@ -91,6 +91,7 @@ p {
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  z-index: 1001;
 }
 
 .hamburger div {
@@ -102,21 +103,31 @@ p {
 
 /* 手機響應式 */
 @media (max-width: 768px) {
+  .fixed-nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+  }
+
+  .hamburger {
+    display: flex; /* 手機顯示 */
+  }
+
   .nav-links {
-    display: none !important; /* 初始隱藏 */
+    display: none; /* 初始隱藏，由漢堡控制 */
     flex-direction: column;
     width: 100%;
     gap: 12px;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
   }
 
   .nav-links.active {
-    display: flex !important; /* 展開 */
+    display: flex; /* 展開 */
   }
 }
-
-
 
 /* =====================================
    卡片樣式
@@ -136,6 +147,29 @@ p {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 30px 20px;
   margin: 20px 0;
+}
+
+/* 卡片內外部連結按鈕 */
+.card-section .btn-external,
+.card-section-1 .btn-external {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3B5B7A; /* 灰藍色底 */
+  color: #ffffff;           /* 白色字 */
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 2px solid #3B5B7A;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.card-section .btn-external:hover,
+.card-section-1 .btn-external:hover {
+  background-color: #ffffff; /* 背景變白 */
+  color: #3B5B7A;            /* 字變灰藍色 */
+  border-color: #3B5B7A;
 }
 
 /* 表格卡片 */
@@ -164,28 +198,6 @@ p {
   font-weight: bold;
 }
 
-/* 卡片內外部連結按鈕 */
-.card-section .btn-external,
-.card-section-1 .btn-external {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #3B5B7A; /* 灰藍色底 */
-  color: #ffffff;           /* 白色字 */
-  font-weight: 600;
-  font-size: 16px;
-  text-decoration: none;
-  border-radius: 6px;
-  border: 2px solid #3B5B7A;
-  transition: all 0.3s ease;
-  margin-top: 15px;
-}
-
-.card-section .btn-external:hover,
-.card-section-1 .btn-external:hover {
-  background-color: #ffffff; /* 背景變白 */
-  color: #3B5B7A;            /* 字變灰藍色 */
-  border-color: #3B5B7A;
-}
 /* 手機表格響應式 */
 @media (max-width: 600px) {
   .table-card table,
