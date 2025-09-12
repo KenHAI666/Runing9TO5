@@ -5,7 +5,8 @@ import re
 import subprocess
 
 app = Flask(__name__)
-
+def editor():
+    return render_template("editor.html")
 # -------------------------------
 # 工具函數
 # -------------------------------
