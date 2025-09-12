@@ -22,12 +22,12 @@ p {
 /* =====================================
    導覽列（桌面 & 手機）
 ===================================== */
+/* 導覽列基礎 */
 .fixed-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  background: #3B5B7A; /* 主色灰藍 */
+  background: #3B5B7A;
   padding: 12px 40px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   position: fixed;
@@ -45,10 +45,10 @@ p {
   letter-spacing: 1px;
 }
 
+/* 導覽連結 - 預設（手機狀態下會被隱藏） */
 .fixed-nav .nav-links {
-  display: flex;
+  display: flex; /* 桌面時顯示 */
   gap: 32px;
-  flex-wrap: wrap;
 }
 
 .fixed-nav .nav-links a {
@@ -70,7 +70,7 @@ p {
   left: 0;
   bottom: 0;
   height: 2px;
-  background: #ffffff; /* 白色點綴 */
+  background: #ffffff;
   transition: width 0.3s ease;
 }
 
@@ -103,19 +103,12 @@ p {
 
 /* 手機響應式 */
 @media (max-width: 768px) {
-  .fixed-nav {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-  }
-
   .hamburger {
     display: flex; /* 手機顯示 */
   }
 
   .nav-links {
-    display: none; /* 初始隱藏，由漢堡控制 */
+    display: none; /* 手機預設隱藏 */
     flex-direction: column;
     width: 100%;
     gap: 12px;
@@ -125,9 +118,10 @@ p {
   }
 
   .nav-links.active {
-    display: flex; /* 展開 */
+    display: flex; /* 點擊後展開 */
   }
 }
+
 
 /* =====================================
    卡片樣式
