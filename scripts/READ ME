@@ -1,11 +1,33 @@
 scripts/
  ├─ notion2jekyll.py   # Notion → Jekyll
  ├─ web2jekyll.py      # 後台輸入 → Jekyll
- └─ server.py          # Flask 後台（呼叫 web2jekyll）
+ └─ server.py          # Flask 後台
 
 📝 開發者專用流程 (README_DEV.md)
 這份文件記錄如何在 GitHub Codespaces 生成並發布文章。
 ---
+
+🚀server.py後台 發布文章流程
+在專案根目錄下啟動 Flask：
+
+python server.py
+
+
+預設會在 http://127.0.0.1:5000 開啟後台編輯器頁面。
+
+後台頁面流程：
+
+填寫文章標題、分類、內容（可以用你設計的 markdown 樣式指令）。
+
+按 預覽 → 會顯示渲染後的效果（套卡片 CSS）。
+
+確認沒問題後按 發佈 → 自動生成 Markdown 檔到 _posts 並 push 到 GitHub。
+
+
+---------------
+以下作廢
+---------------
+
 🚀server.py+web2jekyll.py 發布文章流程
 
 1️⃣ 啟動後台伺服器
