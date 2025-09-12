@@ -22,69 +22,55 @@ p {
 /* =====================================
    導覽列（桌面 & 手機）
 ===================================== */
-/* 導覽列基礎 */
-.fixed-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #3B5B7A;
-  padding: 12px 20px;
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 999;
-}
-
-.fixed-nav .logo {
-  font-size: 20px;
-  font-weight: 700;
-  color: #FDF6EC;
-  text-decoration: none;
-}
-
-/* 導覽連結（桌面預設） */
-.nav-links {
-  display: flex;
-  gap: 24px;
-}
-
-.nav-links a {
-  color: #FDF6EC;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-/* 漢堡按鈕 */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background: #fff;
-}
-
 /* 手機響應式 */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;       /* 預設隱藏 */
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
-    margin-top: 10px;
-    background: #3B5B7A;
-    padding: 10px 0;
-  }
-
-  .nav-links.active {
-    display: flex;       /* 點漢堡展開 */
+  .fixed-nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    position: relative; /* 為了讓選單定位 */
   }
 
   .hamburger {
-    display: flex;       /* 手機顯示 */
+    display: flex; /* 手機顯示 */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001; /* 保證在選單之上 */
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+  }
+
+  .nav-links {
+    display: none; /* 初始隱藏 */
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    top: 60px; /* 導覽列下方展開 */
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 0;
+  }
+
+  .nav-links.active {
+    display: flex; /* 展開 */
   }
 }
 
