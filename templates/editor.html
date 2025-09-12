@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>後台文章編輯</title>
+<link rel="stylesheet" href="/static/style.css">
+<style>
+body { display:flex; font-family: sans-serif; }
+textarea { width: 50%; height:90vh; margin:1rem; padding:1rem; }
+.preview { width: 50%; height:90vh; overflow:auto; margin:1rem; padding:1rem; border:1px solid #ccc; background:#f9f9f9; }
+.card-section-1 { background:#fff; padding:1rem; border-radius:8px; margin-bottom:1rem; }
+.table-card { border-collapse: collapse; width:100%; }
+.table-card th, .table-card td { border:1px solid #ccc; padding:0.5rem; text-align:left; }
+</style>
+</head>
+<body>
+<form method="POST" action="/">
+<textarea name="content" placeholder="文章內容 Markdown">{{ content }}</textarea>
+<div class="preview">
+    {{ preview_html|safe }}
+</div>
+</form>
+<form method="POST" action="/publish">
+<input type="hidden" name="title" value="{{ title }}">
+<input type="hidden" name="category" value="{{ category }}">
+<input type="hidden" name="content" value="{{ content }}">
+<button type="submit">確認發佈</button>
+</form>
+</body>
+</html>
