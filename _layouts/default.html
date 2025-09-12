@@ -57,13 +57,21 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
 
-      // 漢堡選單功能（手機用）
-      const hamburger = document.getElementById('hamburger');
-      const navLinks = document.getElementById('navLinks');
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
 
-      hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-      });
-    </script>
+  // 點擊漢堡 → 開關 menu
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // 點擊選單後自動收起
+  document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+</script>
+
   </body>
 </html>
