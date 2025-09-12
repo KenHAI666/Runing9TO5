@@ -87,7 +87,7 @@ p {
 
 /* 漢堡按鈕 */
 .hamburger {
-  display: none;
+  display: none; /* 桌面隱藏 */
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
@@ -113,7 +113,7 @@ p {
   }
 
   .hamburger {
-    display: flex;
+    display: flex; /* 手機顯示 */
   }
 
   .nav-links {
@@ -126,9 +126,10 @@ p {
   }
 
   .nav-links.active {
-    display: flex;
+    display: flex; /* 展開後顯示 */
   }
 }
+
 
 /* =====================================
    卡片樣式
