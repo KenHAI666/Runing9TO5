@@ -8,6 +8,12 @@ scripts/
 ---
 
 🚀server.py後台 發布文章流程
+進入虛擬環境後：
+
+pip install flask
+
+Flask 會自動使用 jinja2 模板引擎，所以不用額外安裝 jinja2。
+
 在專案根目錄（與 templates/ 同層）啟動：
 
 python scripts/server.py
