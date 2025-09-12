@@ -8,13 +8,13 @@ scripts/
 ---
 
 🚀server.py後台 發布文章流程
-在專案根目錄下啟動 Flask：
+在專案根目錄（與 templates/ 同層）啟動：
 
-python server.py
+python scripts/server.py
 
+然後打開瀏覽器訪問：
 
-預設會在 http://127.0.0.1:5000 開啟後台編輯器頁面。
-
+http://127.0.0.1:5000/
 後台頁面流程：
 
 填寫文章標題、分類、內容（可以用你設計的 markdown 樣式指令）。
