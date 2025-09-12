@@ -1,12 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect
 from datetime import datetime
 import os
 import re
 import subprocess
 
 app = Flask(__name__)
-def editor():
-    return render_template("editor.html")
+
 # -------------------------------
 # 工具函數
 # -------------------------------
@@ -22,6 +21,7 @@ def parse_content(md_content):
     i = 0
     while i < len(lines):
         line = lines[i].strip()
+        # 標題
         if line.startswith("### "):
             new_lines.append(f"<h3>{line[4:]}</h3>")
         elif line.startswith("## "):
@@ -30,6 +30,7 @@ def parse_content(md_content):
             new_lines.append(f"<h1>{line[2:]}</h1>")
         elif line == "---":
             new_lines.append("<hr>")
+        # Markdown 表格
         elif "|" in line:
             table_rows = []
             while i < len(lines) and "|" in lines[i]:
@@ -37,7 +38,9 @@ def parse_content(md_content):
                 table_rows.append(row)
                 i += 1
             table_html = ['<table class="table-card">']
+            # 表頭
             table_html.append("<thead><tr>" + "".join(f"<th>{h}</th>" for h in table_rows[0]) + "</tr></thead>")
+            # 表身
             table_html.append("<tbody>")
             for r in table_rows[1:]:
                 table_html.append("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>")
@@ -54,7 +57,7 @@ def generate_tags(content):
     return list(dict.fromkeys(words))[:5]
 
 # -------------------------------
-# 後台首頁（輸入 + 預覽）
+# 後台首頁：輸入 + 預覽
 # -------------------------------
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -77,7 +80,7 @@ def index():
     return render_template("editor.html", preview_html=preview_html, title=title, category=category, content=content)
 
 # -------------------------------
-# 發佈文章
+# 發布文章
 # -------------------------------
 @app.route("/publish", methods=["POST"])
 def publish():
@@ -117,5 +120,8 @@ description: "{content[:100]}..."
     subprocess.run(["git", "push", "origin", "main"])
     return redirect("/")
 
+# -------------------------------
+# 啟動
+# -------------------------------
 if __name__ == "__main__":
     app.run(debug=True)
