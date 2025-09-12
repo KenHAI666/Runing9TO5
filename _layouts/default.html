@@ -6,12 +6,13 @@
     <!-- 導覽列 -->
     <header>
       <nav class="fixed-nav">
-        {% for item in site.nav %}
-          <a href="{{ item.link | relative_url }}"
-             class="{% if page.url == item.link or page.url == item.link | append: '/' %}active{% endif %}">
-            {{ item.name }}
-          </a>
-        {% endfor %}
+        <a href="/" class="logo">K叔｜不想上班的貓</a>
+        <div class="nav-links">
+          <a href="/about">關於我</a>
+          <a href="/blog">文章</a>
+          <a href="/resources">資源</a>
+          <a href="/contact">聯絡</a>
+        </div>
       </nav>
     </header>
 
@@ -30,8 +31,11 @@
     <script>
       const backToTopBtn = document.getElementById("backToTop");
 
-      window.onscroll = function() {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
           backToTopBtn.style.display = "block";
         } else {
           backToTopBtn.style.display = "none";
