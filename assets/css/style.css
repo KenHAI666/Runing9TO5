@@ -11,49 +11,93 @@ body {
 }
 
 /* ------------------------------
-   導覽列
+   導覽列（左右分佈）
 ------------------------------ */
 .fixed-nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #dceeff;
+  background: #3B5B7A; /* 主色灰藍 */
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 15px 0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   z-index: 999;
 }
 
-.fixed-nav a {
+/* LOGO */
+.fixed-nav .logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FDF6EC;
   text-decoration: none;
-  color: #333;
+  letter-spacing: 1px;
+}
+
+/* 導覽連結 */
+.fixed-nav .nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.fixed-nav .nav-links a {
+  text-decoration: none;
+  color: #FDF6EC; /* 奶油白文字 */
   font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   position: relative;
   padding-bottom: 4px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
-.fixed-nav a::after {
+.fixed-nav .nav-links a::after {
   content: "";
-  display: block;
-  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   height: 2px;
-  background: #0077cc;
-  margin-top: 2px;
-  transition: width 0.3s;
+  width: 0%;
+  background: #C48E64; /* 咖啡色點綴 */
+  transition: width 0.3s ease;
 }
 
-.fixed-nav a.active,
-.fixed-nav a:hover {
-  font-weight: bold;
+.fixed-nav .nav-links a:hover,
+.fixed-nav .nav-links a.active {
+  color: #ffffff;
+  font-weight: 600;
 }
 
-.fixed-nav a.active::after,
-.fixed-nav a:hover::after {
+.fixed-nav .nav-links a:hover::after,
+.fixed-nav .nav-links a.active::after {
   width: 100%;
+}
+
+/* ------------------------------
+   手機響應式
+------------------------------ */
+@media (max-width: 768px) {
+  .fixed-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .fixed-nav .logo {
+    margin-bottom: 10px;
+  }
+
+  .fixed-nav .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .fixed-nav .nav-links a {
+    padding: 8px 0;
+  }
 }
 
 /* ------------------------------
