@@ -102,12 +102,8 @@ p {
 
 /* 手機響應式 */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex; /* 手機顯示 */
-  }
-
   .nav-links {
-    display: none; /* 初始隱藏，由漢堡控制 */
+    display: none !important; /* 初始隱藏 */
     flex-direction: column;
     width: 100%;
     gap: 12px;
@@ -116,7 +112,7 @@ p {
   }
 
   .nav-links.active {
-    display: flex; /* 展開 */
+    display: flex !important; /* 展開 */
   }
 }
 
