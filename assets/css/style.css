@@ -22,29 +22,95 @@ p {
 /* =====================================
    導覽列（桌面 & 手機）
 ===================================== */
-/* 手機響應式 */
-@media (max-width: 768px) {
-  .fixed-nav {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-    position: relative; /* 為了讓選單定位 */
-  }
+/* ========== 導覽列（桌機版） ========== */
+.fixed-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #3B5B7A; /* 桌機主色 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  z-index: 999;
+}
 
+.fixed-nav .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FDF6EC;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex; /* 桌機版橫向排列 */
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #FDF6EC;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* 漢堡按鈕（桌機隱藏） */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ========== 手機版（768px 以下） ========== */
+@media (max-width: 768px) {
   .hamburger {
     display: flex; /* 手機顯示 */
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    z-index: 1001; /* 保證在選單之上 */
   }
 
-  .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    border-radius: 2px;
+  /* 導覽列變成相對高度 */
+  .fixed-nav {
+    padding: 12px 20px;
   }
 
   .nav-links {
@@ -53,26 +119,24 @@ p {
     align-items: center;
     gap: 16px;
     position: absolute;
-    top: 60px; /* 導覽列下方展開 */
+    top: 70px;
     left: 0;
     width: 100%;
-    background: white;
+    background: #3B5B7A; /* 手機版背景色可同桌機或改 */
     padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
 
   .nav-links a {
-    text-decoration: none;
-    color: #333;
     font-size: 18px;
-    font-weight: 500;
-    padding: 8px 0;
+    color: #FDF6EC;
   }
 
   .nav-links.active {
-    display: flex; /* 展開 */
+    display: flex;
   }
 }
+
 
 
 /* =====================================
