@@ -28,12 +28,9 @@ p {
   justify-content: space-between;
   align-items: center;
   background: #3B5B7A;
-  padding: 12px 40px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 12px 20px;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 999;
 }
 
@@ -42,83 +39,52 @@ p {
   font-weight: 700;
   color: #FDF6EC;
   text-decoration: none;
-  letter-spacing: 1px;
 }
 
-/* 導覽連結 - 預設（手機狀態下會被隱藏） */
-.fixed-nav .nav-links {
-  display: flex; /* 桌面時顯示 */
-  gap: 32px;
+/* 導覽連結（桌面預設） */
+.nav-links {
+  display: flex;
+  gap: 24px;
 }
 
-.fixed-nav .nav-links a {
-  text-decoration: none;
+.nav-links a {
   color: #FDF6EC;
+  text-decoration: none;
   font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  position: relative;
-  padding-bottom: 4px;
-  transition: all 0.3s ease;
-}
-
-.fixed-nav .nav-links a::after {
-  content: "";
-  display: block;
-  width: 0;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  background: #ffffff;
-  transition: width 0.3s ease;
-}
-
-.fixed-nav .nav-links a:hover,
-.fixed-nav .nav-links a.active {
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.fixed-nav .nav-links a:hover::after,
-.fixed-nav .nav-links a.active::after {
-  width: 100%;
 }
 
 /* 漢堡按鈕 */
 .hamburger {
-  display: none; /* 桌面隱藏 */
+  display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  z-index: 1001;
 }
 
 .hamburger div {
   width: 25px;
   height: 3px;
-  background-color: #fff;
-  transition: 0.3s;
+  background: #fff;
 }
 
 /* 手機響應式 */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex; /* 手機顯示 */
-  }
-
   .nav-links {
-    display: none; /* 手機預設隱藏 */
+    display: none;       /* 預設隱藏 */
     flex-direction: column;
     width: 100%;
     gap: 12px;
-    justify-content: center;
-    align-items: center;
     margin-top: 10px;
+    background: #3B5B7A;
+    padding: 10px 0;
   }
 
   .nav-links.active {
-    display: flex; /* 點擊後展開 */
+    display: flex;       /* 點漢堡展開 */
+  }
+
+  .hamburger {
+    display: flex;       /* 手機顯示 */
   }
 }
 
