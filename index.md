@@ -13,7 +13,7 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
 </section>
      
 <!-- 用戶回饋區 -->
-<section class="card-section" style="background:#ffe8e8;">
+<section class="card-section" style="background:#FAFAFA;">
   <h2>用戶回饋</h2>
   <p>讀者與學員的真實心得：</p>
 
@@ -48,11 +48,11 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   </ul>
   <p>
   我相信，<b>自由不是辭職才開始，而是從現在就能累積的選擇權</b>。<br>
-  👉 更多文章請見 <a href="[https://runing9to5.com/articles]">文章</a>
+  👉 更多文章請見 <a href="https://runing9to5.com/articles/">文章</a>
   </p>
 </section>
 
-<section class="card-section" style="background:#fff6e8;">
+<section class="card-section" style="background:#3B5B7A;">
   <h2>訂閱電子報</h2>
   <p>📬 輸入你的 Email，加入我們！</p>
   <div class="newsletter-box">
