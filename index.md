@@ -18,18 +18,23 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   <p>讀者與學員的真實心得：</p>
 
   <div class="testimonial">
-    <blockquote>「K叔的筆記超實用，幫我釐清了自媒體定位，不再盲目亂寫。」</blockquote>
-    <p>—— 小芳，上班族斜槓寫作者</p>
+    <blockquote>「特別適合內向創作者 & 邊上班邊想經營內容的人
+讓你慢慢培養產出節奏、寫得順、跑得穩
+打造出專屬自己的個人品牌~💪」</blockquote>
+    <p>—— 小花生，自媒體小編</p>
   </div>
 
   <div class="testimonial">
-    <blockquote>「電子報很有系統，讓我開始懂得怎麼規劃內容，感覺不再那麼迷茫。」</blockquote>
-    <p>—— 阿明，內向創作者</p>
+    <blockquote>「K叔電子報超讚！，讓我開始懂得怎麼規劃內容，感覺不再那麼迷茫。」</blockquote>
+    <p>—— 月行，Threads創作者</p>
   </div>
 
   <div class="testimonial">
-    <blockquote>「原來不用很高調也能經營個人品牌，瞬間安心很多。」</blockquote>
-    <p>—— Chris，自媒體新手</p>
+    <blockquote>「這個人沒有太多花俏的行銷
+總讓我感覺
+像是在跟隔壁同事聊天一樣
+可以一起厭世、一起碎唸生活。」</blockquote>
+    <p>—— TING J.， 叛逆工程師，自媒體新手</p>
   </div>
 </section>
 <!-- SEO 長文區 -->
