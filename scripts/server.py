@@ -4,7 +4,7 @@ import os
 import re
 import subprocess
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), "../templates"))
 
 # -------------------------------
 # 工具函數
