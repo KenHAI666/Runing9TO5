@@ -3,42 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <title>後台文章編輯</title>
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 <style>
-body { display:flex; font-family: sans-serif; margin:0; padding:0; height:100vh; }
-.editor-container { display:flex; width:100%; }
-textarea { width: 50%; height:90vh; margin:1rem; padding:1rem; resize:none; font-family: monospace; font-size: 14px; }
-.preview { width: 50%; height:90vh; overflow:auto; margin:1rem; padding:1rem; border:1px solid #ccc; background:#f9f9f9; }
+body { display: flex; font-family: sans-serif; margin:0; padding:0; }
+.editor-container { display:flex; width:100%; height:100vh; }
+.form-section, .preview-section { width:50%; padding:1rem; box-sizing:border-box; }
+textarea { width:100%; height:40vh; padding:0.5rem; font-size:1rem; }
+input, select { width:100%; margin-bottom:0.5rem; padding:0.5rem; font-size:1rem; }
+.preview { width:100%; height:40vh; overflow:auto; border:1px solid #ccc; padding:0.5rem; background:#f9f9f9; border-radius:8px; margin-bottom:1rem; }
 .card-section-1 { background:#fff; padding:1rem; border-radius:8px; margin-bottom:1rem; }
 .table-card { border-collapse: collapse; width:100%; }
 .table-card th, .table-card td { border:1px solid #ccc; padding:0.5rem; text-align:left; }
-.instructions { width: 100%; padding:0.5rem 1rem; background:#e0f0ff; font-size:14px; margin-bottom:0.5rem; border-radius:6px; }
-button { margin:1rem; padding:0.5rem 1rem; border:none; border-radius:6px; background:#007bff; color:#fff; font-size:14px; cursor:pointer; }
-button:hover { background:#0056b3; }
+button { padding:0.5rem 1rem; font-size:1rem; margin-top:0.5rem; cursor:pointer; }
+.markdown-tips { background:#f0f0f0; padding:0.5rem; border-radius:6px; font-size:0.9rem; margin-bottom:1rem; }
 </style>
 </head>
 <body>
 <div class="editor-container">
-    <form method="POST" action="/">
-        <div class="instructions">
-            <strong>Markdown 指令提示：</strong><br>
-            標題：# 標題1 / ## 標題2 / ### 標題3<br>
-            粗體：**文字**<br>
-            表格：|欄1|欄2|欄3|<br>
-            分隔線：---<br>
-        </div>
-        <textarea name="content" placeholder="在這裡輸入文章 Markdown">{{ content }}</textarea>
-        <div class="preview">
-            {{ preview_html|safe }}
-        </div>
-    </form>
-</div>
 
-<form method="POST" action="/publish">
-    <input type="hidden" name="title" value="{{ title }}">
-    <input type="hidden" name="category" value="{{ category }}">
-    <input type="hidden" name="content" value="{{ content }}">
-    <button type="submit">確認發佈</button>
-</form>
+  <!-- 編輯表單 -->
+  <div class="form-section">
+    <form method="POST" action="/">
+      <label for="title">標題</label>
+      <input type="text" name="title" id="title" value="{{ title }}" placeholder="輸入文章標題">
+      
+      <label for="category">分類</label>
+      <input type="text" name="category" id="category" value="{{ category }}" placeholder="輸入文章分類">
+      
+      <label for="content">內容 (Markdown)</label>
+      <textarea name="content" id="content" placeholder="輸入文章內容">{{ content }}</textarea>
+      
+      <div class="markdown-tips">
+        <strong>Markdown 指令提示：</strong><br>
+        標題：# 標題1 / ## 標題2 / ### 標題3<br>
+        粗體：**文字**<br>
+        表格：|欄1|欄2|欄3|<br>
+        分隔線：---<br>
+      </div>
+      
+      <button type="submit">預覽</button>
+    </form>
+  </div>
+
+  <!-- 預覽區 -->
+  <div class="preview-section">
+    <h3>預覽</h3>
+    <div class="preview">
+      {{ preview_html|safe }}
+    </div>
+
+    <!-- 發佈表單 -->
+    <form method="POST" action="/publish">
+      <input type="hidden" name="title" value="{{ title }}">
+      <input type="hidden" name="category" value="{{ category }}">
+      <input type="hidden" name="content" value="{{ content }}">
+      <button type="submit">確認發佈到網站</button>
+    </form>
+  </div>
+
+</div>
 </body>
 </html>
