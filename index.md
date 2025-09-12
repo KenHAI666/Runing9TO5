@@ -52,7 +52,7 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   </p>
 </section>
 
-<section class="card-section" style="background:#3B5B7A;">
+<section class="card-section" style="background:#dceeff;">
   <h2>訂閱電子報</h2>
   <p>📬 輸入你的 Email，加入我們！</p>
   <div class="newsletter-box">
@@ -60,14 +60,14 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   </div>
 </section>
 
-<section class="card-section">
+<section class="card-section" style="background:#FAFAFA;>
   <h2>關於我</h2>
   <img src="{{ '/assets/images/me.jpeg' | relative_url }}" alt="我的大頭照" class="about-img">
   <p>嗨，我是 K叔，一隻不想上班的貓。<br>
      這裡記錄我如何經營自媒體、打造產品，並分享自由工作者的故事。</p>
 </section>
 
-<section class="card-section" style="background:#ffe8e8;">
+<section class="card-section" style="background:#FAFAFA;">
   <h2>聯絡我 / 社群</h2>
   <p>Email：<a href="mailto:uncleKen@runing9to5.com">uncleKen@runing9to5.com</a></p>
   <p>
