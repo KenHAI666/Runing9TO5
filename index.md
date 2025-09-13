@@ -10,7 +10,7 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   <p>自媒體經營 × 斜槓生活 × 個人品牌養成<br>
      陪你找到屬於自己的節奏，打造內容變現的可能性<br>
     幫 25–45 歲上班族，打造能在下班後也能賺錢的副業系統</p>
-<a href="#subscribe" class="cta-button">👉現在就訂閱免費電子報 </a>
+<a href="#subscribe" class="cta-button">👉現在就訂閱免費電子報<br> </a>
   <small>已有 100+ 上班族加入，開始打造自己的副業系統</small>
 </section>
 
@@ -39,6 +39,20 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   </div>
 </section>
 
+<!-- 最新文章區 -->
+<section class="card-section" style="background:#f7f7f7;">
+  <h2>📌 最新文章</h2>
+
+  {% for post in site.posts limit:3 %}
+    <div class="card-section-1">
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate:100 }}</p>
+      <a href="{{ post.url }}" class="read-more">閱讀更多 →</a>
+    </div>
+  {% endfor %}
+
+</section>
 <section class="card-section" style="background:#dceeff;" id="subscribe">
   <h2>訂閱電子報</h2>
   <p>📬 輸入你的 Email，加入我們！</p>
@@ -46,7 +60,6 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
     <script async data-uid="49e70b7c7c" src="https://ken-66.kit.com/49e70b7c7c/index.js"></script>
   </div>
 </section>
-
 
 <!-- SEO 長文區 -->
 <section class="card-section" style="background:#f7f7f7;">
@@ -64,24 +77,11 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   </ul>
   <p>
   我相信，<b>自由不是辭職才開始，而是從現在就能累積的選擇權</b>。<br>
-  👉  <a href="https://runing9to5.com/articles/">更多文章</a>
+  👉  <a href="https://runing9to5.com/articles/">更多文章<br></a>
+  <a href="#subscribe" class="cta-button">👉現在就訂閱免費電子報<br> </a>  
   </p>
 </section>     
 
-<!-- 最新文章區 -->
-<section class="card-section" style="background:#f7f7f7;">
-  <h2>📌 最新文章</h2>
-
-  {% for post in site.posts limit:3 %}
-    <div class="card-section-1">
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
-      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate:100 }}</p>
-      <a href="{{ post.url }}" class="read-more">閱讀更多 →</a>
-    </div>
-  {% endfor %}
-
-</section>
 
 <section class="card-section" style="background:#FAFAFA;">
   <h2>關於我</h2>
