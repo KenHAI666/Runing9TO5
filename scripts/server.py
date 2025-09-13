@@ -69,12 +69,12 @@ def index():
         content = request.form.get("content", "")
         html_content = parse_content(content)
         preview_html = f'''
-<div class="card-section-1">
+<section class="card-section" style="background:#f7f7f7;">
 <h2>{title}</h2>
 {html_content}
 <p><strong>分類:</strong> {category}</p>
 <p><strong>標籤:</strong> {', '.join(generate_tags(content))}</p>
-</div>
+
 '''
     return render_template("editor.html", preview_html=preview_html, title=title, category=category, content=content)
 
@@ -103,12 +103,12 @@ description: "{content[:100]}..."
 """
 
     full_content = f'''
-<div class="card-section-1">
+<section class="card-section" style="background:#f7f7f7;">
 <h2>{title}</h2>
 {md_html}
 <p><strong>分類:</strong> {category}</p>
 <p><strong>標籤:</strong> {', '.join(tags)}</p>
-</div>
+
 '''
 
     if not os.path.exists("_posts"):
