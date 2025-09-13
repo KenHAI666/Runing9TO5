@@ -31,57 +31,45 @@ keywords: 關於我, 聯絡, K叔, 自媒體, 斜槓, 合作
     想更快找到我？可以用以下方式聯繫 👇
   </p>
 
+  <!-- 聯絡方式 -->
+<section class="card-section" style="background:#e8f6ff;">
+
+  <h2 style="text-align:center; margin-bottom:20px;">📬 聯絡我</h2>
+  <p style="text-align:center; color:#666; margin-bottom:25px;">
+    想更快找到我？可以用以下方式聯繫 👇
+  </p>
+
   <!-- 聯絡卡片群組 -->
   <div class="contact-cards" 
        style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-bottom:30px;">
 
     <!-- Email -->
-    <div class="card" 
-         style="background:#fff; padding:20px; border-radius:10px; 
-                box-shadow:0 2px 8px rgba(0,0,0,0.08); width:260px;">
+    <div class="card" style="background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08); width:260px;">
       <h3 style="margin-bottom:10px; color:#0077cc;">Email</h3>
-      <p>
-        <a href="mailto:uncleken@runing9to5.com" 
-           style="color:#0077cc; text-decoration:none;">
-          uncleken@runing9to5.com
-        </a>
-      </p>
+      <p><a href="mailto:uncleken@runing9to5.com" style="color:#0077cc; text-decoration:none;">uncleken@runing9to5.com</a></p>
     </div>
 
     <!-- Threads -->
-    <div class="card" 
-         style="background:#fff; padding:20px; border-radius:10px; 
-                box-shadow:0 2px 8px rgba(0,0,0,0.08); width:260px;">
+    <div class="card" style="background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08); width:260px;">
       <h3 style="margin-bottom:10px; color:#0077cc;">Threads</h3>
-      <p>
-        <a href="https://www.threads.net/@runing_9to5" target="_blank" 
-           style="color:#0077cc; text-decoration:none;">
-          @runing_9to5
-        </a>
-      </p>
+      <p><a href="https://www.threads.net/@runing_9to5" target="_blank" style="color:#0077cc; text-decoration:none;">@runing_9to5</a></p>
     </div>
 
     <!-- Instagram -->
-    <div class="card" 
-         style="background:#fff; padding:20px; border-radius:10px; 
-                box-shadow:0 2px 8px rgba(0,0,0,0.08); width:260px;">
+    <div class="card" style="background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08); width:260px;">
       <h3 style="margin-bottom:10px; color:#0077cc;">Instagram</h3>
-      <p>
-        <a href="https://www.instagram.com/runing_9to5" target="_blank" 
-           style="color:#0077cc; text-decoration:none;">
-          @runing_9to5
-        </a>
-      </p>
+      <p><a href="https://www.instagram.com/runing_9to5" target="_blank" style="color:#0077cc; text-decoration:none;">@runing_9to5</a></p>
     </div>
-</div>
 
-
+  </div> <!-- /contact-cards -->
 
   <!-- CTA 小字 -->
   <p style="text-align:center; font-size:0.95em; color:#444; margin-bottom:30px;">
     想更快找到我？直接用上方卡片聯繫 ✉️<br>
-   或是填下方表單 👇
+    或是填下方表單 👇
   </p>
+
+</section>
 
 
 <!-- 表單 -->
