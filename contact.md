@@ -22,15 +22,6 @@ keywords: 關於我, 聯絡, K叔, 自媒體, 斜槓, 合作
   </p>
 </section>
 
-<!-- 聯絡方式 -->
-<section class="card-section" 
-         style="background:#e8f6ff;>
-
-  <h2 style="text-align:center; margin-bottom:20px;">📬 聯絡我</h2>
-  <p style="text-align:center; color:#666; margin-bottom:25px;">
-    想更快找到我？可以用以下方式聯繫 👇
-  </p>
-
   <!-- 聯絡方式 -->
 <section class="card-section" style="background:#e8f6ff;">
 
