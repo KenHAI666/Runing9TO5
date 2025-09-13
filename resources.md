@@ -5,7 +5,7 @@ description: K叔整理的自媒體經營資源，包括工具、範例與教學
 keywords: 自媒體, 資源, 工具, 教學, K叔
 ---
 
-<div class="card-section" >
+<section class="card-section" >
   
 <H1>📌以下是我的資源</H1> <br>
 <div class="card-section-1">
@@ -21,4 +21,4 @@ keywords: 自媒體, 資源, 工具, 教學, K叔
   <a href="https://portaly.cc/Uncleken/product/jXFxr1YZGMN04GIL8uiE" target="_blank" class="btn-external">前往商店</a>
 </div>
 
-</div>
+
