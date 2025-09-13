@@ -32,6 +32,23 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   </p>
 </section>     
 
+<!-- 最新文章區 -->
+<section class="card-section" style="background:#f7f7f7;">
+  <h2>📌 最新文章</h2>
+
+  {% for post in site.posts limit:3 %}
+    <div class="card-section-1">
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate:100 }}</p>
+      <a href="{{ post.url }}" class="read-more">閱讀更多 →</a>
+    </div>
+  {% endfor %}
+
+</section>
+
+
+
 <!-- 用戶回饋區 -->
 <section class="card-section" style="background:#FAFAFA;">
   <h2>用戶回饋</h2>
