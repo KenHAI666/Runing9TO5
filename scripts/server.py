@@ -9,8 +9,6 @@ app = Flask(
     __name__,
     template_folder=os.path.join(os.path.dirname(__file__), "../templates")
 )
-
-
 # -------------------------------
 # 工具函數
 # -------------------------------
@@ -21,20 +19,24 @@ def slugify(text):
     return text
 
 def parse_content(md_content):
-    """將簡單 Markdown 轉 HTML"""
+    """將簡單 Markdown 轉 HTML，支援標題、粗體、表格、分隔線"""
     lines = md_content.split("\n")
     new_lines = []
     i = 0
     while i < len(lines):
         line = lines[i].strip()
+
+        # 標題
         if line.startswith("### "):
             new_lines.append(f"<h3>{line[4:]}</h3>")
         elif line.startswith("## "):
             new_lines.append(f"<h2>{line[3:]}</h2>")
         elif line.startswith("# "):
             new_lines.append(f"<h1>{line[2:]}</h1>")
+        # 分隔線
         elif line == "---":
             new_lines.append("<hr>")
+        # 表格
         elif "|" in line:
             table_rows = []
             while i < len(lines) and "|" in lines[i]:
@@ -49,14 +51,21 @@ def parse_content(md_content):
             table_html.append("</tbody></table>")
             new_lines.append("\n".join(table_html))
             continue
+        # 普通段落
         elif line:
+            # 處理粗體 **文字**
+            line = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", line)
             new_lines.append(f"<p>{line}</p>")
+
         i += 1
     return "\n".join(new_lines)
 
 def generate_tags(content):
     words = re.findall(r"[\u4e00-\u9fff]+|\b\w+\b", content)
     return list(dict.fromkeys(words))[:5]
+
+
+
 
 # -------------------------------
 # 後台首頁（編輯 + 預覽）
