@@ -5,7 +5,11 @@ import subprocess
 from flask import Flask, render_template, request, redirect
 
 # Flask 設定 templates 路徑
-app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), "templates"))
+app = Flask(
+    __name__,
+    template_folder=os.path.join(os.path.dirname(__file__), "../templates")
+)
+
 
 # -------------------------------
 # 工具函數
