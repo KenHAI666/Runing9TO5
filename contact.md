@@ -73,9 +73,8 @@ keywords: 關於我, 聯絡, K叔, 自媒體, 斜槓, 合作
         </a>
       </p>
     </div>
+</div>
 
-  </div>
-</section>
 
 
   <!-- CTA 小字 -->
