@@ -7,7 +7,7 @@ tags: ['p', '粉絲', '流量', '爆文', 'table']
 description: "粉絲 × 流量 × 爆文 等級粉絲數流量指標爆文加分定位說明 --------------- 🐣 初心者**300 以下**平均流量 ≈ 粉絲數無建立人設，練習穩定發文（每天 ≥ 5 則） ⚔️ 轉職..."
 ---
 
-<div class="card-section-1">
+<section class="card-section" style="background:#f7f7f7;">
   <h2>粉絲 × 流量 × 爆文</h2>
 
   <div class="table-card">
@@ -63,5 +63,5 @@ description: "粉絲 × 流量 × 爆文 等級粉絲數流量指標爆文加分
 
   <p><strong>分類:</strong> Threads</p>
   <p><strong>標籤:</strong> 粉絲, 流量, 爆文, table</p>
-</div>
+
 
