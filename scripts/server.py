@@ -27,32 +27,51 @@ def parse_content(md_content):
     i = 0
     while i < len(lines):
         line = lines[i].strip()
-        if line.startswith("### "):
+
+        # 標題
+        if line.startswith("###"):
             new_lines.append(f"<h3>{line[4:]}</h3>")
-        elif line.startswith("## "):
+        elif line.startswith("##"):
             new_lines.append(f"<h2>{line[3:]}</h2>")
-        elif line.startswith("# "):
+        elif line.startswith("#"):
             new_lines.append(f"<h1>{line[2:]}</h1>")
+
+        # 水平線
         elif line == "---":
             new_lines.append("<hr>")
-        elif "|" in line:
+
+        # 表格（只處理至少有兩行以上的表格）
+        elif line.startswith("|") and line.endswith("|"):
             table_rows = []
-            while i < len(lines) and "|" in lines[i]:
+            while i < len(lines) and lines[i].strip().startswith("|") and lines[i].strip().endswith("|"):
                 row = [cell.strip() for cell in lines[i].split("|")[1:-1]]
                 table_rows.append(row)
                 i += 1
-            table_html = ['<table class="table-card">']
-            table_html.append("<thead><tr>" + "".join(f"<th>{h}</th>" for h in table_rows[0]) + "</tr></thead>")
-            table_html.append("<tbody>")
-            for r in table_rows[1:]:
-                table_html.append("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>")
-            table_html.append("</tbody></table>")
-            new_lines.append("\n".join(table_html))
-            continue
+
+            if len(table_rows) > 1:  # 確保有表頭 + 至少一列
+                table_html = ['<table class="table-card">']
+                # 表頭
+                table_html.append("<thead><tr>" + "".join(f"<th>{h}</th>" for h in table_rows[0]) + "</tr></thead>")
+                # 表身
+                table_html.append("<tbody>")
+                for r in table_rows[1:]:
+                    table_html.append("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>")
+                table_html.append("</tbody></table>")
+                new_lines.append("\n".join(table_html))
+                continue  # 這裡不要再做 i+=1，因為 while 已經移動過
+
+            else:
+                # 不是表格，當作段落
+                new_lines.append(f"<p>{line}</p>")
+
+        # 一般段落
         elif line:
             new_lines.append(f"<p>{line}</p>")
+
         i += 1
+
     return "\n".join(new_lines)
+
 
 def generate_tags(content):
     words = re.findall(r"[\u4e00-\u9fff]+|\b\w+\b", content)
