@@ -40,6 +40,14 @@ def parse_content(md_content):
         elif line == "---":
             new_lines.append("<hr>")
 
+        # 普通段落（含粗體斜體轉換）
+        elif line != "":
+            # 粗體：**文字**
+            line = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", line)
+            # 斜體：*文字*
+            line = re.sub(r"\*(.+?)\*", r"<em>\1</em>", line)
+            new_lines.append(f"<p>{line}</p>")
+
         # 表格（只處理至少有兩行以上的表格）
         elif line.startswith("|") and line.endswith("|"):
             table_rows = []
