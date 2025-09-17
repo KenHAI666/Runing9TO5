@@ -9,9 +9,9 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   <h1>K叔｜不想上班的貓 🐾</h1>
   <p>自媒體經營 × 斜槓生活 × 個人品牌養成<br>
      陪你找到屬於自己的節奏，打造內容變現的可能性</p>
-  <a href="#subscribe" class="cta-button">👉 現在就訂閱免費電子報</a>
+  <a href="subscribe" class="cta-button">👉 現在就訂閱免費電子報</a>
   <br>
-  <small>已有 300+ 上班族加入，開始打造自己的副業系統</small>
+  <small>已有 100+ 上班族加入，開始打造自己的副業系統</small>
 </section>
 
 <!-- SEO 長文區 -->
