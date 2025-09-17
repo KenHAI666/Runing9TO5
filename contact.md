@@ -47,3 +47,30 @@ keywords: 關於我, K叔, 自媒體, 作品, 聯絡
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc0iVlBA4jIj_K3aQ5snUE-LTlmxQE2fDR65q7i80m6XfeNpg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
   </div>
 </section>
+
+
+<div class="card-section" style="background:#e8f6ff;">
+  <h2>關於專案</h2>
+  <p>K叔的個人網站，專注於分享自媒體經營、個人品牌建立的實用內容。</p>
+
+<p><b>網站連結</b>：<a href="https://runing9to5.com" target="_blank">https://runing9to5.com</a></p>
+
+  <h3>技術架構</h3>
+  <ul style="list-style:none; padding:0;">
+    <li>⚙️ 框架：Jekyll + GitHub Pages</li>
+    <li>🎨 樣式：響應式 CSS</li>
+    <li>🚀 部署：GitHub Actions 自動部署</li>
+    <li>📩 電子報：ConvertKit 整合</li>
+  </ul>
+
+  <h3>功能特色</h3>
+  <ul style="list-style:none; padding:0;">
+    <li>✅ 響應式設計</li>
+    <li>✅ 電子報訂閱整合</li>
+    <li>✅ SEO 優化</li>
+    <li>✅ 自動化部署</li>
+  </ul>
+</div>
+<div class="card-section" style="text-align:center; font-size:0.9em; color:#555; background:#f0f0f0;">
+  <p>Made with ❤️ by K叔</p>
+</div>
