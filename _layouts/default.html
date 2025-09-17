@@ -31,6 +31,41 @@
     <!-- 文章 / 頁面內容 -->
     <main>
       {{ content }}
+
+       {% if page.categories %}
+      <!-- 最新文章 + 相關文章小卡片（兩排） -->
+      <section class="card-section" style="background:#f7f7f7; margin-top:30px; padding:20px;">
+
+        <!-- 最新文章 -->
+        <h3 style="margin-bottom:15px;">最新文章</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:15px; margin-bottom:30px;">
+          {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+          {% for post in sorted_posts limit:3 %}
+            {% if post.url != page.url %}
+              <a href="{{ post.url | relative_url }}" style="flex:1 1 30%; background:#fff; padding:10px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.1); text-decoration:none; color:#333;">
+                <h4 style="margin:0 0 5px 0; font-size:14px;">{{ post.title }}</h4>
+                <p style="margin:0; font-size:12px; color:#666;">{{ post.date | date: "%Y-%m-%d" }}</p>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <!-- 相關文章 -->
+        <h3 style="margin-bottom:15px;">相關文章</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:15px;">
+          {% assign related_posts = site.posts | where_exp:"p","p.categories contains page.categories[0]" %}
+          {% for post in related_posts limit:3 %}
+            {% if post.url != page.url %}
+              <a href="{{ post.url | relative_url }}" style="flex:1 1 30%; background:#fff; padding:10px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.1); text-decoration:none; color:#333;">
+                <h4 style="margin:0 0 5px 0; font-size:14px;">{{ post.title }}</h4>
+                <p style="margin:0; font-size:12px; color:#666;">{{ post.date | date: "%Y-%m-%d" }}</p>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      </section>
+      {% endif %}
     </main>
 
     <!-- 回頂端按鈕 -->
