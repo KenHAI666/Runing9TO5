@@ -34,3 +34,8 @@ seo:
   twitter: false                  # 如果不用 Twitter Card
   facebook: false                 # 如果不用 FB App ID
   image: "/assets/images/og-default.jpg"  # 社群分享縮圖
+
+# sitemap.xml 專用
+plugins:
+  - jekyll-sitemap
+
