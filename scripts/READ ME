@@ -29,6 +29,14 @@ http://127.0.0.1:5000/
 
 確認沒問題後按 發佈 → 自動生成 Markdown 檔到 _posts 並 push 到 GitHub。
 
+無堆送執行
+
+直接用快捷鍵中斷
+Ctrl + C
+強制推送
+git push origin main --force
+
+
 
 ---------------
 以下作廢
