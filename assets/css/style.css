@@ -160,8 +160,7 @@ p {
 }
 
 /* 卡片內外部連結按鈕 */
-.card-section .btn-external,
-.card-section-1 .btn-external {
+.btn-external {
   display: inline-block;
   padding: 10px 20px;
   background-color: #3B5B7A; /* 灰藍色底 */
@@ -175,8 +174,7 @@ p {
   margin-top: 15px;
 }
 
-.card-section .btn-external:hover,
-.card-section-1 .btn-external:hover {
+.btn-external:hover {
   background-color: #ffffff; /* 背景變白 */
   color: #3B5B7A;            /* 字變灰藍色 */
   border-color: #3B5B7A;
