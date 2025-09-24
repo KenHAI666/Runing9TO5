@@ -18,10 +18,9 @@
         <!-- 導覽連結 -->
         <div class="nav-links" id="navLinks">
           <a href="/index">首頁</a>
-          <a href="/articles">文章</a>
-          <a href="/resources">資源</a>
+          <a href="/articles">最新文章</a>
+          <a href="/resources">更多資源</a>
           <a href="/contact">聯絡我</a>
-          <a href="/about">關於我</a>
         </div>
       </nav>
     </header>
@@ -32,6 +31,51 @@
     <!-- 文章 / 頁面內容 -->
     <main>
       {{ content }}
+      <main>
+  {{ content }}
+
+  {% if page.categories %}
+  <!-- 分隔線（卡片區外） -->
+  <hr style="border: none; border-top: 1px solid #ddd; margin: 40px 0;">
+
+  <!-- 卡片區 -->
+  <section class="card-section" style="background:#f7f7f7; padding:20px; text-align:center;">
+    
+    <!-- 訂閱按鈕 -->
+    <a href="/#subscribe" target="_blank" class="btn-external" style="margin-bottom:30px;">👉 現在就訂閱免費電子報</a>
+
+    <!-- 相關文章 -->
+    <h3 style="margin-bottom:15px;">相關文章</h3>
+    <div style="display:flex; flex-wrap:wrap; gap:15px; margin-bottom:30px;">
+      {% assign related_posts = site.posts | where_exp:"p","p.categories contains page.categories[0]" %}
+      {% for post in related_posts limit:3 %}
+        {% if post.url != page.url %}
+          <a href="{{ post.url | relative_url }}" style="flex:1 1 30%; background:#fff; padding:10px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.1); text-decoration:none; color:#333;">
+            <h4 style="margin:0 0 5px 0; font-size:14px;">{{ post.title }}</h4>
+            <p style="margin:0; font-size:12px; color:#666;">{{ post.date | date: "%Y-%m-%d" }}</p>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- 最新文章 -->
+    <h3 style="margin-bottom:15px;">最新文章</h3>
+    <div style="display:flex; flex-wrap:wrap; gap:15px;">
+      {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+      {% for post in sorted_posts limit:3 %}
+        {% if post.url != page.url %}
+          <a href="{{ post.url | relative_url }}" style="flex:1 1 30%; background:#fff; padding:10px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.1); text-decoration:none; color:#333;">
+            <h4 style="margin:0 0 5px 0; font-size:14px;">{{ post.title }}</h4>
+            <p style="margin:0; font-size:12px; color:#666;">{{ post.date | date: "%Y-%m-%d" }}</p>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </section>
+  {% endif %}
+</main>
+
     </main>
 
     <!-- 回頂端按鈕 -->
