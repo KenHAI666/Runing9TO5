@@ -79,7 +79,7 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   </div>
 </section>
 
-<section class="card-section" style="background:#dceeff;" id="subscribe">>
+<section class="card-section" style="background:#dceeff;" id="subscribe">
   <h2>訂閱電子報</h2>
   <p>📬 輸入你的 Email，加入我們！</p>
   <div class="newsletter-box">
