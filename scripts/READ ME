@@ -33,9 +33,10 @@ http://127.0.0.1:5000/
 
 直接用快捷鍵中斷
 Ctrl + C
-強制推送
-git push origin main --force
-
+先拉取遠端改動（推薦）
+git pull origin main --rebase
+拉取完成後再推送
+git push origin main
 
 
 ---------------
