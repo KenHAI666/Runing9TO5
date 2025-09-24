@@ -6,10 +6,16 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
 ---
 <!-- SEO 短版 Hero 區 -->
 <section class="hero" style="background:#dceeff; padding:40px;text-align:center;">
-  <h1>K叔｜不想上班的貓 🐾</h1>
-  <p>自媒體經營 × 斜槓生活 × 個人品牌養成<br>
-     陪你找到屬於自己的節奏，打造內容變現的可能性</p>
-  <H2>網站目前努力建置中</H2>
+  <h1>不露臉、零粉絲也能靠自媒體變現</h1>
+  <p>零粉絲、零曝光也能靠自媒體變現<br>
+    我親身實踐成功案例，找我諮詢的粉絲也都做到<br>
+    電子報完整整理操作流程<br>
+      <a href="#subscribe" class="cta-button">👉 現在就訂閱免費電子報</a>
+  <br>
+  <small>已有 100+ 上班族加入，開始打造自己的副業系統</small>
+</section>
+  </p>
+ 
 </section>
 
 <!-- SEO 長文區 -->
@@ -74,7 +80,7 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   </div>
 </section>
 
-<section class="card-section" style="background:#dceeff;">
+<section class="card-section" style="background:#dceeff;" id="subscribe">>
   <h2>訂閱電子報</h2>
   <p>📬 輸入你的 Email，加入我們！</p>
   <div class="newsletter-box">
