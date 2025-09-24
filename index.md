@@ -33,7 +33,7 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   </ul>
   <p>
   我相信，<b>自由不是辭職才開始，而是從現在就能累積的選擇權</b>。<br>
-  👉 更多文章請見 <a href="https://runing9to5.com/articles/">文章</a>
+  👉  <a href="https://runing9to5.com/articles/">更多文章</a>
   </p>
 </section>     
 
