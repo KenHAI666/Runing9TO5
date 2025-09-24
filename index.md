@@ -10,7 +10,7 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   <p>零粉絲、零曝光也能靠自媒體變現<br>
     我親身實踐成功案例，找我諮詢的粉絲也都做到<br>
     電子報完整整理操作流程<br>
-      <a href="#subscribe" class="cta-button">👉 現在就訂閱免費電子報</a>
+   <a href="/#subscribe" target="_blank" class="btn-external" style="margin-bottom:30px;">👉 現在就訂閱免費電子報</a>
   <br>
   <small>已有 100+ 上班族加入，開始打造自己的副業系統</small>
 </section>
