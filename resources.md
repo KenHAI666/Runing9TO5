@@ -18,9 +18,9 @@ keywords: 自媒體, 資源, 工具, 教學, K叔
 
 
 <div class="card-section-1">
-  <h2>自媒體經營SOP完全筆記 </h2>
+  <h2>從零到變現：內容、信任、收入的完整路徑 </h2>
   <p>建立從定位、產文到變現的完整流程系統，解決你卡住的每一段路</p>
-  <a href="https://portaly.cc/Uncleken/product/jXFxr1YZGMN04GIL8uiE" target="_blank" class="btn-external">前往商店</a>
+  <a href="https://portaly.cc/Uncleken/product/EbC4AFUvTs6sNQoM4jZn" target="_blank" class="btn-external">前往商店</a>
 </div>
 
 
