@@ -10,7 +10,7 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   <p>從零粉絲到自媒體收入<br>
     我親身實踐成功案例，找我諮詢的粉絲也都做到<br>
     電子報完整整理操作流程<br>
-   <a href="#subscribe" class="btn-external" style="margin-bottom:30px;">👉 現在就訂閱免費電子報</a>
+   <a href="#subscribe" class="btn-external" style="margin-bottom:30px;">👉 現在就訂閱免費電子報領取《從零到變現：50 個自媒體小 Tips》</a>
   <br>
   <small>已有 100+ 上班族加入，開始打造自己的副業系統</small>
   </p>
@@ -81,7 +81,7 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
 
 <section class="card-section" style="background:#dceeff;" id="subscribe">
   <h2>訂閱電子報</h2>
-  <p>📬 輸入你的 Email，加入我們！</p>
+  <p>📬 輸入你的 Email，加入我們！領取《從零到變現：50 個自媒體小 Tips》</p>
   <div class="newsletter-box">
     <script async data-uid="49e70b7c7c" src="https://ken-66.kit.com/49e70b7c7c/index.js"></script>
   </div>
