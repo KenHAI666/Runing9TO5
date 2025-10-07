@@ -1,6 +1,6 @@
 ---
 layout: default
-title: K叔｜自媒體經營 × 斜槓生活 × 個人品牌
+title: RUNING_9to5｜K叔｜自媒體經營 × 斜槓生活 × 個人品牌
 description: K叔的個人網站，分享自媒體經營技巧、斜槓副業方法與個人品牌建立，陪你從上班族到自由工作者。
 keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
 ---
@@ -16,7 +16,59 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   </p>
  
 </section>
+<!-- FAQ 區 -->
+<section id="faq" class="faq-section" style="padding:40px; background:#f4f7fa;">
+  <h2 style="text-align:center; margin-bottom:30px;">常見問題 FAQ</h2>
 
+  <div itemscope itemtype="https://schema.org/FAQPage">
+
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">上班族如何找到自媒體利基市場？</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          從生活中的小痛點開始，先解決一個小問題，再慢慢擴大影響力。
+        </p>
+      </div>
+    </div>
+
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">如何在職期間高效產出內容？</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          建立固定流程：紀錄 → 整理 → 延伸，減少臨時創作壓力，長期保持穩定輸出。
+        </p>
+      </div>
+    </div>
+
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">如何低成本啟動第一個數位產品？</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          從筆記、模板、簡單教學開始測試，用回饋優化內容，慢慢建立可變現產品。
+        </p>
+      </div>
+    </div>
+
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">誰適合跟 K叔 學自媒體變現？</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          上班族或內向創作者，希望在不辭職的情況下建立個人品牌、穩定產出內容並探索低風險變現的人。
+        </p>
+      </div>
+    </div>
+
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">K叔 提供哪些服務？</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          電子書販售、自媒體諮詢、1對1陪跑諮詢，陪你從內容規劃到變現落地。
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
 <!-- SEO 長文區 -->
 <section class="card-section" style="background:#f7f7f7;">
   <h2>自媒體 × 斜槓 × 個人品牌｜從上班族到自由工作者</h2>
@@ -51,8 +103,6 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   {% endfor %}
 
 </section>
-
-
 
 <!-- 用戶回饋區 -->
 <section class="card-section" style="background:#FAFAFA;">
