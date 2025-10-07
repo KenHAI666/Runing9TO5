@@ -38,16 +38,16 @@ keywords: "自媒體變現, 自媒體經營, 電子書教學, 個人品牌, 一�
 <!-- FAQ 區 -->
   <section class="card-section animate-section">
     <h2>常見問題</h2>
-    <details>
-      <h3>Q1. 我沒有粉絲，也能開始經營自媒體嗎？</h3>
+    <details open>
+      <summary>Q1. 我沒有粉絲，也能開始經營自媒體嗎？</summary>
       <p>可以。我的方法重點在「內容策略 × 產品設計」，幫助你用價值吸引受眾，而不是靠流量硬撐。</p>
    </details>
-   <details>
-      <h3>Q2. 電子書真的能變現嗎？</h3>
+   <details open>
+      <summary>Q2. 電子書真的能變現嗎？</summary>
       <p>能。只要用正確的定位與價值前置方式，電子書是建立信任與收入的最佳入門產品。</p>
   </details>
-   <details>
-      <h3>Q3. 一對一諮詢能幫我什麼？</h3>
+   <details open>
+       <summary>Q3. 一對一諮詢能幫我什麼？</summary>
       <p>我會協助你釐清定位、產品策略、內容規劃，並給出具體行動建議，讓你不再只是「想開始」。</p>
     </details>
   </section>
