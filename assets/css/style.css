@@ -256,14 +256,6 @@ p {
   transform: translateX(0) translateY(0);
 }
 
-/* === 滑鼠滑過微放大（桌機） === */
-@media (hover: hover) and (pointer: fine) {
-  .animate-section .slide-in.show:hover {
-    transform: scale(1.03);
-    transition: transform 0.3s ease;
-    z-index: 2;
-  }
-}
 
 /* =====================================
    大頭照 / 個人簡介
