@@ -51,7 +51,7 @@
  
 </section>
 <!-- FAQ 區 -->
-  <section class="faq">
+  <section class="card-section animate-section">
     <h2>常見問題</h2>
     <div class="faq-item">
       <h3>Q1. 我沒有粉絲，也能開始經營自媒體嗎？</h3>
@@ -137,7 +137,7 @@
 </section>
 
  <!-- 關於我區 -->
-  <section class="about">
+ <section class="card-section" style="background:#FAFAFA;"> <h2>關於我</h2> <img src="/assets/images/me.jpeg" alt="我的大頭照" class="about-img">
     <h2>👋 關於 K叔｜不想上班的貓</h2>
     <p>我是 RUNING_9to5 的創辦人，一位幫助上班族與創作者「逃離朝九晚五」的自媒體教練。我的服務包含：</p>
     <ul>
