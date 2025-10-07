@@ -5,19 +5,6 @@ description: "K叔｜不想上班的貓，協助上班族與內向創作者建�
 keywords: "自媒體變現, 自媒體經營, 電子書教學, 個人品牌, 一對一諮詢, 上班族斜槓"
 ---
 
-
-  <!-- Breadcrumb Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://runing9to5.com" },
-      { "@type": "ListItem", "position": 2, "name": "文章", "item": "https://runing9to5.com/articles/" }
-    ]
-  }
-  </script>
-
   <!-- Author Schema -->
   <script type="application/ld+json">
   {
@@ -33,7 +20,6 @@ keywords: "自媒體變現, 自媒體經營, 電子書教學, 個人品牌, 一�
     "knowsAbout": ["自媒體經營", "內容變現", "電子書製作", "個人品牌打造"]
   }
   </script>
-</head>
 
 <body>
 <!-- SEO 短版 Hero 區 -->
