@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RUNING_9to5｜逃離朝九晚五，打造可持續的自媒體收入系統</title>
-  <meta name="description" content="K叔｜不想上班的貓，協助上班族與內向創作者建立穩定輸出與個人品牌。提供自媒體變現教學、電子書販賣與一對一諮詢服務。">
-  <meta name="keywords" content="自媒體變現, 自媒體經營, 電子書教學, 個人品牌, 一對一諮詢, 上班族斜槓">
+---
+layout: default
+title: "RUNING_9to5｜逃離朝九晚五，打造可持續的自媒體收入系統"
+description: "K叔｜不想上班的貓，協助上班族與內向創作者建立穩定輸出與個人品牌。提供自媒體變現教學、電子書販賣與一對一諮詢服務。"
+keywords: "自媒體變現, 自媒體經營, 電子書教學, 個人品牌, 一對一諮詢, 上班族斜槓"
+---
+
 
   <!-- Breadcrumb Schema -->
   <script type="application/ld+json">
