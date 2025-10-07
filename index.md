@@ -17,7 +17,7 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
  
 </section>
 <!-- FAQ 區 -->
-<section id="faq" class="faq-section" style="padding:40px; background:#f4f7fa;">
+<section id="faq" class="card-section" style="padding:40px; background:#f4f7fa;">
   <h2 style="text-align:center; margin-bottom:30px;">常見問題 FAQ</h2>
 
   <div itemscope itemtype="https://schema.org/FAQPage">
