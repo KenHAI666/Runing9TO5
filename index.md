@@ -75,14 +75,15 @@ keywords: "自媒體變現, 自媒體經營, 電子書教學, 個人品牌, 一�
 <!-- 最新文章區 -->
 <section class="card-section" style="background:#f7f7f7;">
   <h2>📚 最新文章</h2>
-
   {% for post in site.posts limit:3 %}
+   <article>
     <div class="card-section-1">
       <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
       <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncate:100 }}</p>
       <a href="{{ post.url }}" class="read-more">閱讀更多 →</a>
     </div>
+  </article>
   {% endfor %}
 
 </section>
