@@ -123,8 +123,7 @@ keywords: "自媒體變現, 自媒體經營, 電子書教學, 個人品牌, 一�
 </section>
 
  <!-- 關於我區 -->
- <section class="card-section" style="background:#FAFAFA;"> <h2>關於我</h2> <img src="/assets/images/me.jpeg" alt="我的大頭照" class="about-img">
-    <h2>👋 關於 K叔｜不想上班的貓</h2>
+ <section class="card-section" style="background:#FAFAFA;"> <h2> 關於 K叔｜不想上班的貓</h2> <img src="/assets/images/me.jpeg" alt="我的大頭照" class="about-img">
     <p>我是 RUNING_9to5 的創辦人，一位幫助上班族與創作者「逃離朝九晚五」的自媒體教練。我的服務包含：</p>
     <ul>
       <li>💡 <strong>自媒體變現教學</strong>：用內容打造收入系統。</li>
