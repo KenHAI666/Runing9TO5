@@ -95,4 +95,21 @@ function filterCategory(category) {
   });
 }
 </script>
-
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ post.title }}",
+  "author": {
+    "@type": "Person",
+    "name": "K叔｜不想上班的貓"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "RUNING_9to5"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ post.url }}"
+  },
+  "datePublished": "{{ post.date }}"
+}
