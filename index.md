@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (entry.isIntersecting) {
         const cards = entry.target.querySelectorAll(".slide-in");
         cards.forEach((card, index) => {
-          setTimeout(() => card.classList.add("show"), index * 150);
+          setTimeout(() => card.classList.add("show"), index * 180);
         });
         observer.unobserve(entry.target);
       }
