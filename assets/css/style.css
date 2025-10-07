@@ -235,35 +235,36 @@ p {
   }
 }
 /* === 基本動畫設定 === */
-.animate-section .card {
+.animate-section .slide-in {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease;
 }
 
 /* === 左右進場方向 === */
-.animate-section .card.left {
+.animate-section .slide-in.left {
   transform: translateX(-80px);
 }
 
-.animate-section .card.right {
+.animate-section .slide-in.right {
   transform: translateX(80px);
 }
 
 /* === 進場後回原位 === */
-.animate-section .card.show {
+.animate-section .slide-in.show {
   opacity: 1;
   transform: translateX(0) translateY(0);
 }
 
 /* === 滑鼠滑過微放大（桌機） === */
 @media (hover: hover) and (pointer: fine) {
-  .animate-section .card.show:hover {
+  .animate-section .slide-in.show:hover {
     transform: scale(1.03);
     transition: transform 0.3s ease;
     z-index: 2;
   }
 }
+
 /* =====================================
    大頭照 / 個人簡介
 ===================================== */
