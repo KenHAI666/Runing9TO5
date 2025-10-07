@@ -70,24 +70,25 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
   </div>
 </section>
 <!-- SEO 長文區 -->
-<section class="card-section" style="background:#f7f7f7;">
-  <h2>自媒體 × 斜槓 × 個人品牌｜從上班族到自由工作者</h2>
-  <p>
-  這個網站是 K叔的數位筆記本，專門整理 <b>自媒體經營、內容變現、斜槓副業</b> 的方法。<br><br>
-  如果你是一位想要突破日常、卻又擔心沒有方向的上班族，這裡有最實用的筆記，陪你從「想開始」到「能做到」。<br>
-  📌 你可以在這裡找到：  
+<section class="card-section animate-section" style="background:#f7f7f7;">
+  <h2 class="slide-in">自媒體 × 斜槓 × 個人品牌｜從上班族到自由工作者</h2>
+  <p class="slide-in">
+    這個網站是 K叔的數位筆記本，專門整理 <b>自媒體經營、內容變現、斜槓副業</b> 的方法。<br><br>
+    如果你是一位想要突破日常、卻又擔心沒有方向的上班族，這裡有最實用的筆記，陪你從「想開始」到「能做到」。<br>
+    📌 你可以在這裡找到：  
   </p>
-  <ul>
+  <ul class="slide-in">
     <li>自媒體定位與經營策略</li>
     <li>內容創作與寫作輸出的方法</li>
     <li>斜槓副業的低成本啟動模式</li>
     <li>個人品牌養成與長期經營心法</li>
   </ul>
-  <p>
-  我相信，<b>自由不是辭職才開始，而是從現在就能累積的選擇權</b>。<br>
-  👉  <a href="https://runing9to5.com/articles/">更多文章</a>
+  <p class="slide-in">
+    我相信，<b>自由不是辭職才開始，而是從現在就能累積的選擇權</b>。<br>
+    👉  <a href="https://runing9to5.com/articles/">更多文章</a>
   </p>
-</section>     
+</section>
+
 
 <!-- 最新文章區 -->
 <section class="card-section" style="background:#f7f7f7;">
@@ -105,30 +106,31 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
 </section>
 
 <!-- 用戶回饋區 -->
-<section class="card-section" style="background:#FAFAFA;">
-  <h2>用戶回饋</h2>
-  <p>讀者與學員的真實心得：</p>
+<section class="card-section animate-section" style="background:#FAFAFA;">
+  <h2 class="slide-in">用戶回饋</h2>
+  <p class="slide-in">讀者與學員的真實心得：</p>
 
-  <div class="testimonial">
+  <div class="testimonial slide-in">
     <blockquote>「特別適合內向創作者 & 邊上班邊想經營內容的人讓你慢慢培養產出節奏、寫得順、跑得穩
 打造出專屬自己的個人品牌~💪」
-    <p>小花生，自媒體小編</p>
-</blockquote>
+      <p>小花生，自媒體小編</p>
+    </blockquote>
   </div>
 
-  <div class="testimonial">
+  <div class="testimonial slide-in">
     <blockquote>「K叔電子報超讚！，讓我開始懂得怎麼規劃內容，感覺不再那麼迷茫。」
-    <p>月行，Threads創作者</p>
-      </blockquote>
+      <p>月行，Threads創作者</p>
+    </blockquote>
   </div>
 
-  <div class="testimonial">
+  <div class="testimonial slide-in">
     <blockquote>「這個人沒有太多花俏的行銷總讓我感覺像是在跟隔壁同事聊天一樣可以一起厭世、一起碎唸生活。」
-    <p> TING J.， 叛逆工程師，自媒體新手</p>
-      </blockquote>
+      <p> TING J.， 叛逆工程師，自媒體新手</p>
+    </blockquote>
   </div>
 </section>
 
+<!-- 電子報 -->
 <section class="card-section" style="background:#dceeff;" id="subscribe">
   <h2>訂閱電子報</h2>
   <p>📬 輸入你的 Email，加入我們！領取《從零到變現：50 個自媒體小 Tips》</p>
@@ -152,3 +154,31 @@ keywords: 自媒體, 斜槓, 個人品牌, 內容變現, 上班族副業, K叔
     <a href="https://www.instagram.com/runing_9to5/" target="_blank">Instagram</a>
   </p>
 </section>
+
+<!-- JS 放在這裡 -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const sections = document.querySelectorAll(".animate-section");
+
+  sections.forEach(section => {
+    const cards = section.querySelectorAll(".slide-in");
+    cards.forEach((card, i) => {
+      card.classList.add(i % 2 === 0 ? "left" : "right");
+    });
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const cards = entry.target.querySelectorAll(".slide-in");
+        cards.forEach((card, index) => {
+          setTimeout(() => card.classList.add("show"), index * 150);
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  sections.forEach(section => observer.observe(section));
+});
+</script>
