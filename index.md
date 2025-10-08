@@ -87,7 +87,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
     </ul>
     <p>當觀眾覺得你「真的懂、也真的在乎」，自然就會願意買單。</p>
   </details>
-
+ <a href="/resources" class="btn-external">👉 更多資源</a>
 </section>
 
 
@@ -142,15 +142,37 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
 </section>
 
  <!-- 關於我區 -->
- <section class="card-section" style="background:#FAFAFA;"> <h2> 關於 K叔｜不想上班的貓</h2> <img src="/assets/images/me.jpeg" alt="我的大頭照" class="about-img">
-    <p>我是 RUNING_9to5 的創辦人，一位幫助上班族與創作者「逃離朝九晚五」的自媒體教練。我的服務包含：</p>
-    <ul>
-      <li>💡 <strong>自媒體變現教學</strong>：用內容打造收入系統。</li>
-      <li>📘 <strong>電子書販賣策略</strong>：把經驗轉成被動收益。</li>
-      <li>🧑‍💻 <strong>一對一諮詢</strong>：針對個人品牌的具體行動方案。</li>
-    </ul>
-    <p>我的文字不是想紅，而是想讓你找到屬於自己的出口。</p>
-  </section>
+<section class="card-section" style="background:#FAFAFA;">
+  <h2>關於 K叔｜不想上班的貓</h2>
+  <img src="/assets/images/me.jpeg" alt="K叔｜不想上班的貓 大頭照" class="about-img">
+
+  <p>嗨，我是 <strong>K叔</strong>，<strong>RUNING_9to5</strong> 的創辦人，一位幫助上班族與創作者「逃離朝九晚五」的自媒體教練。</p>
+  <p>我專注於把「經驗 × 策略」變成能持續帶來收入的系統，讓你不只是分享生活，而是靠內容養生活。</p>
+
+  <ul>
+    <li>💡 <strong>自媒體變現教學：</strong> 用內容打造穩定收入系統。</li>
+    <li>📘 <strong>電子書販售策略：</strong> 把你的知識轉成被動收益。</li>
+    <li>🧑‍💻 <strong>一對一諮詢服務：</strong> 協助你釐清定位，制定具體行動方案。</li>
+  </ul>
+
+  <p>我的文字不是為了爆紅，而是想讓你找到屬於自己的出口。</p>
+
+  <h3>關於這裡</h3>
+  <p><strong>自媒體 × 斜槓 × 個人品牌｜從上班族到自由工作者</strong></p>
+
+  <p>這裡是 <strong>K叔的數位筆記本</strong>，專門整理 <strong>自媒體經營、內容變現、斜槓副業</strong> 的方法與實戰筆記。</p>
+  <p>如果你是一位想突破日常、卻又擔心沒有方向的上班族，這裡有最實用的筆記，陪你從「想開始」到「能做到」。</p>
+
+  <ul>
+    <li>🎯 自媒體定位與經營策略</li>
+    <li>✍️ 內容創作與寫作輸出方法</li>
+    <li>💼 斜槓副業的低成本啟動模式</li>
+    <li>🌱 個人品牌養成與長期經營心法</li>
+  </ul>
+
+  <p><strong>我相信，自由不是辭職後才開始，而是從現在就能累積的選擇權。</strong></p>
+</section>
+
 
 <section class="card-section" style="background:#FAFAFA;">
   <h2>聯絡我 / 社群</h2>
