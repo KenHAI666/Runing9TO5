@@ -45,46 +45,79 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "經營自媒體的第一步，是先寫內容還是先做商品？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "建議以終為始，先設計商品，再創造內容。這樣內容才有方向與動力。內容是通往目的地的路，商品才是你要帶人去的地方。"
+      "@type": "Person",
+      "name": "K叔｜不想上班的貓",
+      "url": "https://runing9to5.com",
+      "image": "https://runing9to5.com/assets/images/me.jpeg",
+      "jobTitle": "自媒體教練",
+      "worksFor": { "@type": "Organization", "name": "RUNING_9to5" },
+      "sameAs": [
+        "https://www.threads.com/@runing_9to5",
+        "https://www.instagram.com/@runing_9to5"
+      ],
+      "description": "幫助上班族與創作者透過自媒體、斜槓副業打造自由收入系統。提供電子書與一對一諮詢服務。"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "我沒有粉絲，也能開始經營自媒體嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。即使零粉絲，也能透過商品優先策略與專屬利基內容，慢慢吸引你的理想受眾。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "電子書真的能幫我變現嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "能。透過正確定位與價值前置方式，電子書是建立信任與被動收入的最佳入門產品。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "一對一諮詢能提供什麼幫助？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "我會協助你釐清定位、商品策略與內容規劃，並給出具體行動建議，幫你從想開始變成能做到。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "name": "自媒體變現電子書",
+      "image": "https://runing9to5.com/assets/images/product-ebook.jpg",
+      "description": "K叔整理的自媒體變現筆記，教你從定位到內容再到變現的完整流程。",
+      "brand": { "@type": "Brand", "name": "RUNING_9to5" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://portaly.cc/Uncleken",
+        "priceCurrency": "TWD",
+        "price": "1060",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
       }
     },
     {
-      "@type": "Question",
-      "name": "怎麼知道我的產品方向能不能長期變現？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "理想產品來自熱情、擅長、需求的黃金交叉點。熱情代表你願意做三個月不拿錢，擅長代表你比別人多懂一點，需求代表有人願意付費。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "內容要不要盡量廣一點，吸引更多人？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不用。越廣越難紅。用專賣店思維而非便利商店思維，精準定位不是限制，而是加速器。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "要怎麼打造個人品牌，讓人想追蹤我？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "人們追蹤的是真實、有故事的你。結合專業與生活，分享真實經驗並保留你的語氣與缺點。自媒體是放大鏡，真實感比完美更有吸引力。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "我流量不錯，但產品卻賣不出去？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "問題在於信任。流量不等於轉換。先交朋友再成交，互動比曝光更重要。建議比例：3篇人設文、2篇知識文、1篇銷售文。"
+      "@type": "Service",
+      "name": "K叔一對一諮詢",
+      "description": "針對個人品牌、自媒體策略與內容規劃提供一對一指導與陪跑服務。",
+      "provider": {
+        "@type": "Person",
+        "name": "K叔｜不想上班的貓",
+        "url": "https://runing9to5.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://portaly.cc/Uncleken",
+        "priceCurrency": "TWD",
+        "price": "9999",
+        "availability": "https://schema.org/InStock"
       }
     }
   ]
