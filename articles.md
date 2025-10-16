@@ -5,32 +5,42 @@ description: K叔的文章頁，分享自媒體經營、斜槓生活與個人品
 keywords: 自媒體, 文章, 經營心得, K叔
 permalink: /articles/
 ---
+
 <!-- 導覽列間距 -->
 <div style="height:70px;"></div>
 
 <div class="card-section" style="background:#e8f6ff; padding:20px; border-radius:10px;">
   <h1>📚 文章列表</h1>
 
+  <!-- 🔹 固定內容卡片 -->
+<div class="card-section" style="margin-top:30px;">
+  <div class="card" style="background:#fff6e8; padding:20px; border-radius:10px; margin-bottom:20px;">
+    <h2>自媒體起手式</h2>
+    <p>先想清楚你要幫誰，然後設計內容策略，才能有效變現。</p>
+  </div>
+</div>
+
   <!-- 🔹 分類篩選 -->
   <div id="category-menu" style="margin:20px 0;">
     <strong style="margin-right:10px;">篩選分類：</strong>
-    <button onclick="filterCategory('all')" class="category-btn active">全部</button>
+    <button onclick="filterCategory('all', this)" class="category-btn active">全部</button>
     {% assign categories = site.posts | map: 'categories' | join: ',' | split: ',' | uniq %}
     {% for category in categories %}
       {% if category != "" %}
-      <button onclick="filterCategory('{{ category | strip }}')" class="category-btn">
+      <button onclick="filterCategory('{{ category | strip }}', this)" class="category-btn">
         {{ category | strip }}
       </button>
       {% endif %}
     {% endfor %}
   </div>
 
-  <!-- 🔹 動態文章卡片 -->
+
+  <!-- 🔹 一般文章 -->
   <div id="articles-list">
-    {% assign sorted_posts = site.posts | sort: "date" | reverse %}
-    {% for post in sorted_posts %}
+    {% assign regular_posts = site.posts | reject: "pinned", true | sort: "date" | reverse %}
+    {% for post in regular_posts %}
     <div class="card" 
-         data-category="{{ post.categories | join: ' ' }}"
+         data-category="{{ post.categories | join: ',' }}"
          style="border:1px solid #ddd; border-radius:10px; padding:20px; margin-bottom:20px; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.05); transition: all 0.3s;">
       <h2 style="margin-top:0;">
         <a href="{{ post.url | relative_url }}" style="text-decoration:none; color:#333;">
@@ -48,12 +58,6 @@ permalink: /articles/
   </div>
 </div>
 
-<!-- 🔹 固定內容卡片 -->
-<div class="card-section" style="margin-top:30px;">
-  <div class="card" style="background:#fff6e8; padding:20px; border-radius:10px; margin-bottom:20px;">
-    <h2>自媒體起手式</h2>
-    <p>先想清楚你要幫誰，然後設計內容策略，才能有效變現。</p>
-  </div>
 
 <!-- 🔹 CSS 美化 -->
 <style>
@@ -79,12 +83,22 @@ permalink: /articles/
   transform: translateY(-3px);
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
+.pinned-card {
+  border-width: 2px;
+  background: #fffbea;
+}
 </style>
 
 <!-- 🔹 JS 篩選功能 -->
 <script>
-function filterCategory(category) {
-  const cards = document.querySelectorAll("#articles-list .card");
+function filterCategory(category, btn) {
+  const cards = document.querySelectorAll("#pinned-articles .card, #articles-list .card");
+
+  // 切換 active 狀態
+  document.querySelectorAll("#category-menu .category-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+
+  // 顯示/隱藏文章
   cards.forEach(card => {
     const cats = card.dataset.category.split(",");
     if (category === "all" || cats.includes(category)) {
@@ -95,10 +109,13 @@ function filterCategory(category) {
   });
 }
 </script>
+
+<!-- 🔹 JSON-LD 結構化資料 -->
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "{{ post.title }}",
+  "headline": "{{ page.title }}",
   "author": {
     "@type": "Person",
     "name": "K叔｜不想上班的貓"
@@ -109,7 +126,8 @@ function filterCategory(category) {
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "{{ post.url }}"
+    "@id": "{{ page.url | relative_url }}"
   },
-  "datePublished": "{{ post.date }}"
+  "datePublished": "{{ page.date | date: "%Y-%m-%d" }}"
 }
+</script>
