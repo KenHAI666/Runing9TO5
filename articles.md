@@ -13,12 +13,12 @@ permalink: /articles/
   <h1>📚 文章列表</h1>
 
   <!-- 🔹 固定內容卡片 -->
-<div class="card-section" style="margin-top:30px;">
+
   <div class="card" style="background:#fff6e8; padding:20px; border-radius:10px; margin-bottom:20px;">
     <h2>自媒體起手式</h2>
     <p>先想清楚你要幫誰，然後設計內容策略，才能有效變現。</p>
   </div>
-</div>
+
 
   <!-- 🔹 分類篩選 -->
   <div id="category-menu" style="margin:20px 0;">
