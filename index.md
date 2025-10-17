@@ -32,7 +32,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
   <small>已有 100+ 上班族加入，開始打造自己的副業系統</small>
 </section>
 <!-- 適合誰 -->
-<section class="card-section" style="padding:40px; background:#f6fafd;" id="who-for">
+<section class="card-section" style="padding:40px; background:#dceeff;" id="who-for">
   <h2>這套系統特別適合...</h2>
   <ul>
     <li>白天上班、下班想經營內容副業的上班族</li>
