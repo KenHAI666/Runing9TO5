@@ -186,19 +186,23 @@ p {
 }
 
 
-/* ----- 動畫（滑入） ----- */
+/* =====================================
+   動畫：滑入效果
+===================================== */
 .slide-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+  opacity: 0;                  /* 初始隱藏 */
+  transform: translateY(40px); /* 從下方位移 40px */
+  transition: all 0.8s ease;   /* 平滑過渡效果 */
 }
 
 .slide-in.show {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1;                  /* 顯示 */
+  transform: translateY(0);    /* 回到原位 */
 }
 
-/* ----- 內文字體保持 ----- */
+/* =====================================
+   內文字體保持統一
+===================================== */
 .card-section p,
 .card-section-1 p,
 .card-highlight p {
