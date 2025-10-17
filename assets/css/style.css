@@ -138,132 +138,138 @@ p {
 }
 
 /* =====================================
-   卡片樣式（桌機 + 手機 RWD 統一版）
+   K叔主頁卡片樣式整合版（手機優先）
 ===================================== */
 
-/* ----- 卡片主要樣式 ----- */
-.card-section,
-.card-section-1 {
-    border-radius: 12px;
-    padding: 32px 24px;             /* 桌機內距 */
-    margin: 30px auto;              /* 自動置中 */
-    max-width: 1000px;              /* 桌機最大寬度 */
-    width: 90%;                      /* 彈性寬度，手機自適應 */
-    word-break: break-word;          /* 長單詞自動斷行 */
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+/* ====== 基本設定 ====== */
+.card {
+  border-radius: 14px;
+  padding: 24px 18px;
+  margin: 24px auto;
+  width: 92%;
+  max-width: 950px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  word-break: break-word;
+  transition: all 0.5s ease;
 }
 
-.card-section {
-    background-color: #dceeff;
+/* 文字設定 */
+.card h3, .card h4, .card p {
+  margin: 0.5em 0;
+  line-height: 1.6;
+  color: #333;
 }
 
-.card-section-1 {
-    background-color: #ffffff;
-    padding: 30px 20px;             /* 保持原設計略小內距 */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin: 20px auto;
+/* 手機預設字體略大 */
+.card p {
+  font-size: 16px;
 }
 
-/* ----- 卡片內文字 ----- */
-.card-section p,
-.card-section-1 p {
-    margin: 0.5em 0;
-    font-size: 16px;                /* 桌機字體 */
-    line-height: 1.6;               /* 桌機行距 */
+/* 桌機字體微調 */
+@media (min-width: 768px) {
+  .card p { font-size: 17px; }
 }
 
-/* ----- 卡片按鈕 ----- */
-.btn-external {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #3B5B7A;
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
-    border-radius: 6px;
-    border: 2px solid #3B5B7A;
-    transition: all 0.3s ease;
-    margin-top: 15px;
-    width: fit-content;
-    max-width: 100%;
+/* ====== 三種樣式 ====== */
+
+/* 一般卡片 */
+.card-basic {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
 }
 
-.btn-external:hover {
-    background-color: #ffffff;
-    color: #3B5B7A;
-    border-color: #3B5B7A;
+/* 文章卡片 */
+.card-article {
+  background: #f9fbff;
+  border-left: 4px solid #91b8ff;
+  padding: 28px 22px;
 }
 
-/* ----- 表格卡片 ----- */
-.table-card {
-  margin: 20px 0;
-  overflow-x: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.card-article h3 {
+  color: #2b4b73;
+  font-weight: 700;
 }
 
-.table-card table {
+/* ㄇ型卡片（上有線，下淡化） */
+.card-highlight {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card-highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  border-collapse: collapse;
-  background: #fff;
+  height: 50%;
+  border-top: 3px solid #8fb6ff;
+  border-left: 3px solid #8fb6ff;
+  border-right: 3px solid #8fb6ff;
+  border-bottom: 0;
+  border-radius: 14px 14px 0 0;
+  pointer-events: none;
 }
 
-.table-card th,
-.table-card td {
-  border: 1px solid #ddd;
-  padding: 0.75em;
-  text-align: center;
+.card-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(143,182,255,0.05), transparent);
+  z-index: 0;
 }
 
-.table-card th {
-  background: #f5f5f5;
-  font-weight: bold;
+.card-highlight .content {
+  position: relative;
+  z-index: 2;
+  padding: 26px 20px;
 }
 
-/* ----- 手機專用 RWD ----- */
+/* ====== 動畫設定（整張卡片滑入） ====== */
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
+}
+
+.slide-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====== 插圖設定 ====== */
+.card img {
+  display: block;
+  margin: 0 auto 18px auto;
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ====== RWD 優化 ====== */
 @media (max-width: 600px) {
-    /* 卡片內距縮減 */
-    .card-section,
-    .card-section-1 {
-        padding: 20px 16px;
-    }
+  .card {
+    padding: 20px 16px;
+  }
 
-    /* 文字縮小、行距緊湊 */
-    .card-section p,
-    .card-section-1 p {
-        font-size: 15px;
-        line-height: 1.5;
-    }
+  .card img {
+    max-width: 200px;
+    margin-bottom: 14px;
+  }
 
-    /* 表格響應式 */
-    .table-card table,
-    .table-card thead,
-    .table-card tbody,
-    .table-card th,
-    .table-card td,
-    .table-card tr {
-        display: block;
-    }
-    .table-card tr {
-        margin-bottom: 1em;
-    }
-    .table-card td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-    }
-    .table-card td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 0.5em;
-        font-weight: bold;
-        text-align: left;
-    }
+  .card h3 {
+    font-size: 1.15em;
+  }
 }
-
 
 
 /* === 基本動畫設定 === */
