@@ -87,20 +87,20 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
   <h2 class="slide-in">用戶回饋</h2>
   <p class="slide-in">讀者與學員的真實心得：</p>
 
-  <div class="testimonial slide-in">
+  <div class="card-section-1">
     <blockquote>「特別適合內向創作者 & 邊上班邊想經營內容的人讓你慢慢培養產出節奏、寫得順、跑得穩
 打造出專屬自己的個人品牌~💪」
       <p>小花生，自媒體小編</p>
     </blockquote>
   </div>
 
-  <div class="testimonial slide-in">
+  <div class="card-section-1">
     <blockquote>「K叔電子報超讚！，讓我開始懂得怎麼規劃內容，感覺不再那麼迷茫。」
       <p>月行，Threads創作者</p>
     </blockquote>
   </div>
 
-  <div class="testimonial slide-in">
+  <div class="card-section-1">
     <blockquote>「這個人沒有太多花俏的行銷總讓我感覺像是在跟隔壁同事聊天一樣可以一起厭世、一起碎唸生活。」
       <p> TING J.， 叛逆工程師，自媒體新手</p>
     </blockquote>
