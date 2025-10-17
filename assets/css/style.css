@@ -137,50 +137,65 @@ p {
   }
 }
 
-
-
 /* =====================================
-   卡片樣式
+   卡片樣式（桌機 + 手機 RWD 統一版）
 ===================================== */
+
+/* ----- 卡片主要樣式 ----- */
+.card-section,
+.card-section-1 {
+    border-radius: 12px;
+    padding: 32px 24px;             /* 桌機內距 */
+    margin: 30px auto;              /* 自動置中 */
+    max-width: 1000px;              /* 桌機最大寬度 */
+    width: 90%;                      /* 彈性寬度，手機自適應 */
+    word-break: break-word;          /* 長單詞自動斷行 */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
 .card-section {
-  background-color: #dceeff;
-  border-radius: 12px;
-  padding: 32px 24px;
-  margin: 30px auto;
-  max-width: 1000px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    background-color: #dceeff;
 }
 
 .card-section-1 {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 30px 20px;
-  margin: 20px 0;
+    background-color: #ffffff;
+    padding: 30px 20px;             /* 保持原設計略小內距 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 20px auto;
 }
 
-/* 卡片內外部連結按鈕 */
+/* ----- 卡片內文字 ----- */
+.card-section p,
+.card-section-1 p {
+    margin: 0.5em 0;
+    font-size: 16px;                /* 桌機字體 */
+    line-height: 1.6;               /* 桌機行距 */
+}
+
+/* ----- 卡片按鈕 ----- */
 .btn-external {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #3B5B7A; /* 灰藍色底 */
-  color: #ffffff;           /* 白色字 */
-  font-weight: 600;
-  font-size: 16px;
-  text-decoration: none;
-  border-radius: 6px;
-  border: 2px solid #3B5B7A;
-  transition: all 0.3s ease;
-  margin-top: 15px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3B5B7A;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 2px solid #3B5B7A;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    width: fit-content;
+    max-width: 100%;
 }
 
 .btn-external:hover {
-  background-color: #ffffff; /* 背景變白 */
-  color: #3B5B7A;            /* 字變灰藍色 */
-  border-color: #3B5B7A;
+    background-color: #ffffff;
+    color: #3B5B7A;
+    border-color: #3B5B7A;
 }
 
-/* 表格卡片 */
+/* ----- 表格卡片 ----- */
 .table-card {
   margin: 20px 0;
   overflow-x: auto;
@@ -206,34 +221,51 @@ p {
   font-weight: bold;
 }
 
-/* 手機表格響應式 */
+/* ----- 手機專用 RWD ----- */
 @media (max-width: 600px) {
-  .table-card table,
-  .table-card thead,
-  .table-card tbody,
-  .table-card th,
-  .table-card td,
-  .table-card tr {
-    display: block;
-  }
-  .table-card tr {
-    margin-bottom: 1em;
-  }
-  .table-card td {
-    text-align: right;
-    padding-left: 50%;
-    position: relative;
-  }
-  .table-card td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0;
-    width: 50%;
-    padding-left: 0.5em;
-    font-weight: bold;
-    text-align: left;
-  }
+    /* 卡片內距縮減 */
+    .card-section,
+    .card-section-1 {
+        padding: 20px 16px;
+    }
+
+    /* 文字縮小、行距緊湊 */
+    .card-section p,
+    .card-section-1 p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* 表格響應式 */
+    .table-card table,
+    .table-card thead,
+    .table-card tbody,
+    .table-card th,
+    .table-card td,
+    .table-card tr {
+        display: block;
+    }
+    .table-card tr {
+        margin-bottom: 1em;
+    }
+    .table-card td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .table-card td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 0.5em;
+        font-weight: bold;
+        text-align: left;
+    }
 }
+
+
+
 /* === 基本動畫設定 === */
 .animate-section .slide-in {
   opacity: 0;
