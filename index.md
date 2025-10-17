@@ -83,7 +83,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
 </section>
 
 <!-- 用戶回饋區 -->
-<section class="card-section animate-section" style="background:#FAFAFA;">
+<section class="card-section slide-in" style="background:#FAFAFA;">
   <h2 class="slide-in">用戶回饋</h2>
   <p class="slide-in">讀者與學員的真實心得：</p>
 
@@ -313,13 +313,6 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
 document.addEventListener("DOMContentLoaded", function() {
   const sections = document.querySelectorAll(".animate-section");
 
-  sections.forEach(section => {
-    const cards = section.querySelectorAll(".slide-in");
-    cards.forEach((card, i) => {
-      card.classList.add(i % 2 === 0 ? "left" : "right");
-    });
-  });
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -335,3 +328,4 @@ document.addEventListener("DOMContentLoaded", function() {
   sections.forEach(section => observer.observe(section));
 });
 </script>
+
