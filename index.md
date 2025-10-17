@@ -27,11 +27,9 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
   <h1>陪上班族與內向創作者，打造可持續的自媒體變現系統</h1>
   <h2>不露臉、低風險，用內容打造第二收入</h2>
   <p>我是 K叔｜不想上班的貓。<br>專為上班族與內向創作者設計的變現系統，<br>從零開始打造不被流量綁架的副業。</p>
-   <a href="#subscribe" class="btn-external" style="margin-bottom:30px;">👉 現在就訂閱免費電子報領取《從零到變現：50 個自媒體小 Tips》</a>
+   <a href="#subscribe" class="btn-external" style="margin-bottom:30px;">👉 現在就訂閱免費電子報<br>領取《從零到變現：50 個自媒體小 Tips》</a>
   <br>
   <small>已有 100+ 上班族加入，開始打造自己的副業系統</small>
-  </p>
- 
 </section>
 <!-- 適合誰 -->
 <section class="card-section" style="padding:40px; background:#f6fafd;" id="who-for">
