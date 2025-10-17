@@ -47,7 +47,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
 </section>
 
 <!-- 痛點區-->
-<section id="pain-points" class="card-section" style="padding:60px 40px; background:#f6fafd; text-align:center;">
+<section id="pain-points" class="card-basic" style="padding:60px 40px; background:#f6fafd; text-align:center;">
   <h2 style="font-size:1.8em; margin-bottom:20px;">想要知識變現，你一定遇過這些問題</h2>
   <p style="color:#555; max-width:700px; margin:0 auto 40px;">
     你不是不努力，只是缺一套能持續運作的系統。<br>
