@@ -122,7 +122,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
 </section>
 
  <!-- 關於我區 -->
-<section class="card card-highlight" style="background:#FAFAFA;">
+<section class="card-section" style="background:#FAFAFA;">
   <h2>關於 K叔｜不想上班的貓</h2>
   <img src="/assets/images/me.jpeg" alt="K叔｜不想上班的貓 大頭照" class="about-img">
 
