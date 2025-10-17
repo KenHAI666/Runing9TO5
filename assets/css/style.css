@@ -325,17 +325,10 @@ p {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* =====================================
-   圖片自適應
-===================================== */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+#backToTop:hover {
+  transform: scale(1.1);
+  background: #2E4660;
 }
