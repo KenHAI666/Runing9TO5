@@ -168,47 +168,7 @@ p {
   margin: 20px auto;
 }
 
-/* ----- ㄇ型卡片延伸版 ----- */
-.card-highlight {
-  position: relative;
-  background-color: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 30px 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  margin: 20px auto;
-}
 
-.card-highlight::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  border-top: 3px solid #8fb6ff;
-  border-left: 3px solid #8fb6ff;
-  border-right: 3px solid #8fb6ff;
-  border-bottom: 0;
-  border-radius: 12px 12px 0 0;
-  pointer-events: none;
-}
-
-.card-highlight::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(to bottom, rgba(143,182,255,0.05), transparent);
-  z-index: 0;
-}
-
-.card-highlight .content {
-  position: relative;
-  z-index: 2;
-}
 
 /* ----- 動畫（滑入） ----- */
 .slide-in {
