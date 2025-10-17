@@ -311,21 +311,17 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
 <!-- JS 放在這裡 -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const sections = document.querySelectorAll(".animate-section");
+  const elements = document.querySelectorAll(".slide-in");
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const cards = entry.target.querySelectorAll(".slide-in");
-        cards.forEach((card, index) => {
-          setTimeout(() => card.classList.add("show"), index * 180);
-        });
+        entry.target.classList.add("show");
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.15 });
 
-  sections.forEach(section => observer.observe(section));
+  elements.forEach(el => observer.observe(el));
 });
 </script>
-
