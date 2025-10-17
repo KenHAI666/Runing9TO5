@@ -256,7 +256,31 @@ p {
   transform: translateX(0) translateY(0);
 }
 
+/* Details / Summary 卡片 */
+details {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 24px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
 
+details[open] {
+  background: #f6fafd;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
 /* =====================================
    大頭照 / 個人簡介
 ===================================== */
