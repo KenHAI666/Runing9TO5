@@ -55,7 +55,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
   </p>
 <img src="/assets/images/IN-1.jpg" 
      alt="K叔｜不想上班的貓-自媒體創作者與斜槓上班族陪伴指南" 
-     class="about-img">
+     style="width:150px; height:150px; object-fit:cover; border-radius:4px; display:block;">
   <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; max-width:800px; margin:0 auto;">
     <div style="flex:1 1 320px; background:#fff; border-radius:16px; padding:25px; box-shadow:0 3px 10px rgba(0,0,0,0.05); text-align:left;">
       <p>📉 想經營自媒體，但不知道該從哪裡開始</p>
