@@ -168,6 +168,22 @@ p {
   margin: 20px auto;
 }
 
+/* ----- 卡片按鈕 ----- */
+.btn-external {
+  display: inline-block;           /* 行內區塊，可自適應內容寬度 */
+  padding: 10px 20px;              /* 上下左右內距 */
+  background-color: #3B5B7A;       /* 按鈕背景色 */
+  color: #ffffff;                  /* 文字顏色 */
+  font-weight: 600;                /* 粗體字 */
+  font-size: 16px;                 /* 字體大小 */
+  text-decoration: none;           /* 移除下劃線 */
+  border-radius: 6px;              /* 圓角 */
+  border: 2px solid #3B5B7A;      /* 邊框顏色 */
+  transition: all 0.3s ease;       /* 過渡效果 */
+  margin-top: 15px;                /* 與上方元素間距 */
+  width: fit-content;              /* 自動適應內容寬度 */
+  max-width: 100%;                 /* 防止超出容器 */
+}
 
 
 /* ----- 動畫（滑入） ----- */
