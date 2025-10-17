@@ -39,10 +39,10 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
 <section class="card-section" style="padding:40px; background:#f6fafd;" id="who-for">
   <h2>這套系統特別適合...</h2>
   <ul>
-    <li>👩‍💻 白天上班、下班想經營內容副業的上班族</li>
-    <li>😼 想變現但不想露臉的內向創作者</li>
-    <li>📱 想用 Threads 或 IG 建立信任、打造穩定收入的人</li>
-    <li>🧠 想用內容累積價值、不是追流量的人</li>
+    <li>白天上班、下班想經營內容副業的上班族</li>
+    <li>想變現但不想露臉的內向創作者</li>
+    <li>想用 Threads 或 IG 建立信任、打造穩定收入的人</li>
+    <li>想用內容累積價值、不是追流量的人</li>
   </ul>
 </section>
 
@@ -53,7 +53,9 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
     你不是不努力，只是缺一套能持續運作的系統。<br>
     這些卡關，我都踩過，也幫上百位創作者解開。
   </p>
-
+<img src="/assets/images/me.jpeg" 
+     alt="K叔｜不想上班的貓 - 自媒體創作者與斜槓上班族陪伴指南的大頭照" 
+     class="about-img">
   <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; max-width:800px; margin:0 auto;">
     <div style="flex:1 1 320px; background:#fff; border-radius:16px; padding:25px; box-shadow:0 3px 10px rgba(0,0,0,0.05); text-align:left;">
       <p>📉 想經營自媒體，但不知道該從哪裡開始</p>
@@ -157,7 +159,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
   <h2>🌿 關於自媒體變現的 10 個常見問題（FAQ）</h2>
   <p>給想靠內容過生活，但又不想被流量綁架的你。由 <strong>K叔｜不想上班的貓</strong> 整理多年經驗。</p>
 
-  <details open>
+  <details>
     <summary>Q1：經營自媒體要從哪裡開始？要先有粉絲還是先有產品？</summary>
     <p><strong>A：</strong> 先別急著衝內容。建議採用「以終為始」——先設計商品，再去創作內容。這樣每一篇發文才會有明確目的，而不是無頭蒼蠅亂飛。</p>
   </details>
@@ -167,7 +169,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
     <p><strong>A：</strong> 用「興趣 × 擅長 × 有需求」公式檢查：你喜歡、懂一點、有人付錢。三者重疊，就是長期可變現主題。</p>
   </details>
 
-  <details open>
+  <details>
     <summary>Q3：我的自媒體應該走「多元分享」還是「專注利基」？</summary>
     <p><strong>A：</strong> 專賣店比便利商店更容易建立信任。內容越聚焦，越能被認定為專家。</p>
   </details>
