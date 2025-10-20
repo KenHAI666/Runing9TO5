@@ -185,6 +185,17 @@ p {
   max-width: 100%;                 /* 防止超出容器 */
 }
 
+.card-section-1 ul {
+    list-style: none;  /* 移除預設黑點 */
+    padding-left: 0;
+    text-align: center;
+}
+
+.card-section-1 ul li::before {
+    content: "• ";     /* 自訂黑點 */
+    color: #333;       /* 黑點顏色 */
+}
+
 
 /* =====================================
    動畫：滑入效果
