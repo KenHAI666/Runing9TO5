@@ -36,7 +36,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
 </section>
 
 <!-- 🔹 適合誰 -->
-<section class="card-section-1" style="padding:40px; background:#f6fbff;" id="who-for">
+<section class="card-section-1" style="padding:40px; background:#f6fbff; text-align:center;" id="who-for">
   <h2>這套系統特別適合...</h2>
   <ul>
     <li>白天上班、下班想經營內容副業的上班族</li>
