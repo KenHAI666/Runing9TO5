@@ -2,11 +2,13 @@
 title: "Runing9TO5"
 description: "K叔｜陪你用最懶人的方式，把自媒體經營變成可持續的斜槓收入。"
 baseurl: ""
-url: "https://runing9to5.com/"
+url: "https://runing9to5.com"
 
 author:
-  name: "K叔"
+  name: "K叔｜不想上班的貓"
   avatar: "/assets/images/me.jpeg"
+  email: "hi@runing9to5.com"
+  bio: "陪上班族與內向創作者，打造低風險的自媒體變現系統。"
 
 theme: minima
 
@@ -14,8 +16,9 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-include-cache
 
-# 導覽列
+# 導覽列（維持原樣）
 nav:
   - name: "首頁"
     link: "/"
@@ -28,9 +31,22 @@ nav:
   - name: "關於我"
     link: "/about"
 
-# SEO 專用
+# SEO 專用設定
 seo:
-  type: "website"                # 網站類型
-  twitter: false                  # 如果不用 Twitter Card
-  facebook: false                 # 如果不用 FB App ID
-  image: "/assets/images/og-default.jpg"  # 社群分享縮圖
+  type: "website"
+  title: "Runing9TO5｜上班族的低風險自媒體變現指南"
+  description: "陪上班族與內向創作者，用最懶的方式打造持續收入。"
+  locale: "zh_TW"
+  image: "/assets/images/og-default.jpg"
+  twitter: false
+  facebook: false
+
+# Sitemap 與 Feed
+feed:
+  path: feed.xml
+
+sitemap:
+  exclude:
+    - "/assets/"
+    - "/drafts/"
+  include_posts: true
