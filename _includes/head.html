@@ -1,14 +1,15 @@
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PNKDN6F6');</script>
-<!-- End Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PNKDN6F6');</script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}" />
 
@@ -20,19 +21,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
-  <!-- Open Graph (FB / LINE / Threads 分享) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ page.description | default: site.description }}">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="{% if page.layout == 'product' %}product{% else %}article{% endif %}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ site.url }}/assets/images/og-default.jpg">
-
+  <meta property="og:image" content="{{ page.image | default: site.url | append: '/assets/images/og-default.jpg' }}">
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
 
   <!-- Google Analytics (GA4) -->
-  <!-- ⚠️ 替換成你的測量 ID (例如 G-XXXXXXX) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V656NSBTJR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -40,9 +39,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     gtag('js', new Date());
     gtag('config', 'G-V656NSBTJR');
   </script>
-  
-  <!-- FAQ 結構化資料 -->
-<script type="application/ld+json">
+
+  <!-- JSON-LD 結構化資料 -->
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -65,44 +64,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {
           "@type": "Question",
           "name": "我沒有粉絲，也能開始經營自媒體嗎？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "可以。即使零粉絲，也能透過商品優先策略與專屬利基內容，慢慢吸引你的理想受眾。"
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "可以。即使零粉絲，也能透過商品優先策略與專屬利基內容，慢慢吸引你的理想受眾。" }
         },
         {
           "@type": "Question",
           "name": "電子書真的能幫我變現嗎？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "能。透過正確定位與價值前置方式，電子書是建立信任與被動收入的最佳入門產品。"
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "能。透過正確定位與價值前置方式，電子書是建立信任與被動收入的最佳入門產品。" }
         },
         {
           "@type": "Question",
           "name": "一對一諮詢能提供什麼幫助？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "我會協助你釐清定位、商品策略與內容規劃，並給出具體行動建議，幫你從想開始變成能做到。"
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "我會協助你釐清定位、商品策略與內容規劃，並給出具體行動建議，幫你從想開始變成能做到。" }
         }
       ]
     },
+
+    {% comment %}
+      條件判斷：
+      1. layout == product → Product Schema
+      2. path 包含 /articles/ 或 layout == post → Article Schema
+    {% endcomment %}
+    {% if page.layout == "product" %}
     {
       "@type": "Product",
-      "name": "自媒體變現電子書",
-      "image": "https://runing9to5.com/assets/images/product-ebook.jpg",
-      "description": "K叔整理的自媒體變現筆記，教你從定位到內容再到變現的完整流程。",
+      "name": "{{ page.title }}",
+      "image": "{{ page.image | default: '/assets/images/product-ebook.jpg' }}",
+      "description": "{{ page.description }}",
       "brand": { "@type": "Brand", "name": "RUNING_9to5" },
       "offers": {
         "@type": "Offer",
-        "url": "https://portaly.cc/Uncleken",
+        "url": "{{ page.url | absolute_url }}",
         "priceCurrency": "TWD",
         "price": "1060",
         "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition"
+        "itemCondition": "https://schema.org/NewCondition",
+        "priceValidUntil": "2026-12-31"
       }
-    },
+    }
+    {% else %}
+    {
+      "@type": "Article",
+      "headline": "{{ page.title }}",
+      "description": "{{ page.description | default: site.description }}",
+      "image": "{{ page.image | default: '/assets/images/product-ebook.jpg' }}",
+      "author": { "@type": "Person", "name": "K叔" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "RUNING_9to5",
+        "logo": { "@type": "ImageObject", "url": "https://runing9to5.com/assets/images/logo.png" }
+      },
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}"
+    }
+    {% endif %},
+
     {
       "@type": "Service",
       "name": "K叔一對一諮詢",
@@ -120,6 +135,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "availability": "https://schema.org/InStock"
       }
     }
+
   ]
 }
 </script>
