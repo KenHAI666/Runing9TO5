@@ -156,7 +156,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
   <p><strong>我相信，自由不是辭職後才開始，而是從現在就能累積的選擇權。</strong></p>
 </section>
 <!-- FAQ 區 -->
- <section class="card-section animate-section" id="faq">
+<section class="card-section animate-section" id="faq">
   <h2>🌿 關於自媒體變現的 10 個常見問題（FAQ）</h2>
   <p>給想靠內容過生活，但又不想被流量綁架的你。由 <strong>K叔｜不想上班的貓</strong> 整理多年經驗。</p>
 
@@ -175,7 +175,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
     <p><strong>A：</strong> 專賣店比便利商店更容易建立信任。內容越聚焦，越能被認定為專家。</p>
   </details>
 
-   <details>
+  <details>
     <summary>Q4：我很專業，為什麼沒人買單？</summary>
     <p><strong>A：</strong> 人們不會為知識付錢，而是為被理解付錢。變現靠「專業 × 真實 × 溫度」。</p>
   </details>
@@ -185,17 +185,17 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
     <p><strong>A：</strong> 問自己：他們是誰？煩什麼？你怎麼幫他？懂他們，自然建立差異化。</p>
   </details>
 
-   <details>
+  <details>
     <summary>Q6：商品的本質是什麼？</summary>
     <p><strong>A：</strong> 商品就是價值承諾，幫觀眾從 A 點走到 B 點，跨過他們的卡關。</p>
   </details>
 
-   <details>
+  <details>
     <summary>Q7：自媒體變現的路徑是什麼？</summary>
     <p><strong>A：</strong> 三階段漏斗：1️⃣ 吸引目光 2️⃣ 建立信任 3️⃣ 成交轉換。信任深，銷售自然發生。</p>
   </details>
 
-   <details>
+  <details>
     <summary>Q8：發文比例建議？</summary>
     <p><strong>A：</strong> 「3-2-1」配方：3 人設文、2 知識文、1 銷售文，循環輸出最有效。</p>
   </details>
@@ -205,7 +205,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
     <p><strong>A：</strong> 流量讓你被看到，互動讓你被記得。互動才是信任的起點。</p>
   </details>
 
-   <details>
+  <details>
     <summary>Q10：要多少粉絲才能開始變現？</summary>
     <p><strong>A：</strong> 不需要很多，一千個願意聽你的人就足夠。重點是信任，而非粉絲數量。</p>
   </details>
@@ -213,90 +213,41 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
   <a href="/resources" class="btn-external">👉 更多資源</a>
 </section>
 
+<!-- FAQ JSON-LD (僅保留一份) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "經營自媒體要從哪裡開始？要先有粉絲還是先有產品？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "先別急著衝內容。建議採用「以終為始」——先設計商品，再去創作內容。這樣每一篇發文才會有明確目的，而不是無頭蒼蠅亂飛。"
-      }
+    { "name": "經營自媒體要從哪裡開始？要先有粉絲還是先有產品？",
+      "acceptedAnswer": { "text": "先別急著衝內容。建議採用「以終為始」——先設計商品，再去創作內容。這樣每一篇發文才會有明確目的，而不是無頭蒼蠅亂飛。" }
     },
-    {
-      "@type": "Question",
-      "name": "怎麼知道我的產品能長期變現？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "用「興趣 × 擅長 × 有需求」公式檢查：你喜歡、懂一點、有人付錢。三者重疊，就是長期可變現主題。"
-      }
+    { "name": "怎麼知道我的產品能長期變現？",
+      "acceptedAnswer": { "text": "用「興趣 × 擅長 × 有需求」公式檢查：你喜歡、懂一點、有人付錢。三者重疊，就是長期可變現主題。" }
     },
-    {
-      "@type": "Question",
-      "name": "我的自媒體應該走「多元分享」還是「專注利基」？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "專賣店比便利商店更容易建立信任。內容越聚焦，越能被認定為專家。"
-      }
+    { "name": "我的自媒體應該走「多元分享」還是「專注利基」？",
+      "acceptedAnswer": { "text": "專賣店比便利商店更容易建立信任。內容越聚焦，越能被認定為專家。" }
     },
-    {
-      "@type": "Question",
-      "name": "我很專業，為什麼沒人買單？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "人們不會為知識付錢，而是為被理解付錢。變現靠「專業 × 真實 × 溫度」。"
-      }
+    { "name": "我很專業，為什麼沒人買單？",
+      "acceptedAnswer": { "text": "人們不會為知識付錢，而是為被理解付錢。變現靠「專業 × 真實 × 溫度」。" }
     },
-    {
-      "@type": "Question",
-      "name": "如何找到目標受眾並做差異化？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "問自己：他們是誰？煩什麼？你怎麼幫他？懂他們，自然建立差異化。"
-      }
+    { "name": "如何找到目標受眾並做差異化？",
+      "acceptedAnswer": { "text": "問自己：他們是誰？煩什麼？你怎麼幫他？懂他們，自然建立差異化。" }
     },
-    {
-      "@type": "Question",
-      "name": "商品的本質是什麼？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "商品就是價值承諾，幫觀眾從 A 點走到 B 點，跨過他們的卡關。"
-      }
+    { "name": "商品的本質是什麼？",
+      "acceptedAnswer": { "text": "商品就是價值承諾，幫觀眾從 A 點走到 B 點，跨過他們的卡關。" }
     },
-    {
-      "@type": "Question",
-      "name": "自媒體變現的路徑是什麼？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "三階段漏斗：1️⃣ 吸引目光 2️⃣ 建立信任 3️⃣ 成交轉換。信任深，銷售自然發生。"
-      }
+    { "name": "自媒體變現的路徑是什麼？",
+      "acceptedAnswer": { "text": "三階段漏斗：1️⃣ 吸引目光 2️⃣ 建立信任 3️⃣ 成交轉換。信任深，銷售自然發生。" }
     },
-    {
-      "@type": "Question",
-      "name": "發文比例建議？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "「3-2-1」配方：3 人設文、2 知識文、1 銷售文，循環輸出最有效。"
-      }
+    { "name": "發文比例建議？",
+      "acceptedAnswer": { "text": "「3-2-1」配方：3 人設文、2 知識文、1 銷售文，循環輸出最有效。" }
     },
-    {
-      "@type": "Question",
-      "name": "流量重要還是互動重要？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "流量讓你被看到，互動讓你被記得。互動才是信任的起點。"
-      }
+    { "name": "流量重要還是互動重要？",
+      "acceptedAnswer": { "text": "流量讓你被看到，互動讓你被記得。互動才是信任的起點。" }
     },
-    {
-      "@type": "Question",
-      "name": "要多少粉絲才能開始變現？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不需要很多，一千個願意聽你的人就足夠。重點是信任，而非粉絲數量。"
-      }
+    { "name": "要多少粉絲才能開始變現？",
+      "acceptedAnswer": { "text": "不需要很多，一千個願意聽你的人就足夠。重點是信任，而非粉絲數量。" }
     }
   ]
 }
