@@ -19,7 +19,11 @@
   <meta name="keywords" content="{{ page.keywords | default: '自媒體變現, 自媒體經營, 電子書教學, 個人品牌, 一對一諮詢, 上班族斜槓' }}">
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+
 
   <!-- Open Graph -->
   <meta property="og:title" content="{{ page.title }}">
