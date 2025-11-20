@@ -22,14 +22,14 @@ plugins:
 nav:
   - name: "首頁"
     link: "/"
-  - name: "文章"
+  - name: "更多文章"
     link: "/articles"
-  - name: "資源"
+  - name: "電子書"
     link: "/resources"
-  - name: "聯絡"
+  - name: "找我諮詢"
     link: "/contact"
-  - name: "關於我"
-    link: "/about"
+  - name: "找我諮詢"
+    link: "/#subscribe"
 
 # SEO 專用設定
 seo:
