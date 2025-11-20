@@ -82,6 +82,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
 
 <small style="display:block; margin-top:20px;">已有 100+ 上班族加入，開始打造自己的副業系統</small>
 </div>
+</section>
 <!-- 最新文章區 -->
 <section class="card-section" style="background:#f7f7f7;">
   <h2>📚 最新文章</h2>
