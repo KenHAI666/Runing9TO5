@@ -21,16 +21,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- 導覽連結 -->
         <div class="nav-links" id="navLinks">
-          <a href="/index">首頁</a>
-          <a href="/articles">最新文章</a>
-          <a href="/resources">更多資源</a>
-          <a href="/contact">聯絡我</a>
-        </div>
-      </nav>
-    </header>
+      
+      {% for item in site.nav %}
+        <a href="{{ item.link }}" 
+           {% if item.new_window %}target="_blank" rel="noopener noreferrer"{% endif %}
+           {% if item.highlight %}style="font-weight: bold; color: #e63946;"{% endif %}>
+           {{ item.name }}
+        </a>
+      {% endfor %}
+      
+    </div>
+  </nav>
+</header>
+   <!-- 導覽列間距 -->
+<div style="height:70px;"></div>
 
-    <!-- 導覽列間距 -->
-    <div style="height:70px;"></div>
 
     <!-- 文章 / 頁面內容 -->
     <main>
