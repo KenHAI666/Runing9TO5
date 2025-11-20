@@ -68,10 +68,20 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
       <p>⏰ 下班後想經營副業，但總覺得時間不夠用</p>
     </div>
   </div>
-     <a href="#subscribe" class="btn-external" style="margin-bottom:30px;">👉 現在就訂閱免費電子報<br>領取《從零到變現：50 個自媒體小 Tips》</a>
-  <br>
-  <small>已有 100+ 上班族加入，開始打造自己的副業系統</small>
-</section>
+   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px;">
+     
+  <a href="/contact" class="btn-external">
+     🚀 預約一對一諮詢 (釐清策略)
+  </a>
+  <a href="/resources" class="btn-external">
+     📘 購買電子書 (快速入門)
+  </a>
+  <a href="#subscribe" class="btn-external">
+     👉 訂閱免費電子報(領取小禮物)
+  </a>
+</div>
+
+<small style="display:block; margin-top:20px;">已有 100+ 上班族加入，開始打造自己的副業系統</small>
 
 <!-- 最新文章區 -->
 <section class="card-section" style="background:#f7f7f7;">
