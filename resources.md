@@ -7,20 +7,22 @@ keywords: 知識變現, 電子書, 內容策略, 自媒體經營, 產品打造
 <div style="height:70px;"></div>
 
 <section class="card-section-1" style="padding: 50px 30px; text-align: center;">
-    <h1 style="font-size: 2.5em; margin-bottom: 15px; color: #e63946;">
+    <h1 style="font-size: 2.5em; margin-bottom: 15px; color: #3B5B7A;">
         🔥 從零到變現：內容、信任、收入的完整路徑
     </h1>
-    <p style="font-size: 1.3em; max-width: 700px; margin: 0 auto 30px auto; color: #333;">
-        這不只是一本書，它是你從**素人**到**知識變現**的系統藍圖。<br>
-        徹底解決你「**不知道從何開始**」或「**卡在流量無法變現**」的所有問題。
+    
+    <p style="font-size: 1.3em; max-width: 700px; margin: 0 auto 30px auto; color: #333; line-height: 1.8;">
+        這不只是一本書，它是你從 <strong>素人</strong> 到 <strong>知識變現</strong> 的系統藍圖。<br>
+        徹底解決你「<strong>不知道從何開始</strong>」<br>
+        或「<strong>卡在流量無法變現</strong>」的所有問題。
     </p>
     
     <a href="https://portaly.cc/Uncleken/product/EbC4AFUvTs6sNQoM4jZn" 
        target="_blank" 
-       style="background-color: #e63946; color: white; padding: 18px 50px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1.4em; display: inline-block; border: 2px solid #e63946; transition: all 0.3s;"
+       style="background-color: #C48E64; color: white; padding: 18px 50px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1.4em; display: inline-block; border: 2px solid #C48E64; transition: all 0.3s;"
        
-       onmouseover="this.style.backgroundColor='#d32f2f'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(230, 57, 70, 0.4)';"
-       onmouseout="this.style.backgroundColor='#e63946'; this.style.transform='translateY(0)'; this.style.boxShadow='none';"
+       onmouseover="this.style.backgroundColor='#A67C52'; this.style.borderColor='#A67C52'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(196, 142, 100, 0.4)';"
+       onmouseout="this.style.backgroundColor='#C48E64'; this.style.borderColor='#C48E64'; this.style.transform='translateY(0)'; this.style.boxShadow='none';"
        
        onclick="gtag('event', 'add_to_cart', { 'event_category': 'Ebook', 'event_label': 'Ebook_Sales_Page_Hero_CTA', 'value': 1060, 'currency': 'TWD' });"
        >
@@ -36,18 +38,18 @@ keywords: 知識變現, 電子書, 內容策略, 自媒體經營, 產品打造
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px;">
         
         <div class="card-section-1" style="flex: 1 1 280px; text-align: left; padding: 25px;">
-            <h3 style="color: #e63946; margin-top: 0;"><span style="font-size: 1.5em; margin-right: 10px;">🛠️</span> 系統化定位框架</h3>
+            <h3 style="color: #C48E64; margin-top: 0;"><span style="font-size: 1.5em; margin-right: 10px;">🛠️</span> 系統化定位框架</h3>
             <p><strong>你將不再糾結。</strong> 從市場需求和個人優勢出發，建構一個能持續產出且具備商業價值的內容定位。</p>
         </div>
 
         <div class="card-section-1" style="flex: 1 1 280px; text-align: left; padding: 25px;">
-            <h3 style="color: #e63946; margin-top: 0;"><span style="font-size: 1.5em; margin-right: 10px;">📈 信任資產轉化路徑</span></h3>
-            <p>學會如何設計你的高價值知識產品，並將流量、粉絲，一步步轉化為**主動付費的客戶**。</p>
+            <h3 style="color: #C48E64; margin-top: 0;"><span style="font-size: 1.5em; margin-right: 10px;">📈 信任資產轉化路徑</span></h3>
+            <p>學會如何設計你的高價值知識產品，並將流量、粉絲，一步步轉化為 <strong>主動付費的客戶</strong>。</p>
         </div>
 
         <div class="card-section-1" style="flex: 1 1 280px; text-align: left; padding: 25px;">
-            <h3 style="color: #e63946; margin-top: 0;"><span style="font-size: 1.5em; margin-right: 10px;">⏱️ 效率化寫作流程</span></h3>
-            <p>提供**零基礎**也能快速上手的內容創作 SOP，讓你能在工作之餘，高效建立自媒體。</p>
+            <h3 style="color: #C48E64; margin-top: 0;"><span style="font-size: 1.5em; margin-right: 10px;">⏱️ 效率化寫作流程</span></h3>
+            <p>提供 <strong>零基礎</strong> 也能快速上手的內容創作 SOP，讓你能在工作之餘，高效建立自媒體。</p>
         </div>
         
     </div>
@@ -60,14 +62,14 @@ keywords: 知識變現, 電子書, 內容策略, 自媒體經營, 產品打造
     <div style="display: flex; flex-direction: column; align-items: center; max-width: 600px; margin: 0 auto; gap: 20px;">
         
         <p style="font-size: 1.1em; color: #333;">
-            如果你已經準備好開始變現，**不要猶豫，直接購買完整的系統藍圖**。
+            如果你已經準備好開始變現，<strong>不要猶豫，直接購買完整的系統藍圖</strong>。
         </p>
         <a href="https://portaly.cc/Uncleken/product/EbC4AFUvTs6sNQoM4jZn" 
            target="_blank" 
-           style="background-color: #e63946; color: white; padding: 15px 40px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1.2em; transition: all 0.3s;"
+           style="background-color: #C48E64; color: white; padding: 15px 40px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1.2em; transition: all 0.3s;"
            
-           onmouseover="this.style.backgroundColor='#d32f2f'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 10px rgba(230, 57, 70, 0.3)';"
-           onmouseout="this.style.backgroundColor='#e63946'; this.style.transform='translateY(0)'; this.style.boxShadow='none';"
+           onmouseover="this.style.backgroundColor='#A67C52'; this.style.borderColor='#A67C52'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 10px rgba(196, 142, 100, 0.3)';"
+           onmouseout="this.style.backgroundColor='#C48E64'; this.style.borderColor='#C48E64'; this.style.transform='translateY(0)'; this.style.boxShadow='none';"
            
            onclick="gtag('event', 'add_to_cart', { 'event_category': 'Ebook', 'event_label': 'Ebook_Sales_Page_Final_CTA', 'value': 1060, 'currency': 'TWD' });"
            >
@@ -77,7 +79,7 @@ keywords: 知識變現, 電子書, 內容策略, 自媒體經營, 產品打造
         <hr style="width: 50%; border: 0; border-top: 1px dashed #3B5B7A; margin: 25px 0;">
 
         <p style="font-size: 1.1em; color: #333;">
-            如果你還想試水溫，可以先領取免費的「**自媒體策略 + 破圈挑戰包**」。
+            如果你還想試水溫，可以先領取免費的「<strong>自媒體策略 + 破圈挑戰包</strong>」。
         </p>
         <a href="https://portaly.cc/Uncleken/product/jXFxr1YZGMN04GIL8uiE" 
            target="_blank" 
@@ -108,4 +110,11 @@ keywords: 知識變現, 電子書, 內容策略, 自媒體經營, 產品打造
   },
   "offers": {
     "@type": "Offer",
-    "url": "
+    "url": "https://portaly.cc/Uncleken/product/EbC4AFUvTs6sNQoM4jZn",
+    "priceCurrency": "TWD",
+    "price": "1060",
+    "availability": "https://schema.org/InStock",
+    "priceValidUntil": "2025-12-31"
+  }
+}
+</script>
