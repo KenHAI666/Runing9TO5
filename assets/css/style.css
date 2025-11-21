@@ -1,3 +1,7 @@
+import random
+import requests
+from datetime import datetime
+
 /* =====================================
    全局樣式
 ===================================== */
@@ -138,14 +142,19 @@ p {
 }
 
 /* =====================================
-   卡片樣式升級版
+   卡片樣式升級版 (UX/美學修正)
 ===================================== */
 
 /* ----- 基本樣式----- */
 .card-section,
 .card-section-1 {
+  /* 結構/UX 修正 */
+  position: relative;           /* 讓偽元素定位 (新增) */
+  padding: 32px 32px 32px 32px; /* 修正: 增加左側內距，為左側色塊預留空間 (原為 32px 24px) */
+  transition: all 0.3s ease-in-out; /* 確保懸停有平滑過渡 (新增) */
+  
+  /* 原始樣式 */
   border-radius: 12px;
-  padding: 32px 24px;         /* 桌機內距 */
   margin: 30px auto;          /* 自動置中 */
   max-width: 1000px;          /* 桌機最大寬度 */
   width: 90%;                 /* 手機自適應 */
@@ -153,19 +162,39 @@ p {
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.8s ease;
 }
 
-/* 原始配色保持 */
+/* 顏色修正: .card-section 顏色調整 */
 .card-section {
-  background-color: #dceeff;
+  background-color: #f0f4f8; /* 修正: 新的淺灰藍 */
 }
 
 .card-section-1 {
-  background-color: #ffffff;
+  background-color: #ffffff; /* 保持白色 */
   padding: 30px 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   margin: 20px auto;
+}
+
+/* UX 強化: 卡片左側靜態色塊 & 懸停效果 (新增) */
+/* 懸停抬升效果 */
+.card-section:hover,
+.card-section-1:hover {
+  transform: translateY(-5px); /* 向上抬升 */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* 加強陰影，增加立體感 */
+}
+
+/* 左側色塊樣式 */
+.card-section::before,
+.card-section-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px; /* 色塊的寬度 */
+  height: 100%;
+  /* 使用品牌漸層色作為強調色 */
+  background: linear-gradient(to bottom, #3B5B7A, #e63946);
 }
 
 /* ----- 卡片按鈕 ----- */
@@ -301,7 +330,7 @@ p {
 
 /* =====================================
    回到頂端按鈕
-===================================== */
+==================================== */
 #backToTop {
   display: none;
   position: fixed;
