@@ -28,7 +28,7 @@ keywords: 知識變現, 電子書, 內容策略, 自媒體經營, 產品打造
        >
        立即取得系統藍圖！ (NT$1,060)
     </a>
-    <p style="margin-top: 15px; color: #3B5B7A;">💡 包含終身更新及專屬社群權限</p>
+    <p style="margin-top: 15px; color: #3B5B7A;">💡 包含一次  專屬諮詢</p>
 </section>
 
 <section class="card-section" style="text-align: center;">
