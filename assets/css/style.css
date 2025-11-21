@@ -193,6 +193,8 @@ p {
   left: 0;
   width: 8px; /* 色塊的寬度 */
   height: 100%;
+  border-top-left-radius: 15px; 
+  border-bottom-left-radius: 15px;
   /* 使用品牌漸層色作為強調色 */
   background: linear-gradient(to bottom, #3B5B7A, #e63946);
 }
