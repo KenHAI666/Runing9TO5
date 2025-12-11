@@ -99,14 +99,14 @@
   {% assign current_post_categories = page.categories %}
   
   {% for cat in current_post_categories %}
-    {# 尋找所有包含這個分類的文章 #}
+  
     {% assign posts_with_category = site.posts | where_exp:"p","p.categories contains cat" %}
     
-    {# 將找到的文章加入候選列表 #}
+
     {% assign related_posts_candidates = related_posts_candidates | concat: posts_with_category %}
   {% endfor %}
   
-  {# 移除重複的文章（因為一篇文可能有多個相同分類），並過濾掉目前文章 #}
+
   {% assign unique_related_posts = related_posts_candidates | uniq %}
   {% assign final_related_posts = unique_related_posts | where_exp:"post","post.url != page.url" %}
   
@@ -131,7 +131,7 @@
 <h3 style="margin-bottom:15px; color: #3B5B7A;">最新文章</h3>
 <div style="display:flex; flex-wrap:wrap; gap:15px;">
   
-  {% comment %} 邏輯優化：先排除目前文章，再取前 3 篇，確保數量穩定。site.posts 預設為最新排序。 {% endcomment %}
+
   
   {% assign latest_posts = site.posts | where_exp:"post","post.url != page.url" %}
   
