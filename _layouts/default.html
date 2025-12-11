@@ -85,37 +85,68 @@
            👉 現在就訂閱免費電子報
         </a>
         
-        <h3 style="margin-bottom:15px; color: #3B5B7A; margin-top: 30px;">相關文章</h3>
-        <div style="display:flex; flex-wrap:wrap; gap:15px; margin-bottom:30px;">
-          {% assign related_posts = site.posts | where_exp:"p","p.categories contains page.categories[0]" %}
-          {% for post in related_posts limit:3 %}
-            {% if post.url != page.url %}
-              <a href="{{ post.url | relative_url }}" style="flex:1 1 30%; background:#fff; padding:10px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.1); text-decoration:none; color:#333; transition: all 0.3s;"
-                 onmouseover="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'; this.style.transform='translateY(-2px)';"
-                 onmouseout="this.style.boxShadow='0 1px 4px rgba(0,0,0,0.1)'; this.style.transform='translateY(0)';"
-                 >
-                <h4 style="margin:0 0 5px 0; font-size:14px; color: #3B5B7A;">{{ post.title }}</h4>
-                <p style="margin:0; font-size:12px; color:#666;">{{ post.date | date: "%Y-%m-%d" }}</p>
-              </a>
-            {% endif %}
-          {% endfor %}
-        </div>
+        {% comment %}
+  ==========================================
+  ✅ 區塊一：優化後的相關文章 (最大化關聯性)
+  ==========================================
+{% endcomment %}
+<h3 style="margin-bottom:15px; color: #3B5B7A; margin-top: 30px;">相關文章</h3>
+<div style="display:flex; flex-wrap:wrap; gap:15px; margin-bottom:30px;">
+  
+  {% comment %} 邏輯優化：迭代當前文章的所有分類，篩選出包含任一相同分類的文章，以確保相關性最大化。 {% endcomment %}
+  
+  {% assign related_posts_candidates = "" | split: "" %}
+  {% assign current_post_categories = page.categories %}
+  
+  {% for cat in current_post_categories %}
+    {# 尋找所有包含這個分類的文章 #}
+    {% assign posts_with_category = site.posts | where_exp:"p","p.categories contains cat" %}
+    
+    {# 將找到的文章加入候選列表 #}
+    {% assign related_posts_candidates = related_posts_candidates | concat: posts_with_category %}
+  {% endfor %}
+  
+  {# 移除重複的文章（因為一篇文可能有多個相同分類），並過濾掉目前文章 #}
+  {% assign unique_related_posts = related_posts_candidates | uniq %}
+  {% assign final_related_posts = unique_related_posts | where_exp:"post","post.url != page.url" %}
+  
+  {% for post in final_related_posts limit:3 %}
+    <a href="{{ post.url | relative_url }}" 
+       style="flex:1 1 30%; background:#fff; padding:10px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.1); text-decoration:none; color:#333; transition: all 0.3s;"
+       onmouseover="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'; this.style.transform='translateY(-2px)';"
+       onmouseout="this.style.boxShadow='0 1px 4px rgba(0,0,0,0.1)'; this.style.transform='translateY(0)';"
+    >
+      <h4 style="margin:0 0 5px 0; font-size:14px; color: #3B5B7A;">{{ post.title }}</h4>
+      <p style="margin:0; font-size:12px; color:#666;">{{ post.date | date: "%Y-%m-%d" }}</p>
+    </a>
+  {% endfor %}
+  
+</div>
 
-        <h3 style="margin-bottom:15px; color: #3B5B7A;">最新文章</h3>
-        <div style="display:flex; flex-wrap:wrap; gap:15px;">
-          {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
-          {% for post in sorted_posts limit:3 %}
-            {% if post.url != page.url %}
-              <a href="{{ post.url | relative_url }}" style="flex:1 1 30%; background:#fff; padding:10px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.1); text-decoration:none; color:#333; transition: all 0.3s;"
-                 onmouseover="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'; this.style.transform='translateY(-2px)';"
-                 onmouseout="this.style.boxShadow='0 1px 4px rgba(0,0,0,0.1)'; this.style.transform='translateY(0)';"
-                 >
-                <h4 style="margin:0 0 5px 0; font-size:14px; color: #3B5B7A;">{{ post.title }}</h4>
-                <p style="margin:0; font-size:12px; color:#666;">{{ post.date | date: "%Y-%m-%d" }}</p>
-              </a>
-            {% endif %}
-          {% endfor %}
-        </div>
+{% comment %}
+  ==========================================
+  ✅ 區塊二：優化後的最新文章 (穩定顯示 3 篇)
+  ==========================================
+{% endcomment %}
+<h3 style="margin-bottom:15px; color: #3B5B7A;">最新文章</h3>
+<div style="display:flex; flex-wrap:wrap; gap:15px;">
+  
+  {% comment %} 邏輯優化：先排除目前文章，再取前 3 篇，確保數量穩定。site.posts 預設為最新排序。 {% endcomment %}
+  
+  {% assign latest_posts = site.posts | where_exp:"post","post.url != page.url" %}
+  
+  {% for post in latest_posts limit:3 %}
+    <a href="{{ post.url | relative_url }}" 
+       style="flex:1 1 30%; background:#fff; padding:10px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.1); text-decoration:none; color:#333; transition: all 0.3s;"
+       onmouseover="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'; this.style.transform='translateY(-2px)';"
+       onmouseout="this.style.boxShadow='0 1px 4px rgba(0,0,0,0.1)'; this.style.transform='translateY(0)';"
+    >
+      <h4 style="margin:0 0 5px 0; font-size:14px; color: #3B5B7A;">{{ post.title }}</h4>
+      <p style="margin:0; font-size:12px; color:#666;">{{ post.date | date: "%Y-%m-%d" }}</p>
+    </a>
+  {% endfor %}
+  
+</div>
 
       </section>
       {% endif %}
