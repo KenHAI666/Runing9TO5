@@ -1,8 +1,4 @@
-import random
-import requests
-from datetime import datetime
-
-/* =====================================
+ /* =====================================
    全局樣式
 ===================================== */
 body {
@@ -354,3 +350,149 @@ p {
   transform: scale(1.1);
   background: #2E4660;
 }
+
+/* =====================================
+   首頁各 Section 語意化樣式
+   （取代原本 inline style）
+===================================== */
+
+/* Hero 區 */
+.section-hero {
+  background: #dceeff;
+  text-align: center;
+}
+
+/* 適合誰 */
+.section-who-for {
+  background: #f6fbff;
+  text-align: center;
+}
+
+/* 痛點區 */
+.section-pain-points {
+  background: #f6fafd;
+  text-align: center;
+}
+
+.pain-points-title {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.pain-points-desc {
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.pain-points-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pain-point-card {
+  flex: 1 1 320px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+/* 按鈕群組 */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.social-proof {
+  display: block;
+  margin-top: 20px;
+  color: #666;
+}
+
+/* 最新文章 */
+.section-posts {
+  background: #f7f7f7;
+}
+
+/* 用戶回饋 */
+.section-testimonials {
+  background: #FAFAFA;
+}
+
+/* 電子報 */
+.section-subscribe {
+  background: #dceeff;
+}
+
+/* 關於我 */
+.section-about {
+  background: #FAFAFA;
+}
+
+/* 聯絡我 */
+.section-contact {
+  background: #FAFAFA;
+}
+
+/* =====================================
+   文章頁底部 CTA 按鈕
+   （取代原本 onmouseover inline JS）
+===================================== */
+
+/* 電子書按鈕 */
+.btn-ebook {
+  flex: 1 1 45%;
+  max-width: 300px;
+  background-color: #C48E64;
+  border-color: #C48E64;
+  font-size: 1.1em;
+  padding: 15px;
+  margin: 0;
+}
+
+.btn-ebook:hover {
+  background-color: #A67C52;
+  border-color: #A67C52;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(196, 142, 100, 0.4);
+}
+
+/* 諮詢按鈕 */
+.btn-consult {
+  flex: 1 1 45%;
+  max-width: 300px;
+  background-color: #3B5B7A;
+  border-color: #3B5B7A;
+  font-size: 1.1em;
+  padding: 15px;
+  margin: 0;
+}
+
+.btn-consult:hover {
+  background-color: #2E4660;
+  border-color: #2E4660;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(59, 91, 122, 0.4);
+}
+
+/* 電子報訂閱 CTA */
+.btn-subscribe-cta {
+  margin-bottom: 30px;
+  background-color: #A67C52;
+  border-color: #A67C52;
+}
+
+.btn-subscribe-cta:hover {
+  background-color: #C48E64;
+  border-color: #C48E64;
+}
+
