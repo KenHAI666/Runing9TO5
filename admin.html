@@ -1233,7 +1233,7 @@ function showEditor() {
 
 function switchTab(tab) {
   const isEdit = tab === 'edit';
-  document.getElementById('editPane').style.display    = isEdit ? 'flex' : 'none';
+  document.getElementById('editPane').style.display    = isEdit ? 'block' : 'none';
   document.getElementById('previewPane').style.display = isEdit ? 'none' : 'block';
   document.getElementById('tabEdit').className    = 'tab' + (isEdit ? ' active' : '');
   document.getElementById('tabPreview').className = 'tab' + (!isEdit ? ' active' : '');
