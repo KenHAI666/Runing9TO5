@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Runing9TO5 後台</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1e2d3d;
+      --navy-light: #2a3f55;
+      --blue: #3B5B7A;
+      --blue-light: #4e7499;
+      --accent: #C48E64;
+      --accent-dark: #a67850;
+      --bg: #0f1923;
+      --surface: #19263a;
+      --surface2: #1f3048;
+      --border: #2a3f55;
+      --text: #e8edf2;
+      --text-muted: #7a99b8;
+      --success: #3aad8f;
+      --danger: #e05252;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ══════════════════════════════════
+       登入頁
+    ══════════════════════════════════ */
+    #loginScreen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 背景格線裝飾 */
+    #loginScreen::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(59,91,122,0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,91,122,0.12) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    }
+
+    /* 光暈 */
+    #loginScreen::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,142,100,0.08) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .login-card {
+      position: relative;
+      z-index: 1;
+      width: 380px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 36px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+      animation: loginFadeIn 0.5s ease both;
+    }
+
+    @keyframes loginFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .login-logo {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .login-logo-mark {
+      font-size: 32px;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 8px;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    .login-logo-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.5px;
+    }
+
+    .login-logo-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .login-field {
+      margin-bottom: 16px;
+    }
+
+    .login-label {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .login-input-wrap {
+      position: relative;
+    }
+
+    .login-input {
+      width: 100%;
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 11px 40px 11px 14px;
+      color: var(--text);
+      font-size: 15px;
+      font-family: var(--mono);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .login-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(196,142,100,0.12);
+    }
+
+    .login-input.error {
+      border-color: var(--danger);
+      box-shadow: 0 0 0 3px rgba(224,82,82,0.12);
+      animation: shake 0.4s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%       { transform: translateX(-6px); }
+      40%       { transform: translateX(6px); }
+      60%       { transform: translateX(-4px); }
+      80%       { transform: translateX(4px); }
+    }
+
+    .eye-toggle {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 16px;
+      padding: 2px;
+      transition: color 0.15s;
+    }
+
+    .eye-toggle:hover { color: var(--text); }
+
+    .login-error {
+      font-size: 12px;
+      color: var(--danger);
+      margin-top: 6px;
+      display: none;
+    }
+
+    .login-btn {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Noto Sans TC', sans-serif;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .login-btn:hover  { background: var(--accent-dark); transform: translateY(-1px); }
+    .login-btn:active { transform: translateY(0); }
+    .login-btn:disabled { background: #4a5568; cursor: not-allowed; transform: none; }
+
+    .login-hint {
+      margin-top: 24px;
+      padding: 12px;
+      background: var(--navy);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .login-hint-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+    }
+
+    .login-hint-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .login-hint-text code {
+      font-family: var(--mono);
+      background: var(--surface2);
+      padding: 1px 6px;
+      border-radius: 4px;
+      color: var(--accent);
+      font-size: 12px;
+    }
+
+    /* 嘗試次數警告 */
+    .attempts-bar {
+      display: flex;
+      gap: 4px;
+      margin-top: 12px;
+    }
+
+    .attempt-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: background 0.3s;
+    }
+
+    .attempt-dot.used { background: var(--danger); }
+
+    /* ══════════════════════════════════
+       後台主體（與登入共用同一檔案）
+    ══════════════════════════════════ */
+    #adminApp {
+      display: none;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .topbar-logo {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .topbar-logo span { color: var(--text-muted); font-weight: 400; }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .topbar-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--text-muted);
+    }
+    .status-dot.connected { background: var(--success); }
+
+    .logout-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .logout-btn:hover { color: var(--danger); border-color: var(--danger); }
+
+    .layout {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      height: calc(100vh - 58px);
+    }
+
+    .sidebar {
+      width: 260px;
+      min-width: 260px;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .sidebar-section {
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .form-group { margin-bottom: 12px; }
+
+    .form-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .form-input {
+      width: 100%;
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      color: var(--text);
+      font-size: 13px;
+      font-family: var(--mono);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-input:focus { border-color: var(--blue-light); }
+    .form-input::placeholder { color: #3a5270; }
+
+    .tags-input-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 8px;
+      min-height: 38px;
+      cursor: text;
+    }
+    .tags-input-wrap:focus-within { border-color: var(--blue-light); }
+
+    .tag-chip {
+      background: var(--blue);
+      color: #fff;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tag-chip button {
+      background: none; border: none;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer; font-size: 14px; line-height: 1; padding: 0;
+    }
+    .tag-chip button:hover { color: #fff; }
+
+    .tags-input {
+      background: none; border: none; outline: none;
+      color: var(--text); font-size: 13px; min-width: 80px; flex: 1;
+    }
+
+    .btn {
+      border: none; border-radius: 6px;
+      padding: 9px 16px; font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .btn-primary { background: var(--accent); color: #fff; width: 100%; justify-content: center; }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-primary:disabled { background: #4a5568; cursor: not-allowed; opacity: 0.7; }
+    .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+    .btn-secondary:hover { background: var(--blue); border-color: var(--blue); }
+    .btn-danger { background: transparent; color: var(--danger); border: 1px solid var(--danger); }
+    .btn-danger:hover { background: var(--danger); color: #fff; }
+    .btn-success { background: var(--success); color: #fff; width: 100%; justify-content: center; }
+    .btn-success:hover { filter: brightness(1.1); }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .editor-toolbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toolbar-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: var(--mono);
+    }
+    .toolbar-btn:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+    .toolbar-divider { width: 1px; height: 20px; background: var(--border); margin: 0 4px; }
+
+    .editor-area { flex: 1; display: flex; overflow: hidden; }
+
+    .editor-pane, .preview-pane {
+      flex: 1; overflow-y: auto; padding: 24px 28px;
+    }
+    .editor-pane { border-right: 1px solid var(--border); }
+
+    .title-input {
+      width: 100%; background: none; border: none; outline: none;
+      color: var(--text); font-size: 26px; font-weight: 700;
+      font-family: 'Noto Sans TC', sans-serif;
+      margin-bottom: 6px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 12px;
+      transition: border-color 0.2s;
+    }
+    .title-input:focus { border-bottom-color: var(--accent); }
+    .title-input::placeholder { color: #2d4a6a; }
+
+    .desc-input {
+      width: 100%; background: none; border: none; outline: none;
+      color: var(--text-muted); font-size: 14px;
+      font-family: 'Noto Sans TC', sans-serif;
+      margin-bottom: 20px; resize: none; line-height: 1.5;
+    }
+    .desc-input::placeholder { color: #2d4a6a; }
+
+    .content-editor {
+      width: 100%; background: none; border: none; outline: none;
+      color: var(--text); font-size: 15px;
+      font-family: 'Noto Sans TC', sans-serif;
+      line-height: 1.8; resize: none;
+      min-height: calc(100vh - 300px);
+    }
+    .content-editor::placeholder { color: #2d4a6a; }
+
+    .preview-pane { background: #fdf6e3; }
+
+    .preview-content {
+      max-width: 680px; margin: 0 auto;
+      color: #333; font-family: 'Noto Sans TC', sans-serif; line-height: 1.8;
+    }
+    .preview-content h1 { font-size: 26px; font-weight: 700; margin-bottom: 8px; color: #1a1a1a; }
+    .preview-content h2 { font-size: 20px; font-weight: 700; margin: 24px 0 12px; color: #1a1a1a; border-left: 4px solid #3B5B7A; padding-left: 12px; }
+    .preview-content h3 { font-size: 16px; font-weight: 700; margin: 20px 0 8px; color: #333; }
+    .preview-content p { margin-bottom: 16px; }
+    .preview-content strong { font-weight: 700; color: #1a1a1a; }
+    .preview-content em { font-style: italic; color: #555; }
+    .preview-content ul, .preview-content ol { padding-left: 24px; margin-bottom: 16px; }
+    .preview-content li { margin-bottom: 6px; }
+    .preview-content blockquote { border-left: 4px solid #C48E64; padding-left: 16px; color: #666; font-style: italic; margin: 20px 0; }
+    .preview-content code { background: #e8e0d0; padding: 2px 6px; border-radius: 4px; font-family: var(--mono); font-size: 13px; }
+    .preview-content hr { border: none; border-top: 2px dashed #ddd; margin: 24px 0; }
+    .preview-meta { color: #999; font-size: 13px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #ddd; }
+
+    .post-list { padding: 8px 0; }
+
+    .post-item {
+      padding: 10px 16px; border-radius: 6px; cursor: pointer;
+      display: flex; flex-direction: column; gap: 3px;
+      transition: background 0.15s; position: relative;
+    }
+    .post-item:hover { background: var(--surface2); }
+    .post-item.active { background: var(--navy-light); }
+
+    .post-item-title {
+      font-size: 13px; font-weight: 500; color: var(--text);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 28px;
+    }
+    .post-item-date { font-size: 11px; color: var(--text-muted); font-family: var(--mono); }
+
+    .post-item-del {
+      position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: var(--text-muted);
+      cursor: pointer; font-size: 16px; opacity: 0; transition: opacity 0.15s; padding: 4px;
+    }
+    .post-item:hover .post-item-del { opacity: 1; }
+    .post-item-del:hover { color: var(--danger) !important; }
+
+    .new-post-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 16px; color: var(--text-muted);
+      cursor: pointer; font-size: 13px; border-radius: 6px;
+      transition: all 0.15s; border: 1px dashed var(--border);
+      margin: 8px 16px;
+    }
+    .new-post-btn:hover { color: var(--text); border-color: var(--blue-light); background: var(--surface2); }
+
+    .toast-container {
+      position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+
+    .toast {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px 16px; font-size: 13px;
+      color: var(--text); box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      animation: toastIn 0.3s ease;
+      display: flex; align-items: center; gap: 8px; min-width: 240px;
+    }
+    .toast.success { border-left: 3px solid var(--success); }
+    .toast.error   { border-left: 3px solid var(--danger); }
+    .toast.loading { border-left: 3px solid var(--accent); }
+
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 1000; backdrop-filter: blur(4px);
+    }
+
+    .modal {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px; width: 420px; max-width: 90vw;
+    }
+    .modal-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .modal-desc  { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+    .modal-actions { display: flex; gap: 10px; margin-top: 20px; }
+    .modal-actions .btn { flex: 1; justify-content: center; }
+
+    .tab-bar { display: flex; gap: 0; }
+    .tab {
+      padding: 6px 14px; font-size: 12px; font-weight: 600;
+      color: var(--text-muted); cursor: pointer; border-radius: 5px; transition: all 0.15s;
+    }
+    .tab.active { background: var(--blue); color: #fff; }
+
+    .word-count { font-size: 11px; color: var(--text-muted); font-family: var(--mono); margin-left: auto; padding: 0 8px; }
+
+    .settings-note {
+      background: var(--navy); border: 1px solid var(--border);
+      border-radius: 6px; padding: 10px 12px;
+      font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-top: 8px;
+    }
+    .settings-note a { color: var(--accent); text-decoration: none; }
+    .settings-note a:hover { text-decoration: underline; }
+
+    .spinner {
+      width: 14px; height: 14px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff; border-radius: 50%;
+      animation: spin 0.7s linear infinite; display: inline-block;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .empty-state {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      color: var(--text-muted); gap: 12px; text-align: center; padding: 40px;
+    }
+    .empty-state-icon { font-size: 48px; opacity: 0.4; }
+    .empty-state-title { font-size: 16px; font-weight: 600; color: var(--text); }
+    .empty-state-desc { font-size: 13px; max-width: 280px; line-height: 1.6; }
+
+    /* 改密碼區 */
+    .change-pw-section {
+      margin-top: 16px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     登入畫面
+══════════════════════════════════ -->
+<div id="loginScreen">
+  <div class="login-card">
+    <div class="login-logo">
+      <span class="login-logo-mark">✦</span>
+      <div class="login-logo-title">Runing9TO5 後台</div>
+      <div class="login-logo-sub">請輸入密碼以繼續</div>
+    </div>
+
+    <div class="login-field">
+      <label class="login-label">密碼</label>
+      <div class="login-input-wrap">
+        <input class="login-input" type="password" id="pwInput"
+               placeholder="••••••••"
+               onkeydown="if(event.key==='Enter') doLogin()">
+        <button class="eye-toggle" onclick="toggleEye()" id="eyeBtn">👁</button>
+      </div>
+      <div class="login-error" id="loginError">密碼錯誤，請再試一次</div>
+    </div>
+
+    <button class="login-btn" onclick="doLogin()" id="loginBtn">
+      進入後台 →
+    </button>
+
+    <!-- 嘗試次數指示 -->
+    <div class="attempts-bar" id="attemptsBar" style="display:none;">
+      <div class="attempt-dot" id="dot0"></div>
+      <div class="attempt-dot" id="dot1"></div>
+      <div class="attempt-dot" id="dot2"></div>
+      <div class="attempt-dot" id="dot3"></div>
+      <div class="attempt-dot" id="dot4"></div>
+    </div>
+
+    <div class="login-hint">
+      <div class="login-hint-title">🔑 預設密碼</div>
+      <div class="login-hint-text">
+        預設密碼為 <code>Runing9TO5!</code><br>
+        登入後可在設定區修改密碼。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     後台主體
+══════════════════════════════════ -->
+<div id="adminApp">
+
+  <div class="topbar">
+    <div class="topbar-logo">
+      ✦ Runing9TO5 <span>後台管理</span>
+    </div>
+    <div class="topbar-right">
+      <div class="topbar-status">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">未連接</span>
+      </div>
+      <button class="logout-btn" onclick="doLogout()">登出</button>
+    </div>
+  </div>
+
+  <div class="layout">
+
+    <!-- 側邊欄 -->
+    <div class="sidebar">
+
+      <!-- GitHub 設定 -->
+      <div class="sidebar-section">
+        <div class="sidebar-label">⚙ GitHub 設定</div>
+        <div class="form-group">
+          <label class="form-label">Personal Access Token</label>
+          <input class="form-input" type="password" id="ghToken" placeholder="ghp_xxxxxxxxxxxx">
+        </div>
+        <div class="form-group">
+          <label class="form-label">GitHub 帳號</label>
+          <input class="form-input" type="text" id="ghOwner" placeholder="你的帳號">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Repo 名稱</label>
+          <input class="form-input" type="text" id="ghRepo" placeholder="Runing9TO5">
+        </div>
+        <div class="settings-note">
+          Token 需要 <strong>repo</strong> 權限。<br>
+          <a href="https://github.com/settings/tokens/new" target="_blank">點此申請 Token →</a>
+        </div>
+        <div style="margin-top:12px">
+          <button class="btn btn-secondary" onclick="connectGitHub()" id="connectBtn" style="width:100%; justify-content:center;">
+            連接 GitHub
+          </button>
+        </div>
+
+        <!-- 修改密碼 -->
+        <div class="change-pw-section">
+          <div class="sidebar-label">🔒 修改密碼</div>
+          <div class="form-group">
+            <label class="form-label">新密碼</label>
+            <input class="form-input" type="password" id="newPw" placeholder="輸入新密碼">
+          </div>
+          <div class="form-group">
+            <label class="form-label">確認新密碼</label>
+            <input class="form-input" type="password" id="confirmPw" placeholder="再輸入一次">
+          </div>
+          <button class="btn btn-secondary" onclick="changePassword()" style="width:100%; justify-content:center; margin-top:4px;">
+            更新密碼
+          </button>
+        </div>
+      </div>
+
+      <!-- 文章列表 -->
+      <div class="sidebar-section" style="flex:1; overflow-y:auto; padding-bottom:8px;">
+        <div class="sidebar-label">📄 文章列表</div>
+        <div class="new-post-btn" onclick="newPost()">
+          <span style="font-size:18px; line-height:1">＋</span> 新增文章
+        </div>
+        <div class="post-list" id="postList">
+          <div style="padding:16px; text-align:center; font-size:12px; color:var(--text-muted);">
+            連接 GitHub 後載入文章
+          </div>
+        </div>
+      </div>
+
+      <!-- 文章設定 -->
+      <div class="sidebar-section" id="articleSettings" style="display:none;">
+        <div class="sidebar-label">📝 文章設定</div>
+        <div class="form-group">
+          <label class="form-label">發佈日期</label>
+          <input class="form-input" type="date" id="postDate">
+        </div>
+        <div class="form-group">
+          <label class="form-label">分類（Enter 新增）</label>
+          <div class="tags-input-wrap" id="categoriesWrap">
+            <input class="tags-input" id="categoriesInput" placeholder="自媒體">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">標籤（Enter 新增）</label>
+          <div class="tags-input-wrap" id="tagsWrap">
+            <input class="tags-input" id="tagsInput" placeholder="副業">
+          </div>
+        </div>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
+          <button class="btn btn-success" onclick="publishPost()" id="publishBtn">
+            🚀 發佈文章
+          </button>
+          <button class="btn btn-danger" onclick="confirmDelete()" id="deleteBtn" style="display:none;">
+            🗑 刪除文章
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 主內容 -->
+    <div class="main" id="mainArea">
+      <div class="empty-state" id="emptyState">
+        <div class="empty-state-icon">✦</div>
+        <div class="empty-state-title">歡迎回來，K叔</div>
+        <div class="empty-state-desc">先填入 GitHub 設定並連接，<br>就可以開始撰寫與發佈文章。</div>
+      </div>
+
+      <div id="editorArea" style="display:none; flex:1; flex-direction:column; height:100%;">
+        <div class="editor-toolbar">
+          <div class="tab-bar">
+            <div class="tab active" id="tabEdit" onclick="switchTab('edit')">✏️ 編輯</div>
+            <div class="tab" id="tabPreview" onclick="switchTab('preview')">👁 預覽</div>
+          </div>
+          <div class="toolbar-divider"></div>
+          <button class="toolbar-btn" onclick="insertMd('**','**')"><b>B</b></button>
+          <button class="toolbar-btn" onclick="insertMd('*','*')"><em>I</em></button>
+          <button class="toolbar-btn" onclick="insertMd('## ','')">H2</button>
+          <button class="toolbar-btn" onclick="insertMd('### ','')">H3</button>
+          <div class="toolbar-divider"></div>
+          <button class="toolbar-btn" onclick="insertMd('- ','')">列表</button>
+          <button class="toolbar-btn" onclick="insertMd('> ','')">引言</button>
+          <button class="toolbar-btn" onclick="insertMd('`','`')">程式碼</button>
+          <button class="toolbar-btn" onclick="insertMd('---\n','')">分隔線</button>
+          <span class="word-count" id="wordCount">0 字</span>
+        </div>
+
+        <div class="editor-area" style="flex:1; overflow:hidden;">
+          <div class="editor-pane" id="editPane">
+            <input class="title-input" type="text" id="postTitle" placeholder="文章標題...">
+            <textarea class="desc-input" id="postDesc" placeholder="文章摘要（SEO 描述）..." rows="2"></textarea>
+            <textarea class="content-editor" id="postContent"
+              placeholder="開始寫作...&#10;&#10;支援 Markdown 語法：&#10;## 大標題&#10;**粗體** *斜體*&#10;- 清單項目&#10;> 引言"></textarea>
+          </div>
+          <div class="preview-pane" id="previewPane" style="display:none;">
+            <div class="preview-content" id="previewContent"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- 刪除確認 -->
+<div class="modal-overlay" id="deleteModal" style="display:none;">
+  <div class="modal">
+    <div class="modal-title">🗑 確認刪除</div>
+    <div class="modal-desc" id="deleteModalDesc">確定要刪除這篇文章嗎？此操作無法復原。</div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" onclick="closeModal()">取消</button>
+      <button class="btn btn-danger" onclick="deletePost()">確認刪除</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════
+// 登入邏輯
+// ══════════════════════════════════
+
+// 預設密碼 hash（SHA-256 of "Runing9TO5!"）
+const DEFAULT_HASH = 'b0c4b1c5e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfc';
+const MAX_ATTEMPTS = 5;
+let attempts = 0;
+let lockUntil = 0;
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function getStoredHash() {
+  return localStorage.getItem('runing_pw_hash') || DEFAULT_HASH;
+}
+
+async function doLogin() {
+  const now = Date.now();
+  if (now < lockUntil) {
+    const secs = Math.ceil((lockUntil - now) / 1000);
+    showLoginError(`帳號已鎖定，請等待 ${secs} 秒`);
+    return;
+  }
+
+  const pw = document.getElementById('pwInput').value;
+  if (!pw) { showLoginError('請輸入密碼'); return; }
+
+  const hash = await sha256(pw);
+  const stored = getStoredHash();
+
+  // 第一次使用預設密碼：自動初始化正確的 hash
+  if (!localStorage.getItem('runing_pw_hash')) {
+    const defaultHash = await sha256('Runing9TO5!');
+    if (hash === defaultHash) {
+      loginSuccess();
+      return;
+    }
+  }
+
+  if (hash === stored) {
+    loginSuccess();
+  } else {
+    attempts++;
+    updateAttemptDots();
+    document.getElementById('attemptsBar').style.display = 'flex';
+
+    if (attempts >= MAX_ATTEMPTS) {
+      lockUntil = Date.now() + 60 * 1000;
+      attempts = 0;
+      showLoginError('嘗試次數過多，鎖定 60 秒');
+      document.getElementById('loginBtn').disabled = true;
+      setTimeout(() => {
+        document.getElementById('loginBtn').disabled = false;
+        document.getElementById('attemptsBar').style.display = 'none';
+        updateAttemptDots();
+        hideLoginError();
+      }, 60000);
+    } else {
+      showLoginError(`密碼錯誤（剩餘 ${MAX_ATTEMPTS - attempts} 次嘗試）`);
+    }
+
+    const input = document.getElementById('pwInput');
+    input.classList.add('error');
+    input.value = '';
+    setTimeout(() => input.classList.remove('error'), 500);
+  }
+}
+
+function loginSuccess() {
+  sessionStorage.setItem('runing_auth', '1');
+  attempts = 0;
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('adminApp').style.display = 'flex';
+  document.getElementById('adminApp').style.flexDirection = 'column';
+  initAdmin();
+}
+
+function doLogout() {
+  sessionStorage.removeItem('runing_auth');
+  document.getElementById('adminApp').style.display = 'none';
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('pwInput').value = '';
+  hideLoginError();
+}
+
+function showLoginError(msg) {
+  const el = document.getElementById('loginError');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+function hideLoginError() {
+  document.getElementById('loginError').style.display = 'none';
+}
+
+function updateAttemptDots() {
+  for (let i = 0; i < MAX_ATTEMPTS; i++) {
+    const dot = document.getElementById(`dot${i}`);
+    if (dot) dot.className = 'attempt-dot' + (i < attempts ? ' used' : '');
+  }
+}
+
+function toggleEye() {
+  const input = document.getElementById('pwInput');
+  const isHidden = input.type === 'password';
+  input.type = isHidden ? 'text' : 'password';
+  document.getElementById('eyeBtn').textContent = isHidden ? '🙈' : '👁';
+}
+
+// 修改密碼
+async function changePassword() {
+  const np = document.getElementById('newPw').value;
+  const cp = document.getElementById('confirmPw').value;
+  if (!np || np.length < 6) { showToast('密碼至少 6 個字元', 'error'); return; }
+  if (np !== cp) { showToast('兩次密碼不一致', 'error'); return; }
+  const hash = await sha256(np);
+  localStorage.setItem('runing_pw_hash', hash);
+  document.getElementById('newPw').value = '';
+  document.getElementById('confirmPw').value = '';
+  showToast('✅ 密碼已更新', 'success');
+}
+
+// 自動判斷是否已登入（同一 session）
+window.addEventListener('DOMContentLoaded', () => {
+  if (sessionStorage.getItem('runing_auth') === '1') {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('adminApp').style.display = 'flex';
+    document.getElementById('adminApp').style.flexDirection = 'column';
+    initAdmin();
+  }
+});
+
+// ══════════════════════════════════
+// 後台邏輯
+// ══════════════════════════════════
+let connected = false;
+let posts = [];
+let currentPost = null;
+let categories = [];
+let tags = [];
+
+function initAdmin() {
+  const saved = JSON.parse(localStorage.getItem('runing_admin') || '{}');
+  if (saved.token) document.getElementById('ghToken').value = saved.token;
+  if (saved.owner) document.getElementById('ghOwner').value = saved.owner;
+  if (saved.repo)  document.getElementById('ghRepo').value  = saved.repo;
+
+  document.getElementById('postDate').value = new Date().toISOString().split('T')[0];
+
+  setupTagInput('categoriesInput', 'categoriesWrap', () => categories, v => { categories = v; });
+  setupTagInput('tagsInput', 'tagsWrap', () => tags, v => { tags = v; });
+
+  document.getElementById('postContent').addEventListener('input', updateWordCount);
+}
+
+function saveSettings() {
+  localStorage.setItem('runing_admin', JSON.stringify({
+    token: document.getElementById('ghToken').value,
+    owner: document.getElementById('ghOwner').value,
+    repo:  document.getElementById('ghRepo').value,
+  }));
+}
+
+function getConfig() {
+  return {
+    token: document.getElementById('ghToken').value.trim(),
+    owner: document.getElementById('ghOwner').value.trim(),
+    repo:  document.getElementById('ghRepo').value.trim(),
+  };
+}
+
+async function ghFetch(path, options = {}) {
+  const { token, owner, repo } = getConfig();
+  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}${path}`, {
+    ...options,
+    headers: {
+      'Authorization': `token ${token}`,
+      'Accept': 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json',
+      ...(options.headers || {}),
+    },
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || `HTTP ${res.status}`);
+  }
+  return res.json();
+}
+
+async function connectGitHub() {
+  const { token, owner, repo } = getConfig();
+  if (!token || !owner || !repo) { showToast('請填寫完整的 GitHub 設定', 'error'); return; }
+
+  const btn = document.getElementById('connectBtn');
+  btn.innerHTML = '<span class="spinner"></span> 連接中...';
+  btn.disabled = true;
+
+  try {
+    saveSettings();
+    await ghFetch('');
+    connected = true;
+    document.getElementById('statusDot').className = 'status-dot connected';
+    document.getElementById('statusText').textContent = `${owner}/${repo}`;
+    showToast('✅ 連接成功！', 'success');
+    btn.textContent = '重新載入';
+    btn.disabled = false;
+    await loadPosts();
+  } catch (e) {
+    showToast(`連接失敗：${e.message}`, 'error');
+    btn.textContent = '連接 GitHub';
+    btn.disabled = false;
+  }
+}
+
+async function loadPosts() {
+  try {
+    const files = await ghFetch('/contents/_posts');
+    posts = files.filter(f => f.name.endsWith('.md')).sort((a, b) => b.name.localeCompare(a.name));
+    renderPostList();
+  } catch (e) {
+    showToast(`無法載入文章：${e.message}`, 'error');
+  }
+}
+
+function renderPostList() {
+  const list = document.getElementById('postList');
+  if (!posts.length) {
+    list.innerHTML = '<div style="padding:16px; text-align:center; font-size:12px; color:var(--text-muted);">尚無文章</div>';
+    return;
+  }
+  list.innerHTML = posts.map((p, i) => {
+    const date = p.name.match(/^(\d{4}-\d{2}-\d{2})/)?.[1] || '';
+    const name = p.name.replace('.md','').slice(11).replace(/-/g,' ') || p.name;
+    return `
+      <div class="post-item" onclick="loadPost(${i})" id="postItem_${i}">
+        <div class="post-item-title">${name}</div>
+        <div class="post-item-date">${date}</div>
+        <button class="post-item-del" onclick="event.stopPropagation(); setCurrentAndDelete(${i})">✕</button>
+      </div>
+    `;
+  }).join('');
+}
+
+async function loadPost(index) {
+  if (!connected) { showToast('請先連接 GitHub', 'error'); return; }
+  showToast('載入中...', 'loading', 1000);
+  try {
+    const data = await ghFetch(`/contents/${posts[index].path}`);
+    const raw = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
+    const fmMatch = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+    let fm = {}, body = raw;
+    if (fmMatch) {
+      fmMatch[1].split('\n').forEach(line => {
+        const [k, ...v] = line.split(':');
+        if (k) fm[k.trim()] = v.join(':').trim().replace(/^["']|["']$/g, '');
+      });
+      body = fmMatch[2].trim();
+    }
+
+    currentPost = { path: posts[index].path, sha: data.sha, isNew: false };
+    document.getElementById('postTitle').value = fm.title || '';
+    document.getElementById('postDesc').value  = fm.description || '';
+    document.getElementById('postContent').value = body;
+    document.getElementById('postDate').value = posts[index].name.match(/^(\d{4}-\d{2}-\d{2})/)?.[1] || new Date().toISOString().split('T')[0];
+
+    categories = parseFmArray(fm.categories || '');
+    tags = parseFmArray(fm.tags || '');
+    renderTags('categoriesWrap', 'categoriesInput', categories, c => { categories = c; });
+    renderTags('tagsWrap', 'tagsInput', tags, t => { tags = t; });
+
+    showEditor();
+    document.getElementById('deleteBtn').style.display = 'block';
+    updateWordCount();
+    document.querySelectorAll('.post-item').forEach(el => el.classList.remove('active'));
+    document.getElementById(`postItem_${index}`)?.classList.add('active');
+  } catch (e) {
+    showToast(`載入失敗：${e.message}`, 'error');
+  }
+}
+
+function parseFmArray(val) {
+  if (!val) return [];
+  return val.replace(/[\[\]]/g, '').split(',').map(s => s.trim()).filter(Boolean);
+}
+
+function newPost() {
+  currentPost = { isNew: true };
+  document.getElementById('postTitle').value = '';
+  document.getElementById('postDesc').value  = '';
+  document.getElementById('postContent').value = '';
+  document.getElementById('postDate').value = new Date().toISOString().split('T')[0];
+  categories = []; tags = [];
+  renderTags('categoriesWrap', 'categoriesInput', categories, c => { categories = c; });
+  renderTags('tagsWrap', 'tagsInput', tags, t => { tags = t; });
+  showEditor();
+  document.getElementById('deleteBtn').style.display = 'none';
+  document.querySelectorAll('.post-item').forEach(el => el.classList.remove('active'));
+  document.getElementById('postTitle').focus();
+}
+
+async function publishPost() {
+  if (!connected) { showToast('請先連接 GitHub', 'error'); return; }
+  const title   = document.getElementById('postTitle').value.trim();
+  const desc    = document.getElementById('postDesc').value.trim();
+  const content = document.getElementById('postContent').value.trim();
+  const date    = document.getElementById('postDate').value;
+  if (!title)   { showToast('請填寫文章標題', 'error'); return; }
+  if (!content) { showToast('文章內容不能為空', 'error'); return; }
+
+  const slug = title.toLowerCase().replace(/[\s\u3000]+/g, '-').replace(/[^\w\u4e00-\u9fff-]/g, '');
+  const path = `_posts/${date}-${slug}.md`;
+  const catLine = categories.length ? `categories: [${categories.join(', ')}]` : '';
+  const tagLine = tags.length ? `tags: [${tags.join(', ')}]` : '';
+  const fm = `---\nlayout: post\ntitle: "${title}"\ndate: ${date}\ndescription: "${desc}"\n${catLine}\n${tagLine}\n---\n\n${content}`.replace(/\n{3,}/g, '\n\n');
+  const encoded = btoa(unescape(encodeURIComponent(fm)));
+
+  const btn = document.getElementById('publishBtn');
+  btn.innerHTML = '<span class="spinner"></span> 發佈中...';
+  btn.disabled = true;
+
+  try {
+    const payload = { message: `${currentPost?.isNew ? 'feat' : 'update'}: ${title}`, content: encoded, branch: 'main' };
+    if (!currentPost?.isNew && currentPost?.sha) {
+      payload.sha = currentPost.sha;
+      await ghFetch(`/contents/${currentPost.path}`, { method: 'PUT', body: JSON.stringify(payload) });
+    } else {
+      try {
+        await ghFetch(`/contents/${path}`, { method: 'PUT', body: JSON.stringify(payload) });
+      } catch {
+        payload.branch = 'master';
+        await ghFetch(`/contents/${path}`, { method: 'PUT', body: JSON.stringify(payload) });
+      }
+    }
+    showToast('🎉 文章已發佈！', 'success', 4000);
+    await loadPosts();
+  } catch (e) {
+    showToast(`發佈失敗：${e.message}`, 'error');
+  } finally {
+    btn.innerHTML = '🚀 發佈文章';
+    btn.disabled = false;
+  }
+}
+
+function setCurrentAndDelete(i) { loadPost(i).then(() => confirmDelete()); }
+
+function confirmDelete() {
+  if (!currentPost || currentPost.isNew) return;
+  document.getElementById('deleteModalDesc').textContent =
+    `確定要刪除「${document.getElementById('postTitle').value}」嗎？此操作無法復原。`;
+  document.getElementById('deleteModal').style.display = 'flex';
+}
+function closeModal() { document.getElementById('deleteModal').style.display = 'none'; }
+
+async function deletePost() {
+  closeModal();
+  if (!currentPost?.path || !currentPost?.sha) return;
+  try {
+    await ghFetch(`/contents/${currentPost.path}`, {
+      method: 'DELETE',
+      body: JSON.stringify({ message: `delete: ${document.getElementById('postTitle').value}`, sha: currentPost.sha }),
+    });
+    showToast('文章已刪除', 'success');
+    currentPost = null;
+    document.getElementById('editorArea').style.display = 'none';
+    document.getElementById('emptyState').style.display = 'flex';
+    document.getElementById('articleSettings').style.display = 'none';
+    await loadPosts();
+  } catch (e) {
+    showToast(`刪除失敗：${e.message}`, 'error');
+  }
+}
+
+function showEditor() {
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('editorArea').style.display = 'flex';
+  document.getElementById('articleSettings').style.display = 'block';
+  switchTab('edit');
+}
+
+function switchTab(tab) {
+  const isEdit = tab === 'edit';
+  document.getElementById('editPane').style.display    = isEdit ? 'flex' : 'none';
+  document.getElementById('previewPane').style.display = isEdit ? 'none' : 'block';
+  document.getElementById('tabEdit').className    = 'tab' + (isEdit ? ' active' : '');
+  document.getElementById('tabPreview').className = 'tab' + (!isEdit ? ' active' : '');
+  if (!isEdit) renderPreview();
+}
+
+function insertMd(before, after) {
+  const ta = document.getElementById('postContent');
+  const s = ta.selectionStart, e = ta.selectionEnd;
+  const sel = ta.value.substring(s, e);
+  ta.value = ta.value.substring(0, s) + before + sel + after + ta.value.substring(e);
+  ta.selectionStart = s + before.length;
+  ta.selectionEnd = s + before.length + sel.length;
+  ta.focus();
+}
+
+function updateWordCount() {
+  const count = document.getElementById('postContent').value.replace(/\s/g, '').length;
+  document.getElementById('wordCount').textContent = `${count} 字`;
+}
+
+function renderPreview() {
+  const title = document.getElementById('postTitle').value;
+  const desc  = document.getElementById('postDesc').value;
+  const date  = document.getElementById('postDate').value;
+  let md = document.getElementById('postContent').value
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/`(.+?)`/g, '<code>$1</code>')
+    .replace(/^---$/gm, '<hr>')
+    .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
+    .split('\n\n').map(p => p.match(/^<(h[1-6]|ul|blockquote|hr)/) ? p : `<p>${p.replace(/\n/g,'<br>')}</p>`).join('\n');
+
+  document.getElementById('previewContent').innerHTML = `
+    <h1>${title || '（無標題）'}</h1>
+    <div class="preview-meta">${date}${categories.length ? ' · ' + categories.join(', ') : ''}</div>
+    ${desc ? `<p><em>${desc}</em></p><hr>` : ''}${md}`;
+}
+
+function setupTagInput(inputId, wrapId, getArr, setArr) {
+  const input = document.getElementById(inputId);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ',') {
+      e.preventDefault();
+      const val = input.value.trim().replace(/,$/, '');
+      if (val && !getArr().includes(val)) {
+        const arr = [...getArr(), val];
+        setArr(arr);
+        renderTags(wrapId, inputId, arr, setArr);
+      }
+      input.value = '';
+    }
+    if (e.key === 'Backspace' && !input.value) {
+      const arr = getArr().slice(0, -1);
+      setArr(arr);
+      renderTags(wrapId, inputId, arr, setArr);
+    }
+  });
+  document.getElementById(wrapId).addEventListener('click', () => input.focus());
+}
+
+function renderTags(wrapId, inputId, arr, setArr) {
+  const wrap = document.getElementById(wrapId);
+  const input = document.getElementById(inputId);
+  wrap.innerHTML = arr.map((tag, i) => `
+    <div class="tag-chip">${tag}
+      <button onclick="removeTag('${wrapId}','${inputId}',${i})" type="button">×</button>
+    </div>`).join('');
+  wrap.appendChild(input);
+}
+
+function removeTag(wrapId, inputId, index) {
+  if (wrapId === 'categoriesWrap') {
+    categories.splice(index, 1);
+    renderTags(wrapId, inputId, categories, c => { categories = c; });
+  } else {
+    tags.splice(index, 1);
+    renderTags(wrapId, inputId, tags, t => { tags = t; });
+  }
+}
+
+function showToast(msg, type = 'success', duration = 3000) {
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.innerHTML = `<span>${{success:'✓',error:'✕',loading:'⏳'}[type]||'•'}</span> ${msg}`;
+  container.appendChild(toast);
+  setTimeout(() => toast.remove(), duration);
+}
+</script>
+</body>
+</html>
