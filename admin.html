@@ -468,12 +468,12 @@
 
     .toolbar-divider { width: 1px; height: 20px; background: var(--border); margin: 0 4px; }
 
-    .editor-area { flex: 1; display: flex; overflow: hidden; }
+    .editor-area { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
 
     .editor-pane, .preview-pane {
       flex: 1; overflow-y: auto; padding: 24px 28px;
     }
-    .editor-pane { border-right: 1px solid var(--border); }
+    .editor-pane { border-bottom: 1px solid var(--border); }
 
     .title-input {
       width: 100%; background: none; border: none; outline: none;
@@ -632,6 +632,23 @@
       border-top: 1px solid var(--border);
       padding-top: 16px;
     }
+
+    .checkbox-group {
+      display: flex; flex-wrap: wrap; gap: 6px;
+    }
+    .cb-item {
+      display: flex; align-items: center; gap: 5px;
+      background: var(--navy); border: 1px solid var(--border);
+      border-radius: 20px; padding: 4px 10px;
+      font-size: 12px; color: var(--text-muted);
+      cursor: pointer; transition: all 0.15s; user-select: none;
+    }
+    .cb-item:hover { border-color: var(--blue-light); color: var(--text); }
+    .cb-item input[type=checkbox] { display: none; }
+    .cb-item.checked {
+      background: var(--blue); border-color: var(--blue);
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -767,15 +784,34 @@
           <input class="form-input" type="date" id="postDate">
         </div>
         <div class="form-group">
-          <label class="form-label">分類（Enter 新增）</label>
-          <div class="tags-input-wrap" id="categoriesWrap">
-            <input class="tags-input" id="categoriesInput" placeholder="自媒體">
+          <label class="form-label">分類</label>
+          <div class="checkbox-group" id="categoriesGroup">
+            <label class="cb-item"><input type="checkbox" value="自媒體經營"> 自媒體經營</label>
+            <label class="cb-item"><input type="checkbox" value="創業與副業"> 創業與副業</label>
+            <label class="cb-item"><input type="checkbox" value="個人成長"> 個人成長</label>
+            <label class="cb-item"><input type="checkbox" value="自我成長"> 自我成長</label>
+            <label class="cb-item"><input type="checkbox" value="理財投資"> 理財投資</label>
           </div>
         </div>
         <div class="form-group">
-          <label class="form-label">標籤（Enter 新增）</label>
-          <div class="tags-input-wrap" id="tagsWrap">
-            <input class="tags-input" id="tagsInput" placeholder="副業">
+          <label class="form-label">標籤</label>
+          <div class="checkbox-group" id="tagsGroup">
+            <label class="cb-item"><input type="checkbox" value="個人品牌"> 個人品牌</label>
+            <label class="cb-item"><input type="checkbox" value="副業收入"> 副業收入</label>
+            <label class="cb-item"><input type="checkbox" value="內容創作"> 內容創作</label>
+            <label class="cb-item"><input type="checkbox" value="自媒體經營"> 自媒體經營</label>
+            <label class="cb-item"><input type="checkbox" value="內向者自媒體"> 內向者自媒體</label>
+            <label class="cb-item"><input type="checkbox" value="不露臉變現"> 不露臉變現</label>
+            <label class="cb-item"><input type="checkbox" value="PDCA流程"> PDCA流程</label>
+            <label class="cb-item"><input type="checkbox" value="零粉絲自媒體"> 零粉絲自媒體</label>
+            <label class="cb-item"><input type="checkbox" value="一人公司"> 一人公司</label>
+            <label class="cb-item"><input type="checkbox" value="財務自由"> 財務自由</label>
+            <label class="cb-item"><input type="checkbox" value="不離職創業"> 不離職創業</label>
+            <label class="cb-item"><input type="checkbox" value="斜槓副業"> 斜槓副業</label>
+            <label class="cb-item"><input type="checkbox" value="時間管理"> 時間管理</label>
+            <label class="cb-item"><input type="checkbox" value="風險管理"> 風險管理</label>
+            <label class="cb-item"><input type="checkbox" value="自我管理"> 自我管理</label>
+            <label class="cb-item"><input type="checkbox" value="職涯保障"> 職涯保障</label>
           </div>
         </div>
         <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px;">
@@ -1001,9 +1037,8 @@ function initAdmin() {
 
   document.getElementById('postDate').value = new Date().toISOString().split('T')[0];
 
-  setupTagInput('categoriesInput', 'categoriesWrap', () => categories, v => { categories = v; });
-  setupTagInput('tagsInput', 'tagsWrap', () => tags, v => { tags = v; });
-
+  setupCheckboxGroup('categoriesGroup');
+  setupCheckboxGroup('tagsGroup');
   document.getElementById('postContent').addEventListener('input', updateWordCount);
 }
 
@@ -1119,8 +1154,8 @@ async function loadPost(index) {
 
     categories = parseFmArray(fm.categories || '');
     tags = parseFmArray(fm.tags || '');
-    renderTags('categoriesWrap', 'categoriesInput', categories, c => { categories = c; });
-    renderTags('tagsWrap', 'tagsInput', tags, t => { tags = t; });
+    setCheckboxValues('categoriesGroup', categories);
+    setCheckboxValues('tagsGroup', tags);
 
     showEditor();
     document.getElementById('deleteBtn').style.display = 'block';
@@ -1144,8 +1179,8 @@ function newPost() {
   document.getElementById('postContent').value = '';
   document.getElementById('postDate').value = new Date().toISOString().split('T')[0];
   categories = []; tags = [];
-  renderTags('categoriesWrap', 'categoriesInput', categories, c => { categories = c; });
-  renderTags('tagsWrap', 'tagsInput', tags, t => { tags = t; });
+  setCheckboxValues('categoriesGroup', []);
+  setCheckboxValues('tagsGroup', []);
   showEditor();
   document.getElementById('deleteBtn').style.display = 'none';
   document.querySelectorAll('.post-item').forEach(el => el.classList.remove('active'));
@@ -1163,9 +1198,12 @@ async function publishPost() {
 
   const slug = title.toLowerCase().replace(/[\s\u3000]+/g, '-').replace(/[^\w\u4e00-\u9fff-]/g, '');
   const path = `_posts/${date}-${slug}.md`;
-  const catLine = categories.length ? `categories: [${categories.join(', ')}]` : '';
-  const tagLine = tags.length ? `tags: [${tags.join(', ')}]` : '';
-  const fm = `---\nlayout: post\ntitle: "${title}"\ndate: ${date}\ndescription: "${desc}"\n${catLine}\n${tagLine}\n---\n\n${content}`.replace(/\n{3,}/g, '\n\n');
+  categories = getCheckboxValues('categoriesGroup');
+  tags = getCheckboxValues('tagsGroup');
+  const catLine = categories.length ? `categories: [${categories.map(c=>`'${c}'`).join(', ')}]` : '';
+  const tagLine = tags.length ? `tags: [${tags.map(t=>`'${t}'`).join(', ')}]` : '';
+  const wrappedContent = `<section class="card-section" style="background:#f7f7f7;">\n${content}\n</section>`;
+  const fm = `---\\nlayout: default\\ntitle: "${title}"\\ndate: ${date}\\ndescription: "${desc}"\\n${catLine}\\n${tagLine}\\n---\\n\\n${wrappedContent}`.replace(/\\n{3,}/g, '\\n\\n');
   const encoded = btoa(unescape(encodeURIComponent(fm)));
 
   const btn = document.getElementById('publishBtn');
@@ -1318,6 +1356,27 @@ function removeTag(wrapId, inputId, index) {
     tags.splice(index, 1);
     renderTags(wrapId, inputId, tags, t => { tags = t; });
   }
+}
+
+
+function setupCheckboxGroup(groupId) {
+  document.querySelectorAll(`#${groupId} .cb-item`).forEach(label => {
+    label.addEventListener('click', () => {
+      label.classList.toggle('checked');
+    });
+  });
+}
+
+function getCheckboxValues(groupId) {
+  return Array.from(document.querySelectorAll(`#${groupId} .cb-item.checked`))
+    .map(el => el.querySelector('input').value);
+}
+
+function setCheckboxValues(groupId, values) {
+  document.querySelectorAll(`#${groupId} .cb-item`).forEach(label => {
+    const val = label.querySelector('input').value;
+    label.classList.toggle('checked', values.includes(val));
+  });
 }
 
 function showToast(msg, type = 'success', duration = 3000) {
