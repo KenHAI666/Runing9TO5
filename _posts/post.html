@@ -1,6 +1,207 @@
 ---
 layout: default
 ---
-<section class="card-section" style="background:#f7f7f7;">
+
+<style>
+  /* ── 文章頁容器 ── */
+  .post-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ── 頂部 meta 列 ── */
+  .post-meta-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .post-cat-badge {
+    background: #3B5B7A;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .post-date {
+    font-size: 13px;
+    color: #7a99b8;
+  }
+
+  .post-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .post-tag {
+    background: #eef2f7;
+    color: #3B5B7A;
+    font-size: 11px;
+    padding: 2px 9px;
+    border-radius: 20px;
+  }
+
+  /* ── card-section 內文排版強化 ── */
+  .post-wrap .card-section {
+    background: #f7f9fc !important;
+    border-radius: 12px;
+    padding: 36px 40px;
+    border-left: 6px solid #3B5B7A;
+    box-shadow: 0 2px 12px rgba(59,91,122,0.07);
+    font-size: 16px;
+    line-height: 1.9;
+    color: #2d3748;
+    /* 覆蓋 hover 上移效果，文章頁不需要 */
+    transition: none !important;
+  }
+
+  .post-wrap .card-section:hover {
+    transform: none !important;
+    box-shadow: 0 2px 12px rgba(59,91,122,0.07) !important;
+  }
+
+  .post-wrap .card-section h1,
+  .post-wrap .card-section h2:first-child {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #1a2a3a;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+    padding-bottom: 14px;
+    border-bottom: 3px solid #C48E64;
+  }
+
+  .post-wrap .card-section h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a2a3a;
+    margin: 1.8em 0 0.7em;
+    padding-left: 14px;
+    border-left: 4px solid #3B5B7A;
+  }
+
+  .post-wrap .card-section h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #3B5B7A;
+    margin: 1.5em 0 0.6em;
+  }
+
+  .post-wrap .card-section h4 {
+    font-size: 0.97rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 1.2em 0 0.5em;
+  }
+
+  .post-wrap .card-section p {
+    margin: 0 0 1.1em;
+  }
+
+  .post-wrap .card-section ul,
+  .post-wrap .card-section ol {
+    padding-left: 1.5em;
+    margin: 0 0 1.1em;
+  }
+
+  .post-wrap .card-section li {
+    margin-bottom: 7px;
+  }
+
+  .post-wrap .card-section hr {
+    border: none;
+    border-top: 2px dashed #d8e2ec;
+    margin: 1.8em 0;
+  }
+
+  .post-wrap .card-section b,
+  .post-wrap .card-section B,
+  .post-wrap .card-section strong {
+    color: #1a2a3a;
+    font-weight: 700;
+  }
+
+  .post-wrap .card-section a {
+    color: #3B5B7A;
+    text-decoration: underline;
+  }
+
+  .post-wrap .card-section a:hover {
+    color: #C48E64;
+  }
+
+  /* 結尾分類標籤列 */
+  .post-wrap .card-section .tag-list,
+  .post-wrap .card-section p:last-child {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px dashed #d8e2ec;
+    font-size: 13px;
+    color: #7a99b8;
+  }
+
+  /* 表格 */
+  .post-wrap .card-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2em 0;
+    font-size: 14px;
+  }
+
+  .post-wrap .card-section th {
+    background: #3B5B7A;
+    color: #fff;
+    padding: 9px 14px;
+    text-align: left;
+  }
+
+  .post-wrap .card-section td {
+    padding: 8px 14px;
+    border-bottom: 1px solid #e8edf2;
+  }
+
+  .post-wrap .card-section tr:nth-child(even) td {
+    background: #f0f4f8;
+  }
+
+  @media (max-width: 640px) {
+    .post-wrap { padding: 20px 14px 60px; }
+    .post-wrap .card-section { padding: 24px 18px; }
+    .post-wrap .card-section h1,
+    .post-wrap .card-section h2:first-child { font-size: 1.35rem; }
+  }
+</style>
+
+<div class="post-wrap">
+
+  <!-- 分類 + 日期 + 標籤 -->
+  <div class="post-meta-bar">
+    {% if page.categories %}
+      {% for cat in page.categories %}
+        <span class="post-cat-badge">{{ cat }}</span>
+      {% endfor %}
+    {% endif %}
+    <span class="post-date">📅 {{ page.date | date: "%Y-%m-%d" }}</span>
+  </div>
+
+  {% if page.tags %}
+    <div class="post-tag-list">
+      {% for tag in page.tags %}
+        <span class="post-tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    <div style="height:20px;"></div>
+  {% endif %}
+
+  <!-- 文章內容（已含 card-section 外框） -->
   {{ content }}
-</section>
+
+</div>
