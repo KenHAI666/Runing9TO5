@@ -1361,7 +1361,8 @@ function removeTag(wrapId, inputId, index) {
 
 function setupCheckboxGroup(groupId) {
   document.querySelectorAll(`#${groupId} .cb-item`).forEach(label => {
-    label.addEventListener('click', () => {
+    label.addEventListener('click', (e) => {
+      e.preventDefault();
       label.classList.toggle('checked');
     });
   });
