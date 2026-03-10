@@ -1203,7 +1203,11 @@ async function publishPost() {
   const catLine = categories.length ? `categories: [${categories.map(c=>`'${c}'`).join(', ')}]` : '';
   const tagLine = tags.length ? `tags: [${tags.map(t=>`'${t}'`).join(', ')}]` : '';
   const wrappedContent = `<section class="card-section" style="background:#f7f7f7;">\n${content}\n</section>`;
-  const fm = `---\\nlayout: default\\ntitle: "${title}"\\ndate: ${date}\\ndescription: "${desc}"\\n${catLine}\\n${tagLine}\\n---\\n\\n${wrappedContent}`.replace(/\\n{3,}/g, '\\n\\n');
+  const fmParts = ['---', `layout: default`, `title: "${title}"`, `date: ${date}`, `description: "${desc}"`];
+  if (catLine) fmParts.push(catLine);
+  if (tagLine) fmParts.push(tagLine);
+  fmParts.push('---');
+  const fm = fmParts.join('\n') + '\n\n' + wrappedContent;
   const encoded = btoa(unescape(encodeURIComponent(fm)));
 
   const btn = document.getElementById('publishBtn');
