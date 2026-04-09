@@ -200,9 +200,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
   </p>
 </section>
 
-<footer>
-  <p>© 2025 RUNING_9to5 ｜ 不想上班的貓 K叔</p>
-</footer>
+{% include footer.html %}
 
 <!-- JS 放在這裡 -->
 <script>
