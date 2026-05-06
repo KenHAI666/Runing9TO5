@@ -201,7 +201,29 @@ layout: default
     <div style="height:20px;"></div>
   {% endif %}
 
+  <!-- 廣告位 1：文章頂部 -->
+  <div class="ad-unit ad-top" style="margin: 0 0 28px 0; text-align: center; min-height: 90px;">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-4979322196093081"
+         data-ad-slot="SLOT_ID_TOP"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
   <!-- 文章內容（已含 card-section 外框） -->
   {{ content }}
+
+  <!-- 廣告位 2：文章底部（最高 CTR 位置） -->
+  <div class="ad-unit ad-bottom" style="margin: 32px 0 0 0; text-align: center; min-height: 90px;">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-4979322196093081"
+         data-ad-slot="SLOT_ID_BOTTOM"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
 </div>
