@@ -674,12 +674,103 @@ footer {
 .form-zone    { animation: fadeUp .5s .3s ease-out both; }
 .hero-proof   { animation: fadeUp .5s .4s ease-out both; }
 
+/* ── HERO CTA BUTTON ── */
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 32px;
+  background: #fff;
+  color: var(--navy);
+  font-size: 15px; font-weight: 700;
+  font-family: var(--sans);
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: transform .2s, box-shadow .2s;
+}
+.hero-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+}
+
+/* ── MID-PAGE CTA ── */
+.stats-cta {
+  text-align: center;
+  padding: 28px 0 0;
+}
+.stats-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(228,236,248,0.35);
+  color: #fff;
+  font-size: 14px; font-weight: 700;
+  font-family: var(--sans);
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  transition: background .2s, border-color .2s;
+}
+.stats-cta-btn:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(228,236,248,0.6);
+}
+
 @media(max-width:640px) {
   .about-inner { grid-template-columns: 1fr; }
   .steps-row { grid-template-columns: 1fr; }
   .hero { padding: 64px 20px 56px; }
   .form-zone { padding: 24px 20px 20px; }
 }
+
+/* ── SYSTEME.IO FORM ── */
+.sys-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sys-form input[type="text"] {
+  width: 100%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(228,236,248,0.25);
+  border-radius: 8px;
+  padding: 13px 16px;
+  font-size: 15px;
+  font-family: var(--sans);
+  color: #fff;
+  outline: none;
+  transition: border-color .2s;
+}
+.sys-form input[type="text"]::placeholder {
+  color: rgba(228,236,248,0.35);
+}
+.sys-form input[type="text"]:focus {
+  border-color: rgba(228,236,248,0.6);
+  background: rgba(255,255,255,0.12);
+}
+.sys-btn {
+  width: 100%;
+  background: #2D4A7A;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--sans);
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background .2s, transform .15s;
+  margin-top: 2px;
+}
+.sys-btn:hover {
+  background: var(--navy);
+  transform: translateY(-1px);
+}
+.sys-btn:active { transform: translateY(0); }
 </style>
 </head>
 <body>
@@ -704,7 +795,7 @@ footer {
 ══════════════════════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-inner">
-    <span class="hero-eyebrow">🎁 免費資源・限時開放</span>
+    <span class="hero-eyebrow">🎁 免費資源・完全免費開放</span>
     <h1>每天發文<br>不知道寫什麼？<br>用<em>三大心法</em>，<br>讓內容自己變現</h1>
     <p class="hero-desc">
       訂閱後你會收到《自媒體變現三大核心心法》完整 PDF<br>
@@ -728,6 +819,7 @@ footer {
         天序列信免費領
       </div>
     </div>
+    <a href="#cta" class="hero-cta-btn">立即免費領取 →</a>
   </div>
 </section>
 
@@ -832,7 +924,37 @@ footer {
       <div class="stat-l">核心心法完整拆解</div>
     </div>
   </div>
+  <div class="stats-cta">
+    <a href="#cta" class="stats-cta-btn">免費領取 PDF + 25 個寫作主題 →</a>
+  </div>
 </div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════════════════════ -->
+<section class="about-section">
+  <div class="wrap">
+    <div class="about-inner">
+      <div class="about-avatar">
+        <div class="avatar-icon">🐱</div>
+        <div class="avatar-name">K叔</div>
+        <div class="avatar-handle">@runing_9to5</div>
+      </div>
+      <div class="about-text">
+        <h2>不想上班的貓，<br>但還是在上班的那種</h2>
+        <p>我是 K叔，一個在上班的斜槓自媒體人。我不是什麼全職網紅或成功企業家，我就是一個普通上班族，用下班後的時間，建立自己的內容變現系統。</p>
+        <p>這也是我能理解你的原因：我跟你一樣，時間有限、能量有限，不可能每天花 4 小時做內容。所以我建立的所有框架，都是「最小可行」的版本。</p>
+        <ul class="about-cred-list">
+          <li>在 Threads 發了 2,000+ 篇文章，分析過哪種文表現好</li>
+          <li>建立了自己的內容→信任→收入系統</li>
+          <li>幫助過多位上班族建立副業自媒體</li>
+          <li>所有方法都是自己做出來的，不是紙上談兵</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- ══════════════════════════════════════════════════════════
@@ -1022,31 +1144,6 @@ footer {
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════════
-     ABOUT
-══════════════════════════════════════════════════════════ -->
-<section class="about-section">
-  <div class="wrap">
-    <div class="about-inner">
-      <div class="about-avatar">
-        <div class="avatar-icon">🐱</div>
-        <div class="avatar-name">K叔</div>
-        <div class="avatar-handle">@runing_9to5</div>
-      </div>
-      <div class="about-text">
-        <h2>不想上班的貓，<br>但還是在上班的那種</h2>
-        <p>我是 K叔，一個在上班的斜槓自媒體人。我不是什麼全職網紅或成功企業家，我就是一個普通上班族，用下班後的時間，建立自己的內容變現系統。</p>
-        <p>這也是我能理解你的原因：我跟你一樣，時間有限、能量有限，不可能每天花 4 小時做內容。所以我建立的所有框架，都是「最小可行」的版本。</p>
-        <ul class="about-cred-list">
-          <li>在 Threads 發了 2,000+ 篇文章，分析過哪種文表現好</li>
-          <li>建立了自己的內容→信任→收入系統</li>
-          <li>幫助過多位上班族建立副業自媒體</li>
-          <li>所有方法都是自己做出來的，不是紙上談兵</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <!-- ══════════════════════════════════════════════════════════
@@ -1069,11 +1166,11 @@ footer {
       <div class="form-zone-title">
         輸入 Email，立即免費領取
       </div>
-      <!-- 替換區：貼上你的 systeme.io script -->
-      <div class="embed-placeholder">
-        <code>&lt;!-- 貼上你的 systeme.io inline form script --&gt;</code>
-        <p>同上，複製同一個 script 貼到這裡</p>
-      </div>
+      <form method="post" action="https://systeme.io/embedded/40811012/subscription" class="sys-form">
+        <input type="text" name="surname" placeholder="你的名字（選填）" />
+        <input type="text" name="email" placeholder="輸入你的 Email *" required />
+        <button type="submit" class="sys-btn">立即免費領取 →</button>
+      </form>
       <p class="form-guarantee">完全免費・不寄垃圾信・隨時可取消訂閱</p>
     </div>
 
