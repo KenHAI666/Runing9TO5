@@ -103,7 +103,7 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
 <!-- 關於我區 -->
 <section class="card-section section-about">
   <h2>關於 K叔｜不想上班的貓</h2>
-  <img src="/assets/images/me.jpeg" alt="K叔｜不想上班的貓 大頭照" class="about-img">
+  <img src="/assets/images/in-1.PNG" alt="K叔｜不想上班的貓 大頭照" class="about-img">
 
   <p>嗨，我是 <strong>K叔</strong>，<strong>RUNING_9to5</strong> 的創辦人，一位幫助上班族與創作者「逃離朝九晚五」的自媒體教練。</p>
   <p>我專注於把「經驗 × 策略」變成能持續帶來收入的系統，讓你不只是分享生活，而是靠內容養生活。</p>
