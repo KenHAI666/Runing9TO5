@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>粉絲增加，收入卻沒動？你卡在漏斗哪一關 — K叔《自媒體變現三大核心心法》</title>
+<meta name="description" content="訂閱後免費收到《自媒體變現三大核心心法》完整 PDF ＋ 連續 5 天每天 5 個寫作主題直送信箱，讓你再也不用煩惱今天寫什麼。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg:          #f5f0ea;
+  --bg-card:     #faf8f5;
+  --bg-section:  #ede8e0;
+  --border:      #d8ccbc;
+  --border-soft: #e8e2d8;
+  --text:        #1a2540;
+  --text-sub:    #3d4f6e;
+  --text-muted:  #8896aa;
+  --blue:        #2d4a7a;
+  --blue-dark:   #1e3560;
+  --blue-light:  #e4ecf8;
+  --blue-soft:   #c9d6ed;
+  --brown:       #9e7048;
+  --green:       #2a7a4a;
+  --radius:      6px;
+  --radius-lg:   10px;
+  --radius-pill: 999px;
+  --shadow:      0 1px 4px rgba(26,37,64,.07);
+  --shadow-md:   0 4px 16px rgba(26,37,64,.11);
+  --font-sans:   'Noto Sans TC', system-ui, sans-serif;
+  --font-serif:  'Noto Serif TC', Georgia, serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+img { max-width: 100%; display: block; }
+
+/* ── UTILITIES ── */
+.wrap    { max-width: 900px; margin: 0 auto; padding: 0 36px; }
+.wrap-sm { max-width: 680px; margin: 0 auto; padding: 0 36px; }
+
+.eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--blue);
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-bottom: 14px;
+}
+.eyebrow::before {
+  content: ''; width: 18px; height: 1px; background: var(--blue); opacity: .5;
+}
+.section-h2 {
+  font-family: var(--font-serif); font-weight: 700;
+  font-size: clamp(28px, 3.8vw, 38px);
+  line-height: 1.32; color: var(--text);
+  margin-bottom: 12px; letter-spacing: -.01em;
+}
+.section-intro {
+  font-size: 16px; line-height: 1.8; color: var(--text-sub);
+  margin-bottom: 48px; max-width: 540px;
+}
+
+/* ── ENTRY ANIMS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+[data-anim] {
+  opacity: 0;
+  animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) both;
+}
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ── NAV ── */
+.nav {
+  position: sticky; top: 0; z-index: 60;
+  background: rgba(245,240,234,.88);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-soft);
+}
+.nav-row {
+  max-width: 1040px; margin: 0 auto;
+  padding: 0 36px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--blue); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif); font-weight: 700; font-size: 18px;
+  letter-spacing: -.02em;
+  box-shadow: 0 2px 6px rgba(45,74,122,.25);
+}
+.brand-name {
+  font-family: var(--font-serif); font-weight: 700;
+  font-size: 16px; color: var(--text); line-height: 1.1;
+}
+.brand-sub {
+  font-size: 11px; color: var(--text-muted);
+  font-weight: 400; margin-top: 2px;
+}
+.nav-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--blue); color: #fff;
+  font-size: 13px; font-weight: 500;
+  padding: 9px 18px; border-radius: var(--radius);
+  transition: background .2s, transform .15s;
+}
+.nav-btn:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, #1a2540 0%, #2d4a7a 100%);
+  color: #fff;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 85% 25%, rgba(147,184,240,.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 900px; margin: 0 auto;
+  padding: 88px 36px 80px;
+  position: relative; z-index: 1;
+}
+.hero .eyebrow {
+  background: rgba(228,236,248,.12);
+  border: 1px solid rgba(228,236,248,.25);
+  color: #e4ecf8;
+  padding: 6px 14px; border-radius: var(--radius-pill);
+}
+.hero .eyebrow::before { background: #e4ecf8; opacity: .6; }
+.hero h1 {
+  font-family: var(--font-serif); font-weight: 900;
+  font-size: clamp(36px, 5.4vw, 60px);
+  line-height: 1.18; letter-spacing: -.015em;
+  margin-bottom: 22px; max-width: 720px;
+}
+.hero h1 em { font-style: normal; color: #93b8f0; }
+.hero-desc {
+  font-size: 16px; line-height: 1.85;
+  color: rgba(228,236,248,.72);
+  max-width: 520px; margin-bottom: 36px;
+}
+.hero-desc strong { color: #fff; font-weight: 500; }
+.hero-proof {
+  margin-top: 44px;
+  display: flex; align-items: center; gap: 28px;
+  flex-wrap: wrap;
+}
+.proof-divider {
+  width: 1px; height: 36px;
+  background: rgba(228,236,248,.18);
+}
+.proof-item {
+  font-size: 12px; color: rgba(228,236,248,.72);
+}
+.proof-item strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 26px; font-weight: 800;
+  color: #fff; line-height: 1.05;
+  margin-bottom: 4px; letter-spacing: -.01em;
+}
+.proof-item strong sup { font-size: 14px; vertical-align: super; }
+
+/* ── FORM ── */
+.form-zone {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(228,236,248,.2);
+  border-radius: var(--radius-lg);
+  padding: 28px 28px 24px;
+  max-width: 480px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.18);
+}
+.form-zone-title {
+  font-size: 13px; font-weight: 600;
+  color: rgba(255,255,255,.9);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.form-zone-title::before { content: '✦'; color: #93b8f0; }
+.sys-form { display: flex; flex-direction: column; gap: 10px; }
+.sys-form input[type="text"] {
+  width: 100%;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(228,236,248,.25);
+  border-radius: var(--radius);
+  padding: 13px 16px;
+  font-size: 14px; font-family: inherit;
+  color: #fff; outline: none;
+  transition: border-color .2s, background .2s;
+}
+.sys-form input[type="text"]::placeholder { color: rgba(228,236,248,.4); }
+.sys-form input[type="text"]:focus { border-color: #93b8f0; background: rgba(255,255,255,.12); }
+.sys-btn {
+  width: 100%;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 13px;
+  font-size: 14px; font-weight: 600;
+  letter-spacing: .04em;
+  transition: background .2s, transform .15s;
+  margin-top: 2px;
+}
+.sys-btn:hover { background: var(--blue-dark); transform: translateY(-1px); }
+.form-guarantee {
+  margin-top: 12px; font-size: 11px;
+  color: rgba(255,255,255,.5);
+  display: flex; align-items: center; gap: 6px;
+}
+.form-guarantee::before { content: '🔒'; }
+
+/* ── PAIN — 6 cards ── */
+.pain { padding: 96px 0; background: var(--bg-card); }
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.pain-cell {
+  background: var(--bg);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 24px 22px;
+  transition: box-shadow .25s, transform .25s, border-color .25s;
+}
+.pain-cell:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--blue-soft);
+}
+.pain-num {
+  font-family: var(--font-serif);
+  font-size: 14px; font-weight: 700;
+  color: var(--blue); opacity: .5;
+  letter-spacing: .08em;
+  margin-bottom: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.pain-cell h3 {
+  font-family: var(--font-serif);
+  font-size: 16px; font-weight: 700;
+  margin-bottom: 8px; line-height: 1.4;
+  color: var(--text);
+}
+.pain-cell p {
+  font-size: 13.5px; color: var(--text-sub);
+  line-height: 1.75;
+}
+
+/* ── FUNNEL DIAGRAM ── */
+.funnel-section { padding: 96px 0; background: var(--bg-section); }
+.funnel-diagram {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 56px;
+  align-items: center;
+  margin-top: 40px;
+}
+.funnel-text { padding-right: 12px; }
+.funnel-text h2 {
+  font-family: var(--font-serif);
+  font-size: 30px; font-weight: 700;
+  line-height: 1.32; margin-bottom: 18px;
+  color: var(--text); letter-spacing: -.01em;
+}
+.funnel-text p {
+  font-size: 15px; color: var(--text-sub);
+  line-height: 1.85; margin-bottom: 14px;
+}
+.you-are-here {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--blue-light);
+  border: 1px solid var(--blue-soft);
+  color: var(--blue);
+  font-size: 13px; font-weight: 600;
+  padding: 9px 16px;
+  border-radius: var(--radius-pill);
+  margin-top: 12px;
+}
+.you-are-here::before { content: '➜'; font-size: 14px; }
+
+.funnel-viz {
+  display: flex; flex-direction: column;
+  align-items: stretch;
+}
+.funnel-step {
+  position: relative;
+  padding: 22px 26px;
+  color: #fff;
+  display: flex; align-items: center;
+  gap: 16px;
+  margin: 0 auto;
+}
+.funnel-step-1 {
+  width: 100%;
+  background: linear-gradient(135deg, #4a6ba0 0%, #3d5a8a 100%);
+  border-radius: 12px 12px 4px 4px;
+}
+.funnel-step-2 {
+  width: 78%;
+  background: linear-gradient(135deg, #2d4a7a 0%, #243d63 100%);
+  border-radius: 4px;
+  margin-top: 6px;
+}
+.funnel-step-3 {
+  width: 56%;
+  background: linear-gradient(135deg, #1e3560 0%, #15244a 100%);
+  border-radius: 4px 4px 12px 12px;
+  margin-top: 6px;
+}
+.funnel-step-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.18);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif);
+  font-weight: 700; font-size: 14px;
+  flex-shrink: 0;
+}
+.funnel-step-body { flex: 1; }
+.funnel-step-stage {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+  margin-bottom: 2px;
+}
+.funnel-step-title {
+  font-family: var(--font-serif);
+  font-size: 17px; font-weight: 700;
+  letter-spacing: -.005em;
+}
+.funnel-step-num {
+  font-family: var(--font-serif);
+  font-size: 12px; font-weight: 600;
+  color: rgba(255,255,255,.55);
+}
+
+/* Position map */
+.position-map { margin-top: 64px; }
+.stage-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.stage-cell {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  position: relative;
+}
+.stage-cell.current {
+  border-color: var(--blue);
+  background: var(--blue-light);
+  box-shadow: 0 4px 16px rgba(45,74,122,.18);
+}
+.stage-cell.current::before {
+  content: '你在這';
+  position: absolute;
+  top: -10px; left: 50%; transform: translateX(-50%);
+  background: var(--blue); color: #fff;
+  font-size: 10px; font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+.stage-n {
+  font-family: var(--font-serif);
+  font-size: 14px; font-weight: 700;
+  color: var(--blue); margin-bottom: 4px;
+  opacity: .7;
+}
+.stage-t {
+  font-family: var(--font-serif);
+  font-size: 14px; font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px; line-height: 1.3;
+}
+.stage-d { font-size: 12px; color: var(--text-sub); line-height: 1.55; }
+
+/* Ratio strip */
+.ratio-strip {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.ratio-bars { display: flex; align-items: end; gap: 8px; height: 80px; }
+.ratio-bar { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.ratio-bar-fill {
+  width: 28px;
+  border-radius: 4px 4px 0 0;
+}
+.ratio-bar:nth-child(1) .ratio-bar-fill { height: 80px; background: var(--blue); }
+.ratio-bar:nth-child(2) .ratio-bar-fill { height: 56px; background: var(--blue); opacity: .7; }
+.ratio-bar:nth-child(3) .ratio-bar-fill { height: 32px; background: var(--brown); }
+.ratio-bar-l { font-size: 10px; color: var(--text-muted); letter-spacing: .08em; }
+.ratio-text { font-size: 13.5px; color: var(--text-sub); line-height: 1.7; }
+.ratio-text strong { color: var(--text); font-weight: 600; }
+.ratio-eyebrow {
+  font-family: var(--font-serif);
+  font-size: 12px; font-weight: 700;
+  color: var(--blue); letter-spacing: .04em;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ── PRINCIPLES ── */
+.principles { padding: 96px 0; background: var(--bg); }
+.principle-block {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 0 32px;
+  padding: 44px 0;
+  border-top: 1px solid var(--border-soft);
+  align-items: start;
+}
+.principle-block:last-child { border-bottom: 1px solid var(--border-soft); }
+.p-num {
+  font-family: var(--font-serif);
+  font-size: 56px; font-weight: 900;
+  color: var(--blue); opacity: .18;
+  line-height: .9;
+  letter-spacing: -.03em;
+}
+.p-tag {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.p-tag::before { content: ''; width: 16px; height: 1px; background: var(--blue); opacity: .5; }
+.p-body h3 {
+  font-family: var(--font-serif);
+  font-size: 24px; font-weight: 700;
+  margin-bottom: 14px; line-height: 1.3;
+  color: var(--text); letter-spacing: -.005em;
+}
+.p-body p {
+  font-size: 15px; color: var(--text-sub);
+  line-height: 1.85; margin-bottom: 14px;
+}
+.p-quote {
+  font-family: var(--font-serif);
+  font-size: 15px; font-style: italic;
+  color: var(--text);
+  border-left: 3px solid var(--blue);
+  padding: 4px 0 4px 18px;
+  margin: 18px 0;
+}
+.p-email-hint {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 500;
+  color: var(--blue);
+  background: var(--blue-light);
+  padding: 7px 14px; border-radius: var(--radius);
+  border: 1px solid var(--blue-soft);
+  margin-top: 6px;
+}
+.p-email-hint::before { content: '✉'; font-size: 13px; }
+
+/* ── STATS ── */
+.stats {
+  background: var(--text);
+  padding: 64px 36px;
+  position: relative; overflow: hidden;
+}
+.stats::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(147,184,240,.07) 0%, transparent 60%);
+}
+.stats-row {
+  max-width: 900px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3,1fr);
+  position: relative;
+}
+.stat-cell {
+  text-align: center; padding: 12px;
+  border-right: 1px solid rgba(228,236,248,.12);
+}
+.stat-cell:last-child { border-right: none; }
+.stat-n {
+  font-family: var(--font-serif);
+  font-size: 46px; font-weight: 900;
+  color: #93b8f0;
+  line-height: 1;
+  margin-bottom: 10px;
+  letter-spacing: -.02em;
+}
+.stat-n sup { font-size: 22px; vertical-align: super; }
+.stat-l { font-size: 12px; color: rgba(228,236,248,.55); }
+.stats-cta { text-align: center; margin-top: 36px; position: relative; }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 26px; border-radius: var(--radius);
+  font-size: 14px; font-weight: 600;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(228,236,248,.32);
+  color: #fff;
+  transition: background .2s, transform .15s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,.18); transform: translateY(-1px); }
+
+/* ── SEQUENCE CALENDAR ── */
+.seq { padding: 96px 0; background: var(--bg); }
+.seq-calendar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-top: 32px;
+}
+.seq-day {
+  background: var(--bg-card);
+  padding: 26px 18px 22px;
+  border-right: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  position: relative;
+  min-height: 220px;
+  display: flex; flex-direction: column;
+  transition: background .2s;
+}
+.seq-day:hover { background: var(--bg); }
+.seq-day:last-child { border-right: none; }
+.seq-day-head {
+  font-family: var(--font-serif);
+  font-size: 22px; font-weight: 400;
+  font-style: italic;
+  color: var(--brown);
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.seq-day-n {
+  font-family: var(--font-serif);
+  font-size: 36px; font-weight: 900;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -.02em;
+}
+.seq-day-tag {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.seq-day-title {
+  font-family: var(--font-serif);
+  font-size: 14px; font-weight: 700;
+  line-height: 1.45;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.seq-day-desc {
+  font-size: 12.5px;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+.seq-day-stamp {
+  position: absolute;
+  top: 14px; right: 14px;
+  font-family: var(--font-serif);
+  font-size: 11px; font-weight: 700;
+  color: var(--brown);
+  border: 1.5px solid var(--brown);
+  border-radius: 50%;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  opacity: .6;
+  transform: rotate(-12deg);
+}
+
+/* ── ABOUT ── */
+.about { padding: 96px 0; background: var(--bg); }
+.about-inner {
+  display: grid; grid-template-columns: 240px 1fr;
+  gap: 48px; align-items: start;
+}
+.about-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.about-avatar {
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  overflow: hidden;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  box-shadow: 0 4px 16px rgba(45,74,122,.18);
+}
+.about-avatar img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.about-name {
+  font-family: var(--font-serif);
+  font-size: 17px; font-weight: 700; color: var(--text);
+  margin-bottom: 4px;
+}
+.about-handle { font-size: 12px; color: var(--text-muted); }
+.about-text h2 {
+  font-family: var(--font-serif);
+  font-size: 28px; font-weight: 700;
+  margin-bottom: 16px; line-height: 1.3;
+  color: var(--text); letter-spacing: -.005em;
+}
+.about-text p {
+  font-size: 15px; color: var(--text-sub);
+  line-height: 1.85; margin-bottom: 14px;
+}
+.cred-list { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+.cred-list li {
+  font-size: 14px; color: var(--text-sub);
+  display: flex; align-items: flex-start; gap: 12px;
+  line-height: 1.7;
+}
+.cred-list li::before { content: '▸'; color: var(--blue); flex-shrink: 0; }
+
+/* ── OFFER ── */
+.offer { padding: 96px 0; background: var(--bg-card); }
+.offer-card {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: var(--bg);
+  transition: box-shadow .25s, transform .2s;
+}
+.offer-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.offer-card-head {
+  padding: 22px 26px;
+  display: flex; align-items: center; gap: 18px;
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--bg-section);
+}
+.offer-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius);
+  background: var(--blue); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.offer-card-head h3 {
+  font-family: var(--font-serif);
+  font-size: 16px; font-weight: 700; line-height: 1.35;
+  color: var(--text); margin-bottom: 2px;
+}
+.offer-card-head p { font-size: 12px; color: var(--text-muted); }
+.offer-card-body { padding: 22px 26px; }
+.offer-card-body p { font-size: 14.5px; color: var(--text-sub); line-height: 1.85; }
+.offer-list { list-style: none; margin-top: 14px; }
+.offer-list li {
+  font-size: 13.5px; color: var(--text);
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border-soft);
+  display: flex; align-items: flex-start; gap: 12px;
+  line-height: 1.65;
+}
+.offer-list li:last-child { border-bottom: none; }
+.offer-list li::before {
+  content: '✓';
+  color: var(--green); font-weight: 700;
+  font-size: 13px; margin-top: 2px; flex-shrink: 0;
+}
+
+/* ── HOW ── */
+.how { padding: 96px 0; background: var(--bg); }
+.how-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 12px;
+}
+.how-cell {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  transition: box-shadow .25s, transform .2s;
+}
+.how-cell:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.how-n {
+  font-family: var(--font-serif);
+  font-size: 42px; font-weight: 900;
+  color: var(--blue); line-height: 1;
+  margin-bottom: 14px;
+  letter-spacing: -.03em;
+  opacity: .25;
+}
+.how-cell h3 {
+  font-family: var(--font-serif);
+  font-size: 16px; font-weight: 700;
+  margin-bottom: 8px; color: var(--text);
+}
+.how-cell p { font-size: 14px; color: var(--text-sub); line-height: 1.7; }
+
+/* ── WHO ── */
+.who {
+  padding: 96px 0;
+  background: var(--text);
+  color: rgba(228,236,248,.85);
+}
+.who .eyebrow { color: #93b8f0; }
+.who .eyebrow::before { background: #93b8f0; }
+.who .section-h2 { color: #fff; }
+.who .section-intro { color: rgba(228,236,248,.55); }
+.who-yes {
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  background: rgba(42,122,74,.10);
+  border: 1px solid rgba(108,214,160,.25);
+}
+.who-list-2col {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 32px;
+}
+.who-list-2col li {
+  font-size: 14px; color: rgba(228,236,248,.85);
+  display: flex; align-items: flex-start; gap: 12px;
+  line-height: 1.65;
+}
+.who-list-2col li::before {
+  content: '✓'; color: #6dd6a0; font-weight: 700; flex-shrink: 0;
+}
+
+/* ── CTA FINAL ── */
+.cta-final {
+  padding: 96px 36px;
+  background: linear-gradient(160deg, #1a2540 0%, #2d4a7a 100%);
+  text-align: center;
+  position: relative; overflow: hidden;
+  color: #fff;
+}
+.cta-final::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(228,236,248,.06) 0%, transparent 70%);
+}
+.cta-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+.cta-label {
+  font-size: 11px; font-weight: 600; letter-spacing: .18em;
+  text-transform: uppercase; color: #93b8f0;
+  margin-bottom: 16px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.cta-label::before { content: '✦'; }
+.cta-final h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 900; color: #fff;
+  line-height: 1.22; margin-bottom: 18px;
+  letter-spacing: -.015em;
+}
+.cta-final h2 em { font-style: normal; color: #93b8f0; }
+.cta-final .desc {
+  font-size: 16px; color: rgba(228,236,248,.65);
+  margin-bottom: 40px; line-height: 1.75;
+}
+.cta-form-zone {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(228,236,248,.15);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  max-width: 440px;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.22);
+}
+.cta-form-zone .form-zone-title { color: rgba(255,255,255,.85); }
+.cta-checklist {
+  display: flex; justify-content: center;
+  gap: 20px; flex-wrap: wrap; margin-top: 18px;
+}
+.cta-checklist span {
+  font-size: 12px; color: rgba(228,236,248,.5);
+  display: flex; align-items: center; gap: 6px;
+}
+.cta-checklist span::before { content: '✓'; color: #93b8f0; font-weight: 700; }
+
+/* ── FAQ ── */
+.faq { padding: 96px 0; background: var(--bg-card); }
+.faq-item { border-top: 1px solid var(--border-soft); }
+.faq-item:last-child { border-bottom: 1px solid var(--border-soft); }
+.faq-q {
+  width: 100%; background: none; border: none;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 0; cursor: pointer; text-align: left;
+  font-family: var(--font-serif);
+  font-size: 16px; font-weight: 700; color: var(--text);
+  gap: 20px; line-height: 1.4;
+}
+.faq-q .icon {
+  flex-shrink: 0; width: 26px; height: 26px;
+  border: 1px solid var(--border); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: var(--text-muted);
+  transition: all .25s; line-height: 1;
+}
+.faq-q.open .icon {
+  background: var(--blue); border-color: var(--blue);
+  color: #fff; transform: rotate(45deg);
+}
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height .35s ease, padding .3s;
+  font-size: 14.5px; color: var(--text-sub); line-height: 1.85;
+}
+.faq-a.open { max-height: 500px; padding-bottom: 22px; padding-right: 40px; }
+
+/* ── FOOTER ── */
+.lp-footer {
+  background: var(--text);
+  color: rgba(228,236,248,.65);
+  padding: 36px 36px 32px;
+  text-align: center;
+}
+.footer-brand {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 18px; color: #fff;
+  margin-bottom: 8px;
+}
+.footer-sub { font-size: 12px; color: rgba(228,236,248,.35); }
+.footer-sub a { color: rgba(228,236,248,.5); }
+.footer-sub a:hover { color: #93b8f0; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 760px) {
+  .hero-inner { padding: 64px 24px 56px; }
+  .nav-row { padding: 0 24px; }
+  .pain-grid { grid-template-columns: 1fr 1fr; }
+  .principle-block { grid-template-columns: 1fr; gap: 8px; }
+  .p-num { font-size: 36px; margin-bottom: 4px; }
+  .funnel-diagram { grid-template-columns: 1fr; gap: 32px; }
+  .stage-row { grid-template-columns: 1fr 1fr; }
+  .seq-calendar { grid-template-columns: 1fr; }
+  .seq-day { min-height: auto; border-right: none; border-bottom: 1px solid var(--border-soft); }
+  .seq-day:last-child { border-bottom: none; }
+  .about-inner { grid-template-columns: 1fr; gap: 32px; }
+  .how-grid { grid-template-columns: 1fr; }
+  .who-list-2col { grid-template-columns: 1fr; }
+  .ratio-strip { grid-template-columns: 1fr; }
+  .wrap { padding: 0 24px; }
+  .wrap-sm { padding: 0 24px; }
+}
+@media (max-width: 480px) {
+  .pain-grid { grid-template-columns: 1fr; }
+  .stage-row { grid-template-columns: 1fr; }
+  .hero-proof { gap: 16px; }
+  .proof-divider { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="nav-row">
+    <a href="#hero" class="brand">
+      <div class="brand-mark">K</div>
+      <div>
+        <div class="brand-name">K叔</div>
+        <div class="brand-sub">@runing_9to5 · 不想上班的貓</div>
+      </div>
+    </a>
+    <a href="#cta" class="nav-btn">免費領取 →</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <span class="eyebrow" data-anim style="animation-delay:0s">診斷 → 策略 → 開始寫</span>
+    <h1 data-anim style="animation-delay:.08s">
+      粉絲增加，<br>
+      收入卻沒動？<br>
+      你卡在<em>漏斗</em>的哪一關？
+    </h1>
+    <p class="hero-desc" data-anim style="animation-delay:.16s">
+      大部分人不是不努力，是<strong>順序反了</strong>。<br>
+      這份 PDF 幫你找出卡點，然後用 5 天 25 個主題，<br>
+      把「發文」變成「漏斗」。
+    </p>
+
+    <div data-anim style="animation-delay:.24s">
+      <div class="form-zone">
+        <div class="form-zone-title">輸入 Email，免費收取診斷資源</div>
+        <form method="post" action="https://systeme.io/embedded/40811012/subscription" class="sys-form">
+          <input type="text" name="surname" placeholder="你的名字（選填）">
+          <input type="text" name="email" placeholder="輸入你的 Email *" required>
+          <button type="submit" class="sys-btn">立即免費領取 →</button>
+        </form>
+        <p class="form-guarantee">完全免費・不寄垃圾信・隨時可取消訂閱</p>
+      </div>
+    </div>
+
+    <div class="hero-proof" data-anim style="animation-delay:.32s">
+      <div class="proof-item"><strong>3</strong>階段漏斗拆解</div>
+      <div class="proof-divider"></div>
+      <div class="proof-item"><strong>25</strong>個對應寫作主題</div>
+      <div class="proof-divider"></div>
+      <div class="proof-item"><strong>3-2-1</strong>黃金內容比例</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PAIN ═══ -->
+<section class="pain reveal">
+  <div class="wrap">
+    <span class="eyebrow">你是不是也這樣</span>
+    <h2 class="section-h2">每天 30 分鐘想主題、寫文章、<br>然後盯著個位數的瀏覽數</h2>
+    <p class="section-intro">下面 6 個卡點，命中 3 個以上，這份資源就是寫給你的。</p>
+    <div class="pain-grid">
+      <div class="pain-cell"><div class="pain-num">01 / 06</div><h3>靈感枯竭</h3><p>每天硬想主題，腦袋一片空白，最後乾脆不發了。這不是懶，是沒有框架。</p></div>
+      <div class="pain-cell"><div class="pain-num">02 / 06</div><h3>發了沒人看</h3><p>用心寫的文章只有個位數瀏覽，開始懷疑自己的內容是不是根本沒價值。</p></div>
+      <div class="pain-cell"><div class="pain-num">03 / 06</div><h3>越學越亂</h3><p>看了一堆高手的教學，方法互相矛盾，不知道從哪個開始，反而原地踏步。</p></div>
+      <div class="pain-cell"><div class="pain-num">04 / 06</div><h3>不知道誰會買</h3><p>就算有人看，也不知道這些觀眾裡面，到底誰會願意付錢。</p></div>
+      <div class="pain-cell"><div class="pain-num">05 / 06</div><h3>寫了爆紅文，又掉回零</h3><p>偶爾一篇爆，但下個月又回到沒人看。沒有可重複的系統。</p></div>
+      <div class="pain-cell"><div class="pain-num">06 / 06</div><h3>有流量沒收入</h3><p>粉絲在增加，但完全不知道怎麼把注意力轉換成真正的收入。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FUNNEL DIAGRAM ═══ -->
+<section class="funnel-section reveal">
+  <div class="wrap">
+    <div class="funnel-diagram">
+      <div class="funnel-text">
+        <span class="eyebrow">三階段漏斗</span>
+        <h2>看見 → 信任 → 成交<br>一條路走完才會變現</h2>
+        <p>大多數人卡在「看見」這一階段：每天為瀏覽數焦慮，卻沒有讓人停下來的理由。或卡在「信任」：有人看，但不夠認識你。</p>
+        <p>沒有完整漏斗，你只能靠一篇又一篇爆文續命。有了漏斗，每篇文章都有它的位置。</p>
+        <span class="you-are-here">這份 PDF 會幫你找出你卡在哪一關</span>
+      </div>
+      <div class="funnel-viz">
+        <div class="funnel-step funnel-step-1">
+          <div class="funnel-step-icon">看</div>
+          <div class="funnel-step-body">
+            <div class="funnel-step-stage">Stage 01 · Awareness</div>
+            <div class="funnel-step-title">看見</div>
+          </div>
+          <div class="funnel-step-num">3 / 6</div>
+        </div>
+        <div class="funnel-step funnel-step-2">
+          <div class="funnel-step-icon">信</div>
+          <div class="funnel-step-body">
+            <div class="funnel-step-stage">Stage 02 · Trust</div>
+            <div class="funnel-step-title">信任</div>
+          </div>
+          <div class="funnel-step-num">2 / 6</div>
+        </div>
+        <div class="funnel-step funnel-step-3">
+          <div class="funnel-step-icon">買</div>
+          <div class="funnel-step-body">
+            <div class="funnel-step-stage">Stage 03 · Conversion</div>
+            <div class="funnel-step-title">成交</div>
+          </div>
+          <div class="funnel-step-num">1 / 6</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="position-map">
+      <span class="eyebrow">你目前在哪？</span>
+      <h2 class="section-h2" style="font-size:24px;margin-bottom:32px;">找出自己的位置，下一步就清楚了</h2>
+      <div class="stage-row">
+        <div class="stage-cell"><div class="stage-n">Stage 0</div><div class="stage-t">還沒開始</div><div class="stage-d">想做但不知道哪裡入手，每天滑別人的內容。</div></div>
+        <div class="stage-cell current"><div class="stage-n">Stage 1</div><div class="stage-t">每天硬擠主題</div><div class="stage-d">有在發文但沒有方向，看數據看到自我懷疑。</div></div>
+        <div class="stage-cell"><div class="stage-n">Stage 2</div><div class="stage-t">流量起來了</div><div class="stage-d">瀏覽追蹤都有，但完全不知道怎麼變現。</div></div>
+        <div class="stage-cell"><div class="stage-n">Stage 3</div><div class="stage-t">第一筆收入</div><div class="stage-d">有人買單，要把它放大成可持續的系統。</div></div>
+      </div>
+    </div>
+
+    <div class="ratio-strip">
+      <div class="ratio-bars">
+        <div class="ratio-bar"><div class="ratio-bar-fill"></div><div class="ratio-bar-l">人設</div></div>
+        <div class="ratio-bar"><div class="ratio-bar-fill"></div><div class="ratio-bar-l">知識</div></div>
+        <div class="ratio-bar"><div class="ratio-bar-fill"></div><div class="ratio-bar-l">銷售</div></div>
+      </div>
+      <div class="ratio-text">
+        <span class="ratio-eyebrow">3 - 2 - 1 黃金內容比例</span>
+        <strong>3 篇人設文・2 篇知識文・1 篇銷售文。</strong> 一週六篇，三大心法各佔一塊，這就是漏斗在發文層面的具體應用。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRINCIPLES ═══ -->
+<section class="principles reveal">
+  <div class="wrap">
+    <span class="eyebrow">三大核心心法</span>
+    <h2 class="section-h2">從零到變現的完整路徑</h2>
+    <p class="section-intro">這份 PDF 拆解三個最關鍵的轉折點。每個心法，都對應 1-2 天的實戰寫作主題。</p>
+
+    <div class="principle-block">
+      <div class="p-num">01</div>
+      <div class="p-body">
+        <div class="p-tag">心法一</div>
+        <h3>以終為始 — 商品先於內容</h3>
+        <p>大部分人的第一步是「先發文累積粉絲」。但這是最大的陷阱。沒有方向的發文，就是沒有終點的旅行。</p>
+        <p>真正穩定變現的邏輯是反過來：先設計你要賣的東西，再去創造圍繞它的內容。這樣你寫的每一篇文，都有鋪陳價值的意義。</p>
+        <div class="p-quote">「沒有商品的內容，就是沒有方向的寫作。」</div>
+        <div><span class="p-email-hint">Day 1–2 的序列信會給你這個方向的寫作主題</span></div>
+      </div>
+    </div>
+
+    <div class="principle-block">
+      <div class="p-num">02</div>
+      <div class="p-body">
+        <div class="p-tag">心法二</div>
+        <h3>專賣店思維 — 讓價值一目了然</h3>
+        <p>你的帳號是「便利商店」還是「專賣店」？便利商店什麼都有，但顧客進來分不清你的價值。專賣店一眼就知道你能幫什麼忙。</p>
+        <p>精準定位三問：這群人是誰？他們的痛點是什麼？你的商品能怎麼幫他們？答完這三個，你的「招牌」就出來了。</p>
+        <div class="p-quote">「當你寫給所有人，就是在寫給沒人。」</div>
+        <div><span class="p-email-hint">Day 3 的序列信會給你定位方向的寫作主題</span></div>
+      </div>
+    </div>
+
+    <div class="principle-block">
+      <div class="p-num">03</div>
+      <div class="p-body">
+        <div class="p-tag">心法三</div>
+        <h3>先交朋友，再成交 — 用信任搭橋</h3>
+        <p>銷售不是推銷，而是信任的結果。沒有信任的成交頂多是一錘子買賣；有信任的成交才能長久。</p>
+        <p>三階段漏斗：看見（有趣有共鳴的內容）→ 信任（持續輸出有料又真誠）→ 成交（信任夠深，自然轉化）。還有一個黃金內容比例：3 篇人設文 × 2 篇知識文 × 1 篇銷售文。</p>
+        <div class="p-quote">「變現不是冰冷的交易，是溫暖的價值交換。」</div>
+        <div><span class="p-email-hint">Day 4–5 的序列信會給你信任建立的寫作主題</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats reveal">
+  <div class="stats-row">
+    <div class="stat-cell">
+      <div class="stat-n">2,000<sup>+</sup></div>
+      <div class="stat-l">Threads 貼文實戰經驗</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">25</div>
+      <div class="stat-l">個寫作主題直送信箱</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">3</div>
+      <div class="stat-l">核心心法完整拆解</div>
+    </div>
+  </div>
+  <div class="stats-cta">
+    <a href="#cta" class="btn-ghost">免費領取 PDF + 25 個寫作主題 →</a>
+  </div>
+</div>
+
+<!-- ═══ SEQUENCE CALENDAR ═══ -->
+<section class="seq reveal">
+  <div class="wrap">
+    <span class="eyebrow">五天的早晨</span>
+    <h2 class="section-h2">五封信，五個轉折</h2>
+    <p class="section-intro">每天早上 7:00，一封信。一個觀念，五個對應的寫作主題。</p>
+    <div class="seq-calendar">
+      <div class="seq-day">
+        <div class="seq-day-stamp">D1</div>
+        <div class="seq-day-head">心法一</div>
+        <div class="seq-day-n">01</div>
+        <div class="seq-day-tag">心法</div>
+        <div class="seq-day-title">順序反了</div>
+        <div class="seq-day-desc">商品先於內容，不是先發文累積粉絲。</div>
+      </div>
+      <div class="seq-day">
+        <div class="seq-day-stamp">D2</div>
+        <div class="seq-day-head">心法一+</div>
+        <div class="seq-day-n">02</div>
+        <div class="seq-day-tag">心法</div>
+        <div class="seq-day-title">設計商品</div>
+        <div class="seq-day-desc">商品 = 幫別人從 A 走到 B 的承諾。</div>
+      </div>
+      <div class="seq-day">
+        <div class="seq-day-stamp">D3</div>
+        <div class="seq-day-head">心法二</div>
+        <div class="seq-day-n">03</div>
+        <div class="seq-day-tag">心法</div>
+        <div class="seq-day-title">專賣店思維</div>
+        <div class="seq-day-desc">寫給所有人 ＝ 寫給沒人。一句話講清楚。</div>
+      </div>
+      <div class="seq-day">
+        <div class="seq-day-stamp">D4</div>
+        <div class="seq-day-head">心法三</div>
+        <div class="seq-day-n">04</div>
+        <div class="seq-day-tag">心法</div>
+        <div class="seq-day-title">信任搭橋</div>
+        <div class="seq-day-desc">看見 → 信任 → 成交，三階段漏斗。</div>
+      </div>
+      <div class="seq-day">
+        <div class="seq-day-stamp">D5</div>
+        <div class="seq-day-head">整合實戰</div>
+        <div class="seq-day-n">05</div>
+        <div class="seq-day-tag">心法</div>
+        <div class="seq-day-title">串成一條線</div>
+        <div class="seq-day-desc">把三大心法變成你每週能跑的系統。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about reveal">
+  <div class="wrap">
+    <span class="eyebrow">關於我</span>
+    <h2 class="section-h2">不想上班的貓，<br>但還是在上班的那種</h2>
+    <p class="section-intro">我跟你一樣還在上班、時間有限，所以這套方法是「最小可行」版本。</p>
+    <div class="about-inner">
+      <div class="about-card">
+        <div class="about-avatar">
+          <img src="assets/images/in-1.png" alt="K叔">
+        </div>
+        <div class="about-name">K叔</div>
+        <div class="about-handle">@runing_9to5</div>
+      </div>
+      <div class="about-text">
+        <p>我是 K叔，一個在上班的斜槓自媒體人。我不是什麼全職網紅或成功企業家，我就是一個普通上班族，用下班後的時間，建立自己的內容變現系統。</p>
+        <p>這也是我能理解你的原因：我跟你一樣，時間有限、能量有限，不可能每天花 4 小時做內容。所以我建立的所有框架，都是「最小可行」的版本。</p>
+        <ul class="cred-list">
+          <li>在 Threads 發了 2,000+ 篇文章，分析過哪種文表現好</li>
+          <li>建立了自己的內容→信任→收入系統</li>
+          <li>幫助過多位上班族建立副業自媒體</li>
+          <li>所有方法都是自己做出來的，不是紙上談兵</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OFFER ═══ -->
+<section class="offer reveal">
+  <div class="wrap">
+    <span class="eyebrow">你會得到什麼</span>
+    <h2 class="section-h2">訂閱後你會收到</h2>
+    <p class="section-intro">不只是一份 PDF，而是一個讓你從今天開始「有東西寫」的系統。</p>
+
+    <div class="offer-card">
+      <div class="offer-card-head">
+        <div class="offer-icon">📄</div>
+        <div>
+          <h3>《從零到變現：自媒體變現三大核心心法》完整 PDF</h3>
+          <p>訂閱後立即寄出・3 頁精華・可永久保存</p>
+        </div>
+      </div>
+      <div class="offer-card-body">
+        <p>拆解三個讓你從「亂槍打鳥」變成「有系統輸出」的核心邏輯。包含：商品設計思維、定位三問框架、信任漏斗拆解，以及黃金內容比例 3-2-1 法則。</p>
+      </div>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-card-head">
+        <div class="offer-icon">✉</div>
+        <div>
+          <h3>連續 5 天序列信・每天 5 個寫作主題</h3>
+          <p>打開信箱就知道今天寫什麼・Threads 直接可用</p>
+        </div>
+      </div>
+      <div class="offer-card-body">
+        <p>每封信 = 1 個核心觀念 + 5 個對應的 Threads 寫作主題。25 個主題全部可以直接拿來發文，寫完一輪你就把三大心法內化了。</p>
+        <ul class="offer-list">
+          <li>每個主題都對應一個心法，邊寫邊學，不是死記</li>
+          <li>從你的真實視角切入，不是硬套模板</li>
+          <li>每個主題都附角度提示，不會不知道怎麼展開</li>
+          <li>25 個主題夠你發一個月，再也不用每天硬想</li>
+          <li>全部 Threads 格式適配，直接貼上去就能發</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-card-head">
+        <div class="offer-icon">📨</div>
+        <div>
+          <h3>K叔的實戰觀察電子報</h3>
+          <p>序列信結束後持續送達・可隨時取消</p>
+        </div>
+      </div>
+      <div class="offer-card-body">
+        <p>5 天序列信結束後，你會進入我的電子報名單。我每週分享：自媒體經營的真實觀察、我自己踩過的坑、和新發現的有效方法。不是理論，全是做出來的東西。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW ═══ -->
+<section class="how reveal">
+  <div class="wrap">
+    <span class="eyebrow">流程說明</span>
+    <h2 class="section-h2">訂閱後會發生什麼</h2>
+    <p class="section-intro">三個步驟，今天就開始。</p>
+    <div class="how-grid">
+      <div class="how-cell">
+        <div class="how-n">01</div>
+        <h3>輸入 Email 免費訂閱</h3>
+        <p>填入你的 Email，5 分鐘內 PDF 和第一封信就會到達你的信箱。</p>
+      </div>
+      <div class="how-cell">
+        <div class="how-n">02</div>
+        <h3>連續 5 天收到寫作主題</h3>
+        <p>每天打開信箱，選 1 個主題，發到 Threads。不用想，直接寫。</p>
+      </div>
+      <div class="how-cell">
+        <div class="how-n">03</div>
+        <h3>邊寫邊把心法內化</h3>
+        <p>25 個主題寫完，你就自然理解三大心法的實際應用，不是死記理論。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHO ═══ -->
+<section class="who reveal">
+  <div class="wrap">
+    <span class="eyebrow">適合對象</span>
+    <h2 class="section-h2">這份資源是為你準備的嗎？</h2>
+    <p class="section-intro">如果以下符合你 3 項以上，這份資源就是為你寫的。</p>
+    <div class="who-yes">
+      <ul class="who-list-2col">
+        <li>上班族，想用自媒體建立副業收入</li>
+        <li>已經在發文，但不知道怎麼串成變現系統</li>
+        <li>每天都在煩惱「今天寫什麼」</li>
+        <li>看了很多教學，但缺少可執行的框架</li>
+        <li>想在 Threads 建立個人品牌</li>
+        <li>剛開始做自媒體，想找到正確順序</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FINAL ═══ -->
+<section class="cta-final reveal" id="cta">
+  <div class="cta-inner">
+    <span class="cta-label">立即行動</span>
+    <h2>25 個主題，<br><em>直送你的信箱</em></h2>
+    <p class="desc">
+      不用再煩惱「今天寫什麼」<br>
+      打開信箱，選一個主題，直接寫，直接發
+    </p>
+    <div class="cta-form-zone form-zone">
+      <div class="form-zone-title">輸入 Email，立即免費領取</div>
+      <form method="post" action="https://systeme.io/embedded/40811012/subscription" class="sys-form">
+        <input type="text" name="surname" placeholder="你的名字（選填）">
+        <input type="text" name="email" placeholder="輸入你的 Email *" required>
+        <button type="submit" class="sys-btn">立即免費領取 →</button>
+      </form>
+    </div>
+    <div class="cta-checklist">
+      <span>完全免費</span>
+      <span>立即寄出 PDF</span>
+      <span>連續 5 天主題信</span>
+      <span>隨時可取消</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq reveal">
+  <div class="wrap-sm">
+    <span class="eyebrow">常見問題</span>
+    <h2 class="section-h2" style="margin-bottom:40px;">你可能想問的</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">這份資源適合誰？<span class="icon">+</span></button>
+      <div class="faq-a"><div>適合想在 Threads（或其他平台）經營自媒體，但不知道從哪開始、或每天都在煩惱「寫什麼」的上班族和斜槓創作者。不管你是剛起步還是已經在發文，只要你想把內容和收入連起來，這份資源都有幫助。</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">真的完全免費嗎？<span class="icon">+</span></button>
+      <div class="faq-a"><div>是的，PDF 和 5 天序列信完全免費，不需要信用卡或任何付費。如果你之後想深入學習，我有付費的書和陪跑服務，但沒有任何強迫或隱藏費用。</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">我已經有在發文了，還需要這個嗎？<span class="icon">+</span></button>
+      <div class="faq-a"><div>如果你每天都在煩惱「今天寫什麼」，或是發了很多文但不知道怎麼串成變現系統，那這份資源還是有價值的。它不是教你「怎麼寫」，而是給你一個「系統」，讓你把已有的發文習慣升級。</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">5 天之後呢？<span class="icon">+</span></button>
+      <div class="faq-a"><div>5 天的序列信結束後，你會留在我的電子報名單，我每週會分享自媒體經營的觀察和方法。如果不想繼續收，隨時可以取消，一鍵搞定，不會有任何問題。</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">K叔是誰？憑什麼相信你？<span class="icon">+</span></button>
+      <div class="faq-a"><div>我是 @runing_9to5（不想上班的貓），一個在上班的斜槓自媒體人。我在 Threads 發了 2,000+ 篇文章，建立了自己的內容變現系統，也幫助過多位上班族做到一樣的事。我不是什麼全職網紅，我跟你一樣要上班、時間有限，所以我的方法都是「最小可行」的版本。</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">25 個主題寫完之後怎麼辦？<span class="icon">+</span></button>
+      <div class="faq-a"><div>寫完 25 個主題之後，你會對三大心法有更深的理解，可以開始自己從心法出發去延伸題目。如果你想要更多系統化的支持，我有付費的陪跑服務可以幫你。但先把這 25 個寫完再說，一步一步來。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="lp-footer">
+  <div class="footer-brand">K叔 @runing_9to5</div>
+  <div class="footer-sub">
+    不想上班的貓 ・ © 2026 ・
+    <a href="#">隱私政策</a> ・ <a href="#">取消訂閱</a>
+  </div>
+</footer>
+
+<script>
+// FAQ accordion
+function toggleFaq(btn) {
+  const ans = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+  if (!isOpen) {
+    btn.classList.add('open');
+    ans.classList.add('open');
+  }
+}
+
+// Scroll-triggered reveal
+(function() {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+})();
+</script>
+
+</body>
+</html>
