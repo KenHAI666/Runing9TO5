@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "[自媒體入門] Threads 還是 Blog？上班族自媒體平台選擇指南"
+author: "K叔"
+title: "Threads 還是 Blog？上班族自媒體平台選擇指南"
 date: 2026-05-04
 last_modified_at: 2026-05-04
+lang: zh-TW
 description: "想開始自媒體，卻搞不清楚 Threads、IG、Blog 哪個最適合上班族？K叔用親身經驗告訴你，平台選錯方向，努力再多也只是在幫平台打工。"
-categories: [自媒體經營, 自媒體入門]
+categories: [content-strategy]
 tags: ['Threads', 'Blog', '自媒體平台', '上班族副業', '個人品牌', '自媒體入門']
 permalink: /articles/threads-vs-blog-platform-guide/
 ---

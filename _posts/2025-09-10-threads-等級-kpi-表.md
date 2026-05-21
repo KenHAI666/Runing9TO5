@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "[Threads 教學] Threads 帳號等級 KPI 表：你現在在哪個階段？"
+author: "K叔"
+title: "Threads 帳號等級 KPI 表：你現在在哪個階段？"
 date: 2025-09-10
 last_modified_at: 2026-05-04
+lang: zh-TW
 description: "粉絲數 300 和 3000 的帳號，目標完全不同。K叔整理一張 Threads 帳號成長 KPI 表，讓你清楚知道自己現在的位置和下一步該專注什麼。"
-categories: [Threads教學, 自媒體經營]
+categories: [content-strategy]
 tags: ['Threads經營', 'KPI指標', '自媒體成長', 'Threads入門', '帳號成長']
 permalink: /articles/threads-account-level-kpi/
 ---
