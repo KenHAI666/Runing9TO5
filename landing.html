@@ -308,7 +308,7 @@ img { max-width: 100%; display: block; }
 
 .funnel-viz {
   display: flex; flex-direction: column;
-  align-items: stretch;
+  align-items: center;
 }
 .funnel-step {
   position: relative;
@@ -974,27 +974,33 @@ img { max-width: 100%; display: block; }
         <p>沒有完整漏斗，你只能靠一篇又一篇爆文續命。有了漏斗，每篇文章都有它的位置。</p>
         <span class="you-are-here">這份 PDF 會幫你找出你卡在哪一關</span>
       </div>
-      <div class="funnel-step funnel-step-1">
-  <div class="funnel-step-icon">看</div>
-  <div class="funnel-step-body">
-    <div class="funnel-step-stage">Stage 01 · Awareness</div>
-    <div class="funnel-step-title">看見</div>
-  </div>
-</div>
-<div class="funnel-step funnel-step-2">
-  <div class="funnel-step-icon">信</div>
-  <div class="funnel-step-body">
-    <div class="funnel-step-stage">Stage 02 · Trust</div>
-    <div class="funnel-step-title">信任</div>
-  </div>
-</div>
-<div class="funnel-step funnel-step-3">
-  <div class="funnel-step-icon">買</div>
-  <div class="funnel-step-body">
-    <div class="funnel-step-stage">Stage 03 · Conversion</div>
-    <div class="funnel-step-title">成交</div>
-  </div>
-</div>
+      <div class="funnel-viz">
+        <div class="funnel-step funnel-step-1">
+          <div class="funnel-step-icon">看</div>
+          <div class="funnel-step-body">
+            <div class="funnel-step-stage">Stage 01 · Awareness</div>
+            <div class="funnel-step-title">看見</div>
+          </div>
+          <div class="funnel-step-num">3 / 6</div>
+        </div>
+        <div class="funnel-step funnel-step-2">
+          <div class="funnel-step-icon">信</div>
+          <div class="funnel-step-body">
+            <div class="funnel-step-stage">Stage 02 · Trust</div>
+            <div class="funnel-step-title">信任</div>
+          </div>
+          <div class="funnel-step-num">2 / 6</div>
+        </div>
+        <div class="funnel-step funnel-step-3">
+          <div class="funnel-step-icon">買</div>
+          <div class="funnel-step-body">
+            <div class="funnel-step-stage">Stage 03 · Conversion</div>
+            <div class="funnel-step-title">成交</div>
+          </div>
+          <div class="funnel-step-num">1 / 6</div>
+        </div>
+      </div>
+    </div>
 
     <div class="position-map">
       <span class="eyebrow">你目前在哪？</span>
@@ -1146,11 +1152,11 @@ img { max-width: 100%; display: block; }
     <p class="section-intro">我跟你一樣還在上班、時間有限，所以這套方法是「最小可行」版本。</p>
     <div class="about-inner">
       <div class="about-card">
-       <div class="avatar-icon">
-  <img src="/assets/images/in-1.PNG" alt="K叔" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-</div>
-        <div class="avatar-name">K叔</div>
-        <div class="avatar-handle">@runing_9to5</div>
+        <div class="about-avatar">
+          <img src="assets/images/in-1.png" alt="K叔">
+        </div>
+        <div class="about-name">K叔</div>
+        <div class="about-handle">@runing_9to5</div>
       </div>
       <div class="about-text">
         <p>我是 K叔，一個在上班的斜槓自媒體人。我不是什麼全職網紅或成功企業家，我就是一個普通上班族，用下班後的時間，建立自己的內容變現系統。</p>
