@@ -1158,12 +1158,11 @@ footer {
       <div class="form-zone-title">
         輸入 Email，立即免費領取
       </div>
-      <form id="subscribeForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfUVw2XuMpZBhVwMQ5EbNdd4a3Lrb738qWgBOj5eat7hoB2BQ/formResponse" method="POST" target="hidden_iframe" onsubmit="formSubmitted()">
-        <input type="text" name="entry.551449593" placeholder="你的名字（選填）" class="cta-input" />
-        <input type="email" name="entry.610402703" placeholder="輸入你的 Email *" required class="cta-input" />
-        <button type="submit" class="cta-submit-btn">立即免費領取 →</button>
-      </form>
-      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+      <div id="subscribeForm">
+        <input type="text" id="fieldName" placeholder="你的名字（選填）" class="cta-input" />
+        <input type="email" id="fieldEmail" placeholder="輸入你的 Email *" required class="cta-input" />
+        <button type="button" class="cta-submit-btn" onclick="submitForm()">立即免費領取 →</button>
+      </div>
       <div id="formSuccess" style="display:none; text-align:center; padding:16px 0;">
         <p style="font-size:18px; font-weight:700; color:#E4ECF8; margin:0 0 6px;">🎉 成功！請去信箱確認訂閱</p>
         <p style="font-size:14px; color:rgba(228,236,248,0.7); margin:0;">PDF 和第一封信正在路上 ✉️</p>
@@ -1282,12 +1281,44 @@ function toggleFaq(btn) {
 </script>
 
 <script>
-function formSubmitted() {
-  setTimeout(function() {
+function submitForm() {
+  var email = document.getElementById('fieldEmail').value.trim();
+  var name = document.getElementById('fieldName').value.trim();
+
+  if (!email) {
+    document.getElementById('fieldEmail').focus();
+    return;
+  }
+
+  var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfUVw2XuMpZBhVwMQ5EbNdd4a3Lrb738qWgBOj5eat7hoB2BQ/formResponse';
+  var body = new URLSearchParams();
+  body.append('entry.551449593', name);
+  body.append('entry.610402703', email);
+
+  fetch(formUrl, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: body.toString()
+  }).then(function() {
     document.getElementById('subscribeForm').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
-  }, 800);
+  }).catch(function() {
+    // no-cors 模式下 catch 不會觸發，成功也視為送出
+    document.getElementById('subscribeForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
 }
+
+// Enter 鍵也能送出
+document.addEventListener('DOMContentLoaded', function() {
+  var inputs = document.querySelectorAll('.cta-input');
+  inputs.forEach(function(input) {
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') submitForm();
+    });
+  });
+});
 </script>
 </body>
 </html>
