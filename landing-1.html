@@ -726,14 +726,15 @@ footer {
   .form-zone { padding: 24px 20px 20px; }
 }
 
-/* ── SYSTEME.IO FORM ── */
-.sys-form {
+/* ── CUSTOM SUBSCRIBE FORM ── */
+#subscribeForm {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.sys-form input[type="text"] {
+.cta-input {
   width: 100%;
+  box-sizing: border-box;
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(228,236,248,0.25);
   border-radius: 8px;
@@ -742,16 +743,14 @@ footer {
   font-family: var(--sans);
   color: #fff;
   outline: none;
-  transition: border-color .2s;
+  transition: border-color .2s, background .2s;
 }
-.sys-form input[type="text"]::placeholder {
-  color: rgba(228,236,248,0.35);
-}
-.sys-form input[type="text"]:focus {
+.cta-input::placeholder { color: rgba(228,236,248,0.4); }
+.cta-input:focus {
   border-color: rgba(228,236,248,0.6);
   background: rgba(255,255,255,0.12);
 }
-.sys-btn {
+.cta-submit-btn {
   width: 100%;
   background: #2D4A7A;
   color: #fff;
@@ -766,11 +765,8 @@ footer {
   transition: background .2s, transform .15s;
   margin-top: 2px;
 }
-.sys-btn:hover {
-  background: var(--navy);
-  transform: translateY(-1px);
-}
-.sys-btn:active { transform: translateY(0); }
+.cta-submit-btn:hover { background: var(--navy); transform: translateY(-1px); }
+.cta-submit-btn:active { transform: translateY(0); }
 </style>
 </head>
 <body>
@@ -937,9 +933,7 @@ footer {
   <div class="wrap">
     <div class="about-inner">
       <div class="about-avatar">
-      <div class="avatar-icon">
-  <img src="/assets/images/in-1.PNG" alt="K叔" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-</div>
+        <div class="avatar-icon">🐱</div>
         <div class="avatar-name">K叔</div>
         <div class="avatar-handle">@runing_9to5</div>
       </div>
@@ -1160,19 +1154,20 @@ footer {
       打開信箱，選一個主題，直接寫，直接發
     </p>
 
-    <!-- ============================================================
-         ★ 在這裡替換第二個 systeme.io 的 inline form script ★
-         （這是頁面底部的 CTA 表單，和上面的 hero 表單連接同一個 list）
-         ============================================================ -->
     <div class="cta-form-zone">
       <div class="form-zone-title">
         輸入 Email，立即免費領取
       </div>
-      <form method="post" action="https://systeme.io/embedded/40811012/subscription" class="sys-form">
-        <input type="text" name="surname" placeholder="你的名字（選填）" />
-        <input type="text" name="email" placeholder="輸入你的 Email *" required />
-        <button type="submit" class="sys-btn">立即免費領取 →</button>
+      <form id="subscribeForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfUVw2XuMpZBhVwMQ5EbNdd4a3Lrb738qWgBOj5eat7hoB2BQ/formResponse" method="POST" target="hidden_iframe" onsubmit="formSubmitted()">
+        <input type="text" name="entry.551449593" placeholder="你的名字（選填）" class="cta-input" />
+        <input type="email" name="entry.610402703" placeholder="輸入你的 Email *" required class="cta-input" />
+        <button type="submit" class="cta-submit-btn">立即免費領取 →</button>
       </form>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+      <div id="formSuccess" style="display:none; text-align:center; padding:16px 0;">
+        <p style="font-size:18px; font-weight:700; color:#E4ECF8; margin:0 0 6px;">🎉 成功！請去信箱確認訂閱</p>
+        <p style="font-size:14px; color:rgba(228,236,248,0.7); margin:0;">PDF 和第一封信正在路上 ✉️</p>
+      </div>
       <p class="form-guarantee">完全免費・不寄垃圾信・隨時可取消訂閱</p>
     </div>
 
@@ -1286,5 +1281,13 @@ function toggleFaq(btn) {
 }
 </script>
 
+<script>
+function formSubmitted() {
+  setTimeout(function() {
+    document.getElementById('subscribeForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }, 800);
+}
+</script>
 </body>
 </html>
