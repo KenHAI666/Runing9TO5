@@ -1281,32 +1281,35 @@ function toggleFaq(btn) {
 </script>
 
 <script>
+var WEBHOOK_URL = 'https://kenhai-n8n.hf.space/webhook/subscribe';
+
 function submitForm() {
   var email = document.getElementById('fieldEmail').value.trim();
-  var name = document.getElementById('fieldName').value.trim();
+  var name  = document.getElementById('fieldName').value.trim();
 
   if (!email) {
     document.getElementById('fieldEmail').focus();
     return;
   }
 
-  var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfUVw2XuMpZBhVwMQ5EbNdd4a3Lrb738qWgBOj5eat7hoB2BQ/formResponse';
-  var body = new URLSearchParams();
-  body.append('entry.551449593', name);
-  body.append('entry.610402703', email);
+  var btn = document.querySelector('.cta-submit-btn');
+  btn.disabled = true;
+  btn.textContent = '送出中…';
 
-  fetch(formUrl, {
+  fetch(WEBHOOK_URL, {
     method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: body.toString()
-  }).then(function() {
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: name, email: email })
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('server error');
     document.getElementById('subscribeForm').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
-  }).catch(function() {
-    // no-cors 模式下 catch 不會觸發，成功也視為送出
-    document.getElementById('subscribeForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+  })
+  .catch(function() {
+    btn.disabled = false;
+    btn.textContent = '立即免費領取 →';
+    alert('送出失敗，請稍後再試或直接寄信給我 🙏');
   });
 }
 
