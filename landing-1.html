@@ -524,24 +524,38 @@ nav {
 /* ── ABOUT ── */
 .about-section { padding: 88px 0; background: var(--cream); }
 .about-inner {
-  display: grid; grid-template-columns: 1fr 2fr;
-  gap: 52px; align-items: start;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 52px;
+  align-items: start;
 }
-@media(max-width:640px){ .about-inner { grid-template-columns: 1fr; } }
+@media(max-width:720px){ .about-inner { grid-template-columns: 1fr; } }
+
+/* 左欄：照片卡片 */
 .about-avatar {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-  border-radius: 12px;
-  padding: 32px;
-  text-align: center;
+  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 100%);
+  border-radius: 16px;
+  overflow: hidden;
   box-shadow: var(--shadow-md);
+  text-align: center;
 }
-.avatar-icon { font-size: 64px; margin-bottom: 12px; }
+.about-avatar img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4/5;
+}
+.about-avatar-footer {
+  padding: 16px 20px 20px;
+}
 .avatar-name {
   font-family: var(--serif);
   font-size: 18px; font-weight: 700; color: #fff;
   margin-bottom: 4px;
 }
 .avatar-handle { font-size: 13px; color: #93B8F0; }
+
+/* 右欄：文字 */
 .about-text h2 {
   font-family: var(--serif);
   font-size: 28px; font-weight: 700;
@@ -554,14 +568,21 @@ nav {
 }
 .about-cred-list {
   list-style: none; margin-top: 20px;
-  display: flex; flex-direction: column; gap: 8px;
+  display: flex; flex-direction: column; gap: 10px;
 }
 .about-cred-list li {
   font-size: 14px; color: var(--navy-light);
   display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 14px;
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: 8px;
+  line-height: 1.6;
 }
 .about-cred-list li::before {
-  content: '▸'; color: var(--navy-mid); flex-shrink: 0;
+  content: '✓'; color: var(--green);
+  font-weight: 700; flex-shrink: 0;
+  margin-top: 1px;
 }
 
 /* ── CTA SECTION ── */
@@ -929,21 +950,23 @@ footer {
 <!-- ══════════════════════════════════════════════════════════
      ABOUT
 ══════════════════════════════════════════════════════════ -->
-<section class="about reveal">
+<section class="about-section">
   <div class="wrap">
-    <span class="eyebrow">關於我</span>
-    <h2 class="section-h2">不想上班的貓，<br>但還是在上班的那種</h2>
-    <p class="section-intro">我跟你一樣還在上班、時間有限，所以這套方法是「最小可行」版本。</p>
+    <span class="label">關於我</span>
     <div class="about-inner">
-      <div class="about-card">
-        <div class="about-avatar"><img src="assets/images/in-1.PNG" alt="K叔"></div>
-        <div class="about-name">K叔</div>
-        <div class="about-handle">@runing_9to5</div>
+      <div class="about-avatar">
+        <img src="assets/images/in-1.PNG" alt="K叔" onerror="this.style.display='none';document.getElementById('about-emoji').style.display='flex'">
+        <div id="about-emoji" style="display:none;align-items:center;justify-content:center;padding:40px 0;font-size:80px;">🐱</div>
+        <div class="about-avatar-footer">
+          <div class="avatar-name">K叔</div>
+          <div class="avatar-handle">@runing_9to5</div>
+        </div>
       </div>
       <div class="about-text">
+        <h2>不想上班的貓，<br>但還是在上班的那種</h2>
         <p>我是 K叔，一個在上班的斜槓自媒體人。我不是什麼全職網紅或成功企業家，我就是一個普通上班族，用下班後的時間，建立自己的內容變現系統。</p>
         <p>這也是我能理解你的原因：我跟你一樣，時間有限、能量有限，不可能每天花 4 小時做內容。所以我建立的所有框架，都是「最小可行」的版本。</p>
-        <ul class="cred-list">
+        <ul class="about-cred-list">
           <li>在 Threads 發了 2,000+ 篇文章，分析過哪種文表現好</li>
           <li>建立了自己的內容→信任→收入系統</li>
           <li>幫助過多位上班族建立副業自媒體</li>
@@ -1256,8 +1279,7 @@ footer {
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
-    <div class="about-avatar"><img src="assets/images/in-1.PNG" alt="K叔"></div>
-    <div class="footer-brand">K叔 @runing_9to5</div>
+    <div class="footer-brand">🐱 K叔 @runing_9to5</div>
     <div class="footer-sub">
       不想上班的貓 ・ © 2025 ・
       <a href="#">隱私政策</a> ・ <a href="#">取消訂閱</a>
@@ -1284,35 +1306,32 @@ function toggleFaq(btn) {
 </script>
 
 <script>
-var WEBHOOK_URL = 'https://kenhai-n8n.hf.space/webhook/subscribe';
-
 function submitForm() {
   var email = document.getElementById('fieldEmail').value.trim();
-  var name  = document.getElementById('fieldName').value.trim();
+  var name = document.getElementById('fieldName').value.trim();
 
   if (!email) {
     document.getElementById('fieldEmail').focus();
     return;
   }
 
-  var btn = document.querySelector('.cta-submit-btn');
-  btn.disabled = true;
-  btn.textContent = '送出中…';
+  var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfUVw2XuMpZBhVwMQ5EbNdd4a3Lrb738qWgBOj5eat7hoB2BQ/formResponse';
+  var body = new URLSearchParams();
+  body.append('entry.551449593', name);
+  body.append('entry.610402703', email);
 
-  fetch(WEBHOOK_URL, {
+  fetch(formUrl, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: name, email: email })
-  })
-  .then(function(res) {
-    if (!res.ok) throw new Error('server error');
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: body.toString()
+  }).then(function() {
     document.getElementById('subscribeForm').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
-  })
-  .catch(function() {
-    btn.disabled = false;
-    btn.textContent = '立即免費領取 →';
-    alert('送出失敗，請稍後再試或直接寄信給我 🙏');
+  }).catch(function() {
+    // no-cors 模式下 catch 不會觸發，成功也視為送出
+    document.getElementById('subscribeForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
   });
 }
 
