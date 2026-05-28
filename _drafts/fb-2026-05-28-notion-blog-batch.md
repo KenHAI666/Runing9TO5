@@ -2,7 +2,7 @@
 
 > 來源：Notion「部落格」頁面  
 > 對齊：AI_K叔_Blog /fb 模式  
-> 使用方式：貼文內不放官網連結時，可把「留言連結」另放第一則留言。
+> 使用方式：貼文內不放官網連結時，可把官網連結放在 FB 第一則留言。
 
 ---
 
@@ -31,7 +31,7 @@
 
 自媒體起步不是把自己包裝成老師，而是把你走過的坑，整理成別人的路標。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/self-media-start-mistakes/
 
 ---
@@ -63,7 +63,7 @@ https://runing9to5.com/articles/self-media-start-mistakes/
 上班族做自媒體，最怕每天重新想題目。
 比較好的做法，是把同一個核心問題，用不同角度拆開。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/content-branch-method/
 
 ---
@@ -94,7 +94,7 @@ https://runing9to5.com/articles/content-branch-method/
 時間不是答案。
 狀態才是答案。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/threads-posting-time-guide/
 
 ---
@@ -124,7 +124,7 @@ Threads 不只適合自媒體創作者。
 
 跳過前兩步，讀者只會覺得你很急。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/threads-business-guide/
 
 ---
@@ -158,7 +158,7 @@ https://runing9to5.com/articles/threads-business-guide/
 
 慢一點，但比較不會把自己逼到牆角。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/side-hustle-before-quitting/
 
 ---
@@ -199,5 +199,5 @@ https://runing9to5.com/articles/side-hustle-before-quitting/
 
 是前面的內容早就讓讀者知道：你理解他的卡點，也有一套方法能陪他走下一步。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/content-trust-conversion/

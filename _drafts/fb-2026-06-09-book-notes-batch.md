@@ -34,7 +34,7 @@
 
 是現在就慢慢搭。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/company-of-one-side-hustle/
 
 ---
@@ -66,5 +66,5 @@ https://runing9to5.com/articles/company-of-one-side-hustle/
 
 看不出下一步的數據，只是另一種噪音。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/measurable-content-system/

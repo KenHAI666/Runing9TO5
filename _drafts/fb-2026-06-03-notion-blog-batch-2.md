@@ -31,7 +31,7 @@
 
 你只要願意把走過的坑，整理成別人的路標。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/who-should-do-self-media/
 
 ---
@@ -66,7 +66,7 @@ https://runing9to5.com/articles/who-should-do-self-media/
 
 你是要讓對方少卡一點。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/make-content-easy-to-understand/
 
 ---
@@ -97,7 +97,7 @@ https://runing9to5.com/articles/make-content-easy-to-understand/
 
 很多時候，靈感是舊內容的優化。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/content-optimization-loop/
 
 ---
@@ -130,7 +130,7 @@ https://runing9to5.com/articles/content-optimization-loop/
 
 是從第一天就開始設計信任。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/low-followers-high-trust/
 
 ---
@@ -159,7 +159,7 @@ https://runing9to5.com/articles/low-followers-high-trust/
 
 清楚，比華麗重要。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/positioning-for-right-audience/
 
 ---
@@ -190,5 +190,5 @@ https://runing9to5.com/articles/positioning-for-right-audience/
 
 三個都要有。
 
-留言連結：  
+FB 第一則留言放官網連結：  
 https://runing9to5.com/articles/trust-before-traffic/
