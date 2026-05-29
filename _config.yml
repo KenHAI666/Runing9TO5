@@ -3,12 +3,31 @@ title: "Runing9TO5"
 description: "K叔｜陪你用最懶人的方式，把自媒體經營變成可持續的斜槓收入。"
 baseurl: ""
 url: "https://runing9to5.com"
+lang: "zh-Hant"
 
 author:
   name: "K叔｜不想上班的貓"
   avatar: "/assets/images/me.jpeg"
   email: "hi@runing9to5.com"
   bio: "陪上班族與內向創作者，打造低風險的自媒體變現系統。"
+
+brand:
+  name: "RUNING_9to5"
+  legal_name: "Runing9TO5"
+  email: "hi@runing9to5.com"
+  logo: "/assets/images/favicon.png"
+  default_image: "/assets/images/og-default.jpg"
+
+social:
+  threads: "https://www.threads.net/@runing_9to5"
+  instagram: "https://www.instagram.com/runing_9to5/"
+  portaly: "https://portaly.cc/Uncleken"
+
+ads:
+  enabled: false
+  client: "ca-pub-4979322196093081"
+  slot_top: ""
+  slot_bottom: ""
 
 theme: minima
 

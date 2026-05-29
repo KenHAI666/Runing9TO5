@@ -97,15 +97,17 @@ keywords: 諮詢服務, K叔諮詢, 知識變現, 自媒體策略, 預約諮詢
 <section class="card-section-1" style="max-width:720px; text-align:center;">
   <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">不想填表？直接找我也行——</p>
   <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-    <a href="https://www.instagram.com/runing_9to5/"
+    <a href="{{ site.social.instagram }}"
        target="_blank"
+       rel="noopener noreferrer"
        class="btn-external"
        style="font-size:0.875rem;"
        onclick="gtag('event', 'lead', { 'event_category': 'Social_DM', 'event_label': 'Consultation_IG_Click', 'value': 0 });">
       📸 IG 私訊
     </a>
-    <a href="https://www.threads.net/@runing_9to5"
+    <a href="{{ site.social.threads }}"
        target="_blank"
+       rel="noopener noreferrer"
        class="btn-consult"
        style="font-size:0.875rem; margin-top:0;"
        onclick="gtag('event', 'lead', { 'event_category': 'Social_DM', 'event_label': 'Consultation_Threads_Click', 'value': 0 });">

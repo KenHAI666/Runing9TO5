@@ -26,11 +26,14 @@
   --blue:        #2d4a7a;
   --blue-dark:   #1e3560;
   --blue-light:  #e4ecf8;
+  --accent:      #2d4a7a;
+  --accent-dark: #1e3560;
 
   /* 次強調：暖棕 */
   --brown:       #9e7048;
   --brown-dark:  #7e5838;
   --brown-light: #f5ede3;
+  --accent-warm: #9e7048;
 
   --radius:    6px;
   --radius-lg: 10px;
@@ -159,6 +162,10 @@ details > p {
 
 .nav-links a::after { display: none; }
 
+.nav-spacer {
+  height: 70px;
+}
+
 /* 漢堡按鈕 */
 .hamburger {
   display: none;
@@ -209,6 +216,35 @@ details > p {
 .card-section-1:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+}
+
+.site-footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.site-footer-links {
+  margin-bottom: 1.5rem;
+}
+
+.site-footer-links a {
+  margin: 0 15px;
+  color: #555;
+}
+
+.site-footer-copy {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.site-footer-email {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.site-footer-email a {
+  color: #aaa;
 }
 
 /* ─── BUTTONS ─── */

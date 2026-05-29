@@ -7,7 +7,7 @@ scripts/
 這份文件記錄如何在 GitHub Codespaces 生成並發布文章。
 ---
 
-🚀server.py後台 發布文章流程
+🚀 server.py 後台發布文章流程
 進入虛擬環境後：
 
 pip install flask
@@ -27,16 +27,13 @@ http://127.0.0.1:5000/
 
 按 預覽 → 會顯示渲染後的效果（套卡片 CSS）。
 
-確認沒問題後按 發佈 → 自動生成 Markdown 檔到 _posts 並 push 到 GitHub。
+確認沒問題後按 發佈 → 生成 Markdown 檔到 `_posts`。
 
-無堆送執行
+如需上線，請人工檢查後再自行提交：
 
-直接用快捷鍵中斷
-Ctrl + C
-先拉取遠端改動（推薦）
-git pull origin main --rebase
-拉取完成後再推送
-git push origin main
+- `git add _posts/`
+- `git commit -m "新增文章: 標題"`
+- `git push origin main`
 
 
 ---------------
@@ -62,18 +59,21 @@ python3 scripts/server.py
 腳本會自動將文章寫入 _posts 資料夾，並使用 YYYY-MM-DD-標題.md 的格式命名。
 
 ---
-🚀 發布文章流程notion2jekyll.py
+🚀 notion2jekyll.py 發布文章流程
 
 1️⃣ 開啟 Codespaces
 打開 GitHub 專案頁
 點 Code → Codespaces → New codespace
 等待自動開啟雲端 VSCode
 
-2️⃣ 執行腳本生成文章
+2️⃣ 先做 dry run
 在終端機輸入：
-python3 scripts/notion2jekyll.py
+python3 scripts/notion2jekyll.py path/to/notion-export.json
 
-3️⃣新增文章後，必須手動提交： 已改成自動
+3️⃣ 確認檔名沒問題後再正式寫入
+python3 scripts/notion2jekyll.py path/to/notion-export.json --write
+
+4️⃣ 新增文章後，手動提交
 git add _posts/
 
 git commit -m "新增文章: 測試文章"

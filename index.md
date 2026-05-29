@@ -56,10 +56,10 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
   {% for post in site.posts limit:3 %}
    <article>
     <div class="card-section-1">
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncate:100 }}</p>
-      <a href="{{ post.url }}" class="read-more">閱讀更多 →</a>
+      <a href="{{ post.url | relative_url }}" class="read-more">閱讀更多 →</a>
     </div>
   </article>
   {% endfor %}
@@ -193,10 +193,10 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
 <!-- 聯絡我 -->
 <section class="card-section section-contact">
   <h2>聯絡我 / 社群</h2>
-  <p>Email：<a href="mailto:uncleKen@runing9to5.com">uncleKen@runing9to5.com</a></p>
+  <p>Email：<a href="mailto:{{ site.brand.email }}">{{ site.brand.email }}</a></p>
   <p>
-    <a href="https://www.threads.net/@runing_9to5" target="_blank">Threads</a> |
-    <a href="https://www.instagram.com/runing_9to5/" target="_blank">Instagram</a>
+    <a href="{{ site.social.threads }}" target="_blank">Threads</a> |
+    <a href="{{ site.social.instagram }}" target="_blank">Instagram</a>
   </p>
 </section>
 
