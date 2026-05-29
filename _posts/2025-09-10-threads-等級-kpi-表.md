@@ -88,7 +88,4 @@ Threads 的演算法持續在變，數字只是參考，方向比數字更重要
 
 <p>我是 K叔，你的自媒體企劃。</p>
 
-<p><strong>分類:</strong> Threads教學, 自媒體經營</p>
-<p><strong>標籤:</strong> Threads經營, KPI指標, 自媒體成長, Threads入門, 帳號成長</p>
-
 </section>

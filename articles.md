@@ -28,7 +28,13 @@ permalink: /articles/
     {% for category in categories %}
       {% if category != "" %}
       <button onclick="filterCategory('{{ category | strip }}', this)" class="category-btn">
-        {{ category | strip }}
+        {% assign category_name = category | strip %}
+        {% case category_name %}
+          {% when "content-strategy" %}自媒體策略
+          {% when "personal-growth" %}個人成長
+          {% when "side-hustle" %}副業斜槓
+          {% else %}{{ category_name }}
+        {% endcase %}
       </button>
       {% endif %}
     {% endfor %}
@@ -55,7 +61,16 @@ permalink: /articles/
       </p>
       
       <div style="border-top: 1px dashed #ddd; padding-top: 10px; margin-top: 15px; display: flex; justify-content: space-between; align-items: center; color:#888; font-size: 0.9em;">
-        <span>🏷️ {{ post.categories | join: ", " }}</span>
+        <span>🏷️
+          {% for category in post.categories %}
+            {% case category %}
+              {% when "content-strategy" %}自媒體策略
+              {% when "personal-growth" %}個人成長
+              {% when "side-hustle" %}副業斜槓
+              {% else %}{{ category }}
+            {% endcase %}{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+        </span>
         <span>📅 {{ post.date | date: "%Y-%m-%d" }}</span>
       </div>
       

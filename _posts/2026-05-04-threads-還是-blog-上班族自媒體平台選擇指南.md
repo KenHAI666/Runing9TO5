@@ -142,7 +142,4 @@ permalink: /articles/threads-vs-blog-platform-guide/
 <p>我是 K叔，你的自媒體企劃。<br>
 你現在整理的每一個想法，都會在未來形成價值。</p>
 
-<p><strong>分類:</strong> 自媒體經營, 自媒體入門</p>
-<p><strong>標籤:</strong> Threads, Blog, 自媒體平台, 上班族副業, 個人品牌, 自媒體入門</p>
-
 </section>
