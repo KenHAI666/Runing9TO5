@@ -32,4 +32,4 @@ permalink: /privacy/
 
 ### 6. 您的權利與聯繫方式
 您可以隨時要求查閱、更正或刪除我們所持有的您的個人資料。若對本隱私權政策有任何疑問，請透過電子郵件與我聯繫：
-**Email：** [uncleKen@runing9to5.com](mailto:uncleKen@runing9to5.com)
+**Email：** [{{ site.brand.email }}](mailto:{{ site.brand.email }})

@@ -201,29 +201,31 @@ layout: default
     <div style="height:20px;"></div>
   {% endif %}
 
-  <!-- 廣告位 1：文章頂部 -->
+  {% if site.ads.enabled and site.ads.slot_top != "" %}
   <div class="ad-unit ad-top" style="margin: 0 0 28px 0; text-align: center; min-height: 90px;">
     <ins class="adsbygoogle"
          style="display:block"
-         data-ad-client="ca-pub-4979322196093081"
-         data-ad-slot="SLOT_ID_TOP"
+         data-ad-client="{{ site.ads.client }}"
+         data-ad-slot="{{ site.ads.slot_top }}"
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
+  {% endif %}
 
   <!-- 文章內容（已含 card-section 外框） -->
   {{ content }}
 
-  <!-- 廣告位 2：文章底部（最高 CTR 位置） -->
+  {% if site.ads.enabled and site.ads.slot_bottom != "" %}
   <div class="ad-unit ad-bottom" style="margin: 32px 0 0 0; text-align: center; min-height: 90px;">
     <ins class="adsbygoogle"
          style="display:block"
-         data-ad-client="ca-pub-4979322196093081"
-         data-ad-slot="SLOT_ID_BOTTOM"
+         data-ad-client="{{ site.ads.client }}"
+         data-ad-slot="{{ site.ads.slot_bottom }}"
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
+  {% endif %}
 
 </div>

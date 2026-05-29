@@ -6,7 +6,7 @@ keywords: 自媒體, 文章, 經營心得, K叔, 內容變現
 permalink: /articles/
 ---
 
-<div style="height:70px;"></div>
+<div class="nav-spacer"></div>
 
 <section class="card-section">
   
@@ -158,7 +158,7 @@ function filterCategory(category, btn) {
     "name": "RUNING_9to5",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://runing9to5.com/assets/images/logo.png"
+      "url": "https://runing9to5.com/assets/images/favicon.png"
     }
   }
 }
