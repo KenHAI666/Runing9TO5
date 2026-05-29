@@ -7,7 +7,13 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header>
       <nav class="fixed-nav">
-        <a href="{{ '/' | relative_url }}" class="logo">Runing_9To5｜K叔｜不想上班的貓</a>
+        <a href="{{ '/' | relative_url }}" class="logo">
+          <span class="logo-mark">K</span>
+          <span class="logo-copy">
+            <span class="logo-name">K叔</span>
+            <span class="logo-sub">@runing_9to5 · 不想上班的貓</span>
+          </span>
+        </a>
 
         <div class="hamburger" id="hamburger">
           <div></div>
@@ -19,7 +25,6 @@
       
       {% for item in site.nav %}
         <a href="{{ item.link | relative_url }}"
-           class="{% if item.highlight %}nav-cta{% endif %}"
            {% if item.new_window %}target="_blank" rel="noopener noreferrer"{% endif %}
            
         >
