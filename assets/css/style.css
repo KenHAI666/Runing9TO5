@@ -130,12 +130,48 @@ details > p {
 }
 
 .fixed-nav .logo {
-  font-family: 'Noto Serif TC', serif;
-  font-size: 0.95rem;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   color: var(--text);
   text-decoration: none;
-  letter-spacing: 0.03em;
+}
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--blue);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  box-shadow: 0 2px 6px rgba(45,74,122,0.25);
+}
+
+.logo-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.logo-name {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.logo-sub {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.2;
 }
 
 .nav-links {
@@ -158,23 +194,6 @@ details > p {
 .nav-links a.active {
   color: var(--text);
   border-bottom-color: var(--blue);
-}
-
-.nav-links a.nav-cta {
-  background: var(--blue);
-  color: #fff;
-  border: 1px solid var(--blue);
-  border-radius: var(--radius);
-  padding: 0.55rem 1rem;
-  font-weight: 600;
-}
-
-.nav-links a.nav-cta:hover,
-.nav-links a.nav-cta.active {
-  color: #fff;
-  background: var(--blue-dark);
-  border-color: var(--blue-dark);
-  border-bottom-color: var(--blue-dark);
 }
 
 .nav-links a::after { display: none; }

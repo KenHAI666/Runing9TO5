@@ -49,9 +49,6 @@ nav:
     link: "/contact"
   - name: "訂閱電子報"
     link: "/#subscribe"
-  - name: "免費領取"
-    link: "/landing-1.html"
-    highlight: true
 
 # SEO 專用設定
 seo:
