@@ -18,9 +18,11 @@
         <div class="nav-links" id="navLinks">
       
       {% for item in site.nav %}
-        <a href="{{ item.link }}" 
+        <a href="{{ item.link | relative_url }}"
+           class="{% if item.highlight %}nav-cta{% endif %}"
            {% if item.new_window %}target="_blank" rel="noopener noreferrer"{% endif %}
-           {% if item.highlight %}style="font-weight: bold; color: #e63946;"{% endif %}>
+           
+        >
            {{ item.name }}
         </a>
       {% endfor %}

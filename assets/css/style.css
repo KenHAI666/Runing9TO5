@@ -160,6 +160,23 @@ details > p {
   border-bottom-color: var(--blue);
 }
 
+.nav-links a.nav-cta {
+  background: var(--blue);
+  color: #fff;
+  border: 1px solid var(--blue);
+  border-radius: var(--radius);
+  padding: 0.55rem 1rem;
+  font-weight: 600;
+}
+
+.nav-links a.nav-cta:hover,
+.nav-links a.nav-cta.active {
+  color: #fff;
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+  border-bottom-color: var(--blue-dark);
+}
+
 .nav-links a::after { display: none; }
 
 .nav-spacer {
