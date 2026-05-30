@@ -51,6 +51,21 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
   </div>
 </section>
 
+<!-- 🔹 適合誰 -->
+<section class="card-section-1 section-who-for" id="who-for">
+  <h2>這套系統特別適合...</h2>
+  <p>
+    如果你是想經營 <strong>自媒體</strong>、建立 <strong>個人品牌</strong>，
+    但又不想被流量綁架、也不想把生活全部拿去換曝光，這裡整理的就是給你的方法。
+  </p>
+  <ul>
+    <li>白天上班、下班想經營內容副業的上班族</li>
+    <li>想變現但不想露臉的內向創作者</li>
+    <li>想用 Threads 或 IG 建立信任、打造穩定收入的人</li>
+    <li>想用內容累積價值，而不是只追短期流量的人</li>
+  </ul>
+</section>
+
 <!-- 痛點區 -->
 <section id="pain-points" class="card-section section-pain-points">
   <span class="section-kicker">常見卡點</span>
@@ -168,6 +183,15 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
   <span class="section-kicker">免費訂閱</span>
   <h2>準備好打造屬於你的自媒體變現系統嗎？</h2>
   <p>訂閱電子報，領取《從零到變現：50 個自媒體小 Tips》。</p>
+  <p>
+    這份免費電子報適合想學 <strong>自媒體經營</strong>、<strong>內容變現</strong>、
+    <strong>斜槓副業</strong>、<strong>Threads 寫作</strong> 與
+    <strong>個人品牌建立</strong> 的上班族與創作者。
+  </p>
+  <p>
+    你會收到我整理的實戰觀察、內容策略、電子書與服務設計思路，
+    幫你從「不知道今天寫什麼」一路走到「能用內容建立信任，最後開始變現」。
+  </p>
   <small>100+ 上班族已經開始行動｜從小副業開始改變人生</small>
   <div class="newsletter-box">
     <script async data-uid="49e70b7c7c" src="https://ken-66.kit.com/49e70b7c7c/index.js"></script>
