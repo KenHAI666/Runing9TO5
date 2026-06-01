@@ -114,12 +114,11 @@ keywords: 知識變現, 電子書, 內容策略, 自媒體經營, 產品打造, 
 
   <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border-soft);">
     <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">先看看再說也行——</p>
-    <a href="https://portaly.cc/Uncleken/product/jXFxr1YZGMN04GIL8uiE"
-       target="_blank"
+    <a href="/#subscribe"
        class="btn-external"
        style="font-size:0.875rem; padding:0.5rem 1.25rem; background:transparent; color:var(--accent-dark); border:1px solid var(--border);"
-       onclick="gtag('event', 'lead', { 'event_category': 'Freebie', 'event_label': 'Ebook_Sales_Page_Freebie_CTA' });">
-      免費領取 策略挑戰包 →
+       onclick="gtag('event', 'lead', { 'event_category': 'Newsletter', 'event_label': 'Ebook_Sales_Page_Newsletter_CTA' });">
+      先免費訂閱電子報 →
     </a>
   </div>
 </section>
