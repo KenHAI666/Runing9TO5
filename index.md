@@ -39,7 +39,8 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
     </div>
 
     <div class="hero-panel">
-      <p class="hero-panel-label">這套系統特別適合</p>
+      <p class="hero-panel-label">這套系統特別適合你是想經營 <strong>自媒體</strong>、建立 <strong>個人品牌</strong>，
+    但又不想被流量綁架、也不想把生活全部拿去換曝光，這裡整理的就是給你的方法。</p>
       <div class="hero-fit-list">
         <div class="hero-fit-item">白天上班、下班想經營內容副業的上班族</div>
         <div class="hero-fit-item">想變現但不想露臉的內向創作者</div>
@@ -51,20 +52,6 @@ keywords: "自媒體變現系統, 上班族斜槓指南, 內容變現策略, 內
   </div>
 </section>
 
-<!-- 🔹 適合誰 -->
-<section class="card-section-1 section-who-for" id="who-for">
-  <h2>這套系統特別適合...</h2>
-  <p>
-    如果你是想經營 <strong>自媒體</strong>、建立 <strong>個人品牌</strong>，
-    但又不想被流量綁架、也不想把生活全部拿去換曝光，這裡整理的就是給你的方法。
-  </p>
-  <ul>
-    <li>白天上班、下班想經營內容副業的上班族</li>
-    <li>想變現但不想露臉的內向創作者</li>
-    <li>想用 Threads 或 IG 建立信任、打造穩定收入的人</li>
-    <li>想用內容累積價值，而不是只追短期流量的人</li>
-  </ul>
-</section>
 
 <!-- 痛點區 -->
 <section id="pain-points" class="card-section section-pain-points">
