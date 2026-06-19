@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main   # ⚠️ 你的預設分支，確認是不是 main
+  schedule:
+    - cron: "10 23 * * *"
+  workflow_dispatch:
 
 jobs:
   build:
