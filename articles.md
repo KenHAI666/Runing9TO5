@@ -14,8 +14,8 @@ permalink: /articles/
 
   <div class="card-section-1" style="border-left: 5px solid #C48E64; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; cursor: pointer;" onclick="window.location.href='/resources';">
     <div>
-      <h2 style="margin: 0 0 10px 0; color: #C48E64; font-size: 1.5em;">🔥 從零到變現：系統化經營指南</h2>
-      <p style="margin: 0; color: #555;">別只是寫身體健康的。這套電子書教你如何設計內容策略，把流量變成收入。</p>
+      <h2 style="margin: 0 0 10px 0; color: #C48E64; font-size: 1.5em;">🔥 低粉×高信任×低摩擦經營</h2>
+      <p style="margin: 0; color: #555;">這門 6 大主題課程，不教你追流量，而是教你用更低摩擦的內容系統，把對的人變成買單的人。</p>
     </div>
     <a href="/resources" class="btn-external" style="background-color: #C48E64; border-color: #C48E64; margin-top:0;">查看詳情 →</a>
   </div>
@@ -78,88 +78,22 @@ permalink: /articles/
     {% endfor %}
   </div>
 
+  <script>
+    function filterCategory(category, btn) {
+      const cards = document.querySelectorAll('.article-card');
+      const buttons = document.querySelectorAll('.category-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      cards.forEach(card => {
+        const cats = card.dataset.category.split(',');
+        if (category === 'all' || cats.includes(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
 </section>
-
-
-<style>
-/* 分類按鈕樣式 */
-.category-btn {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  padding: 8px 16px;
-  margin: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  color: #555;
-  transition: all 0.2s;
-  font-family: "Noto Sans TC", sans-serif;
-}
-
-.category-btn:hover {
-  background: #e8f6ff;
-  color: #3B5B7A;
-  border-color: #3B5B7A;
-}
-
-/* 選中狀態 (使用品牌藍) */
-.category-btn.active {
-  background: #3B5B7A;
-  color: white;
-  border-color: #3B5B7A;
-  box-shadow: 0 2px 5px rgba(59, 91, 122, 0.3);
-}
-
-/* 文章卡片懸停效果 (沿用全站樣式，這裡做微調) */
-.article-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.article-card:hover h2 a {
-    color: #C48E64 !important; /* 標題變色 */
-}
-</style>
-
-<script>
-function filterCategory(category, btn) {
-  const cards = document.querySelectorAll("#articles-list .article-card");
-
-  // 切換 active 狀態
-  document.querySelectorAll("#category-menu .category-btn").forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-
-  // 顯示/隱藏文章
-  cards.forEach(card => {
-    // 兼容處理：有些分類可能有空格，做一下清理
-    const cats = card.dataset.category.split(",").map(c => c.trim());
-    
-    if (category === "all" || cats.includes(category)) {
-      card.style.display = "block";
-      // 添加一個小動畫讓出現更自然
-      card.style.opacity = 0;
-      setTimeout(() => card.style.opacity = 1, 50);
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "headline": "{{ page.title }}",
-  "description": "{{ page.description }}",
-  "url": "{{ page.url | absolute_url }}",
-  "publisher": {
-    "@type": "Organization",
-    "name": "RUNING_9to5",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://runing9to5.com/assets/images/favicon.png"
-    }
-  }
-}
-</script>
