@@ -1,6 +1,6 @@
 # 全站基本設定
-title: "Runing9TO5"
-description: "K叔｜陪你用最懶人的方式，把自媒體經營變成可持續的斜槓收入。"
+title: "K叔｜內容變現系統"
+description: "K叔協助有商品或服務的個人品牌，建立內容、信任與成交的可持續變現系統。"
 baseurl: ""
 url: "https://runing9to5.com"
 lang: "zh-Hant"
@@ -9,7 +9,7 @@ author:
   name: "K叔｜不想上班的貓"
   avatar: "/assets/images/me.jpeg"
   email: "hi@runing9to5.com"
-  bio: "陪上班族與內向創作者，打造低風險的自媒體變現系統。"
+  bio: "協助有商品或服務的個人品牌，把內容做成信任與成交的系統。"
 
 brand:
   name: "RUNING_9to5"
@@ -53,8 +53,8 @@ nav:
 # SEO 專用設定
 seo:
   type: "website"
-  title: "Runing9TO5｜上班族的低風險自媒體變現指南"
-  description: "陪上班族與內向創作者，用最懶的方式打造持續收入。"
+  title: "K叔｜幫有商品或服務的個人品牌建立內容變現系統"
+  description: "從內容定位、信任建立到商品成交，K叔協助有商品或服務的個人品牌建立可持續運作的內容變現系統。"
   locale: "zh_TW"
   image: "/assets/images/og-default.jpg"
   twitter: false
