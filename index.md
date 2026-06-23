@@ -27,7 +27,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
 
     <div class="btn-group hero-actions">
       <a href="/contact" class="btn-external">預約一對一諮詢</a>
-      <a href="/resources" class="btn-subscribe-cta">先看電子書</a>
+      <a href="/resources" class="btn-subscribe-cta">先看課程</a>
     </div>
   </div>
 </section>
@@ -108,7 +108,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
 
   <div class="btn-group">
     <a href="/contact" class="btn-external">預約一對一諮詢</a>
-    <a href="/resources" class="btn-subscribe-cta">購買電子書</a>
+    <a href="/resources" class="btn-subscribe-cta">查看課程</a>
     <a href="#subscribe" class="btn-subscribe-cta">訂閱免費電子報</a>
   </div>
   <small class="social-proof">已有 100+ 讀者與學員加入，開始整理自己的內容變現系統</small>
@@ -206,14 +206,14 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
 <section class="card-section section-subscribe" id="subscribe">
   <span class="section-kicker">免費訂閱</span>
   <h2>準備好打造屬於你的自媒體變現系統嗎？</h2>
-  <p>訂閱電子報，領取《從零到變現：50 個自媒體小 Tips》。</p>
+  <p>訂閱電子報，先拿到低粉、高信任、低摩擦經營的實戰觀察。</p>
   <p>
     這份免費電子報適合想學 <strong>自媒體經營</strong>、<strong>內容變現</strong>、
     <strong>斜槓副業</strong>、<strong>Threads 寫作</strong> 與
     <strong>個人品牌建立</strong> 的上班族與創作者。
   </p>
   <p>
-    你會收到我整理的實戰觀察、內容策略、電子書與服務設計思路，
+    你會收到我整理的實戰觀察、內容策略、課程與服務設計思路，
     幫你從「不知道今天寫什麼」一路走到「能用內容建立信任，最後開始變現」。
   </p>
   <small>100+ 上班族已經開始行動｜從小副業開始改變人生</small>
@@ -232,7 +232,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
 
   <ul>
     <li>💡 <strong>自媒體變現教學：</strong> 用內容打造穩定收入系統。</li>
-    <li>📘 <strong>電子書販售策略：</strong> 把你的知識轉成被動收益。</li>
+    <li>📘 <strong>課程與商品設計：</strong> 把你的專業包裝成低摩擦產品。</li>
     <li>🧑‍💻 <strong>一對一諮詢服務：</strong> 協助你釐清定位，制定具體行動方案。</li>
   </ul>
 
@@ -276,7 +276,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
 
   <details>
     <summary>Q4：Threads 適合拿來賣服務或商品嗎？</summary>
-    <p><strong>A：</strong> 適合，但不要把 Threads 當成硬賣平台。它更適合拿來建立連結、輸出觀點、讓陌生人逐步理解你，最後再導向諮詢、電子書、表單或官網文章。</p>
+    <p><strong>A：</strong> 適合，但不要把 Threads 當成硬賣平台。它更適合拿來建立連結、輸出觀點、讓陌生人逐步理解你，最後再導向課程、諮詢、表單或官網文章。</p>
   </details>
 
   <details>

@@ -43,7 +43,7 @@ nav:
     link: "/"
   - name: "更多文章"
     link: "/articles"
-  - name: "電子書"
+  - name: "課程"
     link: "/resources"
   - name: "找我諮詢"
     link: "/contact"
