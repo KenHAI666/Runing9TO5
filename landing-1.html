@@ -839,7 +839,7 @@ document.querySelectorAll('.js-subscribe-form').forEach(function (form) {
     btn.disabled = true;
     btn.textContent = '送出中…';
 
-    const name  = (form.querySelector('input[name="surname"]') || {}).value || '';
+    const name = (form.querySelector('input[name="surname"]') || {}).value || '';
     const email = emailInput.value.trim();
 
     try {
@@ -848,14 +848,22 @@ document.querySelectorAll('.js-subscribe-form').forEach(function (form) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: name, email: email })
       });
-      if (!res.ok) throw new Error('server error');
+
+      const data = await res.json();
+
+      if (!res.ok || data.success === false) {
+        throw new Error(data.message || '送出失敗');
+      }
+
       const zoneId = form.getAttribute('data-zone');
-      const zone   = zoneId ? document.getElementById(zoneId) : form.closest('.form-zone');
+      const zone = zoneId ? document.getElementById(zoneId) : form.closest('.form-zone');
+
       if (zone) renderSuccess(zone);
-    } catch (_) {
+
+    } catch (error) {
       btn.disabled = false;
       btn.textContent = '立即免費領取 →';
-      alert('送出失敗，請稍後再試或直接寄信給我 🙏');
+      alert(error.message || '送出失敗，請稍後再試或直接寄信給我 🙏');
     }
   });
 });
