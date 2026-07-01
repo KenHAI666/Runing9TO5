@@ -849,18 +849,19 @@ document.querySelectorAll('.js-subscribe-form').forEach(function (form) {
         body: JSON.stringify({ name: name, email: email })
       });
 
-if (!res.ok) throw new Error('server error');
-      }
+      if (!res.ok) throw new Error('server error');
 
       const zoneId = form.getAttribute('data-zone');
-      const zone = zoneId ? document.getElementById(zoneId) : form.closest('.form-zone');
+      const zone = zoneId
+        ? document.getElementById(zoneId)
+        : form.closest('.form-zone');
 
       if (zone) renderSuccess(zone);
 
-    } catch (error) {
+    } catch (_) {
       btn.disabled = false;
       btn.textContent = '立即免費領取 →';
-      alert(error.message || '送出失敗，請稍後再試或直接寄信給我 🙏');
+      alert('送出失敗，請稍後再試或直接寄信給我 🙏');
     }
   });
 });
