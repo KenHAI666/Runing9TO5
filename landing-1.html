@@ -849,10 +849,7 @@ document.querySelectorAll('.js-subscribe-form').forEach(function (form) {
         body: JSON.stringify({ name: name, email: email })
       });
 
-      const data = await res.json();
-
-      if (!res.ok || data.success === false) {
-        throw new Error(data.message || '送出失敗');
+if (!res.ok) throw new Error('server error');
       }
 
       const zoneId = form.getAttribute('data-zone');
