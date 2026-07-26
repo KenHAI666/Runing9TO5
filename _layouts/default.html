@@ -72,10 +72,8 @@
       <hr style="border: none; border-top: 1px dashed #ddd; margin: 40px 0;">
 
       <section class="card-section" style="background:#f7f7f7; padding:20px; text-align:center;">
-        <h3 style="margin-bottom:15px; color: #3B5B7A;">✨ 免費獲取系統化經營指南</h3>
-        <a href="/#subscribe" class="btn-external btn-subscribe-cta">
-           👉 現在就訂閱免費電子報
-        </a>
+        <h3 style="margin-bottom:15px; color: #3B5B7A;">免費取得內容變現指南</h3>
+        {% include primary-cta.html class="btn-external btn-subscribe-cta" event_label="Post_Footer_CTA" %}
         
         {% comment %}
   ==========================================
@@ -142,6 +140,8 @@
 
       </section>
       {% endif %}
+
+      {% include footer.html %}
     </main>
 
     <button id="backToTop">⬆</button>
