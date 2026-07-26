@@ -1,0 +1,5 @@
+<a href="{{ '/free' | relative_url }}"
+   class="{{ include.class | default: 'btn-subscribe-cta' }}"
+   {% if include.event_label %}onclick="gtag('event', 'generate_lead', { 'event_category': 'Free_Resource', 'event_label': '{{ include.event_label }}', 'value': 0 });"{% endif %}>
+  免費領取《自媒體變現三大核心心法》
+</a>
