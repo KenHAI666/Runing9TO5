@@ -26,8 +26,8 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
     </p>
 
     <div class="btn-group hero-actions">
-      <a href="/contact" class="btn-external">預約一對一諮詢</a>
-      <a href="/resources" class="btn-subscribe-cta">先看課程</a>
+      {% include primary-cta.html class="btn-external" event_label="Homepage_Hero_CTA" %}
+      <a href="/contact" class="btn-subscribe-cta">找我諮詢</a>
     </div>
   </div>
 </section>
@@ -64,9 +64,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
   </div>
 
   <div class="section-fit-cta">
-    <a href="#subscribe" class="hero-panel-link">
-      訂閱免費電子報 →
-    </a>
+    {% include primary-cta.html class="hero-panel-link" event_label="Homepage_Fit_CTA" %}
   </div>
 </section>
 
@@ -109,7 +107,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
   <div class="btn-group">
     <a href="/contact" class="btn-external">預約一對一諮詢</a>
     <a href="/resources" class="btn-subscribe-cta">查看課程</a>
-    <a href="#subscribe" class="btn-subscribe-cta">訂閱免費電子報</a>
+    {% include primary-cta.html class="btn-subscribe-cta" event_label="Homepage_Pain_CTA" %}
   </div>
   <small class="social-proof">已有 100+ 讀者與學員加入，開始整理自己的內容變現系統</small>
 </section>
@@ -202,24 +200,21 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
   </div>
 </section>
 
-<!-- 電子報 -->
-<section class="card-section section-subscribe" id="subscribe">
-  <span class="section-kicker">免費訂閱</span>
-  <h2>準備好打造屬於你的自媒體變現系統嗎？</h2>
-  <p>訂閱電子報，先拿到低粉、高信任、低摩擦經營的實戰觀察。</p>
+<!-- 免費資源 -->
+<section class="card-section section-subscribe" id="free-resource">
+  <span class="section-kicker">免費資源</span>
+  <h2>免費領取《自媒體變現三大核心心法》</h2>
+  <p>一次看懂「看見 → 信任 → 成交」三階段，找出你的內容卡在哪一關。</p>
   <p>
-    這份免費電子報適合想學 <strong>自媒體經營</strong>、<strong>內容變現</strong>、
+    這份免費資源適合想學 <strong>自媒體經營</strong>、<strong>內容變現</strong>、
     <strong>斜槓副業</strong>、<strong>Threads 寫作</strong> 與
     <strong>個人品牌建立</strong> 的上班族與創作者。
   </p>
   <p>
-    你會收到我整理的實戰觀察、內容策略、課程與服務設計思路，
-    幫你從「不知道今天寫什麼」一路走到「能用內容建立信任，最後開始變現」。
+    領取後還會收到連續 5 天、每天 5 個對應寫作主題，
+    幫你把心法直接變成可以開始寫的內容。
   </p>
-  <small>100+ 上班族已經開始行動｜從小副業開始改變人生</small>
-  <div class="newsletter-box">
-    <script async data-uid="49e70b7c7c" src="https://ken-66.kit.com/49e70b7c7c/index.js"></script>
-  </div>
+  {% include primary-cta.html class="btn-external" event_label="Homepage_Resource_CTA" %}
 </section>
 
 <!-- 關於我區 -->
@@ -301,8 +296,6 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
     <a href="{{ site.social.instagram }}" target="_blank">Instagram</a>
   </p>
 </section>
-
-{% include footer.html %}
 
 <!-- JS 放在這裡 -->
 <script>
