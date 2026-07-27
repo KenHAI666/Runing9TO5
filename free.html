@@ -1,3 +1,6 @@
+---
+permalink: /free
+---
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -88,37 +91,35 @@ img { max-width: 100%; display: block; }
 }
 .reveal.in { opacity: 1; transform: translateY(0); }
 
-/* ── NAV ── */
-.nav {
-  position: sticky; top: 0; z-index: 60;
-  background: rgba(245,240,234,.88);
+/* ── SHARED HEADER ── */
+.site-header {
+  position: fixed; inset: 0 0 auto; z-index: 60;
+  background: rgba(245,240,234,.96);
+  border-bottom: 1px solid var(--border);
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border-soft);
 }
-.nav-row {
-  max-width: 1040px; margin: 0 auto; padding: 0 36px;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 64px;
+.fixed-nav {
+  max-width: 1200px; height: 84px; margin: 0 auto; padding: 0 36px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
-.brand { display: flex; align-items: center; gap: 12px; }
-.brand-mark {
-  width: 36px; height: 36px; border-radius: 8px;
+.logo { display: flex; align-items: center; gap: 14px; }
+.logo-mark {
+  width: 46px; height: 46px; border-radius: 10px;
   background: var(--blue); color: #fff;
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-serif); font-weight: 700; font-size: 18px;
+  font-family: var(--font-serif); font-weight: 700; font-size: 23px;
   letter-spacing: -.02em;
   box-shadow: 0 2px 6px rgba(45,74,122,.25);
 }
-.brand-name { font-family: var(--font-serif); font-weight: 700; font-size: 16px; color: var(--text); line-height: 1.1; }
-.brand-sub { font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px; }
-.nav-btn {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: var(--blue); color: #fff;
-  font-size: 13px; font-weight: 500;
-  padding: 9px 18px; border-radius: var(--radius);
-  transition: background .2s, transform .15s;
-}
-.nav-btn:hover { background: var(--blue-dark); transform: translateY(-1px); }
+.logo-copy { display: flex; flex-direction: column; }
+.logo-name { font-family: var(--font-serif); font-weight: 700; font-size: 19px; color: var(--text); line-height: 1.1; }
+.logo-sub { font-size: 12px; color: var(--text-muted); font-weight: 400; margin-top: 4px; }
+.nav-links { display: flex; align-items: center; gap: 34px; }
+.nav-links a { color: var(--text-sub); font-size: 15px; font-weight: 400; }
+.nav-links a:hover { color: var(--blue); }
+.hamburger { display: none; width: 42px; height: 42px; padding: 9px; border: 0; background: transparent; flex-direction: column; justify-content: center; gap: 5px; }
+.hamburger span { display: block; width: 100%; height: 2px; background: var(--blue); }
+.nav-spacer { height: 84px; }
 
 /* ── HERO ── */
 .hero {
@@ -393,17 +394,28 @@ img { max-width: 100%; display: block; }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .3s; font-size: 14.5px; color: var(--text-sub); line-height: 1.85; }
 .faq-a.open { max-height: 500px; padding-bottom: 22px; padding-right: 40px; }
 
-/* ── FOOTER ── */
-.lp-footer { background: var(--text); color: rgba(228,236,248,.65); padding: 36px 36px 32px; text-align: center; }
-.footer-brand { font-family: var(--font-serif); font-weight: 700; font-size: 18px; color: #fff; margin-bottom: 8px; }
-.footer-sub { font-size: 12px; color: rgba(228,236,248,.35); }
-.footer-sub a { color: rgba(228,236,248,.5); }
-.footer-sub a:hover { color: #93b8f0; }
+/* ── SHARED FOOTER ── */
+.site-footer { background: var(--text); color: rgba(228,236,248,.65); padding: 64px 36px 56px; text-align: center; }
+.site-footer-brand { display: inline-block; font-family: var(--font-serif); font-weight: 700; font-size: 22px; color: #fff; margin-bottom: 10px; }
+.site-footer-meta { margin: 0; font-size: 13px; color: rgba(228,236,248,.38); }
+.site-footer-meta a { color: rgba(228,236,248,.55); }
+.site-footer-meta a:hover { color: #fff; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 760px) {
+  .fixed-nav { height: 72px; padding: 0 20px; }
+  .nav-spacer { height: 72px; }
+  .logo-mark { width: 40px; height: 40px; font-size: 20px; }
+  .logo-name { font-size: 17px; }
+  .logo-sub { font-size: 10px; }
+  .hamburger { display: flex; }
+  .nav-links {
+    display: none; position: absolute; top: 72px; left: 0; right: 0;
+    padding: 22px 24px 26px; background: var(--bg-card);
+    border-bottom: 1px solid var(--border); flex-direction: column; align-items: flex-start; gap: 16px;
+  }
+  .nav-links.active { display: flex; }
   .hero-inner { padding: 64px 24px 56px; }
-  .nav-row { padding: 0 24px; }
   .pain-grid { grid-template-columns: 1fr 1fr; }
   .principle-block { grid-template-columns: 1fr; gap: 8px; }
   .p-num { font-size: 36px; margin-bottom: 4px; }
@@ -429,18 +441,7 @@ img { max-width: 100%; display: block; }
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
-<nav class="nav">
-  <div class="nav-row">
-    <a href="/" class="brand" aria-label="回到 K叔首頁">
-      <div class="brand-mark">K</div>
-      <div>
-        <div class="brand-name">K叔</div>
-        <div class="brand-sub">@runing_9to5 · 不想上班的貓</div>
-      </div>
-    </a>
-  </div>
-</nav>
+{% include header.html %}
 
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="hero">
@@ -784,13 +785,7 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer class="lp-footer">
-  <div class="footer-brand">K叔 @runing_9to5</div>
-  <div class="footer-sub">
-    不想上班的貓 ・ © 2026 ・ <a href="/privacy/">隱私政策</a>
-  </div>
-</footer>
+{% include footer.html %}
 
 <script>
 // ─── FAQ accordion ───────────────────────────────────────────────────
