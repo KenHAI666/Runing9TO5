@@ -134,19 +134,27 @@ details > p {
   margin: 0;
 }
 
-/* ─── NAV ─── */
+/* ─── SHARED HEADER ─── */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(245,240,234,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
 .fixed-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5vw;
-  height: 64px;
-  background: rgba(245,240,234,0.94);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 999;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 36px;
+  height: 84px;
 }
 
 .fixed-nav .logo {
@@ -158,16 +166,16 @@ details > p {
 }
 
 .logo-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
   background: var(--blue);
   color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: 'Noto Serif TC', serif;
-  font-size: 18px;
+  font-size: 23px;
   font-weight: 700;
   letter-spacing: -0.02em;
   box-shadow: 0 2px 6px rgba(45,74,122,0.25);
@@ -181,14 +189,14 @@ details > p {
 
 .logo-name {
   font-family: 'Noto Serif TC', serif;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 700;
   color: var(--text);
   line-height: 1.1;
 }
 
 .logo-sub {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
   color: var(--text-muted);
   line-height: 1.2;
@@ -196,7 +204,7 @@ details > p {
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 34px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -204,7 +212,7 @@ details > p {
 .nav-links a {
   text-decoration: none;
   color: var(--text-sub);
-  font-size: 0.875rem;
+  font-size: 15px;
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
   transition: all 0.2s;
@@ -219,19 +227,26 @@ details > p {
 .nav-links a::after { display: none; }
 
 .nav-spacer {
-  height: 70px;
+  height: 84px;
 }
 
 /* 漢堡按鈕 */
 .hamburger {
   display: none;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  border: 0;
+  background: transparent;
   flex-direction: column;
+  justify-content: center;
   gap: 5px;
   cursor: pointer;
   z-index: 1001;
 }
-.hamburger div {
-  width: 22px;
+.hamburger span {
+  display: block;
+  width: 100%;
   height: 2px;
   background: var(--text);
   border-radius: 1px;
@@ -275,32 +290,42 @@ details > p {
 }
 
 .site-footer {
+  width: 100%;
+  max-width: none;
+  margin: 3rem 0 0;
   text-align: center;
-  padding: 3rem 1rem;
-  border-top: 1px solid var(--border-soft);
+  padding: 4rem 1rem 3.5rem;
+  background: var(--text);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.site-footer-links {
-  margin-bottom: 1.5rem;
+.site-footer-brand {
+  display: inline-block;
+  color: #fff;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
 }
 
-.site-footer-links a {
-  margin: 0 15px;
-  color: #555;
+.site-footer-brand:hover {
+  color: var(--blue-light);
 }
 
-.site-footer-copy {
-  color: #888;
-  font-size: 0.9rem;
+.site-footer-meta {
+  color: rgba(228, 236, 248, 0.42);
+  font-size: 0.85rem;
+  margin: 0;
 }
 
-.site-footer-email {
-  margin-top: 1rem;
-  font-size: 0.8rem;
+.site-footer-meta a {
+  color: rgba(228, 236, 248, 0.58);
 }
 
-.site-footer-email a {
-  color: #aaa;
+.site-footer-meta a:hover {
+  color: #fff;
 }
 
 /* ─── BUTTONS ─── */
@@ -901,7 +926,11 @@ footer p { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.06em; 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   .hamburger { display: flex; }
-  .fixed-nav { padding: 0 4vw; }
+  .fixed-nav { height: 72px; padding: 0 20px; }
+  .nav-spacer { height: 72px; }
+  .logo-mark { width: 40px; height: 40px; font-size: 20px; }
+  .logo-name { font-size: 17px; }
+  .logo-sub { font-size: 10px; }
   .hero-shell { grid-template-columns: 1fr; }
   .hero-proof-strip { grid-template-columns: 1fr; }
   .hero-panel { padding: 1.3rem; }
@@ -914,7 +943,7 @@ footer p { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.06em; 
     align-items: center;
     gap: 1.25rem;
     position: absolute;
-    top: 64px; left: 0;
+    top: 72px; left: 0;
     width: 100%;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
