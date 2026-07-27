@@ -5,37 +5,7 @@
   <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNKDN6F6"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <header>
-      <nav class="fixed-nav">
-        <a href="{{ '/' | relative_url }}" class="logo">
-          <span class="logo-mark">K</span>
-          <span class="logo-copy">
-            <span class="logo-name">K叔</span>
-            <span class="logo-sub">@runing_9to5 · 不想上班的貓</span>
-          </span>
-        </a>
-
-        <div class="hamburger" id="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-
-        <div class="nav-links" id="navLinks">
-      
-      {% for item in site.nav %}
-        <a href="{{ item.link | relative_url }}"
-           {% if item.new_window %}target="_blank" rel="noopener noreferrer"{% endif %}
-           
-        >
-           {{ item.name }}
-        </a>
-      {% endfor %}
-      
-    </div>
-  </nav>
-</header>
-   <div class="nav-spacer"></div>
+    {% include header.html %}
 
 
     <main>
@@ -165,22 +135,5 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
 </script>     
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("navLinks");
-
-  // 點擊漢堡 → 開關 menu
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-
-  // 點擊選單後自動收起
-  document.querySelectorAll("#navLinks a").forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-    });
-  });
-</script>
-
   </body>
 </html>
