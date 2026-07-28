@@ -101,13 +101,11 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
     <div class="pain-point-card"><p>📉 想經營自媒體，但不知道該從哪裡開始</p></div>
     <div class="pain-point-card"><p>🤯 發了很多內容，卻沒人互動或買單</p></div>
     <div class="pain-point-card"><p>💸 有專業卻不知道怎麼包裝成商品</p></div>
-    <div class="pain-point-card"><p>⏰ 下班後想經營副業，但總覺得時間不夠用</p></div>
+    <div class="pain-point-card"><p>⏰ 內容更新總是靠意志力，很難建立能持續的節奏</p></div>
   </div>
 
   <div class="btn-group">
-    <a href="/contact" class="btn-external">預約一對一諮詢</a>
-    <a href="/resources" class="btn-subscribe-cta">查看課程</a>
-    {% include primary-cta.html class="btn-subscribe-cta" event_label="Homepage_Pain_CTA" %}
+    {% include primary-cta.html class="btn-external" event_label="Homepage_Pain_CTA" %}
   </div>
   <small class="social-proof">已有 100+ 讀者與學員加入，開始整理自己的內容變現系統</small>
 </section>
@@ -206,13 +204,12 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
   <h2>免費領取《自媒體變現三大核心心法》</h2>
   <p>一次看懂「看見 → 信任 → 成交」三階段，找出你的內容卡在哪一關。</p>
   <p>
-    這份免費資源適合想學 <strong>自媒體經營</strong>、<strong>內容變現</strong>、
-    <strong>斜槓副業</strong>、<strong>Threads 寫作</strong> 與
-    <strong>個人品牌建立</strong> 的上班族與創作者。
+    這份免費資源適合已經有 <strong>商品</strong>、<strong>服務</strong>、
+    <strong>專業能力</strong>，想透過內容建立信任與成交承接的個人品牌。
   </p>
   <p>
-    領取後還會收到連續 5 天、每天 5 個對應寫作主題，
-    幫你把心法直接變成可以開始寫的內容。
+    領取後，你會加入一套內容變現序列信，從人設、定位、信任與內容節奏，
+    一路帶你找出目前最需要改善的內容卡點。
   </p>
   {% include primary-cta.html class="btn-external" event_label="Homepage_Resource_CTA" %}
 </section>
@@ -222,31 +219,32 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
   <h2>關於 K叔｜不想上班的貓</h2>
   <img src="/assets/images/in-1.PNG" alt="K叔｜不想上班的貓 大頭照" class="about-img">
 
-  <p>嗨，我是 <strong>K叔</strong>，<strong>RUNING_9to5</strong> 的創辦人，一位幫助上班族與創作者「逃離朝九晚五」的自媒體教練。</p>
-  <p>我專注於把「經驗 × 策略」變成能持續帶來收入的系統，讓你不只是分享生活，而是靠內容養生活。</p>
+  <p>嗨，我是 <strong>K叔</strong>，一位用簡單文字拆解複雜問題的自媒體企劃。</p>
+  <p>我協助已經有商品、服務或專業能力的個人品牌，釐清定位、建立內容主線，並把內容、信任與成交承接串成一套可以持續運作的系統。</p>
+  <p>我自己仍然是一名上班族，所以特別重視低消耗、能長期執行的方法。但我的服務不是教你逃離上班，而是幫你讓專業被對的人看見。</p>
 
   <ul>
-    <li>💡 <strong>自媒體變現教學：</strong> 用內容打造穩定收入系統。</li>
-    <li>📘 <strong>課程與商品設計：</strong> 把你的專業包裝成低摩擦產品。</li>
-    <li>🧑‍💻 <strong>一對一諮詢服務：</strong> 協助你釐清定位，制定具體行動方案。</li>
+    <li>💡 <strong>定位與內容主線：</strong> 讓對的人快速理解你能提供什麼價值。</li>
+    <li>✍️ <strong>信任內容設計：</strong> 把專業轉成讀者看得懂、願意相信的內容。</li>
+    <li>🧑‍💻 <strong>成交承接診斷：</strong> 找出定位、內容、商品或入口最需要調整的地方。</li>
   </ul>
 
-  <p>我的文字不是為了爆紅，而是想讓你找到屬於自己的出口。</p>
+  <p>我的文字不是為了爆紅，而是幫你讓專業被對的人看見、理解與信任。</p>
 
   <h3>關於這裡</h3>
-  <p><strong>自媒體 × 斜槓 × 個人品牌｜從上班族到自由工作者</strong></p>
+  <p><strong>定位 × 內容 × 信任 × 成交承接</strong></p>
 
-  <p>這裡是 <strong>K叔的數位筆記本</strong>，專門整理 <strong>自媒體經營、內容變現、斜槓副業</strong> 的方法與實戰筆記。</p>
-  <p>如果你是一位想突破日常、卻又擔心沒有方向的上班族，這裡有最實用的筆記，陪你從「想開始」到「能做到」。</p>
+  <p>這裡是 <strong>K叔的數位筆記本</strong>，專門整理個人品牌定位、內容策略、信任建立與成交承接的實戰筆記。</p>
+  <p>如果你已經有商品、服務或專業能力，這裡會幫你把零散內容整理成一套可以持續運作的系統。</p>
 
   <ul>
-    <li>🎯 自媒體定位與經營策略</li>
-    <li>✍️ 內容創作與寫作輸出方法</li>
-    <li>💼 斜槓副業的低成本啟動模式</li>
-    <li>🌱 個人品牌養成與長期經營心法</li>
+    <li>🎯 個人品牌定位與受眾釐清</li>
+    <li>✍️ 內容主線與低消耗寫作方法</li>
+    <li>🤝 信任建立與互動關係</li>
+    <li>🌱 商品與成交入口的內容承接</li>
   </ul>
 
-  <p><strong>我相信，自由不是辭職後才開始，而是從現在就能累積的選擇權。</strong></p>
+  <p><strong>上班族是我的生活背景，不是我限定服務的對象；我的工作，是幫你的專業被對的人看見。</strong></p>
 </section>
 
 <!-- FAQ 區 -->
