@@ -1,21 +1,28 @@
 ---
 layout: default
-title: 預約諮詢｜每月限 5 位，先填表單
-description: K叔協助有商品或服務的個人品牌，釐清定位、設計內容主題、建立信任路徑，並把內容導向諮詢、商品或服務成交。
-keywords: 諮詢服務, K叔諮詢, 內容變現系統, 個人品牌, 自媒體策略, 預約諮詢
+title: 一小時內容諮詢｜800 元｜K叔
+description: K叔一小時內容諮詢，費用 800 元。先透過診斷表單了解你的現況，再一起找出定位、內容、商品或成交承接最需要優先調整的地方。
+keywords: 內容諮詢, K叔諮詢, 一小時諮詢, 內容變現系統, 個人品牌, 自媒體策略
 ---
 
 <!-- Hero -->
 <section class="card-section section-hero" style="text-align:center; padding:4rem 2.5rem;">
-  <p style="font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">每月限額 5 位</p>
+  <p style="font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">一小時內容諮詢｜NT$800</p>
   <h1 style="font-size:clamp(1.5rem, 3vw, 2.2rem); line-height:1.45; max-width:620px; margin:0 auto 1.25rem;">
-    不硬推你買課，<br>只是認真聊一個小時
+    先找出真正的內容卡點，<br>再決定下一步怎麼調整
   </h1>
   <p style="max-width:480px; margin:0 auto; font-size:0.95rem; color:var(--text-sub); line-height:1.85;">
-    如果你在自媒體路上卡關了，<br>
-    有時候你需要的不是更多資訊——<br>
-    是有人幫你看清楚你現在在哪裡。
+    我會先看過你的診斷表單，<br>
+    讓正式諮詢可以直接進入核心問題。
   </p>
+  <a href="https://forms.gle/LoXoZyVWFJPZRnDt5"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="btn-external"
+     style="display:inline-block; margin-top:1.75rem;"
+     onclick="gtag('event', 'lead', { 'event_category': 'Consultation', 'event_label': 'Consultation_Form_Hero', 'value': 800, 'currency': 'TWD' });">
+    填寫診斷表單
+  </a>
 </section>
 
 <!-- 這是什麼 -->
@@ -25,38 +32,38 @@ keywords: 諮詢服務, K叔諮詢, 內容變現系統, 個人品牌, 自媒體�
   <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
     <div style="background:var(--bg); border:1px solid var(--border); border-radius:6px; padding:1.25rem;">
       <p style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem;">01</p>
-      <p style="font-size:0.9rem; color:var(--text); font-weight:600; margin:0 0 0.4rem;">你現在卡在哪</p>
-      <p style="font-size:0.83rem; color:var(--text-sub); margin:0; line-height:1.7;">定位模糊、沒人互動、不知道怎麼變現——找到真正的問題所在。</p>
+      <p style="font-size:0.9rem; color:var(--text); font-weight:600; margin:0 0 0.4rem;">找出主要卡點</p>
+      <p style="font-size:0.83rem; color:var(--text-sub); margin:0; line-height:1.7;">確認目前最需要處理的是定位、內容、商品，還是成交承接。</p>
     </div>
     <div style="background:var(--bg); border:1px solid var(--border); border-radius:6px; padding:1.25rem;">
       <p style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem;">02</p>
-      <p style="font-size:0.9rem; color:var(--text); font-weight:600; margin:0 0 0.4rem;">接下來怎麼走</p>
-      <p style="font-size:0.83rem; color:var(--text-sub); margin:0; line-height:1.7;">根據你的情況，給出一個你真的做得到的方向，不是理論。</p>
+      <p style="font-size:0.9rem; color:var(--text); font-weight:600; margin:0 0 0.4rem;">排出調整順序</p>
+      <p style="font-size:0.83rem; color:var(--text-sub); margin:0; line-height:1.7;">把零散問題排出優先順序，不再每個地方都同時修改。</p>
     </div>
     <div style="background:var(--bg); border:1px solid var(--border); border-radius:6px; padding:1.25rem;">
       <p style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem;">03</p>
-      <p style="font-size:0.9rem; color:var(--text); font-weight:600; margin:0 0 0.4rem;">你想問什麼都行</p>
-      <p style="font-size:0.83rem; color:var(--text-sub); margin:0; line-height:1.7;">Threads 策略、課程設計、發文頻率……帶著你的問題來。</p>
+      <p style="font-size:0.9rem; color:var(--text); font-weight:600; margin:0 0 0.4rem;">得到下一步方向</p>
+      <p style="font-size:0.83rem; color:var(--text-sub); margin:0; line-height:1.7;">諮詢結束後，你會知道下一步可以採取的具體方向。</p>
     </div>
   </div>
 
   <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.85; border-left:2px solid var(--border); padding-left:1rem; margin:0;">
-    我不會在這一個小時裡推銷你任何東西。<br>
-    如果聊完你覺得有幫助，那就夠了。
+    費用為 <strong>NT$800／60 分鐘</strong>。<br>
+    這次諮詢的目標不是塞給你更多資訊，而是幫你看清楚最該先處理的問題。
   </p>
 </section>
 
 <!-- 為什麼要填表 -->
 <section class="card-section" style="max-width:720px; background:var(--bg-section);">
-  <p style="font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">關於每月限額這件事</p>
+  <p style="font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">為什麼要先填診斷表單</p>
 
   <p style="font-size:0.93rem; line-height:1.9; color:var(--text-sub); margin-bottom:0.75rem;">
-    我還在上班，時間真的有限。<br>
-    每個月只開放 <strong>5 個名額</strong>，是因為我想認真對待每一次對話，不是走流水線。
+    我會先看過你的表單內容，了解你目前的商品、受眾、內容與卡點。<br>
+    這樣正式諮詢不用從背景資料聊起，可以直接進入核心問題。
   </p>
   <p style="font-size:0.93rem; line-height:1.9; color:var(--text-sub);">
-    填表不是在篩選你夠不夠格——<br>
-    是讓我在開口之前，先了解你在哪裡。這樣我們聊起來才不會浪費彼此的時間。
+    填表不是在篩選你夠不夠格，<br>
+    而是讓這一小時真正用在判斷問題與整理下一步。
   </p>
 </section>
 
@@ -67,35 +74,34 @@ keywords: 諮詢服務, K叔諮詢, 內容變現系統, 個人品牌, 自媒體�
     <div>
       <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem; letter-spacing:0.06em;">K叔｜不想上班的貓</p>
       <p style="font-size:0.88rem; color:var(--text-sub); margin:0; line-height:1.75;">
-        我跟你一樣還在上班。我理解那種「想做但怕做白工」的感覺。<br>
-        這一個小時，就是我能給你最直接的幫助。
+        我自己仍然是一名上班族，所以特別重視低消耗、能長期執行的方法。<br>
+        但這次諮詢服務的是已經有商品、服務或專業能力，想把內容做得更有方向的人。
       </p>
     </div>
   </div>
 </section>
 
-<!-- 申請表單 -->
-<section id="contact-form" class="card-section" style="max-width:900px; text-align:center;">
+<!-- 申請入口 -->
+<section id="contact-form" class="card-section" style="max-width:720px; text-align:center;">
   <p style="font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">申請諮詢</p>
-  <h2 style="margin-bottom:0.5rem;">填寫申請表單</h2>
+  <h2 style="margin-bottom:0.5rem;">一小時內容諮詢｜800 元</h2>
   <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.75rem;">
-    填完後 <strong>2 個工作天</strong>內回覆是否安排，<br>
-    目前本月剩餘名額請填表後確認。
+    完成診斷表單後，我會先了解你的現況，<br>
+    再回覆後續安排方式。
   </p>
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSc0iVlBA4jIj_K3aQ5snUE-LTlmxQE2fDR65q7i80m6XfeNpg/viewform?embedded=true" 
-    width="100%" 
-    height="800" 
-    frameborder="0" 
-    marginheight="0" 
-    marginwidth="0"
-    style="border-radius:6px; border:1px solid var(--border);"
-  >載入中…</iframe>
+  <a href="https://forms.gle/LoXoZyVWFJPZRnDt5"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="btn-external"
+     style="display:inline-block;"
+     onclick="gtag('event', 'lead', { 'event_category': 'Consultation', 'event_label': 'Consultation_Form_Main', 'value': 800, 'currency': 'TWD' });">
+    前往填寫診斷表單
+  </a>
 </section>
 
-<!-- 或私訊 -->
+<!-- 諮詢方式問題 -->
 <section class="card-section-1" style="max-width:720px; text-align:center;">
-  <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">不想填表？直接找我也行——</p>
+  <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">如果對諮詢方式有疑問，可以先私訊詢問。</p>
   <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
     <a href="{{ site.social.instagram }}"
        target="_blank"
@@ -103,7 +109,7 @@ keywords: 諮詢服務, K叔諮詢, 內容變現系統, 個人品牌, 自媒體�
        class="btn-external"
        style="font-size:0.875rem;"
        onclick="gtag('event', 'lead', { 'event_category': 'Social_DM', 'event_label': 'Consultation_IG_Click', 'value': 0 });">
-      📸 IG 私訊
+      📸 IG 詢問
     </a>
     <a href="{{ site.social.threads }}"
        target="_blank"
@@ -111,20 +117,17 @@ keywords: 諮詢服務, K叔諮詢, 內容變現系統, 個人品牌, 自媒體�
        class="btn-consult"
        style="font-size:0.875rem; margin-top:0;"
        onclick="gtag('event', 'lead', { 'event_category': 'Social_DM', 'event_label': 'Consultation_Threads_Click', 'value': 0 });">
-      💬 Threads 私訊
+      💬 Threads 詢問
     </a>
   </div>
-  <p style="font-size:0.78rem; color:var(--text-muted); margin-top:1rem;">
-    傳：「我要預約」，K叔看到會回。
-  </p>
 </section>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "K叔自媒體內容變現陪跑",
-  "description": "協助有商品或服務的個人品牌釐清定位、設計內容主題、建立信任路徑，並把內容導向諮詢、商品或服務成交。",
+  "name": "K叔一小時內容諮詢",
+  "description": "先透過診斷表單了解現況，再用一小時找出定位、內容、商品或成交承接最需要優先調整的地方。",
   "serviceType": "Consulting",
   "provider": {
     "@type": "Person",
@@ -133,9 +136,9 @@ keywords: 諮詢服務, K叔諮詢, 內容變現系統, 個人品牌, 自媒體�
   "offers": {
     "@type": "Offer",
     "priceCurrency": "TWD",
-    "price": "0",
+    "price": "800",
     "availability": "https://schema.org/InStock",
-    "url": "https://runing9to5.com/contact"
+    "url": "https://forms.gle/LoXoZyVWFJPZRnDt5"
   }
 }
 </script>
