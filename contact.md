@@ -1,13 +1,13 @@
 ---
 layout: default
-title: 一小時內容諮詢｜800 元｜K叔
-description: K叔一小時內容諮詢，費用 800 元。先透過診斷表單了解你的現況，再一起找出定位、內容、商品或成交承接最需要優先調整的地方。
+title: 一小時內容諮詢｜1000 元｜K叔
+description: K叔一小時內容諮詢，費用 1000 元。先透過診斷表單了解你的現況，再一起找出定位、內容、商品或成交承接最需要優先調整的地方。
 keywords: 內容諮詢, K叔諮詢, 一小時諮詢, 內容變現系統, 個人品牌, 自媒體策略
 ---
 
 <!-- Hero -->
 <section class="card-section section-hero" style="text-align:center; padding:4rem 2.5rem;">
-  <p style="font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">一小時內容諮詢｜NT$800</p>
+  <p style="font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">一小時內容諮詢｜NT$1000</p>
   <h1 style="font-size:clamp(1.5rem, 3vw, 2.2rem); line-height:1.45; max-width:620px; margin:0 auto 1.25rem;">
     先找出真正的內容卡點，<br>再決定下一步怎麼調整
   </h1>
@@ -20,7 +20,7 @@ keywords: 內容諮詢, K叔諮詢, 一小時諮詢, 內容變現系統, 個人�
      rel="noopener noreferrer"
      class="btn-external"
      style="display:inline-block; margin-top:1.75rem;"
-     onclick="gtag('event', 'lead', { 'event_category': 'Consultation', 'event_label': 'Consultation_Form_Hero', 'value': 800, 'currency': 'TWD' });">
+     onclick="gtag('event', 'lead', { 'event_category': 'Consultation', 'event_label': 'Consultation_Form_Hero', 'value': 1000, 'currency': 'TWD' });">
     填寫診斷表單
   </a>
 </section>
@@ -48,7 +48,7 @@ keywords: 內容諮詢, K叔諮詢, 一小時諮詢, 內容變現系統, 個人�
   </div>
 
   <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.85; border-left:2px solid var(--border); padding-left:1rem; margin:0;">
-    費用為 <strong>NT$800／60 分鐘</strong>。<br>
+    費用為 <strong>NT$1000／60 分鐘</strong>。<br>
     這次諮詢的目標不是塞給你更多資訊，而是幫你看清楚最該先處理的問題。
   </p>
 </section>
@@ -84,7 +84,7 @@ keywords: 內容諮詢, K叔諮詢, 一小時諮詢, 內容變現系統, 個人�
 <!-- 申請入口 -->
 <section id="contact-form" class="card-section" style="max-width:720px; text-align:center;">
   <p style="font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">申請諮詢</p>
-  <h2 style="margin-bottom:0.5rem;">一小時內容諮詢｜800 元</h2>
+  <h2 style="margin-bottom:0.5rem;">一小時內容諮詢｜1000 元</h2>
   <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.75rem;">
     完成診斷表單後，我會先了解你的現況，<br>
     再回覆後續安排方式。
@@ -136,7 +136,7 @@ keywords: 內容諮詢, K叔諮詢, 一小時諮詢, 內容變現系統, 個人�
   "offers": {
     "@type": "Offer",
     "priceCurrency": "TWD",
-    "price": "800",
+    "price": "1000",
     "availability": "https://schema.org/InStock",
     "url": "https://forms.gle/LoXoZyVWFJPZRnDt5"
   }
