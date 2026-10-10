@@ -12,6 +12,18 @@ permalink: /articles/
   
   <h1 style="text-align: center; color: #3B5B7A; margin-bottom: 30px;">📚 K叔的數位筆記本</h1>
 
+  {% assign pinned_posts = site.posts | where: "pinned", true | sort: "date" | reverse %}
+  {% for post in pinned_posts %}
+  <article class="card-section-1" style="border-left: 5px solid #C48E64; margin-bottom: 20px;">
+    <p style="margin: 0 0 10px; color: #C48E64; font-weight: 600;">置頂文章</p>
+    <h2 style="margin: 0 0 15px; font-size: 1.4em;">
+      <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #3B5B7A;">{{ post.title }}</a>
+    </h2>
+    <p style="color: #555; line-height: 1.6;">{{ post.description | escape }}</p>
+    <a href="{{ post.url | relative_url }}" class="btn-external">閱讀文章</a>
+  </article>
+  {% endfor %}
+
   <div class="card-section-1" style="border-left: 5px solid #C48E64; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; cursor: pointer;" onclick="window.location.href='/resources';">
     <div>
       <h2 style="margin: 0 0 10px 0; color: #C48E64; font-size: 1.5em;">🔥 低粉×高信任×低摩擦經營</h2>
@@ -42,8 +54,9 @@ permalink: /articles/
 
 
   <div id="articles-list">
-    {% assign regular_posts = site.posts | reject: "pinned", true | sort: "date" | reverse %}
+    {% assign regular_posts = site.posts | sort: "date" | reverse %}
     {% for post in regular_posts %}
+    {% unless post.pinned %}
     
     <div class="card-section-1 article-card" 
          data-category="{{ post.categories | join: ',' }}"
@@ -75,6 +88,7 @@ permalink: /articles/
       </div>
       
     </div>
+    {% endunless %}
     {% endfor %}
   </div>
 
