@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "K叔｜有商品或服務的個人品牌內容變現系統"
-description: "K叔協助有商品或服務的個人品牌，建立內容、信任與成交的可持續變現系統。"
+title: "K叔｜把 Threads 內容變成信任與詢問"
+description: "K叔幫有商品、服務或專業的人，把 Threads 內容變成信任與詢問。從定位、內容到成交路徑。"
 keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Threads內容變現, 信任成交系統, K叔"
 ---
 
@@ -9,25 +9,25 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
 <!-- 🔹 Hero -->
 <section class="card-section section-hero" id="hero">
   <div class="hero-copy">
-    <span class="hero-eyebrow">內容系統 × 信任建立 × 低風險變現</span>
+    <span class="hero-eyebrow">定位 × 內容 × 成交路徑</span>
 
-    <h1>幫有商品或服務的個人品牌，把內容做成信任與成交系統</h1>
+    <h1>幫有商品、服務或專業的人，把 Threads 內容變成信任與詢問</h1>
 
     <p class="hero-lead">
-      不是一直發文追流量，而是把你的專業、商品與內容，
-      串成可以持續帶來詢問與成交的系統。
+      你有商品、服務或專業。<br>
+      Threads 也有在發。<br>
+      但就是沒人來問。
     </p>
 
     <p class="hero-body">
       我是 <strong>K叔｜不想上班的貓</strong>。
-      我協助已經有商品、服務或專業的人，
-      釐清定位、設計內容、建立信任，
-      讓自媒體不只是曝光，而是能慢慢帶來成交的入口。
+      我陪你從定位、內容到成交路徑，
+      找出內容到詢問之間，斷在哪裡。
     </p>
 
     <div class="btn-group hero-actions">
       {% include primary-cta.html class="btn-external" event_label="Homepage_Hero_CTA" %}
-      <a href="/contact" class="btn-subscribe-cta">找我諮詢</a>
+      <a href="/contact" class="btn-subscribe-cta">預約帳號健檢｜NT$1,000</a>
     </div>
   </div>
 </section>
@@ -37,11 +37,11 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
   <div class="section-header">
     <span class="section-kicker">適合對象</span>
 
-    <h2>這套系統，特別適合這樣的你</h2>
+    <h2>比較適合這樣的你</h2>
 
     <p>
-      想經營 <strong>自媒體</strong>、建立 <strong>個人品牌</strong>，
-      但不想被流量綁架，也不想把生活全部拿去換曝光。
+      已經有東西可以賣，<br>
+      但不想把生活全部拿去換曝光。
     </p>
   </div>
 
@@ -55,7 +55,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
     </div>
 
     <div class="hero-fit-item">
-      想用 Threads 或 IG 建立信任、承接諮詢與服務的人
+      想用 Threads 建立信任、承接諮詢與服務的人
     </div>
 
     <div class="hero-fit-item">
@@ -78,7 +78,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
 
     <div class="hero-proof-item">
       <strong>2,000+</strong>
-      <span>Threads 貼文觀察</span>
+      <span>自己在 Threads 發的貼文</span>
     </div>
 
     <div class="hero-proof-item">
@@ -91,23 +91,35 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
 <!-- 痛點區 -->
 <section id="pain-points" class="card-section section-pain-points">
   <span class="section-kicker">常見卡點</span>
-  <h2 class="pain-points-title">想要知識變現，你多半不是不努力，而是缺一套能重複運作的系統</h2>
+  <h2 class="pain-points-title">你不是不努力，是內容沒有通往下一步</h2>
   <p class="pain-points-desc">
-    下面這幾種狀況，只要中三個以上，就代表你不是該更拚，
-    而是該把內容、信任與變現的順序重新排好。
+    流量可以讓人看到你，信任才會讓人留下來。<br>
+    我以前也這樣。
   </p>
 
   <div class="pain-points-grid">
-    <div class="pain-point-card"><p>📉 想經營自媒體，但不知道該從哪裡開始</p></div>
-    <div class="pain-point-card"><p>🤯 發了很多內容，卻沒人互動或買單</p></div>
-    <div class="pain-point-card"><p>💸 有專業卻不知道怎麼包裝成商品</p></div>
-    <div class="pain-point-card"><p>⏰ 內容更新總是靠意志力，很難建立能持續的節奏</p></div>
+    <div class="pain-point-card"><p>💬 有人按讚，沒人私訊</p></div>
+    <div class="pain-point-card"><p>🤔 主頁看不出你在賣什麼</p></div>
+    <div class="pain-point-card"><p>😅 一提到商品，就覺得自己在硬賣</p></div>
+    <div class="pain-point-card"><p>🌀 方法學很多，不知道先改哪裡</p></div>
   </div>
 
   <div class="btn-group">
     {% include primary-cta.html class="btn-external" event_label="Homepage_Pain_CTA" %}
   </div>
-  <small class="social-proof">已有 100+ 讀者與學員加入，開始整理自己的內容變現系統</small>
+  <small class="social-proof">已有 100+ 讀者與學員加入</small>
+</section>
+
+<!-- 怎麼開始 -->
+<section class="card-section section-steps" id="steps">
+  <span class="section-kicker">怎麼開始</span>
+  <h2>三個步驟，一步一步來</h2>
+  <div class="pain-points-grid">
+    <div class="pain-point-card"><p><strong>1. 免費 PDF＋8 天診斷信</strong><br>每天看一個問題，先自己找卡點。<br><a href="/free">免費領取 →</a></p></div>
+    <div class="pain-point-card"><p><strong>2. 1 對 1 帳號健檢＆變現諮詢</strong><br>NT$1,000／60 分鐘。一起看定位、貼文、主頁到成交路徑。<br><a href="https://forms.gle/LoXoZyVWFJPZRnDt5" target="_blank" rel="noopener noreferrer">填表預約 →</a></p></div>
+    <div class="pain-point-card"><p><strong>3. 30 天 Threads 陪跑</strong><br>NT$16,800。知道問題後，有人陪你改 30 天。<br><a href="/resources">看陪跑 →</a></p></div>
+  </div>
+  <p style="font-size:0.9rem; color:var(--text-muted);">想自己來：《從零到變現》課程 NT$1,500｜題庫模板 NT$500｜7 天破圈挑戰包 NT$200 → <a href="/resources">課程與工具</a></p>
 </section>
 
 <!-- 最新文章區 -->
@@ -219,9 +231,9 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
   <h2>關於 K叔｜不想上班的貓</h2>
   <img src="/assets/images/in-1.PNG" alt="K叔｜不想上班的貓 大頭照" class="about-img">
 
-  <p>嗨，我是 <strong>K叔</strong>，一位用簡單文字拆解複雜問題的自媒體企劃。</p>
-  <p>我協助已經有商品、服務或專業能力的個人品牌，釐清定位、建立內容主線，並把內容、信任與成交承接串成一套可以持續運作的系統。</p>
-  <p>我自己仍然是一名上班族，所以特別重視低消耗、能長期執行的方法。但我的服務不是教你逃離上班，而是幫你讓專業被對的人看見。</p>
+  <p>嗨，我是 <strong>K叔</strong>，還在上班。<br>Threads 發了很多篇，也踩了很多坑。</p>
+  <p>現在專心幫有商品、服務或專業的人，把 Threads 內容接到信任和詢問。</p>
+  <p>我不教爆紅，也不保證你會賺多少。<br>我只幫你看清楚：內容到詢問，斷在哪裡。</p>
 
   <ul>
     <li>💡 <strong>定位與內容主線：</strong> 讓對的人快速理解你能提供什麼價值。</li>
@@ -269,7 +281,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
 
   <details>
     <summary>Q4：Threads 適合拿來賣服務或商品嗎？</summary>
-    <p><strong>A：</strong> 適合，但不要把 Threads 當成硬賣平台。它更適合拿來建立連結、輸出觀點、讓陌生人逐步理解你，最後再導向課程、諮詢、表單或官網文章。</p>
+    <p><strong>A：</strong> 適合，但不要把 Threads 當成硬賣平台。它更適合拿來建立連結、輸出觀點、讓陌生人逐步理解你，最後再導向免費資源、帳號健檢諮詢或陪跑。</p>
   </details>
 
   <details>
@@ -282,7 +294,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
     <p><strong>A：</strong> 先不要把專業包成一大包知識，而是拆成具體問題與具體結果。好的方案不是展示你懂多少，而是讓對方相信你能陪他從卡住的 A 點走到想要的 B 點。</p>
   </details>
 
-  <a href="/resources" class="btn-external">👉 更多資源</a>
+  <a href="/resources" class="btn-external">👉 課程與工具</a>
 </section>
 
 <!-- 聯絡我 -->

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 文章列表｜K叔自媒體經營筆記
-description: 這裡整理了 K叔關於自媒體經營、內容變現、斜槓生活與個人品牌的實戰心得。
+description: 這裡整理了 K叔關於自媒體經營、Threads 經營、內容變現與個人品牌的實戰心得。
 keywords: 自媒體, 文章, 經營心得, K叔, 內容變現
 permalink: /articles/
 ---
@@ -26,8 +26,8 @@ permalink: /articles/
 
   <div class="card-section-1" style="border-left: 5px solid #C48E64; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; cursor: pointer;" onclick="window.location.href='/resources';">
     <div>
-      <h2 style="margin: 0 0 10px 0; color: #C48E64; font-size: 1.5em;">🔥 低粉×高信任×低摩擦經營</h2>
-      <p style="margin: 0; color: #555;">這門 6 大主題課程，不教你追流量，而是教你用更低摩擦的內容系統，把對的人變成買單的人。</p>
+      <h2 style="margin: 0 0 10px 0; color: #C48E64; font-size: 1.5em;">🔥 《從零到變現》課程｜NT$1,500</h2>
+      <p style="margin: 0; color: #555;">不教爆紅。<br>教你把定位、內容和詢問接起來，自己照步驟做。</p>
     </div>
     <a href="/resources" class="btn-external" style="background-color: #C48E64; border-color: #C48E64; margin-top:0;">查看詳情 →</a>
   </div>

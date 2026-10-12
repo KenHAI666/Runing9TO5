@@ -1,15 +1,15 @@
 ---
 layout: default
-title: 一小時內容諮詢｜1000 元｜K叔
-description: K叔一小時內容諮詢，費用 1000 元。先透過診斷表單了解你的現況，再一起找出定位、內容、商品或成交承接最需要優先調整的地方。
-keywords: 內容諮詢, K叔諮詢, 一小時諮詢, 內容變現系統, 個人品牌, 自媒體策略
+title: 1 對 1 帳號健檢＆變現諮詢｜NT$1,000／60 分鐘｜K叔
+description: K叔1 對 1 帳號健檢＆變現諮詢，NT$1,000／60 分鐘。一起看你的定位、Threads 貼文、主頁到成交的路徑，找出最卡的那一點。
+keywords: 帳號健檢, 變現諮詢, Threads 諮詢, K叔諮詢, 內容變現系統, 個人品牌, 自媒體策略
 ---
 
 <!-- Hero -->
 <section class="card-section section-hero" style="text-align:center; padding:4rem 2.5rem;">
-  <p style="font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">一小時內容諮詢｜NT$1000</p>
+  <p style="font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">1 對 1 帳號健檢＆變現諮詢｜NT$1,000／60 分鐘</p>
   <h1 style="font-size:clamp(1.5rem, 3vw, 2.2rem); line-height:1.45; max-width:620px; margin:0 auto 1.25rem;">
-    先找出真正的內容卡點，<br>再決定下一步怎麼調整
+    Threads 有互動，卻沒人來問？<br>先找出卡在哪一段
   </h1>
   <p style="max-width:480px; margin:0 auto; font-size:0.95rem; color:var(--text-sub); line-height:1.85;">
     我會先看過你的診斷表單，<br>
@@ -21,7 +21,7 @@ keywords: 內容諮詢, K叔諮詢, 一小時諮詢, 內容變現系統, 個人�
      class="btn-external"
      style="display:inline-block; margin-top:1.75rem;"
      onclick="gtag('event', 'lead', { 'event_category': 'Consultation', 'event_label': 'Consultation_Form_Hero', 'value': 1000, 'currency': 'TWD' });">
-    填寫診斷表單
+    填表預約
   </a>
 </section>
 
@@ -48,8 +48,10 @@ keywords: 內容諮詢, K叔諮詢, 一小時諮詢, 內容變現系統, 個人�
   </div>
 
   <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.85; border-left:2px solid var(--border); padding-left:1rem; margin:0;">
-    費用為 <strong>NT$1000／60 分鐘</strong>。<br>
-    這次諮詢的目標不是塞給你更多資訊，而是幫你看清楚最該先處理的問題。
+    費用 <strong>NT$1,000／60 分鐘</strong>，線上進行。<br>
+    我們會一起看：定位、貼文內容、主頁到成交的路徑。<br>
+    會後給你一份重點與下一步建議。<br>
+    一次聚焦一個帳號；不代操、不保證成效。
   </p>
 </section>
 
@@ -74,8 +76,8 @@ keywords: 內容諮詢, K叔諮詢, 一小時諮詢, 內容變現系統, 個人�
     <div>
       <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem; letter-spacing:0.06em;">K叔｜不想上班的貓</p>
       <p style="font-size:0.88rem; color:var(--text-sub); margin:0; line-height:1.75;">
-        我自己仍然是一名上班族，所以特別重視低消耗、能長期執行的方法。<br>
-        但這次諮詢服務的是已經有商品、服務或專業能力，想把內容做得更有方向的人。
+        我自己還在上班，所以很在意方法能不能做得久。<br>
+        這個諮詢適合：有商品、服務或專業，Threads 有在經營，但詢問一直卡住的人。
       </p>
     </div>
   </div>
@@ -84,19 +86,29 @@ keywords: 內容諮詢, K叔諮詢, 一小時諮詢, 內容變現系統, 個人�
 <!-- 申請入口 -->
 <section id="contact-form" class="card-section" style="max-width:720px; text-align:center;">
   <p style="font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">申請諮詢</p>
-  <h2 style="margin-bottom:0.5rem;">一小時內容諮詢｜1000 元</h2>
+  <h2 style="margin-bottom:0.5rem;">1 對 1 帳號健檢＆變現諮詢｜NT$1,000／60 分鐘</h2>
   <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.75rem;">
-    完成診斷表單後，我會先了解你的現況，<br>
-    再回覆後續安排方式。
+    流程：填表預約 → 確認時間 → 線上 60 分鐘 → 會後重點整理
   </p>
   <a href="https://forms.gle/LoXoZyVWFJPZRnDt5"
      target="_blank"
      rel="noopener noreferrer"
      class="btn-external"
      style="display:inline-block;"
-     onclick="gtag('event', 'lead', { 'event_category': 'Consultation', 'event_label': 'Consultation_Form_Main', 'value': 800, 'currency': 'TWD' });">
-    前往填寫診斷表單
+     onclick="gtag('event', 'lead', { 'event_category': 'Consultation', 'event_label': 'Consultation_Form_Main', 'value': 1000, 'currency': 'TWD' });">
+    填表預約
   </a>
+</section>
+
+<!-- 下一步：陪跑 -->
+<section class="card-section-1" style="max-width:720px; text-align:center;">
+  <p style="font-size:0.78rem; letter-spacing:0.14em; color:var(--accent); margin-bottom:1rem;">找到問題之後</p>
+  <h2 style="margin-bottom:0.5rem;">30 天 Threads 陪跑｜NT$16,800</h2>
+  <p style="font-size:0.9rem; color:var(--text-sub); line-height:1.85;">
+    知道要改什麼，不代表改得動。<br>
+    陪跑是 30 天一起調整定位、內容和成交路徑。<br>
+    適不適合，諮詢時可以一起聊。
+  </p>
 </section>
 
 <!-- 諮詢方式問題 -->
@@ -126,8 +138,8 @@ keywords: 內容諮詢, K叔諮詢, 一小時諮詢, 內容變現系統, 個人�
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "K叔一小時內容諮詢",
-  "description": "先透過診斷表單了解現況，再用一小時找出定位、內容、商品或成交承接最需要優先調整的地方。",
+  "name": "K叔｜1 對 1 帳號健檢＆變現諮詢",
+  "description": "60 分鐘一起看定位、貼文、主頁到成交的路徑，找出你的 Threads 內容變現卡點。",
   "serviceType": "Consulting",
   "provider": {
     "@type": "Person",

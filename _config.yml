@@ -1,6 +1,6 @@
 # 全站基本設定
-title: "K叔｜內容變現系統"
-description: "K叔協助有商品或服務的個人品牌，建立內容、信任與成交的可持續變現系統。"
+title: "K叔｜Threads 內容變現"
+description: "K叔幫有商品、服務或專業的人，把 Threads 內容變成信任與詢問。"
 baseurl: ""
 url: "https://runing9to5.com"
 lang: "zh-Hant"
@@ -9,7 +9,7 @@ author:
   name: "K叔｜不想上班的貓"
   avatar: "/assets/images/me.jpeg"
   email: "hi@runing9to5.com"
-  bio: "協助有商品或服務的個人品牌，把內容做成信任與成交的系統。"
+  bio: "幫有商品、服務或專業的人，把 Threads 內容變成信任與詢問。"
 
 brand:
   name: "RUNING_9to5"
@@ -43,7 +43,7 @@ nav:
     link: "/"
   - name: "文章"
     link: "/articles"
-  - name: "電子書"
+  - name: "課程與工具"
     link: "/resources"
   - name: "找我諮詢"
     link: "/contact"
@@ -53,12 +53,22 @@ nav:
 # SEO 專用設定
 seo:
   type: "website"
-  title: "K叔｜幫有商品或服務的個人品牌建立內容變現系統"
-  description: "從內容定位、信任建立到商品成交，K叔協助有商品或服務的個人品牌建立可持續運作的內容變現系統。"
+  title: "K叔｜把 Threads 內容變成信任與詢問"
+  description: "從定位、內容到成交路徑，K叔幫有商品、服務或專業的人，把 Threads 內容變成信任與詢問。"
   locale: "zh_TW"
   image: "/assets/images/og-default.jpg"
   twitter: false
   facebook: false
+
+# 不輸出到網站的開發檔案
+exclude:
+  - README.md
+  - README.html
+  - templates/
+  - scripts/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
 
 # Sitemap 與 Feed
 feed:

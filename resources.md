@@ -1,68 +1,85 @@
 ---
 layout: default
-title: 低粉×高信任×低摩擦經營｜6大主題課程
-description: K叔的低粉高信任低摩擦經營課程，6大主題、NT$1,500，教你不用追流量，也能把對的人變成願意買單的人。
-keywords: 低粉變現, 高信任內容, 低摩擦經營, 自媒體課程, 個人品牌, 內容變現
+title: 課程與工具｜30 天 Threads 陪跑、《從零到變現》課程｜K叔
+description: K叔的服務與課程：30 天 Threads 陪跑 NT$16,800、《從零到變現》課程 NT$1,500、題庫模板 NT$500、7 天破圈挑戰包 NT$200。不確定從哪開始，先預約 1 對 1 帳號健檢＆變現諮詢。
+keywords: Threads 陪跑, 從零到變現, Threads 課程, 題庫模板, 破圈挑戰, K叔
 ---
 
 {% assign course_url = "https://portaly.cc/Uncleken/product/7MgANlnbm8VQAiIZH8Il" %}
+{% assign consult_url = "https://forms.gle/LoXoZyVWFJPZRnDt5" %}
 
 <section class="card-section section-hero" style="text-align:center; padding: 4rem 2.5rem;">
-  <p style="font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">6 大主題課程｜NT$1,500</p>
+  <p style="font-size:0.78rem; letter-spacing:0.16em; color:var(--accent); margin-bottom:1rem;">主要服務</p>
   <h1 style="font-size:clamp(1.7rem, 3.5vw, 2.5rem); line-height:1.4; max-width:760px; margin:0 auto 1.5rem;">
-    低粉×高信任×低摩擦經營
+    30 天 Threads 陪跑｜NT$16,800
   </h1>
   <p style="max-width:620px; margin:0 auto 1.5rem; font-size:1.05rem; color:var(--text-sub); line-height:1.9;">
-    這不是教你追流量的課。<br>
-    這是教你用最少的摩擦，把對的人變成買單的人。
+    知道要改什麼，跟真的改得動，是兩回事。<br>
+    30 天，一起調整定位、內容和成交路徑。<br>
+    給有商品、服務或專業，想讓 Threads 帶來詢問的人。
   </p>
-  <a href="{{ course_url }}"
+  <a href="{{ consult_url }}"
      target="_blank"
      rel="noopener noreferrer"
      class="btn-ebook"
      style="display:inline-block; font-size:1.05rem; padding:0.9rem 2.5rem;"
-     onclick="gtag('event', 'add_to_cart', { 'event_category': 'Course', 'event_label': 'Low_Followers_Trust_Course_Hero_CTA', 'value': 1500, 'currency': 'TWD' });">
-    查看課程｜NT$1,500
+     onclick="gtag('event', 'lead', { 'event_category': 'Coaching', 'event_label': 'Coaching_30d_Hero_CTA', 'value': 16800, 'currency': 'TWD' });">
+    先預約帳號健檢，聊聊適不適合
   </a>
-  <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.85rem;">新上架課程｜如有需要請先私訊</p>
+  <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.85rem;">陪跑前會先做 1 對 1 帳號健檢＆變現諮詢（NT$1,000／60 分鐘）</p>
 </section>
 
 <section class="card-section-1" style="max-width:760px;">
-  <p style="font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:1.25rem;">這門課適合你，如果你...</p>
+  <p style="font-size:0.78rem; letter-spacing:0.14em; color:var(--accent); margin-bottom:1.25rem;">比較適合你，如果你...</p>
   <ul style="line-height:1.9; color:var(--text-sub); padding-left:1.25rem;">
-    <li>有上班、有副業夢，但沒有時間每天大量發文</li>
-    <li>粉絲數不多，甚至剛起步，但想要穩定有收入</li>
-    <li>不想靠爆款，想靠系統長期經營</li>
-    <li>有專業和經驗，但不知道如何包裝成商品</li>
-    <li>試過發文，但感覺沒方向、看不到成效</li>
+    <li>已經有商品、服務或專業</li>
+    <li>Threads 有在發，也有人互動</li>
+    <li>但詢問和成交一直卡住</li>
+    <li>不想靠爆款，想要做得久的方法</li>
   </ul>
+  <p style="font-size:0.9rem; color:var(--text-muted); margin:0;">不代操、不保證成效。我陪你做，但帳號是你的。</p>
 </section>
 
-<section class="card-section" style="max-width:760px;">
-  <h2 style="margin-bottom:1rem;">我不會教你爆紅、賣課或搞流量</h2>
-  <p style="font-size:1rem; line-height:1.9; color:var(--text-sub); margin-bottom:0.75rem;">
-    我也沒什麼一夜致富的劇本給你。
-  </p>
-  <p style="font-size:1rem; line-height:1.9; color:var(--text-sub); margin:0;">
-    這門課更適合想穩穩建立內容系統的人：先找到定位，再累積信任，最後把信任接到商品與成交。
-  </p>
+<section class="card-section" style="max-width:900px;">
+  <h2 style="text-align:center; margin-bottom:0.5rem;">想自己先來也可以</h2>
+  <p style="text-align:center; font-size:0.85rem; color:var(--text-muted); margin-bottom:2rem;">課程與工具</p>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.25rem;">
+    <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:1.5rem;">
+      <h3 style="font-size:1rem; margin:0 0 0.5rem; color:var(--text);">《從零到變現》課程</h3>
+      <p style="font-size:1.2rem; color:var(--accent-dark); font-weight:700; margin:0 0 0.75rem;">NT$1,500</p>
+      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0 0 1rem;">6 個主題：定位、信任、商品導向寫作、發文流程、導流、詢問。自己照步驟做。</p>
+      <a href="{{ course_url }}" target="_blank" rel="noopener noreferrer" class="btn-ebook" style="display:inline-block;" onclick="gtag('event', 'select_item', { 'event_category': 'Offer', 'event_label': 'Course_Card' });">到 Portaly 查看課程</a>
+    </div>
+    <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:1.5rem;">
+      <h3 style="font-size:1rem; margin:0 0 0.5rem; color:var(--text);">題庫模板</h3>
+      <p style="font-size:1.2rem; color:var(--accent-dark); font-weight:700; margin:0 0 0.75rem;">NT$500</p>
+      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0 0 1rem;">不知道今天發什麼的時候，打開就有題目可以寫。</p>
+      <a href="{{ consult_url }}" target="_blank" rel="noopener noreferrer" class="btn-ebook" style="display:inline-block;" onclick="gtag('event', 'select_item', { 'event_category': 'Offer', 'event_label': 'Template_Card' });">填表詢問</a>
+    </div>
+    <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:1.5rem;">
+      <h3 style="font-size:1rem; margin:0 0 0.5rem; color:var(--text);">7 天破圈挑戰包</h3>
+      <p style="font-size:1.2rem; color:var(--accent-dark); font-weight:700; margin:0 0 0.75rem;">NT$200</p>
+      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0 0 1rem;">7 天、每天一個小任務，先動起來再說。</p>
+      <a href="{{ consult_url }}" target="_blank" rel="noopener noreferrer" class="btn-ebook" style="display:inline-block;" onclick="gtag('event', 'select_item', { 'event_category': 'Offer', 'event_label': 'Challenge_Card' });">填表詢問</a>
+    </div>
+  </div>
 </section>
 
 <section class="card-section-1" style="max-width:900px;">
   <h2 style="text-align:center; margin-bottom:0.5rem;">你會學到什麼？</h2>
-  <p style="text-align:center; font-size:0.85rem; color:var(--text-muted); margin-bottom:2.5rem;">6 大主題，把內容、信任與成交串起來</p>
+  <p style="text-align:center; font-size:0.85rem; color:var(--text-muted); margin-bottom:2.5rem;">《從零到變現》課程：6 個主題</p>
 
   <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.25rem;">
     <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:1.5rem; border-top:3px solid var(--accent);">
       <p style="font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:0.75rem;">01</p>
       <h3 style="font-size:1rem; margin:0 0 0.75rem; color:var(--text);">黃金交集定位</h3>
-      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0;">用「黃金交集」找到只屬於你的定位，避免寫成誰都能看、但沒人想買的內容。</p>
+      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0;">用「黃金交集」找到只屬於你的定位，不再寫成誰都能看、但沒人會來問的內容。</p>
     </div>
 
     <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:1.5rem; border-top:3px solid var(--accent-warm);">
       <p style="font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:0.75rem;">02</p>
       <h3 style="font-size:1rem; margin:0 0 0.75rem; color:var(--text);">信任三支柱系統</h3>
-      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0;">不靠爆款也能累積買單人，讓讀者從看見你、理解你，到開始相信你。</p>
+      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0;">不靠爆款，讓讀者從看見你、理解你，到開始相信你。</p>
     </div>
 
     <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:1.5rem; border-top:3px solid var(--accent);">
@@ -74,37 +91,21 @@ keywords: 低粉變現, 高信任內容, 低摩擦經營, 自媒體課程, 個�
     <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:1.5rem; border-top:3px solid var(--accent-warm);">
       <p style="font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:0.75rem;">04</p>
       <h3 style="font-size:1rem; margin:0 0 0.75rem; color:var(--text);">低摩擦發文流程</h3>
-      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0;">建立 20 分鐘內完成一篇高品質內容的流程，適合還在上班、時間有限的人。</p>
+      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0;">把發文流程變簡單，適合還在上班、時間有限的人。</p>
     </div>
 
     <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:1.5rem; border-top:3px solid var(--accent);">
       <p style="font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:0.75rem;">05</p>
       <h3 style="font-size:1rem; margin:0 0 0.75rem; color:var(--text);">私域導流路徑</h3>
-      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0;">把路人變成忠實訂閱者，讓內容不只停在平台互動，而是進入你的信任路徑。</p>
+      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0;">讓內容不只停在平台互動，而是有下一步可以走。</p>
     </div>
 
     <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:1.5rem; border-top:3px solid var(--accent-warm);">
       <p style="font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:0.75rem;">06</p>
       <h3 style="font-size:1rem; margin:0 0 0.75rem; color:var(--text);">低壓力詢問術</h3>
-      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0;">讓已經信任你的人，更自然地說出「我要」，而不是靠硬推銷逼成交。</p>
+      <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.75; margin:0;">讓已經信任你的人，知道怎麼來問你，不用硬推。</p>
     </div>
   </div>
-</section>
-
-<section class="card-section" style="text-align:center; max-width:760px; background:var(--bg-section);">
-  <p style="font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">目前商品</p>
-  <h2 style="font-size:clamp(1.4rem, 3vw, 2rem); margin-bottom:0.75rem;">低粉×高信任×低摩擦經營</h2>
-  <p style="font-size:1rem; color:var(--text-sub); line-height:1.8; margin-bottom:0.5rem;">6 大主題課程</p>
-  <p style="font-size:1.8rem; color:var(--accent-dark); font-weight:700; margin:0 0 1.5rem;">NT$1,500</p>
-  <a href="{{ course_url }}"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="btn-ebook"
-     style="display:inline-block; font-size:1.1rem; padding:0.9rem 2.5rem; margin-bottom:0.75rem;"
-     onclick="gtag('event', 'add_to_cart', { 'event_category': 'Course', 'event_label': 'Low_Followers_Trust_Course_Main_CTA', 'value': 1500, 'currency': 'TWD' });">
-    到 Portaly 查看課程
-  </a>
-  <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.5rem;">如果不確定適不適合，請先私訊我。</p>
 </section>
 
 <section class="card-section-1" style="max-width:720px;">
@@ -113,10 +114,11 @@ keywords: 低粉變現, 高信任內容, 低摩擦經營, 自媒體課程, 個�
     <div>
       <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem; letter-spacing:0.08em;">K叔說</p>
       <p style="font-size:0.95rem; line-height:1.85; color:var(--text-sub); margin-bottom:0.75rem;">
-        我是 K叔，靠內容翻轉人生的上班族。
+        我是 K叔，還在上班，一邊發 Threads 一邊踩坑。
       </p>
       <p style="font-size:0.95rem; line-height:1.85; color:var(--text-sub); margin:0;">
-        我不想把自媒體講成一夜翻身，也不想教你每天燃燒自己追爆款。這門課整理的是我真正相信的路：低粉也能開始，高信任才是核心，低摩擦才能長期做下去。
+        我不教爆紅，也沒有一夜翻身的劇本。<br>
+        低粉也能開始，信任才是重點，做得久才有用。
       </p>
     </div>
   </div>
@@ -124,16 +126,16 @@ keywords: 低粉變現, 高信任內容, 低摩擦經營, 自媒體課程, 個�
 
 <section class="card-section-1" style="text-align:center; max-width:720px; padding:3rem 2.5rem;">
   <p style="font-size:1rem; line-height:1.9; color:var(--text-sub); margin-bottom:1.75rem;">
-    如果你現在粉絲不多，但已經想把內容接到商品與收入，<br>
-    先從這門課把系統補起來。
+    不確定該從哪一個開始？<br>
+    先花 60 分鐘，把你的帳號攤開來看。
   </p>
-  <a href="{{ course_url }}"
+  <a href="{{ consult_url }}"
      target="_blank"
      rel="noopener noreferrer"
      class="btn-ebook"
      style="display:inline-block; font-size:1rem; padding:0.85rem 2.25rem;"
-     onclick="gtag('event', 'add_to_cart', { 'event_category': 'Course', 'event_label': 'Low_Followers_Trust_Course_Final_CTA', 'value': 1500, 'currency': 'TWD' });">
-    查看課程｜NT$1,500
+     onclick="gtag('event', 'lead', { 'event_category': 'Consultation', 'event_label': 'Resources_Final_CTA', 'value': 1000, 'currency': 'TWD' });">
+    預約 1 對 1 帳號健檢＆變現諮詢｜NT$1,000
   </a>
 </section>
 
@@ -141,9 +143,9 @@ keywords: 低粉變現, 高信任內容, 低摩擦經營, 自媒體課程, 個�
 {
   "@context": "https://schema.org/",
   "@type": "Product",
-  "name": "低粉×高信任×低摩擦經營",
+  "name": "《從零到變現》課程",
   "image": "https://runing9to5.com/assets/images/og-default.jpg",
-  "description": "K叔的 6 大主題課程，教你不用追流量，也能用低摩擦內容系統，把對的人變成願意買單的人。",
+  "description": "K叔的 Threads 內容變現課程，6 個主題，把定位、內容和詢問接起來。",
   "brand": {
     "@type": "Person",
     "name": "K叔｜不想上班的貓"
