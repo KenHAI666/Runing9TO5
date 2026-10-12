@@ -1,52 +1,34 @@
 ---
 layout: default
-title: 關於我
-description: 聯絡 K叔，提供自媒體諮詢或合作事宜
-keywords: 聯絡, K叔, 自媒體, 合作
+title: 關於 K叔
+description: K叔幫有商品、服務或專業的人，把 Threads 內容變成信任與詢問。從定位、內容到成交路徑。
+keywords: K叔, 關於, Threads, 內容變現, 帳號健檢
 ---
 <!-- 導覽列間距 -->
 <div style="height:70px;"></div>
 
 <div class="card-section" style="background:#e8f6ff;">
-  <h1>👋關於我</h1>  <br>
-<div class="card-section" style="background:#fff6e8;">
-  
-  <p>嗨，我是 <b>K叔</b> 👋</p>
-  <p>這裡記錄著我的自媒體經營、斜槓生活，以及一路上學到的方法與心得。</p>
+  <h1>👋 關於我</h1>
+  <div class="card-section" style="background:#fff6e8;">
+    <p>嗨，我是 <b>K叔</b>。</p>
+    <p>白天上班，晚上寫 Threads。<br>發了很多篇，也踩了很多坑。</p>
+    <p>我不教爆紅。<br>我幫有商品、服務或專業的人，<br>把 Threads 內容變成信任和詢問。</p>
 
-  <h3>✨ 核心理念：</h3>
-  <ul style="list-style:none; padding:0;">
-    <li>👉 懶人也能經營自媒體</li>
-    <li>👉 用最低能量，做到持續輸出</li>
-    <li>👉 把「副業」打造成「穩定的收入」</li>
-  </ul>
-
-  <p>如果你也想用輕鬆方式開始，這裡就是你的避風港。</p>
-  <blockquote>系統化經營自媒體｜用最懶人的方式，把自媒體經營變成可持續的斜槓收入</blockquote>
+    <h3>我在意的幾件事</h3>
+    <ul style="list-style:none; padding:0;">
+      <li>👉 先有商品方向，再做內容</li>
+      <li>👉 流量讓人看到你，信任才讓人留下來</li>
+      <li>👉 方法要做得久，不是燃燒自己換曝光</li>
+    </ul>
+  </div>
 </div>
 
 <div class="card-section" style="background:#e8f6ff;">
-  <h2>關於專案</h2>
-  <p>K叔的個人網站，專注於分享自媒體經營、個人品牌建立的實用內容。</p>
-
-<p><b>網站連結</b>：<a href="https://runing9to5.com" target="_blank">https://runing9to5.com</a></p>
-
-  <h3>技術架構</h3>
-  <ul style="list-style:none; padding:0;">
-    <li>⚙️ 框架：Jekyll + GitHub Pages</li>
-    <li>🎨 樣式：響應式 CSS</li>
-    <li>🚀 部署：GitHub Actions 自動部署</li>
-    <li>📩 電子報：ConvertKit 整合</li>
+  <h2>從哪裡開始</h2>
+  <ul style="list-style:none; padding:0; line-height:2;">
+    <li>📄 <a href="/free">免費 PDF＋8 天內容診斷信</a></li>
+    <li>🩺 <a href="https://forms.gle/LoXoZyVWFJPZRnDt5" target="_blank" rel="noopener noreferrer">1 對 1 帳號健檢＆變現諮詢｜NT$1,000／60 分鐘</a></li>
+    <li>🏃 <a href="/resources">30 天 Threads 陪跑｜NT$16,800</a></li>
   </ul>
-
-  <h3>功能特色</h3>
-  <ul style="list-style:none; padding:0;">
-    <li>✅ 響應式設計</li>
-    <li>✅ 電子報訂閱整合</li>
-    <li>✅ SEO 優化</li>
-    <li>✅ 自動化部署</li>
-  </ul>
-</div>
-<div class="card-section" style="text-align:center; font-size:0.9em; color:#555; background:#f0f0f0;">
-  <p>Made with ❤️ by K叔</p>
+  <p>你現在最卡的是什麼？歡迎到 <a href="{{ site.social.threads }}" target="_blank" rel="noopener noreferrer">Threads @runing_9to5</a> 跟我說。</p>
 </div>
