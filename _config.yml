@@ -4,6 +4,9 @@ description: "K叔幫有商品、服務或專業的人，把 Threads 內容變�
 baseurl: ""
 url: "https://runing9to5.com"
 lang: "zh-Hant"
+timezone: "Asia/Taipei"
+# 未來日期的文章不發布，排程由每日 GitHub Actions 建置釋出
+future: false
 
 author:
   name: "K叔｜不想上班的貓"
