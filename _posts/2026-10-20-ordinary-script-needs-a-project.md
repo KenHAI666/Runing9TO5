@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "我以前也以為有流量就能變現：手上只有普通劇本，要先找到你的「項目」"
-date: 2026-09-25
-last_modified_at: 2026-09-25
+date: 2026-10-20
+last_modified_at: 2026-10-20
 lang: zh-TW
 description: "羨慕別人輕鬆做出好內容、輕鬆賺錢？K叔回顧自己從「拍片等流量」到「先有項目、再做內容」的轉變，談普通人怎麼讓 Threads 內容接到詢問。"
 categories: [content-strategy]
