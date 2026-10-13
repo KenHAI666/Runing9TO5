@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "帶著任務的勇者：發生活文，會不會讓平台搞不懂你？"
-date: 2026-09-26
-last_modified_at: 2026-09-26
+date: 2026-11-10
+last_modified_at: 2026-11-10
 lang: zh-TW
 description: "Threads 帳號要垂直，還是可以發生活文？K叔用「勇者型」與「任務型」帳號，說明為什麼個人品牌最好是帶著任務的勇者。"
 categories: [content-strategy]

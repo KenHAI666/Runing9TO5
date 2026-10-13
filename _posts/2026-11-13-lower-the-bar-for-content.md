@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "不知道每天發什麼？先不要急著寫好文案"
-date: 2026-10-09
-last_modified_at: 2026-10-09
+date: 2026-11-13
+last_modified_at: 2026-11-13
 lang: zh-TW
 description: "有商品、有服務，一打開空白頁就卡住？K叔建議先降低內容產出難度，從一句話開始，把日常素材整理成內容。"
 categories: [content-strategy]

@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "蹭熱度有用嗎？泛流量和精準流量，要怎麼搭配"
-date: 2026-09-27
-last_modified_at: 2026-09-27
+date: 2026-12-08
+last_modified_at: 2026-12-08
 lang: zh-TW
 description: "蹭到幾萬流量，對變現卻沒幫助？K叔分享泛流量與精準流量的差別，以及怎麼讓 Threads 流量接到信任與詢問。"
 categories: [content-strategy]

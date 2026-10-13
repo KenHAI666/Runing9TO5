@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "下班只剩 20% 電量？把目標切碎，提高你的出現率"
-date: 2026-10-04
-last_modified_at: 2026-10-04
+date: 2026-11-17
+last_modified_at: 2026-11-17
 lang: zh-TW
 description: "沒時間、沒力氣經營 Threads？K叔分享碎片目標管理：把任務切到 5 分鐘做得完，重點是出現率而不是強度。"
 categories: [side-hustle]

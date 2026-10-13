@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "發文要帶著目的：被看見、被信任，還是走到成交？"
-date: 2026-10-13
-last_modified_at: 2026-10-13
+date: 2026-11-24
+last_modified_at: 2026-11-24
 lang: zh-TW
 description: "在 Threads 發文不等於經營。K叔拆解每一篇貼文的目的，以及怎麼用置頂文把流量接到信任與詢問。"
 categories: [content-strategy]

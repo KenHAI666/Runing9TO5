@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "自媒體只是工具，不是收入來源：把技能升級成你的人生作業系統"
-date: 2026-10-06
-last_modified_at: 2026-10-06
+date: 2026-10-16
+last_modified_at: 2026-10-16
 lang: zh-TW
 description: "很忙卻越做越焦慮？K叔談自媒體只做三件事，以及如何把「技能→練習」改成「技能→問題→需求→產品→收入」。"
 categories: [content-strategy]

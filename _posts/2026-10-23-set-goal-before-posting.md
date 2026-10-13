@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "先設目標再發文：用黃金圈找出你的內容方向"
-date: 2026-09-30
-last_modified_at: 2026-09-30
+date: 2026-10-23
+last_modified_at: 2026-10-23
 lang: zh-TW
 description: "很忙卻沒有進展？K叔用黃金圈 WHY、WHAT、HOW，說明為什麼要以終為始，先定目標與商品，再決定每天發什麼。"
 categories: [content-strategy]

@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "AI 變現不是「我會 AI」：先解決自己的問題，它可能也是別人的問題"
-date: 2026-10-12
-last_modified_at: 2026-10-12
+date: 2026-11-27
+last_modified_at: 2026-11-27
 lang: zh-TW
 description: "自媒體、流量、AI 都是工具，真正值錢的是解決問題的能力。K叔分享從自己的問題出發，找到經營方向與服務的方法。"
 categories: [content-strategy]

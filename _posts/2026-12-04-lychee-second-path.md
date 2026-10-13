@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "《長安的荔枝》讓我明白：有些路，要邊走邊準備"
-date: 2026-10-11
-last_modified_at: 2026-10-11
+date: 2026-12-04
+last_modified_at: 2026-12-04
 lang: zh-TW
 description: "看完《長安的荔枝》，一個上班十幾年的人怎麼看待替自己開第二條路。K叔談沒準備好也先出發的理由。"
 categories: [side-hustle]

@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "不要怕重複：每天都有人第一次看到你，信任要重複一百次"
-date: 2026-10-08
-last_modified_at: 2026-10-08
+date: 2026-11-20
+last_modified_at: 2026-11-20
 lang: zh-TW
 description: "怕重發被說洗版、每天不知道發什麼？K叔談為什麼重複不是問題，以及在 Threads 提高信任的幾個方法。"
 categories: [content-strategy]

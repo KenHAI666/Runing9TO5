@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "市場不負責教育，只負責篩選：選老師前先問「誰適合我現在的階段」"
-date: 2026-10-07
-last_modified_at: 2026-10-07
+date: 2026-12-01
+last_modified_at: 2026-12-01
 lang: zh-TW
 description: "辭職花大錢上整套課，流量有了卻沒人付費。K叔轉述一個朋友客戶的故事，談選課程、選教練前該問的問題。"
 categories: [personal-growth]

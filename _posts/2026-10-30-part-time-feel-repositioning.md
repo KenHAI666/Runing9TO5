@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "被說有「兼職感」之後，我重新檢查了定位的 4 件事"
-date: 2026-10-03
-last_modified_at: 2026-10-03
+date: 2026-10-30
+last_modified_at: 2026-10-30
 lang: zh-TW
 description: "朋友說我的內容有兼職感，也發現自己把目標設成所有人。K叔分享定位要滾動調整，以及自我檢查的 4 個面向。"
 categories: [content-strategy]

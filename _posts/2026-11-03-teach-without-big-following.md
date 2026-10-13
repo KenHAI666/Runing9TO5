@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "粉絲不多，可以教別人嗎？能不能教，看的是能不能讓人做到"
-date: 2026-10-01
-last_modified_at: 2026-10-01
+date: 2026-11-03
+last_modified_at: 2026-11-03
 lang: zh-TW
 description: "流量不高、粉絲才幾百，能不能分享專業或開課？K叔用自己當游泳教練的經驗，談能不能教的關鍵。"
 categories: [personal-growth]

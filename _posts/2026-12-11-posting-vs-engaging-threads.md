@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "發文重要，還是海巡重要？還有，為什麼認真海巡也可能出事"
-date: 2026-10-05
-last_modified_at: 2026-10-05
+date: 2026-12-11
+last_modified_at: 2026-12-11
 lang: zh-TW
 description: "Threads 該多發文還是多互動？K叔用「看見 → 信任 → 變現」拆解發文與海巡的分工，也提醒海巡不要變成機器人在跑 KPI。"
 categories: [content-strategy]

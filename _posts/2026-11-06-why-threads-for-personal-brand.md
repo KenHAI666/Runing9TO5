@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "為什麼我推薦用 Threads 經營個人品牌？3 個理由"
-date: 2026-10-02
-last_modified_at: 2026-10-02
+date: 2026-11-06
+last_modified_at: 2026-11-06
 lang: zh-TW
 description: "K叔為什麼主力推薦 Threads？從平台成長期、文字成本低、聊天室氛圍三個角度，說明 Threads 適合有商品或服務的人建立信任。"
 categories: [content-strategy]

@@ -2,8 +2,8 @@
 layout: post
 author: "K叔"
 title: "三分鐘熱度、什麼都碰一點，也能變成你的定位嗎？"
-date: 2026-09-29
-last_modified_at: 2026-09-29
+date: 2026-10-27
+last_modified_at: 2026-10-27
 lang: zh-TW
 description: "覺得自己很雜、三分鐘熱度？K叔分享怎麼把多重身份和日常習慣，整理成別人看得懂的專業與內容方向。"
 categories: [personal-growth]
