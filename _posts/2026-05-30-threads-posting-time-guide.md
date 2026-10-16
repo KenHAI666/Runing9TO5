@@ -116,4 +116,4 @@ Threads 發文時間怎麼看：網頁版滑鼠停在時間上；手機 App 只�
 
 ---
 
-如果你有商品、服務或專業，Threads 也有在發，但總覺得沒有慢慢累積成詢問，可以先來領我的「8 天內容診斷信」，每天一封，幫你找出現在卡在哪：[runing9to5.com/free](https://runing9to5.com/free)
+如果你有商品、服務或專業，Threads 也有在發，但總覺得沒有慢慢累積成詢問，可以先來領我的「歡迎信＋8 天內容診斷信」，每天一封，幫你找出現在卡在哪：[runing9to5.com/free](https://runing9to5.com/free)

@@ -115,7 +115,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
   <span class="section-kicker">怎麼開始</span>
   <h2>三個步驟，一步一步來</h2>
   <div class="pain-points-grid">
-    <div class="pain-point-card"><p><strong>1. 免費 PDF＋8 天診斷信</strong><br>每天看一個問題，先自己找卡點。<br><a href="/free">免費領取 →</a></p></div>
+    <div class="pain-point-card"><p><strong>1. 免費 PDF＋歡迎信＋8 天內容診斷</strong><br>每天看一個問題，先自己找卡點。<br><a href="/free">免費領取 →</a></p></div>
     <div class="pain-point-card"><p><strong>2. 1 對 1 帳號健檢＆變現諮詢</strong><br>NT$1,000／60 分鐘。一起看定位、貼文、主頁到成交路徑。<br><a href="https://forms.gle/LoXoZyVWFJPZRnDt5" target="_blank" rel="noopener noreferrer">填表預約 →</a></p></div>
     <div class="pain-point-card"><p><strong>3. 30 天 Threads 陪跑</strong><br>NT$16,800。知道問題後，有人陪你改 30 天。<br><a href="/resources">看陪跑 →</a></p></div>
   </div>
