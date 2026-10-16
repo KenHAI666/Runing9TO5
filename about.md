@@ -26,7 +26,7 @@ keywords: K叔, 關於, Threads, 內容變現, 帳號健檢
 <div class="card-section" style="background:#e8f6ff;">
   <h2>從哪裡開始</h2>
   <ul style="list-style:none; padding:0; line-height:2;">
-    <li>📄 <a href="/free">免費 PDF＋8 天內容診斷信</a></li>
+    <li>📄 <a href="/free">免費 PDF＋歡迎信＋8 天內容診斷信</a></li>
     <li>🩺 <a href="https://forms.gle/LoXoZyVWFJPZRnDt5" target="_blank" rel="noopener noreferrer">1 對 1 帳號健檢＆變現諮詢｜NT$1,000／60 分鐘</a></li>
     <li>🏃 <a href="/resources">30 天 Threads 陪跑｜NT$16,800</a></li>
   </ul>
