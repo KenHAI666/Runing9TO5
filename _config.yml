@@ -39,6 +39,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-include-cache
+  - jekyll-redirect-from
 
 # 全站導覽列
 nav:
@@ -46,8 +47,6 @@ nav:
     link: "/"
   - name: "文章"
     link: "/articles"
-  - name: "課程與工具"
-    link: "/resources"
   - name: "找我諮詢"
     link: "/contact"
   - name: "免費資源"

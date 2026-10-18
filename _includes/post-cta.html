@@ -1,0 +1,29 @@
+{% comment %}
+  文章結尾 CTA（全站文章共用，改文案只改這一個檔）
+  主要：/free 免費資源；次要：1 對 1 帳號健檢＆變現諮詢（/contact）
+{% endcomment %}
+<section class="card-section-1 post-end-cta" style="background:#f7f7f7; border: 1px solid #ddd; padding:30px 20px; text-align:center; margin-top: 24px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+
+  <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 24px; gap: 15px; border-bottom: 2px solid #ddd; padding-bottom: 20px;">
+    <img src="{{ '/assets/images/me.jpeg' | relative_url }}" alt="K叔簽名照" style="width: 60px; height: 60px; border-radius: 50%;">
+    <div style="text-align: left;">
+      <h4 style="margin: 0; color: #C48E64; font-size: 1.2em;">K叔｜不想上班的貓</h4>
+      <p style="margin: 2px 0 0 0; color: #555; font-size: 0.9em;">幫有商品、服務或專業的人，把 Threads 內容變成信任與詢問。</p>
+    </div>
+  </div>
+
+  <h3 style="color: #3B5B7A; font-size: 1.4em; margin-bottom: 12px;">看完了，下一步挑一個就好</h3>
+  <p style="color:#555; line-height:1.9; margin: 0 0 24px;">
+    想先自己看看卡在哪，就從免費的開始。<br>
+    看完還是不知道先改哪裡，再來找我一起看。
+  </p>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+    {% include primary-cta.html class="btn-external btn-subscribe-cta" event_label="Post_Footer_CTA" %}
+    <a href="{{ '/contact' | relative_url }}" class="btn-external btn-consult">
+      🩺 1 對 1 帳號健檢＆變現諮詢｜NT$1,000／60 分鐘
+    </a>
+  </div>
+
+  <p style="margin: 20px 0 0; font-size: 0.9em;"><a href="{{ '/about' | relative_url }}">認識 K叔 →</a></p>
+</section>

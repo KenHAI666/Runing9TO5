@@ -3,6 +3,8 @@ layout: default
 title: 1 對 1 帳號健檢＆變現諮詢｜NT$1,000／60 分鐘｜K叔
 description: K叔1 對 1 帳號健檢＆變現諮詢，NT$1,000／60 分鐘。一起看你的定位、Threads 貼文、主頁到成交的路徑，找出最卡的那一點。
 keywords: 帳號健檢, 變現諮詢, Threads 諮詢, K叔諮詢, 內容變現系統, 個人品牌, 自媒體策略
+redirect_from:
+  - /contact/
 ---
 
 <!-- Hero -->
@@ -98,17 +100,6 @@ keywords: 帳號健檢, 變現諮詢, Threads 諮詢, K叔諮詢, 內容變現�
      onclick="gtag('event', 'lead', { 'event_category': 'Consultation', 'event_label': 'Consultation_Form_Main', 'value': 1000, 'currency': 'TWD' });">
     填表預約
   </a>
-</section>
-
-<!-- 下一步：陪跑 -->
-<section class="card-section-1" style="max-width:720px; text-align:center;">
-  <p style="font-size:0.78rem; letter-spacing:0.14em; color:var(--accent); margin-bottom:1rem;">找到問題之後</p>
-  <h2 style="margin-bottom:0.5rem;">30 天 Threads 陪跑｜NT$16,800</h2>
-  <p style="font-size:0.9rem; color:var(--text-sub); line-height:1.85;">
-    知道要改什麼，不代表改得動。<br>
-    陪跑是 30 天一起調整定位、內容和成交路徑。<br>
-    適不適合，諮詢時可以一起聊。
-  </p>
 </section>
 
 <!-- 諮詢方式問題 -->
