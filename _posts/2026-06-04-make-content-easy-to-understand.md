@@ -104,8 +104,6 @@ image: /assets/images/og-default.jpg
 
 <hr>
 
-<p>如果你想把自己的專業整理成更白話、更能轉換的內容，可以來了解<a href="/resources/">自媒體陪跑服務</a>。我們會一起把你的知識翻成讀者聽得懂的語言。</p>
-
 <p>我是 K叔，你的自媒體企劃。</p>
 
 </section>

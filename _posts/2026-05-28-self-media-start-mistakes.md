@@ -106,8 +106,6 @@ image: /assets/images/og-default.jpg
 
 <hr>
 
-<p>如果你想讓我幫你釐清帳號定位、商品方向和內容路線，可以來了解<a href="/resources/">自媒體陪跑服務</a>。我們先把方向定清楚，再開始寫。</p>
-
 <p>我是 K叔，你的自媒體企劃。</p>
 
 </section>

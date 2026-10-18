@@ -112,8 +112,6 @@ image: /assets/images/og-default.jpg
 
 <hr>
 
-<p>如果你想把自己的經驗整理成可累積的內容和小產品，可以來了解<a href="/resources/">自媒體陪跑服務</a>。我們先用低風險方式，把你的第二條路搭起來。</p>
-
 <p>我是 K叔，你的自媒體企劃。</p>
 
 </section>

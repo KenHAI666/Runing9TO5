@@ -96,4 +96,4 @@ image: /assets/images/og-default.jpg
 
 但如果你想走久一點，就要開始把它變成路徑。
 
-如果你也想用低風險方式整理第二路線，可以先看[自媒體陪跑與免費資源](/resources/)，也可以接著讀：[在職做自媒體最難的不是時間](/articles/in-office-creator-reason/)。
+如果你也想用低風險方式整理第二路線，可以接著讀：[在職做自媒體最難的不是時間](/articles/in-office-creator-reason/)。

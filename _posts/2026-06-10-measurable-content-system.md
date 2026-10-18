@@ -109,8 +109,6 @@ image: /assets/images/og-default.jpg
 
 <hr>
 
-<p>如果你想把自己的自媒體經營從「憑感覺發文」改成「有數據、有復盤、有商品方向」的系統，可以來了解<a href="/resources/">自媒體陪跑服務</a>。</p>
-
 <p>我是 K叔，你的自媒體企劃。</p>
 
 </section>

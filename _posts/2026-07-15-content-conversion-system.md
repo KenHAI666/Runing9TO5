@@ -70,7 +70,7 @@ image: /assets/images/og-default.jpg
 
 官網文章、Threads、電子報、課程頁、諮詢頁，不是分開的東西。它們應該互相接住。
 
-例如 Threads 負責讓人看見你，官網文章負責讓 AI 和搜尋抓到你的完整答案，[資源頁](/resources/)負責讓讀者理解你的方法，[諮詢頁](/contact/)負責承接準備好的人。
+例如 Threads 負責讓人看見你，官網文章負責讓 AI 和搜尋抓到你的完整答案，[免費資源](/free)負責讓讀者理解你的方法，[諮詢頁](/contact)負責承接準備好的人。
 
 ## 適合誰、不適合誰？
 
@@ -88,4 +88,4 @@ image: /assets/images/og-default.jpg
 
 空白的地方，就是下一批內容題目。
 
-如果你想把內容從零散發文整理成系統，可以先讀[內容不是先發文，而是先設計出口](/articles/content-needs-exit/)，或看[低粉×高信任×低摩擦經營](/resources/)。
+如果你想把內容從零散發文整理成系統，可以先讀[內容不是先發文，而是先設計出口](/articles/content-needs-exit/)，或先[免費領取《自媒體變現三大核心心法》](/free)。

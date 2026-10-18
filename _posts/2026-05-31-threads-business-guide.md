@@ -126,8 +126,6 @@ image: /assets/images/og-default.jpg
 
 <hr>
 
-<p>如果你想把自己的行業拆成能被看見、能建立信任、也能成交的內容路線，可以來了解<a href="/resources/">自媒體陪跑服務</a>。</p>
-
 <p>我是 K叔，你的自媒體企劃。</p>
 
 </section>

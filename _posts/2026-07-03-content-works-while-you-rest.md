@@ -91,4 +91,4 @@ Threads 很適合即時互動。
 
 如果三個答案都是 yes，就值得沉澱成長文。
 
-如果你也想把短內容整理成可以長期工作的內容系統，可以先看[自媒體陪跑與免費資源](/resources/)，也可以接著讀：[三種最適合下班後寫的內容](/articles/three-trust-content-types/)。
+如果你也想把短內容整理成可以長期工作的內容系統，可以接著讀：[三種最適合下班後寫的內容](/articles/three-trust-content-types/)。

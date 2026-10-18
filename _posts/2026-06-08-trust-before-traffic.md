@@ -106,8 +106,6 @@ image: /assets/images/og-default.jpg
 
 <hr>
 
-<p>如果你想檢查自己的帳號信任感夠不夠、內容有沒有導向成交，可以來了解<a href="/resources/">自媒體陪跑服務</a>。</p>
-
 <p>我是 K叔，你的自媒體企劃。</p>
 
 </section>
