@@ -137,8 +137,6 @@ permalink: /articles/threads-vs-blog-platform-guide/
 
 <hr>
 
-<p>如果你想更有系統地走這條路，歡迎來了解 <a href="/resources/">自媒體陪跑服務</a>，我幫你從定位開始，一步一步建立你的自媒體系統。</p>
-
 <p>我是 K叔，你的自媒體企劃。<br>
 你現在整理的每一個想法，都會在未來形成價值。</p>
 

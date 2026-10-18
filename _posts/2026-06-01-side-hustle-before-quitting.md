@@ -131,8 +131,6 @@ image: /assets/images/og-default.jpg
 
 <hr>
 
-<p>如果你想在不離職的情況下，把你的經驗整理成內容、產品和第二收入路線，可以來了解<a href="/resources/">自媒體陪跑服務</a>。</p>
-
 <p>我是 K叔，你的自媒體企劃。</p>
 
 </section>

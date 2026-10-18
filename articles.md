@@ -24,12 +24,12 @@ permalink: /articles/
   </article>
   {% endfor %}
 
-  <div class="card-section-1" style="border-left: 5px solid #C48E64; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; cursor: pointer;" onclick="window.location.href='/resources';">
+  <div class="card-section-1" style="border-left: 5px solid #C48E64; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; cursor: pointer;" onclick="window.location.href='/free';">
     <div>
-      <h2 style="margin: 0 0 10px 0; color: #C48E64; font-size: 1.5em;">🔥 《從零到變現》課程｜NT$1,500</h2>
-      <p style="margin: 0; color: #555;">不教爆紅。<br>教你把定位、內容和詢問接起來，自己照步驟做。</p>
+      <h2 style="margin: 0 0 10px 0; color: #C48E64; font-size: 1.5em;">📄 免費領取《自媒體變現三大核心心法》</h2>
+      <p style="margin: 0; color: #555;">先自己看看卡在哪。<br>免費 PDF＋歡迎信＋8 天內容診斷信，每天看一個問題就好。</p>
     </div>
-    <a href="/resources" class="btn-external" style="background-color: #C48E64; border-color: #C48E64; margin-top:0;">查看詳情 →</a>
+    <a href="/free" class="btn-external" style="background-color: #C48E64; border-color: #C48E64; margin-top:0;">免費領取 →</a>
   </div>
 
 

@@ -123,8 +123,6 @@ image: /assets/images/og-default.jpg
 
 <hr>
 
-<p>如果你想確認自己適合哪一種內容路線，可以來了解<a href="/resources/">自媒體陪跑服務</a>。我們會先看你的個性、時間和商品方向，再決定怎麼開始。</p>
-
 <p>我是 K叔，你的自媒體企劃。</p>
 
 </section>

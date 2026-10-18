@@ -93,4 +93,4 @@ image: /assets/images/og-default.jpg
 
 重點不是把自己逼到很累，而是讓內容開始累積。
 
-如果你想把這些內容接成一條能變現的路，可以先看[自媒體陪跑與免費資源](/resources/)，也可以接著讀：[在職做自媒體最難的不是時間](/articles/in-office-creator-reason/)。
+如果你想把這些內容接成一條能變現的路，可以接著讀：[在職做自媒體最難的不是時間](/articles/in-office-creator-reason/)。

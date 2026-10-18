@@ -113,13 +113,11 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
 <!-- 怎麼開始 -->
 <section class="card-section section-steps" id="steps">
   <span class="section-kicker">怎麼開始</span>
-  <h2>三個步驟，一步一步來</h2>
+  <h2>兩個步驟，一步一步來</h2>
   <div class="pain-points-grid">
     <div class="pain-point-card"><p><strong>1. 免費 PDF＋歡迎信＋8 天內容診斷</strong><br>每天看一個問題，先自己找卡點。<br><a href="/free">免費領取 →</a></p></div>
     <div class="pain-point-card"><p><strong>2. 1 對 1 帳號健檢＆變現諮詢</strong><br>NT$1,000／60 分鐘。一起看定位、貼文、主頁到成交路徑。<br><a href="https://forms.gle/LoXoZyVWFJPZRnDt5" target="_blank" rel="noopener noreferrer">填表預約 →</a></p></div>
-    <div class="pain-point-card"><p><strong>3. 30 天 Threads 陪跑</strong><br>NT$16,800。知道問題後，有人陪你改 30 天。<br><a href="/resources">看陪跑 →</a></p></div>
   </div>
-  <p style="font-size:0.9rem; color:var(--text-muted);">想自己來：《從零到變現》課程 NT$1,500｜題庫模板 NT$500｜7 天破圈挑戰包 NT$200 → <a href="/resources">課程與工具</a></p>
 </section>
 
 <!-- 最新文章區 -->
@@ -281,7 +279,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
 
   <details>
     <summary>Q4：Threads 適合拿來賣服務或商品嗎？</summary>
-    <p><strong>A：</strong> 適合，但不要把 Threads 當成硬賣平台。它更適合拿來建立連結、輸出觀點、讓陌生人逐步理解你，最後再導向免費資源、帳號健檢諮詢或陪跑。</p>
+    <p><strong>A：</strong> 適合，但不要把 Threads 當成硬賣平台。它更適合拿來建立連結、輸出觀點、讓陌生人逐步理解你，最後再導向免費資源或帳號健檢諮詢。</p>
   </details>
 
   <details>
@@ -294,7 +292,7 @@ keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Thread
     <p><strong>A：</strong> 先不要把專業包成一大包知識，而是拆成具體問題與具體結果。好的方案不是展示你懂多少，而是讓對方相信你能陪他從卡住的 A 點走到想要的 B 點。</p>
   </details>
 
-  <a href="/resources" class="btn-external">👉 課程與工具</a>
+  <a href="/free" class="btn-external">👉 免費領取 PDF＋8 天內容診斷</a>
 </section>
 
 <!-- 聯絡我 -->

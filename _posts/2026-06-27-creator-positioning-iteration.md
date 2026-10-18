@@ -96,4 +96,4 @@ image: /assets/images/og-default.jpg
 
 重要的是，你不要每天發文都像重新做人。
 
-如果你想把定位、內容和商品接起來，可以先看[自媒體陪跑與免費資源](/resources/)，也可以接著讀：[內容不是先發文，是先設計商品](/articles/content-with-product-first/)。
+如果你想把定位、內容和商品接起來，可以接著讀：[內容不是先發文，是先設計商品](/articles/content-with-product-first/)。

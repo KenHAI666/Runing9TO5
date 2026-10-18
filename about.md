@@ -28,7 +28,6 @@ keywords: K叔, 關於, Threads, 內容變現, 帳號健檢
   <ul style="list-style:none; padding:0; line-height:2;">
     <li>📄 <a href="/free">免費 PDF＋歡迎信＋8 天內容診斷信</a></li>
     <li>🩺 <a href="https://forms.gle/LoXoZyVWFJPZRnDt5" target="_blank" rel="noopener noreferrer">1 對 1 帳號健檢＆變現諮詢｜NT$1,000／60 分鐘</a></li>
-    <li>🏃 <a href="/resources">30 天 Threads 陪跑｜NT$16,800</a></li>
   </ul>
   <p>你現在最卡的是什麼？歡迎到 <a href="{{ site.social.threads }}" target="_blank" rel="noopener noreferrer">Threads @runing_9to5</a> 跟我說。</p>
 </div>

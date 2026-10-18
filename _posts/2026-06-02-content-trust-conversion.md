@@ -111,8 +111,6 @@ image: /assets/images/og-default.jpg
 
 <hr>
 
-<p>如果你想檢查自己的內容為什麼有互動卻沒有轉換，可以來了解<a href="/resources/">自媒體陪跑服務</a>。我們會一起看你的定位、內容路線和信任出口。</p>
-
 <p>我是 K叔，你的自媒體企劃。</p>
 
 </section>

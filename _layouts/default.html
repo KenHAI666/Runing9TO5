@@ -14,43 +14,17 @@
       
       {% if page.categories %}
 
-      <section class="card-section-1" style="background:#f7f7f7; border: 1px solid #ddd; padding:30px 20px; text-align:center; margin-top: 24px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-        
-        <h3 style="color: #3B5B7A; font-size: 1.6em; margin-bottom: 25px;">💡 K叔結語：從知識到變現的下一步</h3>
-        
-        <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 30px; gap: 15px; border-bottom: 2px solid #ddd; padding-bottom: 20px;">
-            <img src="{{ '/assets/images/me.jpeg' | relative_url }}" alt="K叔簽名照" style="width: 60px; height: 60px; border-radius: 50%;">
-            <div style="text-align: left;">
-                <h4 style="margin: 0; color: #C48E64; font-size: 1.2em;">K叔｜不想上班的貓</h4>
-                <p style="margin: 2px 0 0 0; color: #555; font-size: 0.9em;">幫有商品、服務或專業的人，把 Threads 內容變成信任與詢問。</p>
-            </div>
-        </div>
-        
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-            
-            <a href="/resources" class="btn-external btn-ebook">
-               📚 《從零到變現》課程：NT$1,500
-            </a>
-            
-            <a href="/about" class="btn-external btn-consult">
-               🤝 認識 K叔
-            </a>
-        </div>
+      {% include post-cta.html %}
 
-      </section>
-      
       <hr style="border: none; border-top: 1px dashed #ddd; margin: 40px 0;">
 
       <section class="card-section" style="background:#f7f7f7; padding:20px; text-align:center;">
-        <h3 style="margin-bottom:15px; color: #3B5B7A;">免費取得內容變現指南</h3>
-        {% include primary-cta.html class="btn-external btn-subscribe-cta" event_label="Post_Footer_CTA" %}
-        
         {% comment %}
   ==========================================
   ✅ 區塊一：優化後的相關文章 (最大化關聯性)
   ==========================================
 {% endcomment %}
-<h3 style="margin-bottom:15px; color: #3B5B7A; margin-top: 30px;">相關文章</h3>
+<h3 style="margin-bottom:15px; color: #3B5B7A;">相關文章</h3>
 <div style="display:flex; flex-wrap:wrap; gap:15px; margin-bottom:30px;">
   
   {% comment %} 邏輯優化：迭代當前文章的所有分類，篩選出包含任一相同分類的文章，以確保相關性最大化。 {% endcomment %}

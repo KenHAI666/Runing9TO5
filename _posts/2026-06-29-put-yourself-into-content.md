@@ -94,4 +94,4 @@ image: /assets/images/og-default.jpg
 
 這三句話一加，內容就會比較像你。
 
-如果你想讓內容不只是知識整理，而是真的能累積信任，可以先看[自媒體陪跑與免費資源](/resources/)，或接著讀：[內容要有出口](/articles/content-needs-exit/)。
+如果你想讓內容不只是知識整理，而是真的能累積信任，可以接著讀：[內容要有出口](/articles/content-needs-exit/)。

@@ -139,8 +139,6 @@ image: /assets/images/og-default.jpg
 
 <hr>
 
-<p>如果你想建立一套不用每天硬想題目的內容系統，可以來了解<a href="/resources/">自媒體陪跑服務</a>。我會陪你把主題、商品和發文支線一起拆出來。</p>
-
 <p>我是 K叔，你的自媒體企劃。</p>
 
 </section>
