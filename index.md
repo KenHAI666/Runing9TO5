@@ -1,33 +1,33 @@
 ---
 layout: default
-title: "K叔｜把 Threads 內容變成信任與詢問"
-description: "K叔幫有商品、服務或專業的人，把 Threads 內容變成信任與詢問。從定位、內容到成交路徑。"
-keywords: "內容變現系統, 個人品牌, 有商品怎麼做自媒體, Threads內容變現, 信任成交系統, K叔"
+title: "K叔｜低粉 × 高信任 × 低摩擦 Threads 經營"
+description: "不用先衝粉絲。K叔幫有商品、服務或專業的個人品牌，先讓對的人知道你能幫什麼，再用低摩擦的 Threads 經營，把內容接到信任和詢問。"
+keywords: "低粉變現, Threads 經營, 個人品牌, 有商品怎麼做自媒體, 低摩擦經營, K叔"
 ---
 
 
 <!-- 🔹 Hero -->
 <section class="card-section section-hero" id="hero">
   <div class="hero-copy">
-    <span class="hero-eyebrow">定位 × 內容 × 成交路徑</span>
+    <span class="hero-eyebrow">低粉 × 高信任 × 低摩擦 Threads 經營</span>
 
-    <h1>幫有商品、服務或專業的人，把 Threads 內容變成信任與詢問</h1>
+    <h1>不用先衝粉絲。先讓對的人知道，你能幫什麼。</h1>
 
     <p class="hero-lead">
-      你有商品、服務或專業。<br>
-      Threads 也有在發。<br>
-      但就是沒人來問。
+      常聽到人說，做自媒體要先衝粉絲。<br>
+      我覺得，要先有商品。服務、專業也算。
     </p>
 
     <p class="hero-body">
-      我是 <strong>K叔｜不想上班的貓</strong>。
-      我陪你從定位、內容到成交路徑，
-      找出內容到詢問之間，斷在哪裡。
+      商品先於內容，內容養信任，<br>
+      信任才會變成詢問。<br>
+      我是 <strong>K叔</strong>，還在上班。<br>
+      我幫你把這條路接起來。
     </p>
 
     <div class="btn-group hero-actions">
       {% include primary-cta.html class="btn-external" event_label="Homepage_Hero_CTA" %}
-      <a href="/contact" class="btn-subscribe-cta">預約帳號健檢｜NT$1,000</a>
+      <a href="/contact" class="btn-subscribe-cta">預約 1 對 1 帳號健檢｜NT$1,000／60 分鐘</a>
     </div>
   </div>
 </section>
