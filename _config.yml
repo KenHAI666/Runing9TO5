@@ -1,6 +1,6 @@
 # 全站基本設定
-title: "K叔｜Threads 內容變現"
-description: "K叔幫有商品、服務或專業的人，把 Threads 內容變成信任與詢問。"
+title: "K叔｜低粉 × 高信任 × 低摩擦 Threads 經營"
+description: "不用先衝粉絲。K叔幫有商品、服務或專業的個人品牌，用低摩擦的 Threads 經營，把內容接到信任和詢問。"
 baseurl: ""
 url: "https://runing9to5.com"
 lang: "zh-Hant"
@@ -55,8 +55,8 @@ nav:
 # SEO 專用設定
 seo:
   type: "website"
-  title: "K叔｜把 Threads 內容變成信任與詢問"
-  description: "從定位、內容到成交路徑，K叔幫有商品、服務或專業的人，把 Threads 內容變成信任與詢問。"
+  title: "K叔｜低粉 × 高信任 × 低摩擦的 Threads 經營與自媒體變現"
+  description: "不用先衝粉絲。K叔幫有商品、服務或專業的個人品牌，先讓對的人知道你能幫什麼，再用低摩擦的 Threads 經營，把內容接到信任和詢問。"
   locale: "zh_TW"
   image: "/assets/images/og-default.jpg"
   twitter: false
