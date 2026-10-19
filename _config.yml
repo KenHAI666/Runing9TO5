@@ -55,7 +55,7 @@ nav:
 # SEO 專用設定
 seo:
   type: "website"
-  title: "K叔｜低粉 × 高信任 × 低摩擦的 Threads 經營與自媒體變現"
+  title: "K叔｜低粉 × 高信任 × 低摩擦 Threads 經營"
   description: "不用先衝粉絲。K叔幫有商品、服務或專業的個人品牌，先讓對的人知道你能幫什麼，再用低摩擦的 Threads 經營，把內容接到信任和詢問。"
   locale: "zh_TW"
   image: "/assets/images/og-default.jpg"

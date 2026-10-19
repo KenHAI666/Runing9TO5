@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "K叔｜低粉 × 高信任 × 低摩擦的 Threads 經營與自媒體變現"
+title: "K叔｜低粉 × 高信任 × 低摩擦 Threads 經營"
 description: "不用先衝粉絲。K叔幫有商品、服務或專業的個人品牌，先讓對的人知道你能幫什麼，再用低摩擦的 Threads 經營，把內容接到信任和詢問。"
-keywords: "低粉變現, 自媒體變現, Threads 經營, 個人品牌, 有商品怎麼做自媒體, 低摩擦經營, K叔"
+keywords: "低粉變現, Threads 經營, 個人品牌, 有商品怎麼做自媒體, 低摩擦經營, K叔"
 ---
 
 
@@ -14,15 +14,15 @@ keywords: "低粉變現, 自媒體變現, Threads 經營, 個人品牌, 有商�
     <h1>不用先衝粉絲。先讓對的人知道，你能幫什麼。</h1>
 
     <p class="hero-lead">
-      大多數人說，做自媒體要先衝粉絲。<br>
-      我覺得，要先有商品。
+      常聽到人說，做自媒體要先衝粉絲。<br>
+      我覺得，要先有商品。服務、專業也算。
     </p>
 
     <p class="hero-body">
       商品先於內容，內容養信任，<br>
       信任才會變成詢問。<br>
       我是 <strong>K叔</strong>，還在上班。<br>
-      我幫有商品、服務或專業的人，把這條路接起來。
+      我幫你把這條路接起來。
     </p>
 
     <div class="btn-group hero-actions">
