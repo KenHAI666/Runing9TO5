@@ -967,3 +967,6 @@ footer p { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.06em; 
 @media (max-width: 480px) {
   .card-section p, .card-section-1 p { font-size: 0.9rem; }
 }
+
+/* 文章內手機截圖：限制顯示寬度 */
+.post-screenshot { display: block; width: 100%; max-width: 280px; height: auto; margin: 1.2em auto; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
