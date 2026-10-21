@@ -43,13 +43,13 @@ image: /assets/images/og-default.jpg
 
 在 Threads 打開「設定」，往下滑就有「帳號狀態」。
 
-![Threads 設定頁裡的「帳號狀態」](/assets/images/articles/threads-account-status-step1.webp)
+![Threads 設定頁裡的「帳號狀態」](/assets/images/articles/threads-account-status-step1.webp){: .post-screenshot width="540" height="1099" loading="lazy"}
 
 點進去會看到三項：
 「移除的內容和訊息問題」、「挪後內容在動態消息的顯示順序」、「你無法使用的功能」。
 三個都打勾，代表這個頁面沒有顯示任何處置。
 
-![我的帳號狀態，三項都打勾](/assets/images/articles/threads-account-status-result.webp)
+![我的帳號狀態，三項都打勾](/assets/images/articles/threads-account-status-result.webp){: .post-screenshot width="540" height="1099" loading="lazy"}
 
 我自己查的時候，三個都是勾勾。
 所以流量低，不一定是被限流。
