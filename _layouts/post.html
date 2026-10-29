@@ -156,6 +156,74 @@ layout: default
     background: #f0f4f8;
   }
 
+  /* 文章內文（非 card-section 版型）：表格與連結 */
+  .post-wrap .post-body {
+    overflow-wrap: break-word;
+  }
+
+  .post-wrap .post-body > :not(.card-section) a:not([class]) {
+    color: var(--brown-dark);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .post-wrap .post-body > :not(.card-section) a:not([class]):hover,
+  .post-wrap .post-body > :not(.card-section) a:not([class]):focus-visible {
+    color: var(--blue-dark);
+    text-decoration-thickness: 2px;
+  }
+
+  .post-wrap .post-body > :not(.card-section) a:not([class]):focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+
+  .post-wrap .post-body > table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2em 0 1.4em;
+    font-size: 15px;
+    line-height: 1.7;
+    background: var(--bg-card);
+  }
+
+  .post-wrap .post-body > table th,
+  .post-wrap .post-body > table td {
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .post-wrap .post-body > table th {
+    background: var(--blue-light);
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  .post-wrap .post-body > table td {
+    color: var(--text-sub);
+  }
+
+  .post-wrap .post-body > table th:first-child,
+  .post-wrap .post-body > table td:first-child {
+    min-width: 4.5em;
+  }
+
+  @media (max-width: 640px) {
+    .post-wrap .post-body > table {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .post-wrap .post-body > table th,
+    .post-wrap .post-body > table td {
+      min-width: 9em;
+    }
+  }
+
   @media (max-width: 640px) {
     .post-wrap { padding: 20px 14px 60px; }
     .post-wrap .card-section { padding: 24px 18px; }
@@ -202,7 +270,9 @@ layout: default
   </div>
   {% endif %}
 
+  <div class="post-body">
   {{ content }}
+  </div>
 
   {% if site.ads.enabled and site.ads.slot_bottom != "" %}
   <div class="ad-unit ad-bottom" style="margin: 32px 0 0 0; text-align: center; min-height: 90px;">
