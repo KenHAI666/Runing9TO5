@@ -73,12 +73,12 @@ keywords: "低粉變現, Threads 經營, 個人品牌, 有商品怎麼做自媒�
   <div class="hero-proof-strip">
     <div class="hero-proof-item">
       <strong>100+</strong>
-      <span>讀者與學員加入實作</span>
+      <span>電子報讀者</span>
     </div>
 
     <div class="hero-proof-item">
       <strong>2,000+</strong>
-      <span>自己在 Threads 發的貼文</span>
+      <span>篇 Threads 貼文</span>
     </div>
 
     <div class="hero-proof-item">
@@ -107,7 +107,7 @@ keywords: "低粉變現, Threads 經營, 個人品牌, 有商品怎麼做自媒�
   <div class="btn-group">
     {% include primary-cta.html class="btn-external" event_label="Homepage_Pain_CTA" %}
   </div>
-  <small class="social-proof">已有 100+ 讀者與學員加入</small>
+  <small class="social-proof">已有 100+ 電子報讀者</small>
 </section>
 
 <!-- 怎麼開始 -->
@@ -140,7 +140,7 @@ keywords: "低粉變現, Threads 經營, 個人品牌, 有商品怎麼做自媒�
 <section class="card-section section-testimonials slide-in">
   <span class="section-kicker slide-in">用戶回饋</span>
   <h2 class="slide-in">不是把你變成另一個人，而是幫你把自己的節奏跑順</h2>
-  <p class="slide-in">讀者與學員的真實心得：</p>
+  <p class="slide-in">讀者的真實心得：</p>
 
   <div class="card-section-1">
     <blockquote>「特別適合內向創作者 & 邊上班邊想經營內容的人讓你慢慢培養產出節奏、寫得順、跑得穩
