@@ -174,7 +174,7 @@ keywords: "低粉變現, Threads 經營, 個人品牌, 有商品怎麼做自媒�
           <span class="proof-shot-tag">粉絲成長</span>
         </div>
         <div class="proof-shot-frame">
-          <img src="/assets/images/testimonials/IMG_9410.jpeg" alt="學員回饋：自媒體問題找這位，然後粉絲漲了。">
+          <img src="/assets/images/testimonials/IMG_9410.jpeg" alt="回饋截圖：自媒體問題找這位，然後粉絲漲了（頭像與帳號已遮罩）。">
         </div>
       </figure>
 
@@ -183,7 +183,7 @@ keywords: "低粉變現, Threads 經營, 個人品牌, 有商品怎麼做自媒�
           <span class="proof-shot-tag">高流量案例</span>
         </div>
         <div class="proof-shot-frame">
-          <img src="/assets/images/testimonials/IMG_9416.JPG" alt="學員回饋：上升 80.9 萬次流量，並把流量引到 K叔。">
+          <img src="/assets/images/testimonials/IMG_9416.JPG" alt="回饋截圖：上升 80.9 萬次流量，並把流量引到 K叔（頭像與帳號已遮罩）。">
         </div>
       </figure>
 
@@ -192,7 +192,7 @@ keywords: "低粉變現, Threads 經營, 個人品牌, 有商品怎麼做自媒�
           <span class="proof-shot-tag">觀點驗證</span>
         </div>
         <div class="proof-shot-frame">
-          <img src="/assets/images/testimonials/IMG_9417.jpeg" alt="學員回饋：粉絲少的帳號反而真正有收入。">
+          <img src="/assets/images/testimonials/IMG_9417.jpeg" alt="回饋截圖：粉絲少的帳號反而真正有收入（頭像與帳號已遮罩）。">
         </div>
       </figure>
 
@@ -201,7 +201,7 @@ keywords: "低粉變現, Threads 經營, 個人品牌, 有商品怎麼做自媒�
           <span class="proof-shot-tag">變現結果</span>
         </div>
         <div class="proof-shot-frame">
-          <img src="/assets/images/testimonials/IMG_9817.jpeg" alt="學員回饋：一個月漲粉 300 人，並成功變現。">
+          <img src="/assets/images/testimonials/IMG_9817.jpeg" alt="回饋截圖：一個月漲粉 300 人，並成功變現（對話截圖，無公開帳號頭像）。">
         </div>
       </figure>
     </div>
