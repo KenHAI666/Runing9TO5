@@ -165,43 +165,43 @@ keywords: "低粉變現, Threads 經營, 個人品牌, 有商品怎麼做自媒�
 <!-- 社會證明截圖 -->
 <section class="card-section section-testimonials">
   <span class="section-kicker">社會證明</span>
-  <h2>挑幾張最有代表性的回饋，讓人一眼看到實際效果</h2>
+  <h2>幾則讀者回饋與交流紀錄</h2>
 
   <div class="proof-gallery">
     <div class="proof-grid">
       <figure class="proof-shot">
         <div class="proof-shot-top">
-          <span class="proof-shot-tag">粉絲成長</span>
+          <span class="proof-shot-tag">讀者回饋</span>
         </div>
         <div class="proof-shot-frame">
-          <img src="/assets/images/testimonials/IMG_9410.jpeg" alt="回饋截圖：自媒體問題找這位，然後粉絲漲了（頭像與帳號已遮罩）。">
+          <img src="/assets/images/testimonials/IMG_9410.jpeg" alt="讀者提及粉絲成長的回饋截圖">
         </div>
       </figure>
 
       <figure class="proof-shot">
         <div class="proof-shot-top">
-          <span class="proof-shot-tag">高流量案例</span>
+          <span class="proof-shot-tag">讀者分享</span>
         </div>
         <div class="proof-shot-frame">
-          <img src="/assets/images/testimonials/IMG_9416.JPG" alt="回饋截圖：上升 80.9 萬次流量，並把流量引到 K叔（頭像與帳號已遮罩）。">
+          <img src="/assets/images/testimonials/IMG_9416.JPG" alt="讀者分享流量經驗的回饋截圖">
         </div>
       </figure>
 
       <figure class="proof-shot">
         <div class="proof-shot-top">
-          <span class="proof-shot-tag">觀點驗證</span>
+          <span class="proof-shot-tag">讀者觀察</span>
         </div>
         <div class="proof-shot-frame">
-          <img src="/assets/images/testimonials/IMG_9417.jpeg" alt="回饋截圖：粉絲少的帳號反而真正有收入（頭像與帳號已遮罩）。">
+          <img src="/assets/images/testimonials/IMG_9417.jpeg" alt="讀者分享粉絲數與收入看法的截圖">
         </div>
       </figure>
 
       <figure class="proof-shot">
         <div class="proof-shot-top">
-          <span class="proof-shot-tag">變現結果</span>
+          <span class="proof-shot-tag">交流回饋</span>
         </div>
         <div class="proof-shot-frame">
-          <img src="/assets/images/testimonials/IMG_9817.jpeg" alt="回饋截圖：一個月漲粉 300 人，並成功變現（對話截圖，無公開帳號頭像）。">
+          <img src="/assets/images/testimonials/IMG_9817.jpeg" alt="讀者回饋的對話截圖">
         </div>
       </figure>
     </div>
