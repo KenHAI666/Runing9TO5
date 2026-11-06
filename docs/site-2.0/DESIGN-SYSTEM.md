@@ -18,7 +18,7 @@ published: false
 | color.gold | `#D6AC54` | 待核准暖金，限裝飾或配深色文字 |
 | color.focus | `#1E3560` | 3px outline + 3px offset |
 
-`#8896AA` 現有 muted 色不可直接視為合格內文色；Phase 1 需量測實際背景對比並調深。金色不可配白字作普通文字按鈕。一般字 4.5:1、大字與必要 UI 邊界 3:1，以 WCAG 2.2 AA 為驗收目標。
+Phase 0 已計算純色對比。主文深藍／奶油底為 13.41:1，次文藍／奶油底為 7.29:1，白字／主按鈕藍為 8.85:1，深藍字／暖金為 7.15:1。暖棕／奶油底僅 3.81:1，既有 muted／奶油底為 2.65:1，白字／暖金為 2.12:1。一般文字優先用深藍或另選合格色。Phase 1 逐一驗證實際背景、hover、焦點及圖像疊色。一般字至少 4.5:1，大字與必要 UI 邊界至少 3:1。 [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
 
 ## 字體、尺寸與版面
 
@@ -36,6 +36,6 @@ published: false
 
 ## Phase 1 驗收矩陣
 
-首頁、文章列表、舊 HTML 長文、新 Markdown 長文、關於、諮詢、隱私、免費頁皆納入回歸；免費頁先截圖／盤點重複 tokens，不擅自改表單契約。320/375/768/1280px，200% zoom，鍵盤 Tab／Shift+Tab／Escape，文字放大與 reduced-motion。檢查固定導覽不遮標題，表格僅自身橫捲，無整頁溢出，focus 不被遮擋。
+首頁、文章列表、舊 HTML 長文、新 Markdown 長文、關於、諮詢、隱私、免費頁皆納入回歸；免費頁先截圖與盤點重複 tokens。訂閱安全與回應行為交由獨立 PR 驗收。320/375/768/1280px，200% zoom，鍵盤 Tab／Shift+Tab／Escape，文字放大與 reduced-motion。檢查固定導覽不遮標題，表格僅自身橫捲，無整頁溢出，focus 不被遮擋。
 
 效能為待驗收預算：主要頁 Lighthouse mobile performance/accessibility 目標 90+；field CWV 目標 LCP≤2.5s、INP≤200ms、CLS≤0.1（第 75 百分位，需真實資料）。目前沒有跑瀏覽器稽核，這些不是現況分數或成效承諾。先取得 baseline，再對每 PR 比較。
