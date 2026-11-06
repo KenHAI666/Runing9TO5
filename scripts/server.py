@@ -1,8 +1,7 @@
 import os
 import re
 from datetime import datetime
-import subprocess
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, abort
 
 # Flask 設定 templates 路徑
 app = Flask(
@@ -80,18 +79,28 @@ def index():
 <p><strong>標籤:</strong> {', '.join(generate_tags(content))}</p>
 
 '''
-    return render_template("editor.html", preview_html=preview_html, title=title, category=category, content=content)
+    return render_template(
+        "editor.html",
+        preview_html=preview_html,
+        title=title,
+        category=category,
+        content=content,
+        saved=request.args.get("saved") == "1",
+    )
 
 # -------------------------------
-# 發佈文章
+# 儲存本機文章（保留舊 URL，不操作 Git 或部署）
 # -------------------------------
 @app.route("/publish", methods=["POST"])
 def publish():
     title = request.form.get("title", "")
     category = request.form.get("category", "")
     content = request.form.get("content", "")
+    slug = slugify(title.strip())
+    if not slug:
+        abort(400, description="請輸入文章標題。")
     date_str = datetime.today().strftime("%Y-%m-%d")
-    filename = f"_posts/{date_str}-{slugify(title)}.md"
+    filename = f"_posts/{date_str}-{slug}.md"
 
     md_html = parse_content(content)
     tags = generate_tags(content)
@@ -117,15 +126,13 @@ description: "{content[:100]}..."
 
     if not os.path.exists("_posts"):
         os.makedirs("_posts")
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(front_matter + full_content)
+    try:
+        with open(filename, "x", encoding="utf-8") as f:
+            f.write(front_matter + full_content)
+    except FileExistsError:
+        abort(409, description="同名文章已存在，未覆寫。請調整標題，或在編輯器中修改現有檔案。")
 
-    # Git 自動提交
-    subprocess.run(["git", "add", filename])
-    subprocess.run(["git", "commit", "-m", f"新增文章：{title}"])
-    subprocess.run(["git", "push", "origin", "main"])
-
-    return redirect("/")
+    return redirect("/?saved=1")
 
 # -------------------------------
 # 啟動 Flask

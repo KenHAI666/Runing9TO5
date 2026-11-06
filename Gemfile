@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby file: ".ruby-version"
+
 # 由 github-pages 決定 Jekyll 版本
 gem "github-pages", group: :jekyll_plugins
 

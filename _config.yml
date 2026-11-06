@@ -71,6 +71,8 @@ exclude:
   - vendor/
   - Gemfile
   - Gemfile.lock
+  - tests/
+  - requirements-dev.txt
 
 # Sitemap 與 Feed
 feed:

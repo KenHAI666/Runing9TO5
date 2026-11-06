@@ -11,7 +11,7 @@ published: false
 - [x] 八份指定文件：目標、架構、設計、資料、路由、遷移、任務、QA。
 - [x] 訂閱流程以 fetch stub 測成功／失敗／驗證缺口，未接觸正式 Webhook。
 - [x] 查閱 Cloudflare 官方來源，記錄路由與排程相容性風險。
-- [ ] K叔審閱、接受 Phase 0 結論並另行核准 Phase 1。
+- [x] Phase 0 已合併（PR #40）；K叔於 2026-11-06 核准啟動 Phase 1。
 
 ## Phase 1 精確任務（核准後依序 PR）
 
@@ -39,7 +39,7 @@ Phase 1 完成門檻：路由、canonical、sitemap/feed、原訂閱入口無意
 
 | 決策／操作 | 本次狀態 | 誰需確認 |
 | --- | --- | --- |
-| 進入 Phase 1、採用設計候選 | 未核准 | K叔 |
+| 進入 Phase 1 | 2026-11-06 已核准，逐 PR 審核；不代表正式切換或商業方案核准 | K叔 |
 | 新增資源中心並改既有 resources 別名 | 未核准 | K叔（入口與 SEO） |
 | 現有服務價格／時長／上架、數位商品與課程方案 | 原碼僅供盤點 | K叔（商業） |
 | n8n sandbox、正式流程／信件／CORS／退訂變更 | 未執行 | 流程持有者 + K叔 |
@@ -49,3 +49,7 @@ Phase 1 完成門檻：路由、canonical、sitemap/feed、原訂閱入口無意
 | 學院／金流／訂單／退款／個資政策 | 未選型 | K叔及相關專業人員 |
 
 只要求與各階段有關的決策；Phase 0 不要求提供正式金鑰或將 secrets 放聊天。審核提交狀態見 QA-CHECKLIST，文件完成不代表 PR 已獲核准。
+
+## Phase 1 進度
+
+P1-01 建置與發布保護：獨立分支 `phase1/build-and-review-safety`，實作本機儲存不操作 Git、同名檔保護、Ruby／Gem 鎖定及 read-only PR checks。本地 Ruby 3.2.11 frozen 安裝、Jekyll 建置、4 項測試通過；80 個公開輸出與最新 main 逐 byte 相同。待遠端 PR 檢查與審核；P1-02–06 尚未開始，正式部署 workflow 保持原樣。

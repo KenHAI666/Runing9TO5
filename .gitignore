@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .jekyll-cache/
 _site/
+.sass-cache/
+.venv/
+.bundle/

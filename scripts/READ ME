@@ -1,84 +1,52 @@
-scripts/
- ├─ notion2jekyll.py   # Notion → Jekyll
- ├─ web2jekyll.py      # 後台輸入 → Jekyll
- └─ server.py          # Flask 後台
+# 本機文章工具與 PR 流程
 
-📝 開發者專用流程 (README_DEV.md)
-這份文件記錄如何在 GitHub Codespaces 生成並發布文章。
----
+正式網站內容只能經審核合併到 main；既有每日排程仍會重建與部署。不得直接 push main。
+每個雲端任務已有隔離 checkout；沿用現有 checkout，除非使用者明確要求，不建立 worktree。
 
-🚀 server.py 後台發布文章流程
-進入虛擬環境後：
+## 本地 Jekyll
 
-pip install flask
+使用 .ruby-version 指定的 Ruby 與 Gemfile.lock 的 Bundler（2.5.22）：
 
-Flask 會自動使用 jinja2 模板引擎，所以不用額外安裝 jinja2。
+    gem install bundler -v 2.5.22
+    bundle install
+    bundle exec jekyll serve --host 127.0.0.1
 
-在專案根目錄（與 templates/ 同層）啟動：
+Gemfile.lock 已納入版本控制。一般安裝不執行 bundle update；升級依賴另開 PR。
+PR 檢查使用 BUNDLE_FROZEN=true，確保 Gemfile 與 lockfile 相符。
+既有正式部署 workflow 的觸發、排程及 Pages 權限未在本次修改。
 
-python scripts/server.py
+## 舊 Flask 編輯器：只儲存本機文章
 
-然後打開瀏覽器訪問：
+先建立獨立分支，再於 repo 根目錄執行：
 
-http://127.0.0.1:5000/
-後台頁面流程：
+    git fetch origin main
+    git switch -c article/your-topic origin/main
+    python3 -m venv .venv
+    . .venv/bin/activate
+    python -m pip install -r requirements-dev.txt
+    python -m flask --app scripts.server run --host 127.0.0.1
 
-填寫文章標題、分類、內容（可以用你設計的 markdown 樣式指令）。
+此工具僅供本機使用，沒有正式後台需要的登入與內容驗證，不可公開部署。
+預覽不寫檔；「儲存本機文章」會新增 _posts/YYYY-MM-DD-title.md。
+舊 /publish URL 保留相容性，但不執行 git add、commit、push 或部署。
+同名文章回傳 409 並保留原檔；不接受空標題。儲存成功不代表文章已上線。
+請人工檢查 front matter、內容、日期與 permalink，再執行：
 
-按 預覽 → 會顯示渲染後的效果（套卡片 CSS）。
+    python -m unittest discover -s tests -v
+    bundle exec jekyll build --trace
+    git add _posts/your-post.md
+    git commit -m "新增文章：主題"
+    git push -u origin article/your-topic
 
-確認沒問題後按 發佈 → 生成 Markdown 檔到 `_posts`。
+在 GitHub 建立以 main 為 base 的 PR，等待檢查與審核；不要自行合併或改正式設定。
 
-如需上線，請人工檢查後再自行提交：
+## Notion JSON 匯入
 
-- `git add _posts/`
-- `git commit -m "新增文章: 標題"`
-- `git push origin main`
+    python3 scripts/notion2jekyll.py path/to/export.json
 
+先看 dry-run。確認後，可先寫到 checkout 外暫存目錄：
 
----------------
-以下作廢
----------------
+    python3 scripts/notion2jekyll.py path/to/export.json --write --output-dir /tmp/notion-review
 
-🚀server.py+web2jekyll.py 發布文章流程
-
-1️⃣ 啟動後台伺服器
-開啟終端機，進入專案根目錄，並執行你的 Flask 伺服器：
-
-python3 scripts/server.py
-成功執行後，你將看到一個類似 * Running on http://127.0.0.1:5000 的訊息。
-
-如果你是在 GitHub Codespaces 中執行，請點擊「在瀏覽器中開啟」或「在本地開啟」按鈕，或者直接訪問 Codespaces 提供的網址。
-
-2️⃣ 透過後台介面發布文章
-在瀏覽器中開啟 http://127.0.0.1:5000。
-
-在網頁表單中輸入文章的 標題、分類 和 內容。
-你可以即時看到文章的預覽效果。
-確認內容無誤後，點擊「儲存並發布文章」按鈕。
-腳本會自動將文章寫入 _posts 資料夾，並使用 YYYY-MM-DD-標題.md 的格式命名。
-
----
-🚀 notion2jekyll.py 發布文章流程
-
-1️⃣ 開啟 Codespaces
-打開 GitHub 專案頁
-點 Code → Codespaces → New codespace
-等待自動開啟雲端 VSCode
-
-2️⃣ 先做 dry run
-在終端機輸入：
-python3 scripts/notion2jekyll.py path/to/notion-export.json
-
-3️⃣ 確認檔名沒問題後再正式寫入
-python3 scripts/notion2jekyll.py path/to/notion-export.json --write
-
-4️⃣ 新增文章後，手動提交
-git add _posts/
-
-git commit -m "新增文章: 測試文章"
-⚠️ 注意：-m 後面一定要寫訊息，不能留空。
-
-推送到 GitHub
-git push origin main
----
+此匯入器不操作 Git，但同名檔可能覆寫；確認內容與目的地後再人工放入文章分支。
+不要以 --drafts 或 --future 建置正式站。未來文章需日期到且有成功 rebuild 才發布。
