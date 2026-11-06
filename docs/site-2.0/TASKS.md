@@ -3,13 +3,14 @@ published: false
 ---
 # 分階段任務與審核閘門
 
-本次只交付 Phase 0，以下工作未開始。每個後續 PR 需說明改動、路由差異、驗證、回復；main 不直接 push，正式設定另核准。
+Phase 0 已整理為文件審查。每個後續 PR 都須附路由差異、驗收及回復方式。正式操作與帳戶設定需另核准。
 
 ## Phase 0
 
 - [x] 取得 main 基線，建立文件分支，列舉並讀取文字來源、內容 metadata 與圖片大小。
 - [x] 八份指定文件：目標、架構、設計、資料、路由、遷移、任務、QA。
-- [x] 訂閱流程以 fetch stub 測成功／失敗／驗證缺口，未接觸正式 Webhook。
+- [x] 沿用 fetch stub 結果，唯讀核對已發布 n8n 節點、錯誤回應與寄送依賴。
+- [x] 核對正式 artifact、路由／外連、排程歷史及 Pages／main 保護狀態。
 - [x] 查閱 Cloudflare 官方來源，記錄路由與排程相容性風險。
 - [ ] K叔審閱、接受 Phase 0 結論並另行核准 Phase 1。
 
@@ -17,14 +18,14 @@ published: false
 
 | 任務／PR | 檔案範圍（建議） | 驗收 | 依賴 |
 | --- | --- | --- | --- |
-| P1-01 建置基線與 PR 安全 | Gemfile/lock、Ruby pin、新 build-only workflow、scripts/READ ME | 與正式 CI Ruby 一致；PR 不帶 deploy 權限；無自動 main push；公開路由 snapshot 無意外變化 | 核准處理 BUILD-01/GOV-01 |
+| P1-01 建置基線與 PR 安全 | Gemfile/Gemfile.lock、.ruby-version、.github/workflows/jekyll-pr.yml、scripts/server.py、README.md、scripts/READ ME | 與正式 CI Ruby 一致；PR 無部署權限及正式 secrets；匯出／寫文到分支並人工開 PR；快照比對 57 個 canonical 與所有別名 | K叔核准啟動 Phase 1、BUILD-01/GOV-01；PR check 出現後另核准 main protection |
 | P1-02 Tokens | 新 tokens.css、style.css、default.html | 現有 var 相容；色彩／spacing／focus tokens；對比量測與 mobile 截圖 | 配色核准、P1-01 |
 | P1-03 Header/Footer | 現 header/footer、navigation.js、components.css、default.html | skip link、aria-current、鍵盤／Escape／focus、無 JS 連結、320px 不溢出；入口不變 | P1-02 |
 | P1-04 Buttons/Cards | ui/button.html、ui/card.html、components.css、選定既有頁 | 真 link/button 語意，44px 觸控、focus/loading/disabled、heading 連結；先轉一頁再漸進 | P1-02 |
 | P1-05 文章版型 | post.html/default.html、components.css | 舊 HTML／Markdown 各至少兩篇、單 H1、表格橫捲、CTA/相關文章正常、URL/SEO 不變 | P1-04 |
 | P1-06 動態與視覺回歸 | CSS/JS、測試配置、QA 報告 | reduced-motion、無 JS 可讀、320/375/768/1280、200% zoom、鍵盤與 axe/Lighthouse baseline | P1-03–05 |
 
-FORM-01/02、ANALYTICS-01、ADS-01、privacy layout 各另開小 PR，避免視覺 PR 混入服務契約或追蹤決策。`free.html` 不因抽共用元件而改動 Webhook；需要接觸訂閱互動時先核准 sandbox 與契約。
+FORM-03 優先安排獨立的表單安全 PR，驗證無 JS 時資料無法進 URL。FORM-01/02 的回應契約和 sandbox 寄送、ANALYTICS-01、ADS-01、PRIV-01 與 privacy layout 各列獨立審查範圍。`free.html` 不因抽共用元件而改動 Webhook；需要接觸訂閱互動時先核准 sandbox 與契約。
 
 Phase 1 完成門檻：路由、canonical、sitemap/feed、原訂閱入口無意外改變；必要建置與內容驗證通過；沒有新增重大 a11y 問題；文件與截圖可審，K叔確認才接 Phase 2。
 
@@ -43,8 +44,8 @@ Phase 1 完成門檻：路由、canonical、sitemap/feed、原訂閱入口無意
 | 新增資源中心並改既有 resources 別名 | 未核准 | K叔（入口與 SEO） |
 | 現有服務價格／時長／上架、數位商品與課程方案 | 原碼僅供盤點 | K叔（商業） |
 | n8n sandbox、正式流程／信件／CORS／退訂變更 | 未執行 | 流程持有者 + K叔 |
-| Analytics 容器權限／追蹤同意策略 | 未取得／未變更 | 帳戶管理者 + K叔 |
-| GitHub branch protection、Pages／Actions 設定 | 未變更 | repo 管理者 |
+| Analytics 容器權限／追蹤同意策略 | 待帳戶驗證 | 帳戶管理者 + K叔 |
+| GitHub branch protection、Pages／Actions 設定 | 已確認 main 無保護、Pages 僅 main；任何改動待核准 | repo 管理者 |
 | Cloudflare App 授權、預覽、付費方案、正式網域／DNS／排程 | 未執行 | 帳戶管理者 + K叔 |
 | 學院／金流／訂單／退款／個資政策 | 未選型 | K叔及相關專業人員 |
 
