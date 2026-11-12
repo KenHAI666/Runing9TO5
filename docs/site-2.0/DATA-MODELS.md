@@ -34,7 +34,7 @@ Jekyll 不會自動執行上述 schema；Phase 3 必須實作驗證器與負向�
 
 ## 資源 Resource
 
-額外欄位：format（pdf/template/checklist/link）、delivery（subscription/external_download）、asset_url（可空）、subscription_flow_id（公開流程識別，不是 webhook secret）。免費不等於可未經同意寄信；交付入口沿用 `/free`，未核准不得新造 email 流程。`/resources/` 衝突先解決。
+額外欄位：format（pdf/template/checklist/link）、delivery（subscription/external_download）、asset_url（可空）、subscription_flow_id（公開流程識別，不是 webhook secret）。訂閱型交付沿用 `/free`；`asset_url` 只用於已核准公開下載的資產。登記、同意、寄送狀態與開信紀錄留在受控流程。`/resources/` 衝突先解決。
 
 ## 工具 Tool
 
@@ -63,7 +63,7 @@ price: null
 cta: null
 ```
 
-price 若核准：`amount_minor` 為非負整數（最小貨幣單位）、`currency` 為 ISO 4217、`tax_display`／`billing_basis`／`verified_at` 明定。null 顯示「洽詢／待公布」只在文案核准後使用，不能自動輸出 NT$0。現有 NT$1,000／60 分鐘只是原始碼記載，不當成新方案承諾。金流 URL 僅經商家確認後加入，不保存 merchant secret 或訂單 ID。
+price 若核准：`amount_minor` 為非負整數（最小貨幣單位）、`currency` 為 ISO 4217、`tax_display`／`billing_basis`／`verified_at` 明定。null 顯示「洽詢／待公布」只在文案核准後使用，不能自動輸出 NT$0。正式頁目前列有 NT$1,000／60 分鐘。新頁上架前由 K叔確認實際價格、交付範圍與預約入口。金流 URL 僅經商家確認後加入，不保存 merchant secret 或訂單 ID。
 
 ## 課程 Course
 

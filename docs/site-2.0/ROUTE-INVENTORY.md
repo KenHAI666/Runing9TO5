@@ -3,9 +3,9 @@ published: false
 ---
 # 路由與原始碼盤點
 
-盤點日 2026-11-06，基線 main `b951dfc0657ff43e2edc8f4468cfec4de0d8268b`。本清單為本地 Jekyll 3.10.0／github-pages 233 實際建置推導，不宣稱等於正式站當下部署；正式站 GET 受目前網路政策 403 阻擋。公開 URL 一律以 `https://runing9to5.com` 加下表 path 組成。
+盤點日為 2026-11-06（台北），程式基線為 main `13dbdce7b730df5df0f9c591c41b956d4fc9bc92`。以 [正式 Actions 產物](https://github.com/KenHAI666/Runing9TO5/actions/runs/42157839818)、[公開 sitemap](https://runing9to5.com/sitemap.xml) 及 HTTP GET 交叉核對。公開 URL 由 `https://runing9to5.com` 加下表路徑組成。
 
-台北 2026-11-06 12:00 固定時鐘建置：51 篇公開文章、6 個主要頁、4 個 redirect 頁、19 個其餘輸出，共 80 個檔案。sitemap 57 個 loc＝51 篇文章＋6 個主要頁；redirect、landing 與 assets 不在該 sitemap。沒有路由碰撞。canonical path 與實體輸出檔不同時，下表分別列出；HTTP status、extensionless 別名與主機正規化仍需正式／預覽主機驗證。
+正式部署有 80 個檔案，sitemap 有 57 個 canonical（51 篇文章、6 頁）。138 個對應 artifact 的 GET 路徑皆 200 且回應內容與產物完全相同。下列盤點收錄全部產物對應的主要 URL、實體檔路徑及已知相容別名。網址查詢參數與片段可形成多種變體。
 
 ## 頁面、轉址與插件輸出
 
@@ -26,9 +26,23 @@ published: false
 | `/feed.xml` | `/feed.xml` | `feed.xml；無 layout` |
 | `/sitemap.xml` | `/sitemap.xml` | `sitemap.xml；無 layout` |
 
-redirects.json 證實：`/contact/` → `https://runing9to5.com/contact.html`；`/free/`、`/resources/`、`/resources.html` → `https://runing9to5.com/free`。這些是 jekyll-redirect-from 的 HTML refresh/canonical，不是已驗證的 HTTP 301。
+## 正式主機的別名與回應
 
-`/landing` 為靜態 HTML 內容（無副檔名），noindex + meta refresh 到 `/free`；未驗證主機 MIME。`/about`、`/contact`、`/articles` 等無 slash／無副檔名連結需主機 alias 支援，不能只憑檔案清單保證 status。
+| 路徑 | HTTP 結果與最終用途 |
+| --- | --- |
+| `/free`、`/free.html` | 皆 200、相同 HTML，canonical `/free` |
+| `/free/`、`/free/index.html`、`/resources`、`/resources/`、`/resources.html`、`/resources/index.html` | 200 HTML，含 meta refresh 指向 `/free`。HTTP 客戶端若未解析 HTML 就停在 200。 |
+| `/contact`、`/contact.html` | 皆 200，canonical `/contact.html` |
+| `/contact/`、`/contact/index.html` | 200 HTML，meta refresh 指向 `/contact.html` |
+| `/about`、`/about.html` | 皆 200，canonical `/about.html` |
+| `/articles`、`/privacy` | 單次 HTTP 轉址後 200，目的地各補尾斜線 |
+| 下表 51 篇文章的無尾斜線版本 | 各經一次 HTTP 轉址，落到下表 canonical |
+| `/index.html`、`/articles/index.html`、`/privacy/index.html`、下表文章的實體 `index.html` | 皆 200，canonical 分別指向根頁、列表、隱私與各篇的主要路徑 |
+| `/landing` | 200、`application/octet-stream`；雖含 noindex 與指向 `/free` 的 meta refresh，主機以二進位類型回應，瀏覽器可能下載。Phase 4 驗明確 HTTP 轉址。 |
+| `http://runing9to5.com/`、`https://www.runing9to5.com/` | 根頁抽測各經一次 HTTP 轉址到正式 HTTPS apex |
+| `/about/`、`/articles.html`、`/privacy.html`、未知路徑、`/404.html` | 404 |
+| `/start/`、`/tools/`、`/services/`、`/courses/` | 404，為待規劃入口 |
+| `/articles/ai-copywriting-human-review/`、Phase 0 PRD 的 .md／.html 路徑 | 404，前者是 11/09 排程文 |
 
 ## 公開文章（日期已到，51 篇）
 
@@ -157,7 +171,7 @@ redirects.json 證實：`/contact/` → `https://runing9to5.com/contact.html`；
 | `.github/workflows/jekyll-deploy.yml` | push main + 每日排程 + dispatch，Ruby 3.2、Pages artifact/deploy |
 | `README.md` / `README.html` / `scripts/READ ME` | 前兩者 exclude；READ ME 有不再相符的安全敘述，需另 PR |
 
-根目錄其餘為 Gemfile、_config.yml、.gitignore、robots、ads、landing。無 CNAME、根 404、自訂 plugins、_data 或 collections；GitHub Pages domain／環境／branch protection 是帳戶設定，不可由檔案缺少推論沒有配置。全部文字來源已讀取並掃描 metadata／標題／連結，圖片只稽核檔名／大小，未聲稱逐張視覺審核。
+根目錄其餘為 Gemfile、_config.yml、.gitignore、robots、ads、landing。無 CNAME、根 404、自訂 plugins、_data 或 collections；GitHub API 證實 Pages 用 Actions 且自訂域名已啟用 HTTPS。部署 environment 只允許 main，而 main 沒有分支保護或生效規則。全部文字來源已讀取並掃描 metadata／標題／連結，圖片只稽核檔名／大小，未聲稱逐張視覺審核。
 
 ## SEO 與 Analytics 實際輸出
 
@@ -169,27 +183,14 @@ H1：60 份 HTML 各 1 個、landing 0 個、privacy 2 個。隱私頁藉 Minima
 
 ## 外部連結稽核
 
-來源中的外部地址分為社群／轉換、追蹤／字體／廣告、文章參考、編輯來源。以下為完整非本地 hostname 清單（同網域內不同頁見原碼），未執行表單送出或訂閱。URL 字串掃描與生成頁 anchor 的本地目標檢查完成；目前可接受 `.html` 主機別名推導，未發現確定缺檔的內部 anchor 目標。未做正式外連可達性保證。
+公開產物中的外站 anchor 去重後共有 12 個，皆以唯讀 GET 得到最終 200。200 可由登入、同意或說明頁回傳，僅代表 HTTP 可達。
 
-| Host | 來源舉例 | 狀態／注意 |
-| --- | --- | --- |
-| `about.fb.com` | `_posts/2026-10-19-threads-no-traffic-shadowban.md` | 僅原碼盤點；未逐條網路請求 |
-| `app.notion.com` | `_posts/2026-10-10-k-uncle-friends.md` | 僅原碼盤點；未逐條網路請求 |
-| `blog.hootsuite.com` | `_posts/2026-10-29-threads-no-engagement-positioning.md` | 僅原碼盤點；未逐條網路請求 |
-| `fonts.googleapis.com` | `assets/css/style.css` | 僅原碼盤點；未逐條網路請求 |
-| `fonts.gstatic.com` | `free.html` | 僅原碼盤點；未逐條網路請求 |
-| `forms.gle` | `_includes/head.html` | 未送出；需 sandbox／帳戶核實 |
-| `help.instagram.com` | `_posts/2026-10-19-threads-no-traffic-shadowban.md` | 僅原碼盤點；未逐條網路請求 |
-| `kenhai-n8n.hf.space` | `free.html` | 未送出；需 sandbox／帳戶核實 |
-| `pagead2.googlesyndication.com` | `_includes/head.html` | 僅原碼盤點；未逐條網路請求 |
-| `portaly.cc` | `_config.yml` | 僅原碼盤點；未逐條網路請求 |
-| `schema.org` | `_includes/head.html` | 僅原碼盤點；未逐條網路請求 |
-| `www.aboutads.info` | `privacy.md` | HTTP 連結，建議核實 HTTPS 替代；未改動 |
-| `www.google.com` | `privacy.md` | 僅原碼盤點；未逐條網路請求 |
-| `www.googletagmanager.com` | `_includes/head.html` | 僅原碼盤點；未逐條網路請求 |
-| `www.instagram.com` | `_config.yml` | 僅原碼盤點；未逐條網路請求 |
-| `www.socialmediatoday.com` | `_posts/2026-10-19-threads-no-traffic-shadowban.md` | 僅原碼盤點；未逐條網路請求 |
-| `www.threads.com` | `_posts/2026-10-19-threads-no-traffic-shadowban.md` | 僅原碼盤點；未逐條網路請求 |
-| `www.threads.net` | `README.html` | 僅原碼盤點；未逐條網路請求 |
+| 連結／分類 | 觀察 |
+| --- | --- |
+| Google Forms 轉址 | 轉至可讀表單頁。未提交，也未確認通知、容量或商業方案。 |
+| Facebook 官方文章、Instagram Help、Social Media Today、Instagram 帳號 | 各 1 個網址，最終 200。 |
+| Threads 帳號和文章 | 5 個網址，最終 200。舊 `threads.net` 個人頁跳到 `threads.com`。 |
+| Google 廣告設定 | 最終到 blocked-cookies 說明。實際可使用的隱私設定入口需另作瀏覽器驗證。 |
+| AboutAds | 舊 HTTP 連結跳到 HTTPS `youradchoices.com`，可另案更新。 |
 
-主站 `runing9to5.com` 的 robots GET 與 GitHub API 均遭本環境政策拒絕；不能把 403 當成網站故障。Cloudflare 官方資料透過其 GitHub 原始文件唯讀取得。無 Search Console、GA4、n8n workflow 或 Forms 回應資料，索引／寄送／退訂／付款可用性皆未驗證。
+原始碼另引用 Notion 和 Hootsuite 的編輯／參考來源，及 Portaly 社群資料、Google Fonts、Analytics、AdSense、Schema.org。這些不在上列已渲染外站 anchor 探測內。n8n 端點只以唯讀 workflow 定義核對。GTM、GA4、搜尋索引與寄送驗證邊界見 [QA-CHECKLIST.md](QA-CHECKLIST.md)。

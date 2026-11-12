@@ -10,7 +10,9 @@ published: false
 ```text
 _posts/*.md + _config.yml + Liquid layouts/includes + assets
   → bundle exec jekyll build → _site → GitHub Pages
-free.html（獨立 HTML/CSS/JS）→ POST JSON → n8n（站外）→ 郵件系統（未核實）
+free.html（獨立 HTML/CSS/JS）→ POST JSON → n8n（站外）
+  → Google Sheets → Resend Day 0 → 回應網站
+  → 排程後續寄信 → Kit；另有退訂與開信追蹤
 contact.md → 外部 Google Forms（不在靜態站處理訂單）
 Notion JSON → notion2jekyll.py dry-run／人工審核 → 文章
 ```
@@ -46,9 +48,9 @@ Notion JSON → notion2jekyll.py dry-run／人工審核 → 文章
 
 ## 表單與分析邊界
 
-正式 Webhook 保持原樣。本地測試只用攔截 fetch；未來預覽預設禁用送出或使用另核准的 sandbox。表單請求與分析事件不傳 email/name 到 dataLayer。後端才負責輸入檢查、重複訂閱、限流、CORS、同意紀錄、郵件交付及退訂；前端成功狀態須依經核准回應契約，不能憑 HTTP 2xx 宣稱已完成訂閱。
+表單輸入只經必要的訂閱請求傳送。姓名與 Email 禁止進入網址、dataLayer、公開日誌或靜態輸出。本地測試用 fetch stub，預覽預設禁用送出，另核准後才接 sandbox。先補表單在 JS 載入失敗時的行為，再建立 server-side 驗證、重複與並行保護、限流、CORS、同意紀錄和寄送失敗後的補償。成功文案應對應可驗證的狀態（收件、寄信供應商接受、實際交付），逐項證據見 [QA-CHECKLIST.md](QA-CHECKLIST.md)。
 
-追蹤應集中於單一 adapter；GTM 與直接 GA4 的去重需先查容器。正式 ID 只在正式構建載入，預覽不送正式事件。沒有帳戶權限不能宣稱已修復分析或已符合法規。
+追蹤應集中於單一 adapter；GTM 與直接 GA4 的去重需先查容器。正式 ID 只在正式構建載入。預覽關閉正式事件，將廣告 slot 與 loader 綁定同一個 gate。追蹤與告知策略待帳戶持有者及 K叔確認。
 
 ## 學院界線
 
