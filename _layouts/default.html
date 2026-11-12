@@ -14,7 +14,9 @@
       
       {% if page.categories %}
 
+      {% unless page.hide_post_cta %}
       {% include post-cta.html %}
+      {% endunless %}
 
       <hr style="border: none; border-top: 1px dashed #ddd; margin: 40px 0;">
 
