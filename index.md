@@ -227,7 +227,7 @@ keywords: "低粉變現, Threads 經營, 個人品牌, 有商品怎麼做自媒�
 <!-- 關於我區 -->
 <section class="card-section section-about">
   <h2>關於 K叔｜不想上班的貓</h2>
-  <img src="/assets/images/in-1.PNG" alt="K叔｜不想上班的貓 大頭照" class="about-img">
+  <img src="/assets/images/me.jpeg" alt="K叔｜不想上班的貓 大頭照" class="about-img">
 
   <p>嗨，我是 <strong>K叔</strong>，還在上班。<br>Threads 發了很多篇，也踩了很多坑。</p>
   <p>現在專心幫有商品、服務或專業的人，把 Threads 內容接到信任和詢問。</p>
