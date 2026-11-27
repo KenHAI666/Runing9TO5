@@ -1,18 +1,18 @@
 ---
 layout: post
 author: "K叔"
-title: "Threads 沒流量是被限流嗎？帳號狀態與 3 個限流迷思"
+title: "Threads（脆）沒流量是被限流嗎？帳號狀態與 3 個限流迷思"
 date: 2026-10-19
-last_modified_at: 2026-10-19
+last_modified_at: 2026-11-27
 lang: zh-TW
-description: "Threads 突然沒流量，先查帳號狀態，再分辨貼連結、刪文與大量動作的限流說法。整理已知資料與判斷限制，避免只憑瀏覽下降就下結論。"
+description: "Threads（脆）突然沒流量是被限流嗎？先查帳號狀態，教你怎麼知道自己是不是被限流，再分辨貼連結、刪文與大量動作的說法。整理官方資料與判斷限制，不只憑瀏覽下降就下結論。"
 categories: [content-strategy]
 tags: [Threads限流, Threads沒流量, Threads帳號狀態, Threads貼連結, Threads刪文]
 permalink: /articles/threads-no-traffic-shadowban/
 image: /assets/images/og-default.jpg
 ---
 
-# Threads 沒流量是被限流嗎？帳號狀態與 3 個限流迷思
+# Threads（脆）沒流量是被限流嗎？帳號狀態與 3 個限流迷思
 
 看流量只有幾百，你一定很慌。
 
@@ -36,6 +36,8 @@ image: /assets/images/og-default.jpg
 所以這篇先陪你做兩件事：
 先查帳號，看帳號狀態有沒有顯示異常；
 再拆幾個常聽到的限流說法。
+
+（Threads 在台灣很多人叫它「脆」，這篇講的「脆限流」「脆突然沒流量」都是同一件事。）
 
 ## 先查帳號，再看流量波動
 
@@ -110,6 +112,10 @@ Mosseri 在 2024 年 11 月說過，Threads 沒有刻意降低連結貼文的排
 
 ## 常見問題
 
+### 怎麼知道自己是不是被限流？
+
+先打開 Threads（脆）的「設定 → 帳號狀態」，看三項有沒有都打勾；再看是一篇低，還是連續好幾篇都低，並拿累積時間差不多的舊貼文來比。三項都正常、只是單篇或短期偏低，多半不是被限流，而是那篇內容或發文時機的問題。
+
 ### Threads 有「限流」嗎？官方怎麼說？
 
 大家說的「限流」，可能是內容被限制推薦、功能被限制，也可能只是瀏覽下降。
@@ -156,6 +162,14 @@ Threads 的「帳號狀態」會顯示平台對你採取的處置，先去看有
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "怎麼知道自己是不是被限流？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "先打開 Threads（脆）的「設定 → 帳號狀態」，看三項有沒有都打勾；再看是一篇低，還是連續好幾篇都低，並拿累積時間差不多的舊貼文來比。三項都正常、只是單篇或短期偏低，多半不是被限流，而是那篇內容或發文時機的問題。"
+      }
+    },
     {
       "@type": "Question",
       "name": "Threads 有「限流」嗎？官方怎麼說？",
