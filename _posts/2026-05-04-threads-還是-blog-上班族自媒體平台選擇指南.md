@@ -135,6 +135,8 @@ permalink: /articles/threads-vs-blog-platform-guide/
 
 <p>有了這句話，平台選擇就清楚了。</p>
 
+<p><b>延伸閱讀：</b><a href="/articles/threads-account-level-kpi/">Threads 帳號等級 KPI 表：你現在在哪個階段？</a>；<a href="/articles/product-before-content/">自媒體不是先發文，而是先設計商品</a></p>
+
 <hr>
 
 <p>我是 K叔，你的自媒體企劃。<br>

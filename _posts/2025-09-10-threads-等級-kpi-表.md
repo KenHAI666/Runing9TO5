@@ -82,6 +82,8 @@ Threads 的演算法持續在變，數字只是參考，方向比數字更重要
 
 <p>這三件事，在初心者階段做對，你進入成長期的速度會快很多。</p>
 
+<p><b>延伸閱讀：</b><a href="/articles/threads-pdca-one-change/">Threads 發文效果不好怎麼調整？用 PDCA 一次改一件事</a>；<a href="/articles/social-media-growth-with-pdca/">自媒體起號不靠天份，靠的是這個循環</a></p>
+
 <hr>
 
 <p>我是 K叔，你的自媒體企劃。</p>
