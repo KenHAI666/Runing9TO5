@@ -39,6 +39,27 @@
   --radius-lg: 10px;
   --shadow:    0 1px 4px rgba(26,37,64,0.07);
   --shadow-md: 0 4px 16px rgba(26,37,64,0.11);
+
+  /* 內容標記：問題（灰藍色塊）與解法（黃色螢光筆） */
+  --slate:        #8896aa;   /* 問題色塊底（奶白大字，24px 以上粗體） */
+  --highlight:    #E9AC42;   /* 解法螢光底（搭配深藍字） */
+}
+
+/* ─── 內容標記 ─── */
+.problem-block {
+  background: var(--slate);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 24px;
+  padding: 0.25em 0.5em;
+  border-radius: var(--radius);
+}
+
+.highlight {
+  background: var(--highlight);
+  color: var(--text);
+  padding: 0 0.2em;
+  border-radius: 2px;
 }
 
 /* ─── RESET & BASE ─── */
